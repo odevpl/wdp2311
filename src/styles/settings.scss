@@ -25,3 +25,13 @@ $primary: $dim-orange;
 $pure-white: $white;
 
 $text-color: $dark-grey;
+$animation-time: 250ms;
+$animation-time-background-color: $animation-time + 0ms;
+
+.extra-hover {
+  $moveX: 10px;
+  $moveY: 0;
+  $scale: 1;
+
+  transform: translate($moveX, $moveY) scale($scale);
+}
