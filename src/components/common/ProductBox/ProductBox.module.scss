@@ -5,6 +5,10 @@
   border: 1px solid #e1e1e1;
   margin-bottom: 2rem;
 
+  &:hover .price {
+    background-color: $primary;
+  }
+
   .photo {
     position: relative;
     padding: 10px 10px 0 10px;
@@ -37,8 +41,10 @@
     }
 
     .buttons {
+      opacity: 0;
       display: flex;
       justify-content: space-between;
+      transition: opacity 0.3s;
     }
   }
 
@@ -82,5 +88,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+
+  .hovered {
+    opacity: 1;
   }
 }
