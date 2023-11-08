@@ -4,17 +4,69 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 9f1c985 (Create global vars for transition times and class for extra hover effects)
 "@babel/code-frame@7.5.5", "@babel/code-frame@^7.0.0", "@babel/code-frame@^7.5.5":
   version "7.5.5"
   resolved "https://registry.npmjs.org/@babel/code-frame/-/code-frame-7.5.5.tgz"
+=======
+"@ampproject/remapping@^2.2.0":
+  version "2.2.1"
+  resolved "https://registry.npmjs.org/@ampproject/remapping/-/remapping-2.2.1.tgz"
+  integrity sha512-lFMjJTrFL3j7L9yBxwYfCq2k6qqwHyzuUl/XBnif78PWTJYyL/dfowQHWE3sp6U6ZzqWiiIZnpTMO96zhkjwtg==
+  dependencies:
+    "@jridgewell/gen-mapping" "^0.3.0"
+    "@jridgewell/trace-mapping" "^0.3.9"
+
+"@babel/code-frame@7.5.5", "@babel/code-frame@^7.0.0", "@babel/code-frame@^7.5.5":
+"@babel/code-frame@^7.0.0", "@babel/code-frame@^7.5.5", "@babel/code-frame@7.5.5":
+  version "7.5.5"
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
   integrity sha512-27d4lZoomVyo51VegxI20xZPuSHusqbQag/ztrBC7wegWoQ1nLREPVSKSW8byhTlzTKyNE4ifaTA6lCp7JjpFw==
 <<<<<<< HEAD
   dependencies:
     "@babel/highlight" "^7.0.0"
 
+<<<<<<< HEAD
 "@babel/core@7.6.0", "@babel/core@^7.1.0", "@babel/core@^7.4.5":
+=======
+"@babel/code-frame@^7.22.13":
+  version "7.22.13"
+  resolved "https://registry.npmjs.org/@babel/code-frame/-/code-frame-7.22.13.tgz"
+  integrity sha512-XktuhWlJ5g+3TJXc5upd9Ks1HutSArik6jf2eAjYFyIOf4ej3RN+184cZbzDvbPnuTJIUhPKKJE3cIsYTiAT3w==
+  dependencies:
+    "@babel/highlight" "^7.22.13"
+    chalk "^2.4.2"
+
+"@babel/compat-data@^7.22.6", "@babel/compat-data@^7.22.9", "@babel/compat-data@^7.23.3":
+  version "7.23.3"
+  resolved "https://registry.npmjs.org/@babel/compat-data/-/compat-data-7.23.3.tgz"
+  integrity sha512-BmR4bWbDIoFJmJ9z2cZ8Gmm2MXgEDgjdWgpKmKWUt54UGFJdlj31ECtbaDvCG/qVdG3AQ1SfpZEs01lUFbzLOQ==
+
+"@babel/core@^7.0.0", "@babel/core@^7.0.0-0", "@babel/core@^7.0.0-0 || ^8.0.0-0 <8.0.0", "@babel/core@^7.1.0", "@babel/core@^7.12.0", "@babel/core@^7.13.0", "@babel/core@^7.23.3", "@babel/core@^7.4.0 || ^8.0.0-0 <8.0.0", "@babel/core@^7.4.5":
+  version "7.23.3"
+  resolved "https://registry.npmjs.org/@babel/core/-/core-7.23.3.tgz"
+  integrity sha512-Jg+msLuNuCJDyBvFv5+OKOUjWMZgd85bKjbICd3zWrKAo+bJ49HJufi7CQE0q0uR8NGyO6xkCACScNqyjHSZew==
+  dependencies:
+    "@ampproject/remapping" "^2.2.0"
+    "@babel/code-frame" "^7.22.13"
+    "@babel/generator" "^7.23.3"
+    "@babel/helper-compilation-targets" "^7.22.15"
+    "@babel/helper-module-transforms" "^7.23.3"
+    "@babel/helpers" "^7.23.2"
+    "@babel/parser" "^7.23.3"
+    "@babel/template" "^7.22.15"
+    "@babel/traverse" "^7.23.3"
+    "@babel/types" "^7.23.3"
+    convert-source-map "^2.0.0"
+    debug "^4.1.0"
+    gensync "^1.0.0-beta.2"
+    json5 "^2.2.3"
+    semver "^6.3.1"
+
+"@babel/core@7.6.0":
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
   version "7.6.0"
   resolved "https://registry.npmjs.org/@babel/core/-/core-7.6.0.tgz"
   integrity sha512-FuRhDRtsd6IptKpHXAa+4WPZYY2ZzgowkbLBecEDDSje1X/apG7jQM33or3NdOmjXBKWGOg4JmSiRfUfuTtHXw==
@@ -56,6 +108,20 @@
     semver "^5.4.1"
     source-map "^0.5.0"
 
+<<<<<<< HEAD
+=======
+"@babel/core@^7.23.3":
+"@babel/generator@^7.23.3", "@babel/generator@^7.4.0", "@babel/generator@^7.6.0":
+  version "7.23.3"
+  resolved "https://registry.npmjs.org/@babel/generator/-/generator-7.23.3.tgz"
+  integrity sha512-keeZWAV4LU3tW0qRi19HRpabC/ilM0HRBBzf9/k8FFiG4KVpiv0FIy4hHfLfFQZNhziCTPTmd59zoyv6DNISzg==
+  dependencies:
+    "@babel/types" "^7.23.3"
+    "@jridgewell/gen-mapping" "^0.3.2"
+    "@jridgewell/trace-mapping" "^0.3.17"
+    jsesc "^2.5.1"
+
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
 "@babel/generator@^7.4.0", "@babel/generator@^7.6.0":
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -77,6 +143,9 @@
     "@babel/types" "^7.0.0"
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
 "@babel/helper-annotate-as-pure@^7.22.5":
 =======
 "@babel/helper-annotate-as-pure@^7.0.0", "@babel/helper-annotate-as-pure@^7.22.5":
@@ -149,6 +218,9 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
 =======
 "@babel/helper-builder-binary-assignment-operator-visitor@^7.22.15":
   version "7.22.15"
@@ -4904,6 +4976,9 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
     regenerator-runtime "^0.13.4"
 =======
     "regenerator-runtime" "^0.13.2"
@@ -6589,10 +6664,13 @@
     warning "^4.0.3"
 =======
 >>>>>>> 4820ffc (Create global vars for transition times and class for extra hover effects)
+<<<<<<< HEAD
 =======
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 >>>>>>> 4820ffc (Create global vars for transition times and class for extra hover effects)
+=======
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
 
 "@samverschueren/stream-to-observable@^0.3.0":
 <<<<<<< HEAD
@@ -7656,6 +7734,9 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
 "@types/react-transition-group@^4.4.6":
   version "4.4.9"
   resolved "https://registry.npmjs.org/@types/react-transition-group/-/react-transition-group-4.4.9.tgz"
@@ -7667,9 +7748,12 @@
 =======
 "@types/react@*":
 >>>>>>> 4820ffc (Create global vars for transition times and class for extra hover effects)
+<<<<<<< HEAD
 =======
 "@types/react@*":
 >>>>>>> 4820ffc (Create global vars for transition times and class for extra hover effects)
+=======
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
   version "18.2.37"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-18.2.37.tgz#0f03af69e463c0f19a356c2660dbca5d19c44cae"
   integrity sha512-RGAYMi2bhRgEXT3f4B92WTohopH6bIXw05FuGlmJEnv/omEn190+QYEIYxIAuIBdKgboYYdVved2p1AxZVQnaw==
@@ -7740,10 +7824,16 @@
   integrity sha512-ce5d3q03Ex0sy4R14722Rmt6MT07Ua+k4FwDfdcToYJcMKNtRVQvJ6JCAPdAmAnbRb6CsX6aYb9m96NGod9uTw==
 
 "@types/stack-utils@^1.0.1":
+<<<<<<< HEAD
   version "1.0.1"
   resolved "https://registry.npmjs.org/@types/stack-utils/-/stack-utils-1.0.1.tgz"
   integrity sha512-l42BggppR6zLmpfU6fq9HEa2oGPEI8yrSPL3GITjfRInppYFahObbIQOQK3UGxEnyQpltZLaPe75046NOZQikw==
 >>>>>>> c0fbfa8 (Create global vars for transition times and class for extra hover effects)
+=======
+  "integrity" "sha512-l42BggppR6zLmpfU6fq9HEa2oGPEI8yrSPL3GITjfRInppYFahObbIQOQK3UGxEnyQpltZLaPe75046NOZQikw=="
+  "resolved" "https://registry.npmjs.org/@types/stack-utils/-/stack-utils-1.0.1.tgz"
+  "version" "1.0.1"
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
 
 "@types/warning@^3.0.0":
   version "3.0.3"
@@ -7751,6 +7841,7 @@
   integrity sha512-D1XC7WK8K+zZEveUPY+cf4+kgauk8N4eHr/XIHXGlGYkHLud6hK9lYfZk1ry1TNh798cZUCgb6MqGEG8DkJt6Q==
 
 "@types/yargs-parser@*":
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -7768,6 +7859,11 @@
 >>>>>>> c0fbfa8 (Create global vars for transition times and class for extra hover effects)
 
 >>>>>>> 4820ffc (Create global vars for transition times and class for extra hover effects)
+=======
+  "integrity" "sha512-gCubfBUZ6KxzoibJ+SCUc/57Ms1jz5NjHe4+dI2krNmU5zCPAphyLJYyTOg06ueIyfj+SaCUqmzun7ImlxDcKg=="
+  "resolved" "https://registry.npmjs.org/@types/yargs-parser/-/yargs-parser-13.1.0.tgz"
+  "version" "13.1.0"
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
 
 "@types/yargs@^13.0.0":
 <<<<<<< HEAD
@@ -11204,6 +11300,7 @@ babel-plugin-macros@2.8.0:
     cosmiconfig "^6.0.0"
     resolve "^1.12.0"
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 babel-plugin-macros@2.6.1:
   version "2.6.1"
@@ -11224,6 +11321,8 @@ babel-plugin-macros@2.6.1:
     cosmiconfig "^5.2.0"
     resolve "^1.10.0"
 >>>>>>> c0fbfa8 (Create global vars for transition times and class for extra hover effects)
+=======
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
 
 <<<<<<< HEAD
 =======
@@ -11295,11 +11394,14 @@ babel-plugin-macros@^3.1.0:
     resolve "^1.19.0"
 =======
 >>>>>>> 4820ffc (Create global vars for transition times and class for extra hover effects)
+<<<<<<< HEAD
 =======
     "@babel/runtime" "^7.7.2"
     cosmiconfig "^6.0.0"
     resolve "^1.12.0"
 >>>>>>> 4820ffc (Create global vars for transition times and class for extra hover effects)
+=======
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
 
 >>>>>>> master
 babel-plugin-named-asset-import@^0.3.4:
@@ -11311,11 +11413,15 @@ babel-plugin-named-asset-import@^0.3.4:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
 =======
 >>>>>>> f0cffa860091218890f03302e3af780576ff4f40
 >>>>>>> master
 =======
 >>>>>>> 4820ffc (Create global vars for transition times and class for extra hover effects)
+<<<<<<< HEAD
 =======
 >>>>>>> cfb7f82 (Create global vars for transition times and class for extra hover effects)
 =======
@@ -11327,6 +11433,8 @@ babel-plugin-named-asset-import@^0.3.4:
   integrity sha512-S6d+tEzc5Af1tKIMbsf2QirCcPdQ+mKUCY2H1nJj1DyA1ShwpsoxEOAwbWsG5gcXNV/olpvQd9vrUWRx4bnhpw==
 <<<<<<< HEAD
 >>>>>>> 9f1c985 (Create global vars for transition times and class for extra hover effects)
+=======
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
 
 babel-plugin-syntax-object-rest-spread@^6.8.0:
   version "6.13.0"
@@ -11350,6 +11458,9 @@ babel-plugin-transform-react-remove-prop-types@0.4.24:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
 =======
 <<<<<<< HEAD
 =======
@@ -11363,6 +11474,7 @@ babel-plugin-transform-react-remove-prop-types@0.4.24:
 >>>>>>> master
 =======
 >>>>>>> 4820ffc (Create global vars for transition times and class for extra hover effects)
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> cfb7f82 (Create global vars for transition times and class for extra hover effects)
@@ -11390,6 +11502,8 @@ babel-plugin-transform-react-remove-prop-types@0.4.24:
 <<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> 4820ffc (Create global vars for transition times and class for extra hover effects)
+=======
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
 babel-plugin-polyfill-regenerator@^0.5.3:
   version "0.5.3"
   resolved "https://registry.yarnpkg.com/babel-plugin-polyfill-regenerator/-/babel-plugin-polyfill-regenerator-0.5.3.tgz#d4c49e4b44614607c13fb769bcd85c72bb26a4a5"
@@ -11450,6 +11564,9 @@ babel-plugin-transform-object-rest-spread@^6.26.0:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
 babel-plugin-transform-react-remove-prop-types@0.4.24:
 =======
 babel-plugin-transform-react-remove-prop-types@0.4.24, babel-plugin-transform-react-remove-prop-types@^0.4.24:
@@ -11457,9 +11574,12 @@ babel-plugin-transform-react-remove-prop-types@0.4.24, babel-plugin-transform-re
 =======
 babel-plugin-transform-react-remove-prop-types@0.4.24:
 >>>>>>> 4820ffc (Create global vars for transition times and class for extra hover effects)
+<<<<<<< HEAD
 =======
 babel-plugin-transform-react-remove-prop-types@0.4.24:
 >>>>>>> 4820ffc (Create global vars for transition times and class for extra hover effects)
+=======
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
   version "0.4.24"
   resolved "https://registry.npmjs.org/babel-plugin-transform-react-remove-prop-types/-/babel-plugin-transform-react-remove-prop-types-0.4.24.tgz"
   integrity sha512-eqj0hVcJUR57/Ug2zE1Yswsw4LhuqqHhD+8v120T1cl3kjg76QwtyBrdIk4WVwK+lAhBJVYCd/v+4nc4y+8JsA==
@@ -11477,11 +11597,15 @@ babel-preset-jest@^24.9.0:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
 =======
 >>>>>>> f0cffa860091218890f03302e3af780576ff4f40
 >>>>>>> master
 =======
 >>>>>>> 4820ffc (Create global vars for transition times and class for extra hover effects)
+<<<<<<< HEAD
 =======
 >>>>>>> cfb7f82 (Create global vars for transition times and class for extra hover effects)
 =======
@@ -11496,6 +11620,8 @@ babel-preset-jest@^24.9.0:
 >>>>>>> cfb7f82 (Create global vars for transition times and class for extra hover effects)
 =======
 >>>>>>> 9f1c985 (Create global vars for transition times and class for extra hover effects)
+=======
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
   dependencies:
     "@babel/plugin-syntax-object-rest-spread" "^7.0.0"
     babel-plugin-jest-hoist "^24.9.0"
@@ -11507,6 +11633,9 @@ babel-preset-jest@^24.9.0:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
 =======
 <<<<<<< HEAD
 =======
@@ -11557,8 +11686,11 @@ babel-preset-react-app@^9.0.2:
 >>>>>>> master
 =======
 >>>>>>> 4820ffc (Create global vars for transition times and class for extra hover effects)
+<<<<<<< HEAD
 =======
 >>>>>>> 4820ffc (Create global vars for transition times and class for extra hover effects)
+=======
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
 babel-preset-react-app@^9.0.2:
 <<<<<<< HEAD
   version "9.1.2"
@@ -11567,15 +11699,21 @@ babel-preset-react-app@^9.0.2:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
 =======
 >>>>>>> f0cffa860091218890f03302e3af780576ff4f40
 >>>>>>> master
 =======
 >>>>>>> 4820ffc (Create global vars for transition times and class for extra hover effects)
+<<<<<<< HEAD
 =======
 >>>>>>> 4820ffc (Create global vars for transition times and class for extra hover effects)
 =======
 >>>>>>> c0fbfa8 (Create global vars for transition times and class for extra hover effects)
+=======
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
   dependencies:
     "@babel/core" "7.9.0"
     "@babel/plugin-proposal-class-properties" "7.8.3"
@@ -14463,8 +14601,19 @@ class-utils@^0.3.5:
     define-property "^0.2.5"
     isobject "^3.0.0"
     static-extend "^0.1.1"
+<<<<<<< HEAD
 >>>>>>> 9f1c985 (Create global vars for transition times and class for extra hover effects)
+=======
 
+<<<<<<< HEAD
+classnames@^2.3.2:
+  version "2.3.2"
+  resolved "https://registry.npmjs.org/classnames/-/classnames-2.3.2.tgz"
+  integrity sha512-CSbhY4cFEJRe6/GQzIk5qXZ4Jeg5pcsP7b5peFSDpffpe1cqjASH/n9UTjBwOp6XpMSTwQ8Za2K5V02ueA7Tmw==
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
+
+=======
+>>>>>>> 4820ffc (Create global vars for transition times and class for extra hover effects)
 clean-css@4.2.x:
   version "4.2.1"
   resolved "https://registry.npmjs.org/clean-css/-/clean-css-4.2.1.tgz"
@@ -14767,7 +14916,18 @@ clone-deep@^4.0.1:
     is-plain-object "^2.0.4"
     kind-of "^6.0.2"
     shallow-clone "^3.0.0"
+<<<<<<< HEAD
 
+<<<<<<< HEAD
+=======
+clsx@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/clsx/-/clsx-2.0.0.tgz#12658f3fd98fafe62075595a5c30e43d18f3d00b"
+  integrity sha512-rQ1+kcj+ttHG0MKVGBUXwayCCF1oh39BF5COIpRzuCEv8Mwjv0XucrI2ExNTOn9IlLifGClWQcU9BrZORvtw6Q==
+=======
+>>>>>>> 4820ffc (Create global vars for transition times and class for extra hover effects)
+
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
 co@^4.6.0:
   version "4.6.0"
   resolved "https://registry.npmjs.org/co/-/co-4.6.0.tgz"
@@ -16009,6 +16169,7 @@ cosmiconfig@^6.0.0:
   integrity sha512-xb3ZL6+L8b9JLLCx3ZdoZy4+2ECphCMo2PwqgP1tlfVq6M6YReyzBJtvWWtbDSpNr9hn96pkCiZqUcFEc+54Qg==
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> cfb7f82 (Create global vars for transition times and class for extra hover effects)
@@ -16018,6 +16179,8 @@ cosmiconfig@^6.0.0:
   "version" "4.0.3"
 <<<<<<< HEAD
 >>>>>>> cfb7f82 (Create global vars for transition times and class for extra hover effects)
+=======
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
   dependencies:
     "bn.js" "^4.1.0"
     "elliptic" "^6.0.0"
@@ -16040,6 +16203,7 @@ cosmiconfig@^7.0.0:
   integrity sha512-AdmX6xUzdNASswsFtmwSt7Vj8po9IuqXm0UXz7QKPuEUmPB4XyjGfaAr2PSuELMwkRMVH1EpIkX5bTZGRB3eCA==
 =======
 >>>>>>> 4820ffc (Create global vars for transition times and class for extra hover effects)
+<<<<<<< HEAD
 =======
 >>>>>>> 4820ffc (Create global vars for transition times and class for extra hover effects)
 =======
@@ -16047,6 +16211,14 @@ cosmiconfig@^7.0.0:
   dependencies:
     "bn.js" "^4.1.0"
     "elliptic" "^6.0.0"
+=======
+  dependencies:
+    "@types/parse-json" "^4.0.0"
+    import-fresh "^3.1.0"
+    parse-json "^5.0.0"
+    path-type "^4.0.0"
+    yaml "^1.7.2"
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
 
 <<<<<<< HEAD
 >>>>>>> master
@@ -16057,11 +16229,15 @@ create-ecdh@^4.0.0:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
 =======
 >>>>>>> f0cffa860091218890f03302e3af780576ff4f40
 >>>>>>> master
 =======
 >>>>>>> 4820ffc (Create global vars for transition times and class for extra hover effects)
+<<<<<<< HEAD
 =======
 >>>>>>> cfb7f82 (Create global vars for transition times and class for extra hover effects)
 =======
@@ -16072,6 +16248,8 @@ create-ecdh@^4.0.0:
   resolved "https://registry.npmjs.org/create-ecdh/-/create-ecdh-4.0.3.tgz"
   integrity sha512-GbEHQPMOswGpKXM9kCWVrremUcBmjteUaQ01T9rkKCPDXfUHX0IoP9LpHYo2NPFampa4e+/pFDc3jQdxrxQLaw==
 >>>>>>> c0fbfa8 (Create global vars for transition times and class for extra hover effects)
+=======
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
   dependencies:
     bn.js "^4.1.0"
     elliptic "^6.0.0"
@@ -17737,6 +17915,7 @@ decamelize@^2.0.0:
   "resolved" "https://registry.npmjs.org/define-property/-/define-property-0.2.5.tgz"
   "version" "0.2.5"
   dependencies:
+<<<<<<< HEAD
     "is-descriptor" "^0.1.0"
 
 <<<<<<< HEAD
@@ -17971,15 +18150,125 @@ del@^5.0.0:
 <<<<<<< HEAD
 >>>>>>> 9f1c985 (Create global vars for transition times and class for extra hover effects)
 =======
+=======
+    is-descriptor "^1.0.2"
+    isobject "^3.0.1"
+=======
+
+decamelize@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/decamelize/-/decamelize-1.2.0.tgz#f6534d15148269b20352e7bee26f501f9a191290"
+  integrity sha512-z2S+W9X73hAUUki+N+9Za2lBlun89zigOyGrsax+KUQ6wKW4ZoWpEYBkGhQjwAjjDCkWxhY0VKEhk8wzY7F5cA==
+
+decamelize@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/decamelize/-/decamelize-2.0.0.tgz#656d7bbc8094c4c788ea53c5840908c9c7d063c7"
+  integrity sha512-Ikpp5scV3MSYxY39ymh45ZLEecsTdv/Xj2CaQfI8RLMuwi7XvjX9H/fhraiSuU+C5w5NTDu4ZU72xNiZnurBPg==
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
   dependencies:
-    globby "^10.0.1"
-    graceful-fs "^4.2.2"
-    is-glob "^4.0.1"
-    is-path-cwd "^2.2.0"
-    is-path-inside "^3.0.1"
-    p-map "^3.0.0"
-    rimraf "^3.0.0"
-    slash "^3.0.0"
+    xregexp "4.0.0"
+>>>>>>> 4820ffc (Create global vars for transition times and class for extra hover effects)
+
+decode-uri-component@^0.2.0:
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/decode-uri-component/-/decode-uri-component-0.2.2.tgz#e69dbe25d37941171dd540e024c444cd5188e1e9"
+  integrity sha512-FqUYQ+8o158GyGTrMFJms9qh3CqTKvAqgqsTnkLI8sKu0028orqBhxNMFkFen0zGyg6epACD32pjVk58ngIErQ==
+
+dedent@^0.7.0:
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/dedent/-/dedent-0.7.0.tgz#2495ddbaf6eb874abb0e1be9df22d2e5a544326c"
+  integrity sha512-Q6fKUPqnAHAyhiUgFU7BUzLiv0kd8saH9al7tnu5Q/okj6dnupxyTgFIBjVzJATdfIAm9NAsvXNzjaKa+bxVyA==
+
+deep-equal@^1.0.1:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/deep-equal/-/deep-equal-1.1.2.tgz#78a561b7830eef3134c7f6f3a3d6af272a678761"
+  integrity sha512-5tdhKF6DbU7iIzrIOa1AOUt39ZRm13cmL1cGEh//aqR8x9+tNfbywRf0n5FD/18OKMdo7DNEtrX2t22ZAkI+eg==
+  dependencies:
+    is-arguments "^1.1.1"
+    is-date-object "^1.0.5"
+    is-regex "^1.1.4"
+    object-is "^1.1.5"
+    object-keys "^1.1.1"
+    regexp.prototype.flags "^1.5.1"
+
+deep-is@~0.1.3:
+  version "0.1.4"
+  resolved "https://registry.yarnpkg.com/deep-is/-/deep-is-0.1.4.tgz#a6f2dce612fadd2ef1f519b73551f17e85199831"
+  integrity sha512-oIPzksmTg4/MriiaYGO+okXDT7ztn/w3Eptv/+gSIdMdKsJo0u4CfYNFJPy+4SKMuCqGw2wxnA+URMg3t8a/bQ==
+
+default-gateway@^4.2.0:
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/default-gateway/-/default-gateway-4.2.0.tgz#167104c7500c2115f6dd69b0a536bb8ed720552b"
+  integrity sha512-h6sMrVB1VMWVrW13mSc6ia/DwYYw5MN6+exNu1OaJeFac5aSAvwM7lZ0NVfTABuSkQelr4h5oebg3KB1XPdjgA==
+  dependencies:
+    execa "^1.0.0"
+    ip-regex "^2.1.0"
+
+define-data-property@^1.0.1, define-data-property@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/define-data-property/-/define-data-property-1.1.1.tgz#c35f7cd0ab09883480d12ac5cb213715587800b3"
+  integrity sha512-E7uGkTzkk1d0ByLeSc6ZsFS79Axg+m1P/VsgYsxHgiuc3tFSj+MjMIwe90FC4lOAZzNBdY7kkO2P2wKdsQ1vgQ==
+  dependencies:
+    get-intrinsic "^1.2.1"
+    gopd "^1.0.1"
+    has-property-descriptors "^1.0.0"
+
+define-properties@^1.1.2, define-properties@^1.1.3, define-properties@^1.1.4, define-properties@^1.2.0:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/define-properties/-/define-properties-1.2.1.tgz#10781cc616eb951a80a034bafcaa7377f6af2b6c"
+  integrity sha512-8QmQKqEASLd5nx0U1B1okLElbUuuttJ/AnYmRXbbbGDWh6uS208EjD4Xqq/I9wK7u0v6O08XhTWnt5XtEbR6Dg==
+  dependencies:
+    define-data-property "^1.0.1"
+    has-property-descriptors "^1.0.0"
+    object-keys "^1.1.1"
+
+define-property@^0.2.5:
+  version "0.2.5"
+  resolved "https://registry.yarnpkg.com/define-property/-/define-property-0.2.5.tgz#c35b1ef918ec3c990f9a5bc57be04aacec5c8116"
+  integrity sha512-Rr7ADjQZenceVOAKop6ALkkRAmH1A4Gx9hV/7ZujPUN2rkATqFO0JZLZInbAjpZYoJ1gUx8MRMQVkYemcbMSTA==
+  dependencies:
+    is-descriptor "^0.1.0"
+
+define-property@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/define-property/-/define-property-1.0.0.tgz#769ebaaf3f4a63aad3af9e8d304c9bbe79bfb0e6"
+  integrity sha512-cZTYKFWspt9jZsMscWo8sc/5lbPC9Q0N5nBLgb+Yd915iL3udB1uFgS3B8YCx66UVHq018DAVFoee7x+gxggeA==
+  dependencies:
+    is-descriptor "^1.0.0"
+
+define-property@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/define-property/-/define-property-2.0.2.tgz#d459689e8d654ba77e02a817f8710d702cb16e9d"
+  integrity sha512-jwK2UV4cnPpbcG7+VRARKTZPUWowwXA8bzH5NP6ud0oeAxyYPuGZUAC7hMugpCdz4BeSZl2Dl9k66CHJ/46ZYQ==
+  dependencies:
+    is-descriptor "^1.0.2"
+    isobject "^3.0.1"
+
+"del@^3.0.0":
+  "integrity" "sha1-U+z2mf/LyzljdpGrE7rxYIGXZuU="
+  "resolved" "https://registry.npmjs.org/del/-/del-3.0.0.tgz"
+  "version" "3.0.0"
+  dependencies:
+    "globby" "^6.1.0"
+    "is-path-cwd" "^1.0.0"
+    "is-path-in-cwd" "^1.0.0"
+    "p-map" "^1.1.1"
+    "pify" "^3.0.0"
+    "rimraf" "^2.2.8"
+
+"del@^5.0.0":
+  "integrity" "sha512-wH9xOVHnczo9jN2IW68BabcecVPxacIA3g/7z6vhSU/4stOKQzeCRK0yD0A24WiAAUJmmVpWqrERcTxnLo3AnA=="
+  "resolved" "https://registry.npmjs.org/del/-/del-5.1.0.tgz"
+  "version" "5.1.0"
+  dependencies:
+    "globby" "^10.0.1"
+    "graceful-fs" "^4.2.2"
+    "is-glob" "^4.0.1"
+    "is-path-cwd" "^2.2.0"
+    "is-path-inside" "^3.0.1"
+    "p-map" "^3.0.0"
+    "rimraf" "^3.0.0"
+    "slash" "^3.0.0"
 
 >>>>>>> 9f1c985 (Create global vars for transition times and class for extra hover effects)
 delayed-stream@~1.0.0:
@@ -17996,6 +18285,9 @@ depd@~1.1.2:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
 dequal@^2.0.3:
   version "2.0.3"
   resolved "https://registry.npmjs.org/dequal/-/dequal-2.0.3.tgz"
@@ -18003,12 +18295,15 @@ dequal@^2.0.3:
 
 =======
 >>>>>>> 4820ffc (Create global vars for transition times and class for extra hover effects)
+<<<<<<< HEAD
 =======
 >>>>>>> 9f1c985 (Create global vars for transition times and class for extra hover effects)
 =======
 >>>>>>> 4820ffc (Create global vars for transition times and class for extra hover effects)
 =======
 >>>>>>> 9f1c985 (Create global vars for transition times and class for extra hover effects)
+=======
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
 des.js@^1.0.0:
   version "1.0.0"
   resolved "https://registry.npmjs.org/des.js/-/des.js-1.0.0.tgz"
@@ -18660,6 +18955,9 @@ dom-converter@^0.2:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
 dom-helpers@^5.0.1, dom-helpers@^5.2.0, dom-helpers@^5.2.1:
   version "5.2.1"
   resolved "https://registry.npmjs.org/dom-helpers/-/dom-helpers-5.2.1.tgz"
@@ -18678,10 +18976,13 @@ dom-serializer@~0.1.1:
 
 =======
 >>>>>>> 4820ffc (Create global vars for transition times and class for extra hover effects)
+<<<<<<< HEAD
 =======
 >>>>>>> 9f1c985 (Create global vars for transition times and class for extra hover effects)
 =======
 >>>>>>> 9f1c985 (Create global vars for transition times and class for extra hover effects)
+=======
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
 dom-serializer@0:
   version "0.2.1"
   resolved "https://registry.npmjs.org/dom-serializer/-/dom-serializer-0.2.1.tgz"
@@ -18779,6 +19080,7 @@ dom-serializer@^2.0.0:
     domelementtype "^2.3.0"
     domhandler "^5.0.2"
     entities "^4.2.0"
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> 9f1c985 (Create global vars for transition times and class for extra hover effects)
@@ -18827,6 +19129,7 @@ dom-serializer@~0.1.1:
   resolved "https://registry.yarnpkg.com/dom-serializer/-/dom-serializer-0.1.1.tgz#1ec4059e284babed36eec2941d4a970a189ce7c0"
   integrity sha512-l0IU0pPzLWSHBcieZbpOKgkIn3ts3vAh7ZuFyXNwJxJXk/c4Gwj9xaTJwIDVQCXawWD0qb3IzMGH5rglQaO0XA==
 =======
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> 9f1c985 (Create global vars for transition times and class for extra hover effects)
@@ -18834,6 +19137,29 @@ dom-serializer@~0.1.1:
   version "0.1.1"
   resolved "https://registry.npmjs.org/dom-serializer/-/dom-serializer-0.1.1.tgz"
   integrity sha512-l0IU0pPzLWSHBcieZbpOKgkIn3ts3vAh7ZuFyXNwJxJXk/c4Gwj9xaTJwIDVQCXawWD0qb3IzMGH5rglQaO0XA==
+=======
+
+domain-browser@^1.1.1:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/domain-browser/-/domain-browser-1.2.0.tgz#3d31f50191a6749dd1375a7f522e823d42e54eda"
+  integrity sha512-jnjyiM6eRyZl2H+W8Q/zLMA481hzi0eszAaBUzIVnmYVDBbnLxVNnfu1HgEBvCbL+71FrxMl3E6lpKH7Ge3OXA==
+
+domelementtype@1:
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/domelementtype/-/domelementtype-1.3.1.tgz#d048c44b37b0d10a7f2a3d5fee3f4333d790481f"
+  integrity sha512-BSKB+TSpMpFI/HOxCNr1O8aMOTZ8hT3pM3GQ0w/mWRmkhEDSFJkkyzz4XQsBV44BChwGkrDfMyjVD0eA2aFV3w==
+
+domelementtype@^2.0.1, domelementtype@^2.2.0, domelementtype@^2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/domelementtype/-/domelementtype-2.3.0.tgz#5c45e8e869952626331d7aab326d01daf65d589d"
+  integrity sha512-OLETBj6w0OsagBwdXnPdN0cnMfF9opN69co+7ZrbfPGrdpPVNBUj02spi6B1N7wChLQiPn4CSH/zJvXw56gmHw==
+
+domexception@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/domexception/-/domexception-1.0.1.tgz#937442644ca6a31261ef36e3ec677fe805582c90"
+  integrity sha512-raigMkn7CJNNo6Ihro1fzG7wr3fHuYVytzquZKX5n0yizGsTcYgzdIUwj1X9pK0VvjeihV+XiclP+DjwbsSKug==
+>>>>>>> 4820ffc (Create global vars for transition times and class for extra hover effects)
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
   dependencies:
     domelementtype "^1.3.0"
     entities "^1.1.1"
@@ -19288,6 +19614,9 @@ electron-to-chromium@^1.3.247, electron-to-chromium@^1.4.535:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
   version "1.4.582"
   resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.582.tgz#4908215182266793499ac57d80e2680d7dd9b3db"
   integrity sha512-89o0MGoocwYbzqUUjc+VNpeOFSOK9nIdC5wY4N+PVUarUK0MtjyTjks75AZS2bW4Kl8MdewdFsWaH0jLy+JNoA==
@@ -19303,6 +19632,7 @@ electron-to-chromium@^1.4.535:
   resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.580.tgz#2f8f70f70733a6be1fb6f31de1224e6dc4bb196d"
   integrity sha512-T5q3pjQon853xxxHUq3ZP68ZpvJHuSMY2+BZaW3QzjS4HvNuvsMmZ/+lU+nCrftre1jFZ+OSlExynXWBihnXzw==
 >>>>>>> 4820ffc (Create global vars for transition times and class for extra hover effects)
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> 9f1c985 (Create global vars for transition times and class for extra hover effects)
@@ -19329,6 +19659,8 @@ electron-to-chromium@^1.3.247:
 >>>>>>> c0fbfa8 (Create global vars for transition times and class for extra hover effects)
 =======
 >>>>>>> 9f1c985 (Create global vars for transition times and class for extra hover effects)
+=======
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
 
 elegant-spinner@^1.0.1:
   version "1.0.1"
@@ -19342,6 +19674,7 @@ elliptic@^6.0.0:
 <<<<<<< HEAD
 <<<<<<< HEAD
   dependencies:
+<<<<<<< HEAD
 <<<<<<< HEAD
     bn.js "^4.4.0"
     brorand "^1.0.1"
@@ -19373,6 +19706,8 @@ elliptic@^6.0.0:
   "version" "6.5.1"
   dependencies:
 >>>>>>> cfb7f82 (Create global vars for transition times and class for extra hover effects)
+=======
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
     "bn.js" "^4.4.0"
     "brorand" "^1.0.1"
     "hash.js" "^1.0.0"
@@ -19381,7 +19716,10 @@ elliptic@^6.0.0:
     "minimalistic-assert" "^1.0.0"
     "minimalistic-crypto-utils" "^1.0.0"
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 4820ffc (Create global vars for transition times and class for extra hover effects)
+=======
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
 
 emoji-regex@^7.0.1, emoji-regex@^7.0.2:
   version "7.0.3"
@@ -25395,7 +25733,20 @@ hex-color-regex@^1.1.0:
   integrity sha512-l9sfDFsuqtOqKDsQdqrMRk0U85RZc0RtOR9yPI7mRVOa4FsR/BVnZ0shmQRM96Ji99kYZP/7hn1cedc1+ApsTQ==
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> cfb7f82 (Create global vars for transition times and class for extra hover effects)
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> 4820ffc (Create global vars for transition times and class for extra hover effects)
+history@^4.9.0:
+  version "4.10.1"
+  resolved "https://registry.yarnpkg.com/history/-/history-4.10.1.tgz#33371a65e3a83b267434e2b3f3b1b4c58aad4cf3"
+  integrity sha512-36nwAD620w12kuzPAsyINPWJqlNbij+hpK1k9XRloDtym8mxzGYl2c17LnV6IAGB2Dmg4tEa7G7DlawS0+qjew==
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
 "history@^4.9.0":
   "integrity" "sha512-36nwAD620w12kuzPAsyINPWJqlNbij+hpK1k9XRloDtym8mxzGYl2c17LnV6IAGB2Dmg4tEa7G7DlawS0+qjew=="
   "resolved" "https://registry.npmjs.org/history/-/history-4.10.1.tgz"
@@ -25410,6 +25761,7 @@ history@^5.0.3:
 >>>>>>> master
 =======
 >>>>>>> 4820ffc (Create global vars for transition times and class for extra hover effects)
+<<<<<<< HEAD
 =======
 >>>>>>> cfb7f82 (Create global vars for transition times and class for extra hover effects)
 =======
@@ -25424,6 +25776,15 @@ history@^4.9.0:
   resolved "https://registry.npmjs.org/hex-color-regex/-/hex-color-regex-1.1.0.tgz"
 >>>>>>> c0fbfa8 (Create global vars for transition times and class for extra hover effects)
   integrity sha512-l9sfDFsuqtOqKDsQdqrMRk0U85RZc0RtOR9yPI7mRVOa4FsR/BVnZ0shmQRM96Ji99kYZP/7hn1cedc1+ApsTQ==
+=======
+  dependencies:
+    "@babel/runtime" "^7.1.2"
+    loose-envify "^1.2.0"
+    resolve-pathname "^3.0.0"
+    tiny-invariant "^1.0.2"
+    tiny-warning "^1.0.0"
+    value-equal "^1.0.1"
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
 
 history@^4.9.0:
   version "4.10.1"
@@ -25528,6 +25889,9 @@ hmac-drbg@^1.0.0:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
 hoist-non-react-statics@^3.1.0, hoist-non-react-statics@^3.3.0, hoist-non-react-statics@^3.3.2:
   version "3.3.2"
   resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-3.3.2.tgz#ece0acaf71d62c2969c2ec59feff42a4b1a85b45"
@@ -25557,6 +25921,7 @@ hoist-non-react-statics@^3.1.0, hoist-non-react-statics@^3.3.0, hoist-non-react-
   resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-3.3.2.tgz#ece0acaf71d62c2969c2ec59feff42a4b1a85b45"
   integrity sha512-/gGivxi8JPKWNm/W0jSmzcMPpfpPLc3dY/6GxhX2hQ9iGj3aDfklV4ET7NjKpSinLpJ5vafa9iiGIEZg10SfBw==
 >>>>>>> 4820ffc (Create global vars for transition times and class for extra hover effects)
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> 9f1c985 (Create global vars for transition times and class for extra hover effects)
@@ -25580,6 +25945,8 @@ hoist-non-react-statics@^3.1.0, hoist-non-react-statics@^3.3.0, hoist-non-react-
 >>>>>>> 4820ffc (Create global vars for transition times and class for extra hover effects)
 =======
 >>>>>>> c0fbfa8 (Create global vars for transition times and class for extra hover effects)
+=======
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
   dependencies:
     react-is "^16.7.0"
 
@@ -26786,6 +27153,9 @@ import-fresh@^2.0.0:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
 import-fresh@^3.0.0, import-fresh@^3.1.0:
   version "3.3.0"
   resolved "https://registry.yarnpkg.com/import-fresh/-/import-fresh-3.3.0.tgz#37162c25fcb9ebaa2e6e53d5b4d88ce17d9e0c2b"
@@ -26815,6 +27185,7 @@ import-fresh@^3.0.0, import-fresh@^3.1.0:
   resolved "https://registry.yarnpkg.com/import-fresh/-/import-fresh-3.3.0.tgz#37162c25fcb9ebaa2e6e53d5b4d88ce17d9e0c2b"
   integrity sha512-veYYhQa+D1QBKznvhUHxb8faxlrwUnxseDAbAp457E0wLNio2bOSKnjYDhMj+YiAq61xrMGhQk9iXVk5FzgQMw==
 >>>>>>> 4820ffc (Create global vars for transition times and class for extra hover effects)
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> 9f1c985 (Create global vars for transition times and class for extra hover effects)
@@ -26846,6 +27217,8 @@ import-fresh@^3.0.0, import-fresh@^3.1.0:
 >>>>>>> cfb7f82 (Create global vars for transition times and class for extra hover effects)
 =======
 >>>>>>> 9f1c985 (Create global vars for transition times and class for extra hover effects)
+=======
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
   dependencies:
     parent-module "^1.0.0"
     resolve-from "^4.0.0"
@@ -28772,10 +29145,20 @@ is-stream@^2.0.0:
   resolved "https://registry.npmjs.org/is-stream/-/is-stream-2.0.0.tgz"
   integrity sha512-XCoy+WlUr7d1+Z8GgSuXmpuUFC9fOhRXglJMx+dwLKTkL44Cjd4W1Z5P+BQZpr+cR93aGP4S/s7Ftw6Nd/kiEw==
 
+<<<<<<< HEAD
 is-string@^1.0.4:
   version "1.0.4"
   resolved "https://registry.npmjs.org/is-string/-/is-string-1.0.4.tgz"
   integrity sha1-zDqbaYV9Yh6WNyWiTK7shzuCbmQ=
+=======
+is-string@^1.0.5, is-string@^1.0.7:
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/is-string/-/is-string-1.0.7.tgz#0dd12bf2006f255bb58f695110eff7491eebc0fd"
+  integrity sha512-tE2UXzivje6ofPW7l23cjDOMa09gb7xlAqG6jG5ej6uPV32TlWP3NKPigtaGeHNu9fohccRYvIiZMfOOnOYUtg==
+  dependencies:
+<<<<<<< HEAD
+    has-tostringtag "^1.0.0"
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
 
 is-subset@^0.1.1:
   version "0.1.1"
@@ -29011,6 +29394,7 @@ isexe@^2.0.0:
 =======
 =======
     which-typed-array "^1.1.11"
+<<<<<<< HEAD
 =======
 "is-wsl@^1.1.0":
   "integrity" "sha1-HxbkqiKwTRM2tmGIpmrzxgDDpm0="
@@ -29032,6 +29416,24 @@ is-typedarray@~1.0.0:
 is-windows@^1.0.2:
   version "1.0.2"
   resolved "https://registry.npmjs.org/is-windows/-/is-windows-1.0.2.tgz"
+=======
+
+is-typedarray@~1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/is-typedarray/-/is-typedarray-1.0.0.tgz#e479c80858df0c1b11ddda6940f96011fcda4a9a"
+  integrity sha512-cyA56iCMHAh5CdzjJIa4aohJyeO1YbwLi3Jc35MmRU6poroFjIGZzUzupGiRPOjgHg9TLu43xbpwXk523fMxKA==
+
+is-weakref@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/is-weakref/-/is-weakref-1.0.2.tgz#9529f383a9338205e89765e0392efc2f100f06f2"
+  integrity sha512-qctsuLZmIQ0+vSSMfoVvyFe2+GSEvnmZ2ezTup1SBse9+twCCeial6EEi3Nc2KFcf6+qz2FBPnjXsk8xhKSaPQ==
+  dependencies:
+    call-bind "^1.0.2"
+
+is-windows@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/is-windows/-/is-windows-1.0.2.tgz#d1850eb9791ecd18e6182ce12a30f396634bb19d"
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
   integrity sha512-eXK1UInq2bPmjyX6e3VHIzMLobc4J94i4AWn+Hpq3OU5KkrRC96OAcR3PRJ/pGu6m8TRnBHP9dkXQVsT/COVIA==
 
 >>>>>>> 4820ffc (Create global vars for transition times and class for extra hover effects)
@@ -29053,6 +29455,11 @@ isarray@0.0.1:
   version "0.0.1"
   resolved "https://registry.npmjs.org/isarray/-/isarray-0.0.1.tgz"
   integrity sha1-ihis/Kmo9Bd+Cav8YDiTmwXR7t8=
+
+isarray@0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/isarray/-/isarray-0.0.1.tgz#8a18acfca9a8f4177e09abfc6038939b05d1eedf"
+  integrity sha512-D2S+3GLxWH+uhrNEcoh/fnmYeP8E8/zHl644d/jdA0g2uyXvy3sb0qxotE+ne0LtccHknQzWwZEzhak7oJ0COQ==
 
 isarray@1.0.0, isarray@^1.0.0, isarray@~1.0.0:
   version "1.0.0"
@@ -29102,15 +29509,21 @@ isobject@^2.0.0:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
 =======
 >>>>>>> f0cffa860091218890f03302e3af780576ff4f40
 >>>>>>> master
 =======
 >>>>>>> 4820ffc (Create global vars for transition times and class for extra hover effects)
+<<<<<<< HEAD
 =======
   resolved "https://registry.npmjs.org/isobject/-/isobject-2.1.0.tgz"
   integrity sha1-8GVWEJaj8dou9GJy+BXIQNh+DIk=
 >>>>>>> c0fbfa8 (Create global vars for transition times and class for extra hover effects)
+=======
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
   dependencies:
     isarray "1.0.0"
 
@@ -33112,6 +33525,7 @@ loose-envify@^1.0.0, loose-envify@^1.1.0, loose-envify@^1.2.0, loose-envify@^1.3
   resolved "https://registry.yarnpkg.com/loose-envify/-/loose-envify-1.4.0.tgz#71ee51fa7be4caec1a63839f7e682d8132d30caf"
   integrity sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q==
 >>>>>>> 4820ffc (Create global vars for transition times and class for extra hover effects)
+<<<<<<< HEAD
 =======
 loglevel@^1.4.1:
   version "1.6.4"
@@ -33127,6 +33541,8 @@ loose-envify@^1.0.0, loose-envify@^1.1.0, loose-envify@^1.2.0, loose-envify@^1.3
   integrity sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q==
 <<<<<<< HEAD
 >>>>>>> 4820ffc (Create global vars for transition times and class for extra hover effects)
+=======
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
   dependencies:
     js-tokens "^3.0.0 || ^4.0.0"
 
@@ -37789,7 +38205,30 @@ path-parse@^1.0.6:
   integrity sha512-GSmOT2EbHrINBf9SR7CDELwlJ8AENk3Qn7OikK4nFYAu3Ote2+JYNVvkpAEQm3/TLNEJFD/xZJjzyxg3KBWOzw==
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> cfb7f82 (Create global vars for transition times and class for extra hover effects)
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 4820ffc (Create global vars for transition times and class for extra hover effects)
+path-parse@^1.0.6, path-parse@^1.0.7:
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/path-parse/-/path-parse-1.0.7.tgz#fbc114b60ca42b30d9daf5858e4bd68bbedb6735"
+  integrity sha512-LDJzPVEEEPR+y48z93A0Ed0yXb8pAByGWo/k5YYdYgpY2/2EsOsksJrq7lOHxryrVOn1ejG6oAp8ahvOIQD8sw==
+
+<<<<<<< HEAD
+<<<<<<< HEAD
+path-to-regexp@0.1.7:
+  version "0.1.7"
+  resolved "https://registry.yarnpkg.com/path-to-regexp/-/path-to-regexp-0.1.7.tgz#df604178005f522f15eb4490e7247a1bfaa67f8c"
+  integrity sha512-5DFkuoqlv1uYQKxy8omFBeJPQcdoE07Kv2sferDCrAq1ohOU+MSDswDIbnx3YAM60qIOnYa53wBhXW0EbMonrQ==
+
+path-to-regexp@^1.7.0:
+  version "1.8.0"
+  resolved "https://registry.yarnpkg.com/path-to-regexp/-/path-to-regexp-1.8.0.tgz#887b3ba9d84393e87a0a0b9f4cb756198b53548a"
+  integrity sha512-n43JRhlUKUAlibEJhPeir1ncUID16QnEjNpwzNdO3Lm4ywrBpBZ5oLD0I6br9evr1Y9JTqwRtAh7JLoOzAQdVA==
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
 =======
 "parse5@4.0.0":
   "integrity" "sha512-VrZ7eOd3T1Fk4XWNXMgiGBK/z0MG48BWG2uQNU4I72fkQuKUTZpl+u9k+CxEG0twMVzSmXEEz12z5Fnw1jIQFA=="
@@ -37937,6 +38376,7 @@ path-to-regexp@0.1.7:
 =======
 =======
 >>>>>>> 4820ffc (Create global vars for transition times and class for extra hover effects)
+<<<<<<< HEAD
 =======
   resolved "https://registry.yarnpkg.com/path-is-absolute/-/path-is-absolute-1.0.1.tgz#174b9268735534ffbc7ace6bf53a5a9e1b5c5f5f"
   integrity sha512-AVbw3UJ2e9bq64vSaS9Am0fje1Pa8pbGqTTsmXfaIiMpnr5DlDhfJOuLj9Sf95ZPVDAUerDfEk88MPmPe7UCQg==
@@ -37966,11 +38406,14 @@ path-parse@^1.0.6:
   integrity sha512-GSmOT2EbHrINBf9SR7CDELwlJ8AENk3Qn7OikK4nFYAu3Ote2+JYNVvkpAEQm3/TLNEJFD/xZJjzyxg3KBWOzw==
 
 >>>>>>> 4820ffc (Create global vars for transition times and class for extra hover effects)
+=======
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
 path-to-regexp@0.1.7:
   version "0.1.7"
   resolved "https://registry.npmjs.org/path-to-regexp/-/path-to-regexp-0.1.7.tgz"
   integrity sha1-32BBeABfUi8V60SQ5yR6G/qmf4w=
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> master
@@ -37996,6 +38439,17 @@ path-to-regexp@^1.7.0:
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+=======
+>>>>>>> master
+=======
+path-to-regexp@^1.7.0:
+  version "1.8.0"
+  resolved "https://registry.yarnpkg.com/path-to-regexp/-/path-to-regexp-1.8.0.tgz#887b3ba9d84393e87a0a0b9f4cb756198b53548a"
+  integrity sha512-n43JRhlUKUAlibEJhPeir1ncUID16QnEjNpwzNdO3Lm4ywrBpBZ5oLD0I6br9evr1Y9JTqwRtAh7JLoOzAQdVA==
+  dependencies:
+    isarray "0.0.1"
+
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
 >>>>>>> 4820ffc (Create global vars for transition times and class for extra hover effects)
 path-type@^2.0.0:
   version "2.0.0"
@@ -38009,10 +38463,13 @@ path-type@^2.0.0:
 >>>>>>> master
 =======
 >>>>>>> 4820ffc (Create global vars for transition times and class for extra hover effects)
+<<<<<<< HEAD
 =======
   resolved "https://registry.npmjs.org/path-type/-/path-type-2.0.0.tgz"
   integrity sha1-8BLMuEFbcJb8LaoQVMPXI4lZTHM=
 >>>>>>> c0fbfa8 (Create global vars for transition times and class for extra hover effects)
+=======
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
   dependencies:
     pify "^2.0.0"
 
@@ -42320,6 +42777,9 @@ prop-types-exact@^1.2.0:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
 prop-types-extra@^1.1.0:
   version "1.1.1"
   resolved "https://registry.npmjs.org/prop-types-extra/-/prop-types-extra-1.1.1.tgz"
@@ -42330,8 +42790,11 @@ prop-types-extra@^1.1.0:
 
 prop-types@^15.0.0, prop-types@^15.5.10, prop-types@^15.6.2, prop-types@^15.7.2, prop-types@^15.8.1:
 =======
+<<<<<<< HEAD
 =======
 >>>>>>> 4820ffc (Create global vars for transition times and class for extra hover effects)
+=======
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
 prop-types@^15.6.2, prop-types@^15.7.2, prop-types@^15.8.1:
 >>>>>>> 4820ffc (Create global vars for transition times and class for extra hover effects)
   version "15.8.1"
@@ -43184,6 +43647,7 @@ randomfill@^1.0.3:
     randombytes "^2.0.5"
     safe-buffer "^5.1.0"
 
+<<<<<<< HEAD
 >>>>>>> 9f1c985 (Create global vars for transition times and class for extra hover effects)
 range-parser@^1.2.1, range-parser@~1.2.1:
   version "1.2.1"
@@ -43210,6 +43674,29 @@ react-app-polyfill@^1.0.3:
   dependencies:
 <<<<<<< HEAD
 <<<<<<< HEAD
+=======
+"range-parser@^1.2.1", "range-parser@~1.2.1":
+  "integrity" "sha512-Hrgsx+orqoygnmhFbKaHE6c296J+HTAQXoxEF6gNupROmmGJRoyzfG3ccAveqCBrwr/2yxQ5BVd/GTl5agOwSg=="
+  "resolved" "https://registry.npmjs.org/range-parser/-/range-parser-1.2.1.tgz"
+  "version" "1.2.1"
+
+"raw-body@2.4.0":
+  "integrity" "sha512-4Oz8DUIwdvoa5qMJelxipzi/iJIi40O5cGV1wNYp5hvZP8ZN0T+jiNkL0QepXs+EsQ9XJ8ipEDoiH70ySUJP3Q=="
+  "resolved" "https://registry.npmjs.org/raw-body/-/raw-body-2.4.0.tgz"
+  "version" "2.4.0"
+  dependencies:
+    "bytes" "3.1.0"
+    "http-errors" "1.7.2"
+    "iconv-lite" "0.4.24"
+    "unpipe" "1.0.0"
+
+"react-app-polyfill@^1.0.3":
+  "integrity" "sha512-ICvAU2vtO0k+kU0oCS7L7btUcAReTddvEiRiJDmAKc+d98Fy9Z1g6cjkdcKyfLWwopzBsUMcDwxoiNtrtLMs0Q=="
+  "resolved" "https://registry.npmjs.org/react-app-polyfill/-/react-app-polyfill-1.0.3.tgz"
+  "version" "1.0.3"
+  dependencies:
+<<<<<<< HEAD
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
     core-js "^3.5.0"
     object-assign "^4.1.1"
     promise "^8.0.3"
@@ -43235,6 +43722,7 @@ react-bootstrap@^2.9.1:
     uncontrollable "^7.2.1"
     warning "^4.0.3"
 =======
+<<<<<<< HEAD
 =======
 "range-parser@^1.2.1", "range-parser@~1.2.1":
   "integrity" "sha512-Hrgsx+orqoygnmhFbKaHE6c296J+HTAQXoxEF6gNupROmmGJRoyzfG3ccAveqCBrwr/2yxQ5BVd/GTl5agOwSg=="
@@ -43260,12 +43748,15 @@ react-app-polyfill@^1.0.3:
   dependencies:
 <<<<<<< HEAD
 >>>>>>> 4820ffc (Create global vars for transition times and class for extra hover effects)
+=======
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
     "core-js" "3.2.1"
     "object-assign" "4.1.1"
     "promise" "8.0.3"
     "raf" "3.4.1"
     "regenerator-runtime" "0.13.3"
     "whatwg-fetch" "3.0.0"
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> 4820ffc (Create global vars for transition times and class for extra hover effects)
 =======
@@ -43283,6 +43774,9 @@ react-app-polyfill@^1.0.3:
 >>>>>>> 4820ffc (Create global vars for transition times and class for extra hover effects)
 =======
 >>>>>>> c0fbfa8 (Create global vars for transition times and class for extra hover effects)
+=======
+>>>>>>> 4820ffc (Create global vars for transition times and class for extra hover effects)
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
 
 react-dev-utils@^9.0.4:
   version "9.0.4"
@@ -43376,6 +43870,7 @@ react-dev-utils@^9.0.4:
   integrity sha512-VwR+mBUXPLdYk/rOz6s6qpasIFGd7GW0KXd/3bih+/qGcMQvPG19XxtjDMtiAg0zWiFwp1ugCzAjLThbzFjVqw==
   dependencies:
     "@babel/code-frame" "7.5.5"
+<<<<<<< HEAD
     address "1.1.2"
     browserslist "4.7.0"
     chalk "2.4.2"
@@ -43403,6 +43898,40 @@ react-dev-utils@^9.0.4:
 
 <<<<<<< HEAD
 >>>>>>> cfb7f82 (Create global vars for transition times and class for extra hover effects)
+=======
+    "address" "1.1.2"
+    "browserslist" "4.7.0"
+    "chalk" "2.4.2"
+    "cross-spawn" "6.0.5"
+    "detect-port-alt" "1.1.6"
+    "escape-string-regexp" "1.0.5"
+    "filesize" "3.6.1"
+    "find-up" "3.0.0"
+    "fork-ts-checker-webpack-plugin" "1.5.0"
+    "global-modules" "2.0.0"
+    "globby" "8.0.2"
+    "gzip-size" "5.1.1"
+    "immer" "1.10.0"
+    "inquirer" "6.5.0"
+    "is-root" "2.1.0"
+    "loader-utils" "1.2.3"
+    "open" "^6.3.0"
+    "pkg-up" "2.0.0"
+    "react-error-overlay" "^6.0.2"
+    "recursive-readdir" "2.2.2"
+    "shell-quote" "1.7.2"
+    "sockjs-client" "1.4.0"
+    "strip-ansi" "5.2.0"
+    "text-table" "0.2.0"
+
+<<<<<<< HEAD
+<<<<<<< HEAD
+react-dom@^16.9.0:
+<<<<<<< HEAD
+  version "16.14.0"
+  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.14.0.tgz#7ad838ec29a777fb3c75c3a190f661cf92ab8b89"
+  integrity sha512-1gCeQXDLoIqMgqD3IO2Ah9bnf0w9kzhwN5q4FGnHZ67hBm9yePzB5JJAIQCc8x3pFnNlwFq4RidZggNAAkzWWw==
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
 =======
     "address" "1.1.2"
     "browserslist" "4.7.0"
@@ -43518,6 +44047,7 @@ react-dom@^16.9.0:
 <<<<<<< HEAD
 >>>>>>> c0fbfa8 (Create global vars for transition times and class for extra hover effects)
 =======
+<<<<<<< HEAD
 >>>>>>> 9f1c985 (Create global vars for transition times and class for extra hover effects)
   dependencies:
     loose-envify "^1.1.0"
@@ -43530,10 +44060,25 @@ react-dom@^16.9.0:
 =======
   dependencies:
 >>>>>>> cfb7f82 (Create global vars for transition times and class for extra hover effects)
+=======
+react-dom@^16.0.0-0, react-dom@^16.9.0, react-dom@>=16.14.0, react-dom@>=16.6.0:
+  version "16.14.0"
+  resolved "https://registry.npmjs.org/react-dom/-/react-dom-16.14.0.tgz"
+  integrity sha512-1gCeQXDLoIqMgqD3IO2Ah9bnf0w9kzhwN5q4FGnHZ67hBm9yePzB5JJAIQCc8x3pFnNlwFq4RidZggNAAkzWWw==
+>>>>>>> b402a34 (Fix bugs)
+=======
+"react-dom@^16.0.0-0", "react-dom@^16.9.0":
+  "integrity" "sha512-YFT2rxO9hM70ewk9jq0y6sQk8cL02xm4+IzYBz75CQGlClQQ1Bxq0nhHF6OtSbit+AIahujJgb/CPRibFkMNJQ=="
+  "resolved" "https://registry.npmjs.org/react-dom/-/react-dom-16.9.0.tgz"
+  "version" "16.9.0"
+>>>>>>> 4820ffc (Create global vars for transition times and class for extra hover effects)
+  dependencies:
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
     "loose-envify" "^1.1.0"
     "object-assign" "^4.1.1"
     "prop-types" "^15.6.2"
     "scheduler" "^0.15.0"
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> 4820ffc (Create global vars for transition times and class for extra hover effects)
 =======
@@ -43543,6 +44088,8 @@ react-dom@^16.9.0:
     prop-types "^15.6.2"
     scheduler "^0.15.0"
 >>>>>>> c0fbfa8 (Create global vars for transition times and class for extra hover effects)
+=======
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
 
 react-error-overlay@^6.0.2:
   version "6.0.2"
@@ -43554,6 +44101,9 @@ react-error-overlay@^6.0.2:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
 react-is@^16.13.1, react-is@^16.3.2, react-is@^16.6.0, react-is@^16.7.0, react-is@^16.8.4, react-is@^16.8.6, react-is@^16.9.0:
 =======
 <<<<<<< HEAD
@@ -43569,9 +44119,12 @@ react-is@^16.13.1, react-is@^16.3.2, react-is@^16.7.0, react-is@^16.8.4, react-i
 =======
 react-is@^16.13.1, react-is@^16.6.0, react-is@^16.7.0, react-is@^16.8.4, react-is@^16.8.6:
 >>>>>>> 4820ffc (Create global vars for transition times and class for extra hover effects)
+<<<<<<< HEAD
 =======
 react-is@^16.13.1, react-is@^16.6.0, react-is@^16.7.0, react-is@^16.8.4, react-is@^16.8.6:
 >>>>>>> 4820ffc (Create global vars for transition times and class for extra hover effects)
+=======
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
   version "16.13.1"
   resolved "https://registry.npmjs.org/react-is/-/react-is-16.13.1.tgz"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
@@ -43594,6 +44147,9 @@ react-is@^16.6.0, react-is@^16.7.0, react-is@^16.8.1, react-is@^16.8.4, react-is
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
 react-lifecycles-compat@^3.0.4:
   version "3.0.4"
   resolved "https://registry.npmjs.org/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz"
@@ -43601,11 +44157,15 @@ react-lifecycles-compat@^3.0.4:
 
 react-redux@^7.1.1, "react-redux@^7.2.1 || ^8.0.2":
 =======
+<<<<<<< HEAD
 =======
 >>>>>>> 4820ffc (Create global vars for transition times and class for extra hover effects)
 react-redux@^7.1.1:
 <<<<<<< HEAD
 <<<<<<< HEAD
+=======
+react-redux@^7.1.1:
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
 >>>>>>> 4820ffc (Create global vars for transition times and class for extra hover effects)
   version "7.2.9"
   resolved "https://registry.yarnpkg.com/react-redux/-/react-redux-7.2.9.tgz#09488fbb9416a4efe3735b7235055442b042481d"
@@ -43617,6 +44177,7 @@ react-redux@^7.1.1:
 >>>>>>> c0fbfa8 (Create global vars for transition times and class for extra hover effects)
   dependencies:
     "@babel/runtime" "^7.5.5"
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
   version "7.1.1"
@@ -43654,13 +44215,18 @@ react-redux@^7.1.1:
     "@babel/runtime" "^7.5.5"
 <<<<<<< HEAD
 >>>>>>> cfb7f82 (Create global vars for transition times and class for extra hover effects)
+=======
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
     "hoist-non-react-statics" "^3.3.0"
     "invariant" "^2.2.4"
     "loose-envify" "^1.4.0"
     "prop-types" "^15.7.2"
     "react-is" "^16.9.0"
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 4820ffc (Create global vars for transition times and class for extra hover effects)
+=======
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
 
 react-router-dom@^5.1.2:
 <<<<<<< HEAD
@@ -43669,6 +44235,9 @@ react-router-dom@^5.1.2:
   integrity sha512-m4EqFMHv/Ih4kpcBCONHbkT68KoAeHN4p3lAGoNryfHi0dMy0kCzEZakiKRsvg5wHZ/JLrLW8o8KomWiz/qbYQ==
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
   dependencies:
 <<<<<<< HEAD
     "@babel/runtime" "^7.12.13"
@@ -43778,6 +44347,7 @@ react-router@6.0.0:
 <<<<<<< HEAD
     "@babel/runtime" "^7.1.2"
 =======
+<<<<<<< HEAD
 =======
   version "5.1.2"
   resolved "https://registry.npmjs.org/react-router-dom/-/react-router-dom-5.1.2.tgz"
@@ -43838,6 +44408,27 @@ react-router@5.1.2:
     hoist-non-react-statics "^3.1.0"
     loose-envify "^1.3.1"
     mini-create-react-context "^0.3.0"
+=======
+  dependencies:
+    "@babel/runtime" "^7.12.13"
+    history "^4.9.0"
+    loose-envify "^1.3.1"
+    prop-types "^15.6.2"
+    react-router "5.3.4"
+    tiny-invariant "^1.0.2"
+    tiny-warning "^1.0.0"
+
+react-router@5.3.4:
+  version "5.3.4"
+  resolved "https://registry.yarnpkg.com/react-router/-/react-router-5.3.4.tgz#8ca252d70fcc37841e31473c7a151cf777887bb5"
+  integrity sha512-Ys9K+ppnJah3QuaRiLxk+jDWOR1MekYQrlytiXxC1RyfbdsZkS5pvKAzCCr031xHixZwpnsYNT5xysdFHQaYsA==
+  dependencies:
+    "@babel/runtime" "^7.12.13"
+>>>>>>> 4820ffc (Create global vars for transition times and class for extra hover effects)
+    history "^4.9.0"
+    hoist-non-react-statics "^3.1.0"
+    loose-envify "^1.3.1"
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
     path-to-regexp "^1.7.0"
     prop-types "^15.6.2"
     react-is "^16.6.0"
@@ -43845,6 +44436,9 @@ react-router@5.1.2:
     tiny-warning "^1.0.0"
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
 >>>>>>> aff373f (git add updated yarn.lock)
 =======
     history "^5.0.3"
@@ -44029,6 +44623,9 @@ react-test-renderer@^16.0.0-0, react-test-renderer@^16.9.0:
     object-assign "^4.1.1"
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
     prop-types "^15.6.2"
     react-is "^16.9.0"
     scheduler "^0.15.0"
@@ -44044,11 +44641,17 @@ react-transition-group@^4.4.5:
     loose-envify "^1.4.0"
 =======
 >>>>>>> 4820ffc (Create global vars for transition times and class for extra hover effects)
+<<<<<<< HEAD
 =======
 >>>>>>> 4820ffc (Create global vars for transition times and class for extra hover effects)
     prop-types "^15.6.2"
     react-is "^16.9.0"
     scheduler "^0.15.0"
+=======
+    prop-types "^15.6.2"
+    react-is "^16.8.6"
+    scheduler "^0.19.1"
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
 
 <<<<<<< HEAD
 "react@^0.14 || ^15.0.0 || ^16.0.0-alpha", "react@^0.14.0 || ^15.0.0 || ^16.0.0", react@^16.0.0, react@^16.0.0-0, react@^16.14.0, "react@^16.8.0 || ^17.0.0-rc.1 || ^18.0.0", "react@^16.8.3 || ^17 || ^18", react@^16.9.0, "react@^16.9.0 || ^17.0.0 || ^18", react@>=0.14.0, react@>=15, react@>=15.0.0, react@>=16.14.0, react@>=16.6.0, react@>=16.8.0, "react@0.13.x || 0.14.x || ^15.0.0-0 || ^16.0.0-0", react@16.x:
@@ -45890,8 +46493,11 @@ resolve-pathname@^3.0.0:
 =======
 
 >>>>>>> 4820ffc (Create global vars for transition times and class for extra hover effects)
+<<<<<<< HEAD
 =======
 >>>>>>> 4820ffc (Create global vars for transition times and class for extra hover effects)
+=======
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
 resolve-url-loader@3.1.0:
   version "3.1.0"
   resolved "https://registry.npmjs.org/resolve-url-loader/-/resolve-url-loader-3.1.0.tgz"
@@ -45899,15 +46505,21 @@ resolve-url-loader@3.1.0:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
 =======
 >>>>>>> f0cffa860091218890f03302e3af780576ff4f40
 >>>>>>> master
 =======
 >>>>>>> 4820ffc (Create global vars for transition times and class for extra hover effects)
+<<<<<<< HEAD
 =======
 >>>>>>> cfb7f82 (Create global vars for transition times and class for extra hover effects)
 =======
 >>>>>>> 4820ffc (Create global vars for transition times and class for extra hover effects)
+=======
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
   dependencies:
     adjust-sourcemap-loader "2.0.0"
     camelcase "5.0.0"
@@ -45923,6 +46535,9 @@ resolve-url-loader@3.1.0:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
 resolve-url@^0.2.1:
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/resolve-url/-/resolve-url-0.2.1.tgz#2c637fe77c893afd2a663fe21aa9080068e2052a"
@@ -46151,10 +46766,47 @@ resolve@^1.10.0, resolve@^1.10.1, resolve@^1.11.0, resolve@^1.12.0, resolve@^1.1
   "version" "2.0.0"
 >>>>>>> cfb7f82 (Create global vars for transition times and class for extra hover effects)
 =======
+<<<<<<< HEAD
 >>>>>>> 9f1c985 (Create global vars for transition times and class for extra hover effects)
   dependencies:
     convert-source-map "^0.3.3"
     css "^2.0.0"
+=======
+resolve@^1.10.0, resolve@^1.10.1, resolve@^1.11.0, resolve@^1.12.0, resolve@^1.14.2, resolve@^1.19.0, resolve@^1.22.4, resolve@^1.3.2, resolve@^1.8.1:
+  version "1.22.8"
+  resolved "https://registry.yarnpkg.com/resolve/-/resolve-1.22.8.tgz#b6c87a9f2aa06dfab52e3d70ac8cde321fa5a48d"
+  integrity sha512-oKWePCxqpd6FlLvGV1VU0x7bkPmmCNolxzjMf4NczoDnQcIWrAF+cPtZn5i6n+RfD2d9i0tzpKnG6Yk168yIyw==
+>>>>>>> f0cffa860091218890f03302e3af780576ff4f40
+>>>>>>> master
+=======
+"resolve-url@^0.2.1":
+  "integrity" "sha1-LGN/53yJOv0qZj/iGqkIAGjiBSo="
+  "resolved" "https://registry.npmjs.org/resolve-url/-/resolve-url-0.2.1.tgz"
+  "version" "0.2.1"
+
+"resolve@^1.10.0", "resolve@^1.10.1", "resolve@^1.11.0", "resolve@^1.12.0", "resolve@^1.3.2", "resolve@^1.5.0", "resolve@^1.8.1", "resolve@1.12.0":
+  "integrity" "sha512-B/dOmuoAik5bKcD6s6nXDCjzUKnaDvdkRyAk6rsmsKLipWj4797iothd7jmmUhWTfinVMU+wc56rYKsit2Qy4w=="
+  "resolved" "https://registry.npmjs.org/resolve/-/resolve-1.12.0.tgz"
+  "version" "1.12.0"
+  dependencies:
+    path-parse "^1.0.6"
+
+resolve@^1.10.0, resolve@^1.10.1, resolve@^1.11.0, resolve@^1.12.0, resolve@^1.14.2, resolve@^1.22.4, resolve@^1.3.2, resolve@^1.8.1:
+  version "1.22.8"
+  resolved "https://registry.yarnpkg.com/resolve/-/resolve-1.22.8.tgz#b6c87a9f2aa06dfab52e3d70ac8cde321fa5a48d"
+  integrity sha512-oKWePCxqpd6FlLvGV1VU0x7bkPmmCNolxzjMf4NczoDnQcIWrAF+cPtZn5i6n+RfD2d9i0tzpKnG6Yk168yIyw==
+>>>>>>> 4820ffc (Create global vars for transition times and class for extra hover effects)
+  dependencies:
+    is-core-module "^2.13.0"
+    path-parse "^1.0.7"
+    supports-preserve-symlinks-flag "^1.0.0"
+
+<<<<<<< HEAD
+resolve@1.1.7:
+  version "1.1.7"
+  resolved "https://registry.npmjs.org/resolve/-/resolve-1.1.7.tgz"
+  integrity sha1-IDEU2CrSxe2ejgQRs5ModeiJ6Xs=
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
 
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -46214,7 +46866,34 @@ ret@~0.1.10:
   resolved "https://registry.npmjs.org/ret/-/ret-0.1.15.tgz"
   integrity sha512-TTlYpa+OL+vMMNG24xSlQGEJ3B/RzEfUlLct7b5G/ytav+wPrplCpVMFuwzXbkecJrb6IYo1iFb0S9v37754mg==
 
+<<<<<<< HEAD
 reusify@^1.0.0:
+=======
+=======
+restore-cursor@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/restore-cursor/-/restore-cursor-2.0.0.tgz#9f7ee287f82fd326d4fd162923d62129eee0dfaf"
+  integrity sha512-6IzJLuGi4+R14vwagDHX+JrXmPVtPpn4mffDJ1UdR7/Edm87fl6yi8mMBIVvFtJaNTUvjughmW4hwLhRG7gC1Q==
+  dependencies:
+    onetime "^2.0.0"
+    signal-exit "^3.0.2"
+
+restore-cursor@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/restore-cursor/-/restore-cursor-3.1.0.tgz#39f67c54b3a7a58cea5236d95cf0034239631f7e"
+  integrity sha512-l+sSefzHpj5qimhFSE5a8nufZYAM3sBSVMAPtYkmC+4EH2anSGaEMXSD0izRQbu9nfyQ9y5JrVmp7E8oZrUjvA==
+  dependencies:
+    onetime "^5.1.0"
+    signal-exit "^3.0.2"
+
+ret@~0.1.10:
+  version "0.1.15"
+  resolved "https://registry.yarnpkg.com/ret/-/ret-0.1.15.tgz#b8a4825d5bdb1fc3f6f53c2bc33f81388681c7bc"
+  integrity sha512-TTlYpa+OL+vMMNG24xSlQGEJ3B/RzEfUlLct7b5G/ytav+wPrplCpVMFuwzXbkecJrb6IYo1iFb0S9v37754mg==
+
+>>>>>>> 4820ffc (Create global vars for transition times and class for extra hover effects)
+reusify@^1.0.4:
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
   version "1.0.4"
 <<<<<<< HEAD
   resolved "https://registry.yarnpkg.com/reusify/-/reusify-1.0.4.tgz#90da382b1e126efc02146e90845a88db12925d76"
@@ -51111,6 +51790,9 @@ timsort@^0.3.0:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
 tiny-invariant@^1.0.2:
   version "1.3.1"
   resolved "https://registry.yarnpkg.com/tiny-invariant/-/tiny-invariant-1.3.1.tgz#8560808c916ef02ecfd55e66090df23a4b7aa642"
@@ -51200,15 +51882,19 @@ timsort@^0.3.0:
 =======
 =======
 >>>>>>> 4820ffc (Create global vars for transition times and class for extra hover effects)
+<<<<<<< HEAD
 =======
 >>>>>>> 9f1c985 (Create global vars for transition times and class for extra hover effects)
 =======
 >>>>>>> 4820ffc (Create global vars for transition times and class for extra hover effects)
+=======
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
 tiny-invariant@^1.0.2:
   version "1.0.6"
   resolved "https://registry.npmjs.org/tiny-invariant/-/tiny-invariant-1.0.6.tgz"
   integrity sha512-FOyLWWVjG+aC0UqG76V53yAWdXfH8bO6FNmyZOuUrzDzK8DI3/JRY25UD7+g49JWM1LXwymsKERB+DzI0dTEQA==
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 tiny-warning@^1.0.0, tiny-warning@^1.0.2:
 =======
@@ -51227,6 +51913,9 @@ tiny-warning@^1.0.0, tiny-warning@^1.0.2:
 >>>>>>> c0fbfa8 (Create global vars for transition times and class for extra hover effects)
 =======
 >>>>>>> 9f1c985 (Create global vars for transition times and class for extra hover effects)
+=======
+tiny-warning@^1.0.0:
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
   version "1.0.3"
   resolved "https://registry.npmjs.org/tiny-warning/-/tiny-warning-1.0.3.tgz"
   integrity sha512-lBN9zLN/oAf68o3zNXYrdCt1kP8WsiGW8Oo2ka41b2IM5JL/S1CTyX1rW0mb/zSuJun0ZUrDxx4sqvYS2FWzPA==
@@ -51235,18 +51924,24 @@ tiny-warning@^1.0.0, tiny-warning@^1.0.2:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
 >>>>>>> aff373f (git add updated yarn.lock)
 =======
 >>>>>>> 42ebb24 (add incoming changes to App.js)
 >>>>>>> master
 =======
 >>>>>>> 4820ffc (Create global vars for transition times and class for extra hover effects)
+<<<<<<< HEAD
 =======
 >>>>>>> 9f1c985 (Create global vars for transition times and class for extra hover effects)
 =======
 >>>>>>> 4820ffc (Create global vars for transition times and class for extra hover effects)
 =======
 >>>>>>> 9f1c985 (Create global vars for transition times and class for extra hover effects)
+=======
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
 tmp@^0.0.33:
   version "0.0.33"
   resolved "https://registry.npmjs.org/tmp/-/tmp-0.0.33.tgz"
@@ -51256,11 +51951,15 @@ tmp@^0.0.33:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
 =======
 >>>>>>> f0cffa860091218890f03302e3af780576ff4f40
 >>>>>>> master
 =======
 >>>>>>> 4820ffc (Create global vars for transition times and class for extra hover effects)
+<<<<<<< HEAD
 =======
 >>>>>>> cfb7f82 (Create global vars for transition times and class for extra hover effects)
 =======
@@ -51279,6 +51978,8 @@ tmp@^0.0.33:
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
+=======
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
   dependencies:
     os-tmpdir "~1.0.2"
 
@@ -51601,6 +52302,7 @@ tough-cookie@^2.3.3, tough-cookie@^2.3.4, tough-cookie@^2.5.0:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 9f1c985 (Create global vars for transition times and class for extra hover effects)
 =======
@@ -51630,10 +52332,13 @@ tr46@^1.0.1:
 >>>>>>> 4820ffc (Create global vars for transition times and class for extra hover effects)
 =======
 >>>>>>> cfb7f82 (Create global vars for transition times and class for extra hover effects)
+=======
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
 "tough-cookie@~2.4.3":
   "integrity" "sha512-Q5srk/4vDM54WJsJio3XNn6K2sCG+CQ8G5Wz6bZhRZoAe/+TxjWB/GlFAnYEbkYVlON9FMk/fE3h2RLpPXo4lQ=="
   "resolved" "https://registry.npmjs.org/tough-cookie/-/tough-cookie-2.4.3.tgz"
   "version" "2.4.3"
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> cfb7f82 (Create global vars for transition times and class for extra hover effects)
@@ -51642,6 +52347,16 @@ tr46@^1.0.1:
   dependencies:
     psl "^1.1.24"
     punycode "^1.4.1"
+=======
+  dependencies:
+    "psl" "^1.1.24"
+    "punycode" "^1.4.1"
+
+tree-kill@^1.2.2:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/tree-kill/-/tree-kill-1.2.2.tgz#4ca09a9092c88b73a7cdc5e8a01b507b0790a0cc"
+  integrity sha512-L0Orpi8qGpRG//Nd+H90vFB+3iHnue1zSSGmNOOCh1GLJ7rUKVwV2HvijphGQS2UmhUZewS9VgvxYIdgr+fG1A==
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
 
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -51727,6 +52442,9 @@ tslib@^1.8.1, tslib@^1.9.0:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
 tslib@^2.4.0:
   version "2.6.2"
   resolved "https://registry.npmjs.org/tslib/-/tslib-2.6.2.tgz"
@@ -51734,12 +52452,15 @@ tslib@^2.4.0:
 
 =======
 >>>>>>> 4820ffc (Create global vars for transition times and class for extra hover effects)
+<<<<<<< HEAD
 =======
 >>>>>>> 9f1c985 (Create global vars for transition times and class for extra hover effects)
 =======
 >>>>>>> 4820ffc (Create global vars for transition times and class for extra hover effects)
 =======
 >>>>>>> 9f1c985 (Create global vars for transition times and class for extra hover effects)
+=======
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
 tsutils@^3.17.1:
   version "3.17.1"
   resolved "https://registry.npmjs.org/tsutils/-/tsutils-3.17.1.tgz"
@@ -51841,8 +52562,9 @@ tunnel-agent@^0.6.0:
 >>>>>>> c0fbfa8 (Create global vars for transition times and class for extra hover effects)
 =======
   dependencies:
-    safe-buffer "^5.0.1"
+    "tslib" "^1.8.1"
 
+<<<<<<< HEAD
 >>>>>>> 9f1c985 (Create global vars for transition times and class for extra hover effects)
 tweetnacl@^0.14.3, tweetnacl@~0.14.0:
   version "0.14.5"
@@ -51879,10 +52601,18 @@ type-check@~0.3.2:
   "version" "0.0.0"
 
 >>>>>>> cfb7f82 (Create global vars for transition times and class for extra hover effects)
+=======
+"tty-browserify@0.0.0":
+  "integrity" "sha1-oVe6QC2iTpv5V/mqadUk7tQpAaY="
+  "resolved" "https://registry.npmjs.org/tty-browserify/-/tty-browserify-0.0.0.tgz"
+  "version" "0.0.0"
+
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
 "tunnel-agent@^0.6.0":
   "integrity" "sha1-J6XeoGs2sEoKmWZ3SykIaPD8QP0="
   "resolved" "https://registry.npmjs.org/tunnel-agent/-/tunnel-agent-0.6.0.tgz"
   "version" "0.6.0"
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> cfb7f82 (Create global vars for transition times and class for extra hover effects)
@@ -51912,9 +52642,12 @@ type-check@~0.3.2:
 =======
 >>>>>>> c0fbfa8 (Create global vars for transition times and class for extra hover effects)
 =======
+=======
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
   dependencies:
-    prelude-ls "~1.1.2"
+    "safe-buffer" "^5.0.1"
 
+<<<<<<< HEAD
 >>>>>>> 9f1c985 (Create global vars for transition times and class for extra hover effects)
 type-fest@^0.5.2:
   version "0.5.2"
@@ -51956,10 +52689,18 @@ type-is@~1.6.17, type-is@~1.6.18:
   "version" "0.14.5"
 
 >>>>>>> cfb7f82 (Create global vars for transition times and class for extra hover effects)
+=======
+"tweetnacl@^0.14.3", "tweetnacl@~0.14.0":
+  "integrity" "sha1-WuaBd/GS1EViadEIr6k/+HQ/T2Q="
+  "resolved" "https://registry.npmjs.org/tweetnacl/-/tweetnacl-0.14.5.tgz"
+  "version" "0.14.5"
+
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
 "type-check@~0.3.2":
   "integrity" "sha1-WITKtRLPHTVeP7eE8wgEsrUg23I="
   "resolved" "https://registry.npmjs.org/type-check/-/type-check-0.3.2.tgz"
   "version" "0.3.2"
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> cfb7f82 (Create global vars for transition times and class for extra hover effects)
@@ -51994,10 +52735,12 @@ type-is@~1.6.17, type-is@~1.6.18:
 =======
 >>>>>>> c0fbfa8 (Create global vars for transition times and class for extra hover effects)
 =======
+=======
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
   dependencies:
-    media-typer "0.3.0"
-    mime-types "~2.1.24"
+    "prelude-ls" "~1.1.2"
 
+<<<<<<< HEAD
 >>>>>>> 9f1c985 (Create global vars for transition times and class for extra hover effects)
 type@^1.0.1:
   version "1.0.3"
@@ -52055,6 +52798,18 @@ typedarray@^0.0.6:
   "version" "0.6.0"
 
 >>>>>>> cfb7f82 (Create global vars for transition times and class for extra hover effects)
+=======
+"type-fest@^0.5.2":
+  "integrity" "sha512-DWkS49EQKVX//Tbupb9TFa19c7+MK1XmzkrZUR8TAktmE/DizXoaoJV6TZ/tSIPXipqNiRI6CyAe7x69Jb6RSw=="
+  "resolved" "https://registry.npmjs.org/type-fest/-/type-fest-0.5.2.tgz"
+  "version" "0.5.2"
+
+"type-fest@^0.6.0":
+  "integrity" "sha512-q+MB8nYR1KDLrgr4G5yemftpMC7/QLqVndBmEEdqzmNj5dcFOO4Oo8qlwZE3ULT3+Zim1F8Kq4cBnikNhlCMlg=="
+  "resolved" "https://registry.npmjs.org/type-fest/-/type-fest-0.6.0.tgz"
+  "version" "0.6.0"
+
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
 "type-is@~1.6.17", "type-is@~1.6.18":
   "integrity" "sha512-TkRKr9sUTxEH8MdfuCSP7VizJyzRNMjj2J2do2Jr3Kym598JVdEksuzPQCnlFPW4ky9Q+iA+ma9BGm06XQBy8g=="
   "resolved" "https://registry.npmjs.org/type-is/-/type-is-1.6.18.tgz"
@@ -52085,6 +52840,9 @@ typedarray@^0.0.6:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
 typed-array-byte-offset@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/typed-array-byte-offset/-/typed-array-byte-offset-1.0.0.tgz#cbbe89b51fdef9cd6aaf07ad4707340abbc4ea0b"
@@ -52143,6 +52901,7 @@ uglify-js@3.4.x:
   "resolved" "https://registry.npmjs.org/uglify-js/-/uglify-js-3.4.10.tgz"
   "version" "3.4.10"
 >>>>>>> 4820ffc (Create global vars for transition times and class for extra hover effects)
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> c0fbfa8 (Create global vars for transition times and class for extra hover effects)
@@ -52156,6 +52915,8 @@ uglify-js@3.4.x:
 >>>>>>> 4820ffc (Create global vars for transition times and class for extra hover effects)
 =======
 >>>>>>> c0fbfa8 (Create global vars for transition times and class for extra hover effects)
+=======
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
   dependencies:
     commander "~2.19.0"
     source-map "~0.6.1"
@@ -52204,6 +52965,9 @@ uglify-js@3.4.x:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
 uncontrollable@^7.2.1:
   version "7.2.1"
   resolved "https://registry.npmjs.org/uncontrollable/-/uncontrollable-7.2.1.tgz"
@@ -52224,8 +52988,11 @@ unicode-canonical-property-names-ecmascript@^2.0.0:
   resolved "https://registry.npmjs.org/unicode-canonical-property-names-ecmascript/-/unicode-canonical-property-names-ecmascript-2.0.0.tgz"
   integrity sha512-yY5PpDlfVIU5+y/BSCxAJRBIS1Zc2dDG3Ujq+sR0U+JjUevW2JhocOF+soROYDSaAezOzOKuyyixhD6mBknSmQ==
 =======
+<<<<<<< HEAD
 =======
 >>>>>>> 4820ffc (Create global vars for transition times and class for extra hover effects)
+=======
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
 undici-types@~5.26.4:
   version "5.26.5"
   resolved "https://registry.yarnpkg.com/undici-types/-/undici-types-5.26.5.tgz#bcd539893d00b56e964fd2657a4866b221a65617"
@@ -52264,12 +53031,17 @@ uglify-js@^3.1.4:
   integrity sha512-W+jrUHJr3DXKhrsS7NUVxn3zqMOFn0hL/Ei6v0anCIMoKC93TjcflTagwIHLW7SfMFfiQuktQyFVCFHGUE0+yg==
   dependencies:
 <<<<<<< HEAD
+<<<<<<< HEAD
     commander "~2.20.0"
     source-map "~0.6.1"
 =======
     "unicode-canonical-property-names-ecmascript" "^1.0.4"
     "unicode-property-aliases-ecmascript" "^1.0.4"
 >>>>>>> 4820ffc (Create global vars for transition times and class for extra hover effects)
+=======
+    "unicode-canonical-property-names-ecmascript" "^1.0.4"
+    "unicode-property-aliases-ecmascript" "^1.0.4"
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
 
 unicode-canonical-property-names-ecmascript@^1.0.4:
   version "1.0.4"
@@ -53201,16 +53973,24 @@ validate-npm-package-license@^3.0.1:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 4820ffc (Create global vars for transition times and class for extra hover effects)
 =======
 >>>>>>> 9f1c985 (Create global vars for transition times and class for extra hover effects)
+=======
+=======
+>>>>>>> 4820ffc (Create global vars for transition times and class for extra hover effects)
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
 value-equal@^1.0.1:
   version "1.0.1"
   resolved "https://registry.npmjs.org/value-equal/-/value-equal-1.0.1.tgz"
   integrity sha512-NOJ6JZCAWr0zlxZt+xqCHNTEKOsrks2HQd4MqhP1qy4z1SkbEP467eNx6TgDKXMvUOb+OENfJCZwM+16n7fRfw==
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
 
 =======
 <<<<<<< HEAD
@@ -53239,6 +54019,7 @@ value-equal@^1.0.1:
 =======
 
 >>>>>>> 4820ffc (Create global vars for transition times and class for extra hover effects)
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> 9f1c985 (Create global vars for transition times and class for extra hover effects)
@@ -53249,6 +54030,8 @@ value-equal@^1.0.1:
 
 <<<<<<< HEAD
 >>>>>>> 4820ffc (Create global vars for transition times and class for extra hover effects)
+=======
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
 vary@~1.1.2:
   version "1.1.2"
 <<<<<<< HEAD
@@ -53258,11 +54041,15 @@ vary@~1.1.2:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
 =======
 >>>>>>> f0cffa860091218890f03302e3af780576ff4f40
 >>>>>>> master
 =======
 >>>>>>> 4820ffc (Create global vars for transition times and class for extra hover effects)
+<<<<<<< HEAD
 =======
   resolved "https://registry.npmjs.org/vary/-/vary-1.1.2.tgz"
   integrity sha1-IpnwLG3tMNSllhsLn3RSShj2NPw=
@@ -53279,6 +54066,8 @@ vary@~1.1.2:
 >>>>>>> 9f1c985 (Create global vars for transition times and class for extra hover effects)
 =======
 >>>>>>> 9f1c985 (Create global vars for transition times and class for extra hover effects)
+=======
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
 
 vendors@^1.0.0:
   version "1.0.3"
@@ -53588,11 +54377,48 @@ webidl-conversions@^4.0.2:
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 4820ffc (Create global vars for transition times and class for extra hover effects)
 =======
 >>>>>>> 9f1c985 (Create global vars for transition times and class for extra hover effects)
 =======
 >>>>>>> 9f1c985 (Create global vars for transition times and class for extra hover effects)
+=======
+=======
+    makeerror "1.0.12"
+
+watchpack-chokidar2@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/watchpack-chokidar2/-/watchpack-chokidar2-2.0.1.tgz#38500072ee6ece66f3769936950ea1771be1c957"
+  integrity sha512-nCFfBIPKr5Sh61s4LPpy1Wtfi0HE8isJ3d2Yb5/Ppw2P2B/3eVSEBjKfN0fmHJSK14+31KwMKmcrzs2GM4P0Ww==
+  dependencies:
+    chokidar "^2.1.8"
+
+watchpack@^1.6.0:
+  version "1.7.5"
+  resolved "https://registry.yarnpkg.com/watchpack/-/watchpack-1.7.5.tgz#1267e6c55e0b9b5be44c2023aed5437a2c26c453"
+  integrity sha512-9P3MWk6SrKjHsGkLT2KHXdQ/9SNkyoJbabxnKOoJepsvJjJG8uYTR3yTPxPQvNDI3w4Nz1xnE0TLHK4RIVe/MQ==
+  dependencies:
+    graceful-fs "^4.1.2"
+    neo-async "^2.5.0"
+  optionalDependencies:
+    chokidar "^3.4.1"
+    watchpack-chokidar2 "^2.0.1"
+
+wbuf@^1.1.0, wbuf@^1.7.3:
+  version "1.7.3"
+  resolved "https://registry.yarnpkg.com/wbuf/-/wbuf-1.7.3.tgz#c1d8d149316d3ea852848895cb6a0bfe887b87df"
+  integrity sha512-O84QOnr0icsbFGLS0O3bI5FswxzRr8/gHwWkDlQFskhSPryQXvrTMxjxGP4+iWYoauLoBvfDpkrOauZ+0iZpDA==
+  dependencies:
+    minimalistic-assert "^1.0.0"
+
+webidl-conversions@^4.0.2:
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/webidl-conversions/-/webidl-conversions-4.0.2.tgz#a855980b1f0b6b359ba1d5d9fb39ae941faa63ad"
+  integrity sha512-YQ+BmxuTgd6UXZW3+ICGfyqRyHXVlD5GtQr5+qjiNW7bF0cqrzX500HVXPBOvgXb5YnzDd+h0zqyv61KUD7+Sg==
+
+>>>>>>> 4820ffc (Create global vars for transition times and class for extra hover effects)
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
 webpack-dev-middleware@^3.5.1:
   version "3.7.1"
   resolved "https://registry.npmjs.org/webpack-dev-middleware/-/webpack-dev-middleware-3.7.1.tgz"
@@ -55256,7 +56082,11 @@ yallist@^3.0.2:
   integrity sha512-S+Zk8DEWE6oKpV+vI3qWkaK+jSbIK86pCwe2IF/xwIpQ8jEuxpw9NyaGjmp9+BoJv5FV2piqCDcoCtStppiq2A==
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> cfb7f82 (Create global vars for transition times and class for extra hover effects)
+=======
+<<<<<<< HEAD
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
 =======
 "write@1.0.3":
   "integrity" "sha512-/lg70HAjtkUgWPVZhZcm+T4hkL8Zbtp1nFNOn3lRrxnlv50SRBv7cR7RqR+GMsd3hUXy9hWBo4CHTbFTcOYwig=="
@@ -55323,6 +56153,7 @@ yallist@^3.0.2:
 >>>>>>> master
 =======
 >>>>>>> 4820ffc (Create global vars for transition times and class for extra hover effects)
+<<<<<<< HEAD
 =======
   resolved "https://registry.yarnpkg.com/xtend/-/xtend-4.0.2.tgz#bb72779f5fa465186b1f438f674fa347fdb5db54"
 =======
@@ -55341,6 +56172,8 @@ yallist@^3.0.2:
   integrity sha512-a4UGQaWPH59mOXUYnAG2ewncQS4i4F43Tv3JoAM+s2VDAmS9NsK8GpDMLrCHPksFT7h3K6TOoUNn2pb7RoXx4g==
 
 >>>>>>> 4820ffc (Create global vars for transition times and class for extra hover effects)
+=======
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
 yallist@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/yallist/-/yallist-4.0.0.tgz#9bb92790d9c0effec63be73519e11a35019a3a72"
@@ -55349,6 +56182,9 @@ yallist@^4.0.0:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
 yaml@^1.7.2:
 =======
 yaml@^1.10.0, yaml@^1.7.2:
@@ -55356,9 +56192,12 @@ yaml@^1.10.0, yaml@^1.7.2:
 =======
 yaml@^1.7.2:
 >>>>>>> 4820ffc (Create global vars for transition times and class for extra hover effects)
+<<<<<<< HEAD
 =======
 yaml@^1.7.2:
 >>>>>>> 4820ffc (Create global vars for transition times and class for extra hover effects)
+=======
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
   version "1.10.2"
   resolved "https://registry.yarnpkg.com/yaml/-/yaml-1.10.2.tgz#2301c5ffbf12b467de8da2333a459e29e7920e4b"
   integrity sha512-r3vXyErRCYJ7wg28yvBY5VSoAF8ZvlcW9/BwUzEtUsjvX/DKs24dIkuwjtuprwJJHsbyUbLApepYTR1BN4uHrg==
@@ -55383,6 +56222,9 @@ yargs-parser@^10.1.0:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
 =======
 >>>>>>> f0cffa860091218890f03302e3af780576ff4f40
 >>>>>>> master
@@ -55534,6 +56376,9 @@ yargs@12.0.2:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
 yargs@^13.3.0:
 <<<<<<< HEAD
   version "13.3.2"
@@ -55545,16 +56390,20 @@ yargs@^13.3.0:
   integrity sha512-2eehun/8ALW8TLoIl7MVaRUrg+yCnenu8B4kBlRxj3GJGDKU1Og7sMXPNm1BYyM1DOJmTZ4YeN/Nwxv+8XJsUA==
 >>>>>>> 2c2e7b6 (Added banner back into /product subpage)
 =======
+<<<<<<< HEAD
 =======
 >>>>>>> cfb7f82 (Create global vars for transition times and class for extra hover effects)
 =======
 >>>>>>> 4820ffc (Create global vars for transition times and class for extra hover effects)
 =======
 >>>>>>> cfb7f82 (Create global vars for transition times and class for extra hover effects)
+=======
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
 "yargs@12.0.2":
   "integrity" "sha512-e7SkEx6N6SIZ5c5H22RTZae61qtn3PYUE8JYbBFlK9sYmh3DMQ6E5ygtaG/2BW0JZi4WGgTR2IV5ChqlqrDGVQ=="
   "resolved" "https://registry.npmjs.org/yargs/-/yargs-12.0.2.tgz"
   "version" "12.0.2"
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -55580,6 +56429,9 @@ yargs@^13.3.0:
 >>>>>>> c0fbfa8 (Create global vars for transition times and class for extra hover effects)
 =======
 >>>>>>> 9f1c985 (Create global vars for transition times and class for extra hover effects)
+=======
+>>>>>>> 4820ffc (Create global vars for transition times and class for extra hover effects)
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
   dependencies:
     cliui "^5.0.0"
     find-up "^3.0.0"
@@ -55597,6 +56449,9 @@ yargs@^13.3.0:
     yargs-parser "^13.1.2"
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
 =======
     yargs-parser "^13.1.1"
 >>>>>>> 2c2e7b6 (Added banner back into /product subpage)
@@ -55609,6 +56464,7 @@ yarn@^1.22.19:
   integrity sha512-rAQTKOBnJSk3MhOJ536OIR9R/taWCU/e+Caun3BJuBoP5kZUDZoqNqt8PAPfBLihZVQoX/sUaNQqAdKjY9agcw==
 =======
 >>>>>>> 4820ffc (Create global vars for transition times and class for extra hover effects)
+<<<<<<< HEAD
 =======
     yargs-parser "^13.1.1"
 >>>>>>> c0fbfa8 (Create global vars for transition times and class for extra hover effects)
@@ -55654,3 +56510,5 @@ yarn@^1.22.19:
 =======
     yargs-parser "^13.1.1"
 >>>>>>> 9f1c985 (Create global vars for transition times and class for extra hover effects)
+=======
+>>>>>>> 08e3520 (Create global vars for transition times and class for extra hover effects)
