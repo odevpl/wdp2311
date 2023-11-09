@@ -10,13 +10,13 @@ class NewFurniture extends React.Component {
     activeCategory: 'bed',
   };
 
-  handlePageChange(newPage) {
+  handlePageChange = newPage => {
     this.setState({ activePage: newPage });
-  }
+  };
 
-  handleCategoryChange(newCategory) {
+  handleCategoryChange = newCategory => {
     this.setState({ activeCategory: newCategory });
-  }
+  };
 
   render() {
     const { categories, products } = this.props;
@@ -28,10 +28,10 @@ class NewFurniture extends React.Component {
     const dots = [];
     for (let i = 0; i < pagesCount; i++) {
       dots.push(
-        <li>
+        <li key={i}>
           <a
             onClick={() => this.handlePageChange(i)}
-            className={i === activePage && styles.active}
+            className={i === activePage ? styles.active : ''}
           >
             page {i}
           </a>
@@ -52,7 +52,7 @@ class NewFurniture extends React.Component {
                   {categories.map(item => (
                     <li key={item.id}>
                       <a
-                        className={item.id === activeCategory && styles.active}
+                        className={item.id === activeCategory ? styles.active : ''}
                         onClick={() => this.handleCategoryChange(item.id)}
                       >
                         {item.name}
@@ -69,7 +69,7 @@ class NewFurniture extends React.Component {
           <div className='row'>
             {categoryProducts.slice(activePage * 8, (activePage + 1) * 8).map(item => (
               <div key={item.id} className='col-3'>
-                <ProductBox {...item} />
+                <ProductBox id={item.id} {...item} />
               </div>
             ))}
           </div>
