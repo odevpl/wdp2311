@@ -13,7 +13,11 @@ const ADD_PRODUCT = createActionName('ADD_PRODUCT');
 export const addProduct = payload => ({ payload, type: ADD_PRODUCT });
 
 /* reducer */
-export default function reducer(statePart = [], action = {}) {
+const initialState = {
+  products: [], // Dodaj tę właściwość
+};
+
+export default function reducer(statePart = initialState, action = {}) {
   switch (action.type) {
     case ADD_PRODUCT: {
       return {
@@ -21,6 +25,7 @@ export default function reducer(statePart = [], action = {}) {
         products: [...statePart.products, action.payload],
       };
     }
+
     default:
       return statePart;
   }
