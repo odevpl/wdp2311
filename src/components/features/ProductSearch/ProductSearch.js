@@ -1,31 +1,41 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-
+import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faListUl, faSearch, faCaretDown } from '@fortawesome/free-solid-svg-icons';
-
+import { connect } from 'react-redux';
 import styles from './ProductSearch.module.scss';
+import { getAll } from '../../../redux/categoriesRedux';
 
-const ProductSearch = () => (
-  <form action='' className={styles.root}>
-    <div className={styles.category}>
-      <FontAwesomeIcon className={styles.icon} icon={faListUl} />
-      <select name='' id=''>
-        <option value=''>Select a category</option>
-      </select>
-      <FontAwesomeIcon className={styles.icon} icon={faCaretDown} />
-    </div>
-    <div className={styles.searchField}>
-      <input placeholder='Search products...' type='text' />
-      <button>
-        <FontAwesomeIcon className={styles.icon} icon={faSearch} />
-      </button>
-    </div>
-  </form>
-);
+class ProductSearch extends Component {
+  render() {
+    return (
+      <form action='' className={styles.root}>
+        <div className={styles.category}>
+          <FontAwesomeIcon className={styles.icon} icon={faListUl} />
 
-ProductSearch.propTypes = {
-  children: PropTypes.node,
-};
+          <ul className={styles.list}>
+            <li className={styles.mainItem}>
+              Select category
+              <ul className={styles.childList}>
+                <li className={styles.childItem}>Category</li>
+              </ul>
+            </li>
+          </ul>
+
+          <FontAwesomeIcon className={styles.icon} icon={faCaretDown} />
+        </div>
+        <div className={styles.searchField}>
+          <input placeholder='Search products...' type='text' />
+          <button>
+            <FontAwesomeIcon className={styles.icon} icon={faSearch} />
+          </button>
+        </div>
+      </form>
+    );
+  }
+}
+
+/*const mapStateToProps = state => ({
+  categories: getAll(state),
+});*/
 
 export default ProductSearch;
