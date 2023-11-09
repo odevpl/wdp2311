@@ -1,7 +1,7 @@
 @import "../../../styles/settings.scss";
 
 .root {
-  background-color: #ffffff;
+  background-color: $pure-white;
   border: 1px solid #e1e1e1;
   margin-bottom: 2rem;
 
@@ -32,7 +32,7 @@
       transform: translateX(-50%);
       background-color: #292929;
       border-radius: 50%;
-      color: #ffffff;
+      color: $pure-white;
       padding: 30px 15px 5px 15px;
     }
 
@@ -63,7 +63,7 @@
 
   .line {
     margin: 0 10px;
-    border-bottom: 1px solid #2a2a2a;
+    border-bottom: 1px solid $dark-grey;
     position: relative;
 
     &::before {
