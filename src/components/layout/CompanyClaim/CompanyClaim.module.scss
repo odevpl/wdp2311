@@ -29,7 +29,7 @@
     .cartBox {
       display: inline-block;
       position: relative;
-      color: #ffffff;
+      color: $pure-white;
 
       .cartIcon {
         background-color: $primary;
@@ -54,7 +54,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 14px;
+        font-size: 9px;
         color: rgb(224, 227, 237);
         position: absolute;
         top: 50%;
