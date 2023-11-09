@@ -1,0 +1,11 @@
+$swipeMove: 3;
+
+.swipeLeft {
+  overflow: hidden;
+  transform: translateX(-$swipeMove + px);
+}
+
+.swipeRight {
+  overflow: hidden;
+  transform: translateX($swipeMove + px);
+}
