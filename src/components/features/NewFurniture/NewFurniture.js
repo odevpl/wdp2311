@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 
 import styles from './NewFurniture.module.scss';
 import ProductBox from '../../common/ProductBox/ProductBox';
+import Swipeable from '../../common/Swipeable/Swipeable';
 
 import CompareProducts from '../../views/CompareProducts/CompareProducts';
-import Swipeable from '../../common/Swipeable/Swipeable';
 
 import { connect } from 'react-redux';
 import { getLayout } from '../../../redux/layoutRedux';
