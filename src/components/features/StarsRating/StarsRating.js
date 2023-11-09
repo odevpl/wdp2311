@@ -7,14 +7,17 @@ import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { faStar as farStar } from '@fortawesome/free-regular-svg-icons';
 import Button from '../../common/Button/Button';
 
+import { addStarsRating } from '../../../redux/productsRedux';
+import { useDispatch } from 'react-redux';
+
 const StarsRating = ({ stars, id, ownRating }) => {
   const [hover, setHover] = useState(0);
-  const [ownStar, setOwnStar] = useState(null);
+
+  const dispatch = useDispatch();
 
   const handleClick = (e, star) => {
     e.preventDefault();
-    setOwnStar(star);
-    console.log(ownStar);
+    dispatch(addStarsRating({ ownRating: star, id }));
   };
   return (
     <div>
