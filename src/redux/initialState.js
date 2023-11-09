@@ -227,6 +227,36 @@ const initialState = {
   cart: {
     products: [],
   },
+
+  promotional: {
+    first: {
+      id: 'aenean-ru-bristique-24',
+      name: 'Aenean Ru Bristique 24',
+      category: 'bed',
+      price: 30,
+      stars: 2,
+      promo: 'sale',
+      newFurniture: true,
+    },
+    second: {
+      id: 'aenean-ru-bristique-20',
+      name: 'Aenean Ru Bristique 20',
+      category: 'bed',
+      price: 30,
+      stars: 2,
+      promo: 'sale',
+      newFurniture: true,
+    },
+    third: {
+      id: 'aenean-ru-bristique-2',
+      name: 'Aenean Ru Bristique 2',
+      category: 'bed',
+      price: 30,
+      stars: 2,
+      promo: 'sale',
+      newFurniture: true,
+    },
+  },
 };
 
 export default initialState;
