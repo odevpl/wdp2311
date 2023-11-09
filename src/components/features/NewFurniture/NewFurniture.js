@@ -61,10 +61,6 @@ class NewFurniture extends React.Component {
     const nextPage = () =>
       activePage + 1 < pagesCount && this.handlePageChange(activePage + 1, true);
 
-    const previousPage = () => activePage > 0 && this.handlePageChange(activePage - 1);
-    const nextPage = () =>
-      activePage + 1 < pagesCount && this.handlePageChange(activePage + 1);
-
     const dots = [];
     for (let i = 0; i < pagesCount; i++) {
       dots.push(
