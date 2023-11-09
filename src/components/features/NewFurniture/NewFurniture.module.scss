@@ -1,5 +1,7 @@
 @import "../../../styles/settings.scss";
 
+$productGap: 1rem;
+
 .root {
   .panelBar {
     margin-bottom: 30px;
@@ -97,5 +99,16 @@
         }
       }
     }
+  }
+
+  .productsContainer {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    gap: $productGap;
+  }
+
+  .desktopProduct {
+    width: calc(100% - $productGap);
   }
 }
