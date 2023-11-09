@@ -25,7 +25,7 @@ export default function reducer(statePart = [], action = {}) {
     case ADD_PRODUCT_TO_COMPARE: {
       const newProductToCompare = action.payload;
       const isAlreadyAdded = statePart.some(
-        product => product.id === newProductToCompare.id
+        product => product.name === newProductToCompare.name
       );
 
       if (statePart.length < 4 && !isAlreadyAdded) {
