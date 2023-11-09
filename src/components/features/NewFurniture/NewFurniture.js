@@ -4,6 +4,9 @@ import PropTypes from 'prop-types';
 import styles from './NewFurniture.module.scss';
 import ProductBox from '../../common/ProductBox/ProductBox';
 
+import { connect } from 'react-redux';
+import { getLayout } from '../../../redux/layoutRedux';
+
 class NewFurniture extends React.Component {
   state = {
     activePage: 0,
@@ -19,11 +22,17 @@ class NewFurniture extends React.Component {
   }
 
   render() {
-    const { categories, products } = this.props;
+    const { categories, products, layout } = this.props;
     const { activeCategory, activePage } = this.state;
 
+    const productsPerPage = {
+      DESKTOP: 8,
+      TABLET: 6,
+      MOBILE: 3,
+    };
+
     const categoryProducts = products.filter(item => item.category === activeCategory);
-    const pagesCount = Math.ceil(categoryProducts.length / 8);
+    const pagesCount = Math.ceil(categoryProducts.length / productsPerPage[layout]);
 
     const dots = [];
     for (let i = 0; i < pagesCount; i++) {
@@ -66,12 +75,17 @@ class NewFurniture extends React.Component {
               </div>
             </div>
           </div>
-          <div className='row'>
-            {categoryProducts.slice(activePage * 8, (activePage + 1) * 8).map(item => (
-              <div key={item.id} className='col-3'>
-                <ProductBox {...item} />
-              </div>
-            ))}
+          <div className={styles.productsContainer}>
+            {categoryProducts
+              .slice(
+                activePage * productsPerPage[layout],
+                (activePage + 1) * productsPerPage[layout]
+              )
+              .map(item => (
+                <div key={item.id} className={styles.desktopProduct}>
+                  <ProductBox {...item} />
+                </div>
+              ))}
           </div>
         </div>
       </div>
@@ -98,6 +112,7 @@ NewFurniture.propTypes = {
       newFurniture: PropTypes.bool,
     })
   ),
+  layout: PropTypes.string,
 };
 
 NewFurniture.defaultProps = {
@@ -105,4 +120,8 @@ NewFurniture.defaultProps = {
   products: [],
 };
 
-export default NewFurniture;
+function mapStateToProps(state) {
+  return { layout: getLayout(state) };
+}
+
+export default connect(mapStateToProps)(NewFurniture);

@@ -1,13 +1,13 @@
 @import "../../../styles/settings.scss";
 
 .root {
-  background-color: #ffffff;
+  background-color: $pure-white;
   border: 1px solid #e1e1e1;
   margin-bottom: 2rem;
 
   .photo {
     position: relative;
-    padding: 80% 10px 0 10px;
+    padding: 10px 10px 0 10px;
     background: {
       color: #f4f5f7;
       size: contain;
@@ -17,6 +17,14 @@
     overflow: hidden;
     align-items: flex-end;
 
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: 185px;
+      padding: 0;
+    }
+
+
     .sale {
       position: absolute;
       top: -30px;
@@ -24,7 +32,7 @@
       transform: translateX(-50%);
       background-color: #292929;
       border-radius: 50%;
-      color: #ffffff;
+      color: $pure-white;
       padding: 30px 15px 5px 15px;
     }
 
@@ -55,7 +63,7 @@
 
   .line {
     margin: 0 10px;
-    border-bottom: 1px solid #2a2a2a;
+    border-bottom: 1px solid $dark-grey;
     position: relative;
 
     &::before {

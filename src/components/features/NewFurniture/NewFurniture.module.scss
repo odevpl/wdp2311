@@ -1,5 +1,7 @@
 @import "../../../styles/settings.scss";
 
+$productGap: 1rem;
+
 .root {
   .panelBar {
     margin-bottom: 30px;
@@ -74,7 +76,7 @@
         margin: 0;
         padding: 0 0 0 1rem;
         list-style: none;
-        background-color: #ffffff;
+        background-color: $pure-white;
         transform: translateY(15px);
 
         li {
@@ -97,5 +99,16 @@
         }
       }
     }
+  }
+
+  .productsContainer {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    gap: $productGap;
+  }
+
+  .desktopProduct {
+    width: calc(100% - $productGap);
   }
 }

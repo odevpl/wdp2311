@@ -1,13 +1,27 @@
+/* NOT FOR USE OUTSIDE THIS FILE */
+$white: #ffffff;
+$dim-white: rgb(169, 169, 169);
+$dim-orange: #d58e32;
+$dark-grey: #2a2a2a;
+$grey-bg: #363636;
+$light-grey-bg: #434343;
+/* NOT FOR USE OUTSIDE THIS FILE */
+
+// VARIABLES USED IN COMPONENTS
+
 $base-padding: 24px;
-
-$header-topbar-bg: #434343;
-$header-bg: #363636;
-
-$footer-claim-bg: #2a2a2a;
-$footer-bg: #363636;
-
-$primary: #d58e32;
-
-$text-color: #2a2a2a;
-
 $form-border-color: #292929;
+
+$header-bg: $grey-bg;
+$header-topbar-bg: $light-grey-bg;
+
+$footer-bg: $grey-bg;
+$footer-claim-bg: $dark-grey;
+$footer-text-elements: $dim-white;
+
+$button-bg: $dark-grey;
+
+$primary: $dim-orange;
+$pure-white: $white;
+
+$text-color: $dark-grey;
