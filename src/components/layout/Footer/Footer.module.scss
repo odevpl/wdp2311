@@ -80,3 +80,19 @@
     }
   }
 }
+@media only screen and (max-width: 767px) {
+  .socialMedia {
+    text-align: center;
+  }
+  .copyright {
+    text-align: center;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .socialMedia {
+    text-align: right;
+  }
+  .copyright {
+    text-align: left;
+  }
+}
