@@ -1,23 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 import styles from './ProductBox.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faStar,
-  faExchangeAlt,
-  faShoppingBasket,
-} from '@fortawesome/free-solid-svg-icons';
-import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons';
+import { faExchangeAlt, faShoppingBasket } from '@fortawesome/free-solid-svg-icons';
+import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../Button/Button';
+import StarsRating from '../../features/StarsRating/StarsRating';
 
-const ProductBox = ({ name, price, promo, stars }) => {
+const ProductBox = ({ name, price, promo, stars, id, ownRating }) => {
+  const [isHovered, setIsHovered] = useState(false);
+
   return (
-    <div className={styles.root}>
+    <div
+      className={styles.root}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
       <div className={styles.photo}>
-        <img src={`images/beds/${name}.jpg`} alt={name} />
         {promo && <div className={styles.sale}>{promo}</div>}
-        <div className={styles.buttons}>
+        <div
+          className={styles.buttons}
+          style={isHovered === true ? { opacity: 1 } : { opacity: 0 }}
+        >
           <Button variant='small'>Quick View</Button>
           <Button variant='small'>
             <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> ADD TO CART
@@ -27,15 +32,7 @@ const ProductBox = ({ name, price, promo, stars }) => {
       <div className={styles.content}>
         <h5>{name}</h5>
         <div className={styles.stars}>
-          {[1, 2, 3, 4, 5].map(i => (
-            <a key={i} href='#'>
-              {i <= stars ? (
-                <FontAwesomeIcon icon={faStar}>{i} stars</FontAwesomeIcon>
-              ) : (
-                <FontAwesomeIcon icon={farStar}>{i} stars</FontAwesomeIcon>
-              )}
-            </a>
-          ))}
+          <StarsRating stars={stars} id={id} ownRating={ownRating} />
         </div>
       </div>
       <div className={styles.line}></div>
@@ -48,8 +45,8 @@ const ProductBox = ({ name, price, promo, stars }) => {
             <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
           </Button>
         </div>
-        <div className={styles.price}>
-          <Button noHover variant='small'>
+        <div>
+          <Button className={styles.price} noHover variant='small'>
             $ {price}
           </Button>
         </div>
@@ -63,6 +60,8 @@ ProductBox.propTypes = {
   price: PropTypes.number,
   promo: PropTypes.string,
   stars: PropTypes.number,
+  id: PropTypes.string,
+  ownRating: PropTypes.number,
 };
 
 export default ProductBox;

@@ -25,17 +25,41 @@
       z-index: 0;
     }
 
-    select {
-      -webkit-appearance: none;
-      border: 0;
-      background-color: transparent;
-      padding: 5px 30px 5px 35px;
+    .list {
+      list-style: none;
       position: relative;
+      font-size: 14px;
+      top: 8px;
+      width: 200px;
       z-index: 1;
       cursor: pointer;
       outline: none;
       font-size: 14px;
     }
+
+    .childList {
+      display: none;
+      position: absolute;
+      list-style: none;
+      z-index: 1;
+      width: 202px;
+      top: 100%;
+      left: -1px;
+      background-color: #fff;
+      margin-top: 12px;
+      padding: 5px 0;
+      border: 1px solid $form-border-color;
+      border-top: 0;
+    }
+
+    .mainItem:hover .childList {
+      display: inline-block;
+    }
+
+    .childItem {
+      padding: 3px;
+    }
+
   }
 
   .searchField {
