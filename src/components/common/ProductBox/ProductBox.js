@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 import styles from './ProductBox.module.scss';
@@ -9,12 +9,20 @@ import Button from '../Button/Button';
 import StarsRating from '../../features/StarsRating/StarsRating';
 
 const ProductBox = ({ name, price, promo, stars, id, ownRating }) => {
+  const [isHovered, setIsHovered] = useState(false);
+
   return (
-    <div className={styles.root}>
+    <div
+      className={styles.root}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
       <div className={styles.photo}>
-        <img src={`images/beds/${name}.jpg`} alt={name} />
         {promo && <div className={styles.sale}>{promo}</div>}
-        <div className={styles.buttons}>
+        <div
+          className={styles.buttons}
+          style={isHovered === true ? { opacity: 1 } : { opacity: 0 }}
+        >
           <Button variant='small'>Quick View</Button>
           <Button variant='small'>
             <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> ADD TO CART
@@ -37,8 +45,8 @@ const ProductBox = ({ name, price, promo, stars, id, ownRating }) => {
             <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
           </Button>
         </div>
-        <div className={styles.price}>
-          <Button noHover variant='small'>
+        <div>
+          <Button className={styles.price} noHover variant='small'>
             $ {price}
           </Button>
         </div>
