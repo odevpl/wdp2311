@@ -12,6 +12,17 @@
       display: inline-block;
       line-height: 55px;
 
+      a.login {
+        &::after {
+          content: "Login";
+        }
+      }
+      a.register {
+        &::after {
+          content: "Register";
+        }
+      }
+
       a {
         color: $pure-white;
         font-size: 13px;
@@ -37,6 +48,33 @@
 
     .icon {
       margin-right: 5px;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .root {
+    ul {
+      li {
+        a.login {
+          &::after {
+            content: "";
+          }
+        }
+        a.register {
+          &::after {
+            content: "";
+          }
+        }
+      }
+    }
+
+    .topOptions {
+      flex: 0 0 56%;
+
+      ul li {
+        margin-right: 0.6rem;
+      }
     }
   }
 }
