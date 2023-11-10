@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import styles from './ProductBox.module.scss';
@@ -15,12 +15,19 @@ const ProductBox = ({ name, price, promo, stars, isFavorite, isCompare, id, ownR
   const buttonCompareActive = clsx('outline', {
     [styles.favorite]: isCompare,
   });
+  const [isHovered, setIsHovered] = useState(false);
   return (
-    <div className={styles.root}>
+    <div
+      className={styles.root}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
       <div className={styles.photo}>
-        <img src={`images/beds/${name}.jpg`} alt={name} />
         {promo && <div className={styles.sale}>{promo}</div>}
-        <div className={styles.buttons}>
+        <div
+          className={styles.buttons}
+          style={isHovered === true ? { opacity: 1 } : { opacity: 0 }}
+        >
           <Button variant='small'>Quick View</Button>
           <Button variant='small'>
             <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> ADD TO CART
@@ -55,8 +62,8 @@ const ProductBox = ({ name, price, promo, stars, isFavorite, isCompare, id, ownR
             <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
           </Button>
         </div>
-        <div className={styles.price}>
-          <Button noHover variant='small'>
+        <div>
+          <Button className={styles.price} noHover variant='small'>
             $ {price}
           </Button>
         </div>
