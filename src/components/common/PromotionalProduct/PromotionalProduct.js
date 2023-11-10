@@ -17,10 +17,16 @@ const PromotionalProduct = ({ name, price, stars }) => {
     <div className={styles.root}>
       <div className={styles.photo}>
         <img src={`images/beds/${name}.jpg`} alt={name} />
-        <div className={styles.buttons}>
+        <div className={styles.button}>
           <Button variant='small'>
             <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> ADD TO CART
           </Button>
+        </div>
+        <div className={'text-white ' + styles.counter}>
+          <div className={styles.amount}>25 days</div>
+          <div className={styles.amount}> 10 hrs</div>
+          <div className={styles.amount}> 45 mins</div>
+          <div className={styles.amount}> 30 secs</div>
         </div>
       </div>
       <div className={styles.content}>
@@ -63,7 +69,6 @@ PromotionalProduct.propTypes = {
   children: PropTypes.node,
   name: PropTypes.string,
   price: PropTypes.number,
-  promo: PropTypes.string,
   stars: PropTypes.number,
 };
 

@@ -2,6 +2,12 @@
 
 .root {
   margin-top: 10px;
+  height: 500px;
+
+  .hotDeal {
+    height: 500px;
+  }
+
   .dealBg {
     background-color: $header-bg;
     display: flex;
