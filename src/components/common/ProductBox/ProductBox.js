@@ -11,10 +11,10 @@ import { addProductToCompare } from '../../../redux/compareRedux';
 import { useDispatch } from 'react-redux';
 
 const ProductBox = ({ name, price, promo, stars, id, ownRating }) => {
-
   const [isHovered, setIsHovered] = useState(false);
   const dispatch = useDispatch();
   const product = { name };
+
   const addToCompare = () => {
     dispatch(addProductToCompare(product));
   };
