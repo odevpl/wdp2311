@@ -230,6 +230,7 @@ const initialState = {
   cart: {
     products: [],
   },
+  productsToCompare: [],
 };
 
 export default initialState;

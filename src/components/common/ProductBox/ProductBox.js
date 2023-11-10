@@ -7,10 +7,17 @@ import { faExchangeAlt, faShoppingBasket } from '@fortawesome/free-solid-svg-ico
 import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../Button/Button';
 import StarsRating from '../../features/StarsRating/StarsRating';
+import { addProductToCompare } from '../../../redux/compareRedux';
+import { useDispatch } from 'react-redux';
 
 const ProductBox = ({ name, price, promo, stars, id, ownRating }) => {
-  const [isHovered, setIsHovered] = useState(false);
 
+  const [isHovered, setIsHovered] = useState(false);
+  const dispatch = useDispatch();
+  const product = { name };
+  const addToCompare = () => {
+    dispatch(addProductToCompare(product));
+  };
   return (
     <div
       className={styles.root}
@@ -41,7 +48,7 @@ const ProductBox = ({ name, price, promo, stars, id, ownRating }) => {
           <Button variant='outline'>
             <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
           </Button>
-          <Button variant='outline'>
+          <Button variant='outline' onClick={addToCompare}>
             <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
           </Button>
         </div>
