@@ -1,0 +1,53 @@
+@import "../../../styles/settings.scss";
+
+.root {
+  margin-top: 10px;
+  height: 500px;
+
+  .hotDeal {
+    height: 500px;
+  }
+
+  .dealBg {
+    background-color: $header-bg;
+    display: flex;
+    justify-content: space-between;
+
+    .title {
+      display: flex;
+      text-transform: uppercase;
+      color: #ffffff;
+      margin-left: 10px;
+      margin: auto 10px;
+      font-size: 16px;
+    }
+  }
+
+  .dots {
+    display: inline-block;
+
+    ul {
+      padding: 0 0 0 1rem;
+      list-style: none;
+
+      li {
+        display: inline-block;
+        margin-left: 0.5rem;
+
+        a {
+          display: block;
+          width: 10px;
+          height: 10px;
+          border-radius: 6px;
+          background-color: #e1e1e1;
+          font-size: 0;
+
+          &.active,
+          &:hover {
+            background-color: $primary;
+          }
+        }
+      }
+    }
+  }
+}
