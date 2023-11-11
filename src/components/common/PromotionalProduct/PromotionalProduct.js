@@ -1,44 +1,32 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import styles from './ProductBox.module.scss';
+import styles from './PromotionalProduct.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faStar,
   faExchangeAlt,
   faShoppingBasket,
+  faEye,
 } from '@fortawesome/free-solid-svg-icons';
 import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons';
-import Button from '../Button/Button';
-import StarsRating from '../../features/StarsRating/StarsRating';
-import { addProductToCompare } from '../../../redux/compareRedux';
-import { useDispatch } from 'react-redux';
+import Button from '../../common/Button/Button';
 
-const ProductBox = ({ name, price, promo, stars, isFavorite, isCompare, id, ownRating, oldPrice  }) => {
-  const buttonFavoriteActive = clsx('outline', {
-    [styles.favorite]: isFavorite,
-  });
-  const buttonCompareActive = clsx('outline', {
-    [styles.favorite]: isCompare,
-  });
-  const [isHovered, setIsHovered] = useState(false);
-  const dispatch = useDispatch();
-  const product = { name };
-
-  const addToCompare = () => {
-    dispatch(addProductToCompare(product));
-  };
-
+const PromotionalProduct = ({ name, price, stars }) => {
   return (
     <div className={styles.root}>
       <div className={styles.photo}>
         <img src={`images/beds/${name}.jpg`} alt={name} />
-        {promo && <div className={styles.sale}>{promo}</div>}
-        <div className={styles.buttons}>
-          <Button variant='small'>Quick View</Button>
+        <div className={styles.button}>
           <Button variant='small'>
             <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> ADD TO CART
           </Button>
+        </div>
+        <div className={'text-white ' + styles.counter}>
+          <div className={styles.amount}>25 days</div>
+          <div className={styles.amount}> 10 hrs</div>
+          <div className={styles.amount}> 45 mins</div>
+          <div className={styles.amount}> 30 secs</div>
         </div>
       </div>
       <div className={styles.content}>
@@ -59,14 +47,16 @@ const ProductBox = ({ name, price, promo, stars, isFavorite, isCompare, id, ownR
       <div className={styles.actions}>
         <div className={styles.outlines}>
           <Button variant='outline'>
+            <FontAwesomeIcon icon={faEye}>Add to compare</FontAwesomeIcon>
+          </Button>
+          <Button variant='outline'>
             <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
           </Button>
-          <Button variant='outline' onClick={addToCompare}  className={buttonCompareActive}>
+          <Button variant='outline'>
             <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
           </Button>
         </div>
         <div className={styles.price}>
-          {oldPrice ? <span className={styles.oldPrice}>${oldPrice}</span> : ''}
           <Button noHover variant='small'>
             $ {price}
           </Button>
@@ -75,17 +65,11 @@ const ProductBox = ({ name, price, promo, stars, isFavorite, isCompare, id, ownR
     </div>
   );
 };
-ProductBox.propTypes = {
+PromotionalProduct.propTypes = {
   children: PropTypes.node,
   name: PropTypes.string,
   price: PropTypes.number,
-  promo: PropTypes.string,
   stars: PropTypes.number,
-  oldPrice: PropTypes.number,
-  isFavorite: PropTypes.bool,
-  isCompare: PropTypes.bool,
-  id: PropTypes.string,
-  ownRating: PropTypes.number,
 };
 
-export default ProductBox;
+export default PromotionalProduct;
