@@ -8,7 +8,16 @@ import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../Button/Button';
 import StarsRating from '../../features/StarsRating/StarsRating';
 
-const ProductBox = ({ name, price, promo, stars, isFavorite, isCompare, id, ownRating  }) => {
+const ProductBox = ({
+  name,
+  price,
+  promo,
+  stars,
+  isFavorite,
+  isCompare,
+  id,
+  ownRating,
+}) => {
   const buttonFavoriteActive = clsx('outline', {
     [styles.favorite]: isFavorite,
   });
@@ -23,6 +32,7 @@ const ProductBox = ({ name, price, promo, stars, isFavorite, isCompare, id, ownR
       onMouseLeave={() => setIsHovered(false)}
     >
       <div className={styles.photo}>
+        <img src={`images/beds/${name}.jpg`} alt={name} />
         {promo && <div className={styles.sale}>{promo}</div>}
         <div
           className={styles.buttons}
@@ -37,17 +47,6 @@ const ProductBox = ({ name, price, promo, stars, isFavorite, isCompare, id, ownR
       <div className={styles.content}>
         <h5>{name}</h5>
         <div className={styles.stars}>
-
-          {[1, 2, 3, 4, 5].map(i => (
-            <a key={i} href='#'>
-              {i <= stars ? (
-                <FontAwesomeIcon icon={faStar}>{i} stars</FontAwesomeIcon>
-              ) : (
-                <FontAwesomeIcon icon={farStar}>{i} stars</FontAwesomeIcon>
-              )}
-            </a>
-          ))}
-
           <StarsRating stars={stars} id={id} ownRating={ownRating} />
         </div>
       </div>
@@ -58,7 +57,6 @@ const ProductBox = ({ name, price, promo, stars, isFavorite, isCompare, id, ownR
             <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
           </Button>
           <Button variant='outline' className={buttonCompareActive}>
-
             <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
           </Button>
         </div>
