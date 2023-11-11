@@ -6,6 +6,7 @@ export const getNew = ({ products }) =>
   products.filter(item => item.newFurniture === true);
 
 export const allPromotional = ({ promotional }) => promotional;
+const UPDATE_YOUR_STARS_RATE = 'UPDATE_YOUR_STARS_RATE';
 export const addStarsRating = payload => ({ type: UPDATE_YOUR_STARS_RATE, payload });
 
 /* reducer */

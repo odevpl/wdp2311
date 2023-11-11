@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-
+import { clsx } from 'clsx';
 import styles from './ProductBox.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -14,7 +14,17 @@ import StarsRating from '../../features/StarsRating/StarsRating';
 import { addProductToCompare } from '../../../redux/compareRedux';
 import { useDispatch } from 'react-redux';
 
-const ProductBox = ({ name, price, promo, stars, isFavorite, isCompare, id, ownRating, oldPrice  }) => {
+const ProductBox = ({
+  name,
+  price,
+  promo,
+  stars,
+  isFavorite,
+  isCompare,
+  id,
+  ownRating,
+  oldPrice,
+}) => {
   const buttonFavoriteActive = clsx('outline', {
     [styles.favorite]: isFavorite,
   });
@@ -61,7 +71,11 @@ const ProductBox = ({ name, price, promo, stars, isFavorite, isCompare, id, ownR
           <Button variant='outline'>
             <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
           </Button>
-          <Button variant='outline' onClick={addToCompare}  className={buttonCompareActive}>
+          <Button
+            variant='outline'
+            onClick={addToCompare}
+            className={buttonCompareActive}
+          >
             <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
           </Button>
         </div>
