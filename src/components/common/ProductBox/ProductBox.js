@@ -7,17 +7,11 @@ import { faExchangeAlt, faShoppingBasket } from '@fortawesome/free-solid-svg-ico
 import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../Button/Button';
 import StarsRating from '../../features/StarsRating/StarsRating';
+import { addProductToCompare } from '../../../redux/compareRedux';
+import { useDispatch } from 'react-redux';
 
-const ProductBox = ({
-  name,
-  price,
-  promo,
-  stars,
-  isFavorite,
-  isCompare,
-  id,
-  ownRating,
-}) => {
+
+const ProductBox = ({ name, price, promo, stars, isFavorite, isCompare, id, ownRating, oldPrice  }) => {
   const buttonFavoriteActive = clsx('outline', {
     [styles.favorite]: isFavorite,
   });
@@ -25,6 +19,12 @@ const ProductBox = ({
     [styles.favorite]: isCompare,
   });
   const [isHovered, setIsHovered] = useState(false);
+  const dispatch = useDispatch();
+  const product = { name };
+
+  const addToCompare = () => {
+    dispatch(addProductToCompare(product));
+  };
   return (
     <div
       className={styles.root}
@@ -56,15 +56,15 @@ const ProductBox = ({
           <Button variant='outline' className={buttonFavoriteActive}>
             <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
           </Button>
-          <Button variant='outline' className={buttonCompareActive}>
+          <Button variant='outline' onClick={addToCompare}  className={buttonCompareActive}>
             <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
           </Button>
         </div>
-        <div>
-          <Button className={styles.price} noHover variant='small'>
-            $ {price}
-          </Button>
-        </div>
+        <div className={styles.price}>
+        {oldPrice ? <span className={styles.oldPrice}>${oldPrice}</span> : ''}
+        <Button noHover variant='small'>
+          $ {price}
+        </Button>
       </div>
     </div>
   );
@@ -75,6 +75,7 @@ ProductBox.propTypes = {
   price: PropTypes.number,
   promo: PropTypes.string,
   stars: PropTypes.number,
+  oldPrice: PropTypes.number,
   isFavorite: PropTypes.bool,
   isCompare: PropTypes.bool,
   id: PropTypes.string,

@@ -1,0 +1,38 @@
+@import "../../../styles/settings.scss";
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+
+.product {
+  position: relative;
+}
+
+.imageContainer {
+  position: relative;
+}
+
+.imgCompare {
+  object-fit: cover;
+  width: auto;
+  height: 150px;
+  padding: 0;
+}
+
+.closeIcon {
+  position: absolute;
+  top: 10%;
+  right: 5%;
+  font-size: 20px;
+  color: #fffdd0;
+  display: none;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.imageContainer:hover .closeIcon {
+  display: block;
+}
+
