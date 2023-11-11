@@ -278,6 +278,8 @@ const initialState = {
   cart: {
     products: [],
   },
+
+  productsToCompare: [],
   brands: [
     {
       id: 1,
