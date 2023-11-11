@@ -7,8 +7,18 @@ import { faExchangeAlt, faShoppingBasket } from '@fortawesome/free-solid-svg-ico
 import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../Button/Button';
 import StarsRating from '../../features/StarsRating/StarsRating';
+import Popup from '../Popup/Popup';
 
-const ProductBox = ({ name, price, promo, stars, isFavorite, isCompare, id, ownRating  }) => {
+const ProductBox = ({
+  name,
+  price,
+  promo,
+  stars,
+  isFavorite,
+  isCompare,
+  id,
+  ownRating,
+}) => {
   const buttonFavoriteActive = clsx('outline', {
     [styles.favorite]: isFavorite,
   });
@@ -16,19 +26,46 @@ const ProductBox = ({ name, price, promo, stars, isFavorite, isCompare, id, ownR
     [styles.favorite]: isCompare,
   });
   const [isHovered, setIsHovered] = useState(false);
+
+  const [modalShow, setModalShow] = useState(false);
+  const [backgroundBlur, setBackgroundBlur] = useState(false);
   return (
     <div
       className={styles.root}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
+      <Popup
+        show={modalShow}
+        onHide={() => {
+          setModalShow(false);
+          setBackgroundBlur(false);
+        }}
+        {...{
+          backgroundBlur,
+          name,
+          price,
+          promo,
+          stars,
+          id,
+          ownRating,
+        }}
+      ></Popup>
       <div className={styles.photo}>
         {promo && <div className={styles.sale}>{promo}</div>}
         <div
           className={styles.buttons}
           style={isHovered === true ? { opacity: 1 } : { opacity: 0 }}
         >
-          <Button variant='small'>Quick View</Button>
+          <Button
+            variant='small'
+            onClick={() => {
+              setModalShow(true);
+              setBackgroundBlur(true);
+            }}
+          >
+            Quick View
+          </Button>
           <Button variant='small'>
             <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> ADD TO CART
           </Button>
@@ -37,17 +74,6 @@ const ProductBox = ({ name, price, promo, stars, isFavorite, isCompare, id, ownR
       <div className={styles.content}>
         <h5>{name}</h5>
         <div className={styles.stars}>
-
-          {[1, 2, 3, 4, 5].map(i => (
-            <a key={i} href='#'>
-              {i <= stars ? (
-                <FontAwesomeIcon icon={faStar}>{i} stars</FontAwesomeIcon>
-              ) : (
-                <FontAwesomeIcon icon={farStar}>{i} stars</FontAwesomeIcon>
-              )}
-            </a>
-          ))}
-
           <StarsRating stars={stars} id={id} ownRating={ownRating} />
         </div>
       </div>
@@ -58,7 +84,6 @@ const ProductBox = ({ name, price, promo, stars, isFavorite, isCompare, id, ownR
             <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
           </Button>
           <Button variant='outline' className={buttonCompareActive}>
-
             <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
           </Button>
         </div>
