@@ -28,7 +28,7 @@
       width: 76px;
       height: 76px;
       border-radius: 100%;
-      background-color: #ffffff;
+      background-color: $pure-white;
       z-index: -1;
     }
 
@@ -63,7 +63,7 @@
 
   &.active {
     .iconWrapper {
-      color: #ffffff;
+      color: $pure-white;
 
       &::after {
         background-color: $primary;
@@ -74,5 +74,10 @@
     .content {
       color: $primary;
     }
+  }
+}
+@media screen and (max-width: 768px) {
+  .root {
+    height: 140px;
   }
 }
