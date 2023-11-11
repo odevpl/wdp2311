@@ -110,12 +110,12 @@ $productGap: 1rem;
 
   .fadeOut {
     opacity: 0;
-    transition: opacity 0.5s ease-in-out; /* Adjust the duration and easing as needed */
+    transition: opacity 0.6s ease-in-out; /* Adjust the duration and easing as needed */
   }
 
   .fadeIn {
     opacity: 1;
-    transition: opacity 0.5s ease-in-out;
+    transition: opacity 0.6s ease-in-out;
   }
 
   .desktopProduct {
