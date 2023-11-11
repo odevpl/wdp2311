@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-
+import clsx from 'clsx';
 import styles from './ProductBox.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExchangeAlt, faShoppingBasket } from '@fortawesome/free-solid-svg-icons';
@@ -8,14 +8,26 @@ import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../Button/Button';
 import StarsRating from '../../features/StarsRating/StarsRating';
 
-
-const ProductBox = ({ name, price, promo, stars, id, ownRating, oldPrice }) => {
+const ProductBox = ({ name, price, promo, stars, isFavorite, isCompare, id, ownRating, oldPrice  }) => {
+  const buttonFavoriteActive = clsx('outline', {
+    [styles.favorite]: isFavorite,
+  });
+  const buttonCompareActive = clsx('outline', {
+    [styles.favorite]: isCompare,
+  });
+  const [isHovered, setIsHovered] = useState(false);
   return (
-    <div className={styles.root}>
+    <div
+      className={styles.root}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
       <div className={styles.photo}>
-        <img src={`images/beds/${name}.jpg`} alt={name} />
         {promo && <div className={styles.sale}>{promo}</div>}
-        <div className={styles.buttons}>
+        <div
+          className={styles.buttons}
+          style={isHovered === true ? { opacity: 1 } : { opacity: 0 }}
+        >
           <Button variant='small'>Quick View</Button>
           <Button variant='small'>
             <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> ADD TO CART
@@ -25,16 +37,28 @@ const ProductBox = ({ name, price, promo, stars, id, ownRating, oldPrice }) => {
       <div className={styles.content}>
         <h5>{name}</h5>
         <div className={styles.stars}>
+
+          {[1, 2, 3, 4, 5].map(i => (
+            <a key={i} href='#'>
+              {i <= stars ? (
+                <FontAwesomeIcon icon={faStar}>{i} stars</FontAwesomeIcon>
+              ) : (
+                <FontAwesomeIcon icon={farStar}>{i} stars</FontAwesomeIcon>
+              )}
+            </a>
+          ))}
+
           <StarsRating stars={stars} id={id} ownRating={ownRating} />
         </div>
       </div>
       <div className={styles.line}></div>
       <div className={styles.actions}>
         <div className={styles.outlines}>
-          <Button variant='outline'>
+          <Button variant='outline' className={buttonFavoriteActive}>
             <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
           </Button>
-          <Button variant='outline'>
+          <Button variant='outline' className={buttonCompareActive}>
+
             <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
           </Button>
         </div>
@@ -54,6 +78,8 @@ ProductBox.propTypes = {
   promo: PropTypes.string,
   stars: PropTypes.number,
   oldPrice: PropTypes.number,
+  isFavorite: PropTypes.bool,
+  isCompare: PropTypes.bool,
   id: PropTypes.string,
   ownRating: PropTypes.number,
 };
