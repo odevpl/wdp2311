@@ -1,5 +1,5 @@
 import React from 'react';
-//import { BrowserRouter, Switch,Route} ;
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './redux/store';
 
@@ -13,7 +13,15 @@ import ProductPage from './components/views/ProductPage/ProductPage';
 
 const App = () => (
   <Provider store={store}>
-    <MainLayout></MainLayout>
+    <BrowserRouter>
+      <MainLayout>
+        <Routes>
+          <Route exact path={'/'} component={Homepage} />
+          <Route exact path={'/shop/:categoryId'} component={ProductList} />
+          <Route exact path={'/product/:productId'} component={ProductPage} />
+        </Routes>
+      </MainLayout>
+    </BrowserRouter>
   </Provider>
 );
 
