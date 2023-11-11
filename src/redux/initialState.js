@@ -230,6 +230,29 @@ const initialState = {
   cart: {
     products: [],
   },
+  feedback: [
+    {
+      id: 1,
+      name: 'John Smith',
+      message:
+        'Niezrównana jakość i obsługa! Kupiłem niedawno zestaw mebli do salonu i jestem zachwycony ich jakością. Meble są solidne, stylowe i wygodne. Obsługa klienta była również na najwyższym poziomie. Zdecydowanie polecam ten sklep!',
+      clientImg: `images/clientsAvatar/man1.jpg`,
+    },
+    {
+      id: 2,
+      name: 'Amanda Doe',
+      message:
+        'Doskonałe doświadczenie zakupowe! Sklep oferuje szeroki wybór mebli, co ułatwiło mi znalezienie idealnego stołu do jadalni. Proces zakupu był prosty, a dostawa szybka i bezproblemowa. Jestem bardzo zadowolony z mojego zakupu',
+      clientImg: `images/clientsAvatar/woman1.jpg`,
+    },
+    {
+      id: 3,
+      name: 'Sara Black',
+      message:
+        'Kupiłem tu kilka mebli do sypialni i są one nie tylko piękne, ale także wyjątkowo trwałe. Na pewno wrócę tu po więcej!',
+      clientImg: `images/clientsAvatar/woman2.jpg`,
+    },
+  ],
 };
 
 export default initialState;
