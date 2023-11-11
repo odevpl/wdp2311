@@ -278,7 +278,6 @@ const initialState = {
   cart: {
     products: [],
   },
-
   promotional: {
     first: {
       id: 'aenean-ru-bristique-24',
@@ -290,7 +289,7 @@ const initialState = {
       newFurniture: true,
     },
   },
-  
+  productsToCompare: [],
   brands: [
     {
       id: 1,

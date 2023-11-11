@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import styles from './NewFurniture.module.scss';
 import ProductBox from '../../common/ProductBox/ProductBox';
+import CompareProducts from '../../views/CompareProducts/CompareProducts';
 
 import { connect } from 'react-redux';
 import { getLayout } from '../../../redux/layoutRedux';
@@ -86,6 +87,9 @@ class NewFurniture extends React.Component {
                   <ProductBox {...item} />
                 </div>
               ))}
+          </div>
+          <div className={styles.compare}>
+            <CompareProducts />
           </div>
         </div>
       </div>
