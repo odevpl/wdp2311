@@ -11,10 +11,20 @@ class NewFurniture extends React.Component {
   state = {
     activePage: 0,
     activeCategory: 'bed',
+    isFading: false,
   };
 
   handlePageChange(newPage) {
-    this.setState({ activePage: newPage });
+    // Set isFading to true before changing the page to trigger fade-out
+    this.setState({ isFading: true }, () => {
+      setTimeout(() => {
+        // Change the page after a delay to allow fade-out transition
+        this.setState({
+          activePage: newPage,
+          isFading: false, // Set isFading to false to trigger fade-in
+        });
+      }, 400); // Adjust the delay according to your transition duration
+    });
   }
 
   handleCategoryChange(newCategory) {
@@ -23,7 +33,7 @@ class NewFurniture extends React.Component {
 
   render() {
     const { categories, products, layout } = this.props;
-    const { activeCategory, activePage } = this.state;
+    const { activeCategory, activePage, isFading } = this.state;
 
     const productsPerPage = {
       DESKTOP: 8,
@@ -75,7 +85,11 @@ class NewFurniture extends React.Component {
               </div>
             </div>
           </div>
-          <div className={styles.productsContainer}>
+          <div
+            className={`${styles.productsContainer} ${
+              isFading ? styles.fadeOut : styles.fadeIn
+            }`}
+          >
             {categoryProducts
               .slice(
                 activePage * productsPerPage[layout],

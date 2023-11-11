@@ -108,6 +108,16 @@ $productGap: 1rem;
     gap: $productGap;
   }
 
+  .fadeOut {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out; /* Adjust the duration and easing as needed */
+  }
+
+  .fadeIn {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+  }
+
   .desktopProduct {
     width: calc(100% - $productGap);
   }

@@ -10,16 +10,17 @@ import MainLayout from './components/layout/MainLayout/MainLayout';
 import Homepage from './components/views/Homepage/Homepage';
 import ProductList from './components/views/ProductList/ProductList';
 import ProductPage from './components/views/ProductPage/ProductPage';
+import { Switch } from 'react-router-dom/cjs/react-router-dom.min';
 
 const App = () => (
   <Provider store={store}>
     <BrowserRouter>
       <MainLayout>
-        <Routes>
+        <Switch>
           <Route exact path={'/'} component={Homepage} />
           <Route exact path={'/shop/:categoryId'} component={ProductList} />
           <Route exact path={'/product/:productId'} component={ProductPage} />
-        </Routes>
+        </Switch>
       </MainLayout>
     </BrowserRouter>
   </Provider>
