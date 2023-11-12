@@ -1,5 +1,39 @@
 @import "../../../styles/settings.scss";
 
 .root {
-  padding: $base-padding 0;
+  padding: 0 0 $base-padding;
+
+  .banner {
+    background-color: $product-header-bg;
+    padding: 3.5rem;
+    color: $pure-white;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .bannerTitle {
+      font-size: 56px;
+      font-weight: 300;
+      width: 630px;
+      letter-spacing: 2px;
+      margin: 0;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .bannerSubtitle {
+      font-weight: 300;
+      width: 630px;
+      letter-spacing: 12px;
+      display: flex;
+      justify-content: space-between;
+      margin-left: 12px;
+
+      .subtitleColor {
+        color: $primary;
+        font-weight: bold;
+      }
+    }
+  }
 }
