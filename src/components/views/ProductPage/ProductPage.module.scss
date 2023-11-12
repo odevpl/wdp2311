@@ -36,4 +36,19 @@
       }
     }
   }
+
+  .srcLinks {
+    padding: $base-padding;
+
+    a {
+      padding: 3px 6px;
+      margin: 0 10px;
+      text-decoration: none;
+      color: $text-color;
+
+      &.active {
+        color: $primary;
+      }
+    }
+  }
 }

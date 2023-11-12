@@ -1,4 +1,7 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 // import PropTypes from 'prop-types';
 import styles from './ProductPage.module.scss';
 
@@ -12,6 +15,16 @@ const ProductPage = () => (
         <h3 className={styles.bannerSubtitle}>
           Always <span className={styles.subtitleColor}>25%</span>off or more
         </h3>
+      </div>
+
+      <div className={styles.srcLinks}>
+        <Link to={'/'}> Home</Link>
+
+        <FontAwesomeIcon icon={faAngleRight} />
+
+        <Link to={'/product/furniture'} className={styles.active}>
+          Furniture
+        </Link>
       </div>
     </div>
   </div>
