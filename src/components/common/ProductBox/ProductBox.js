@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import clsx from 'clsx';
+import { clsx } from 'clsx';
 import styles from './ProductBox.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExchangeAlt, faShoppingBasket } from '@fortawesome/free-solid-svg-icons';
@@ -9,7 +9,6 @@ import Button from '../Button/Button';
 import StarsRating from '../../features/StarsRating/StarsRating';
 import { addProductToCompare } from '../../../redux/compareRedux';
 import { useDispatch } from 'react-redux';
-
 
 const ProductBox = ({ name, price, promo, stars, isFavorite, isCompare, id, ownRating, oldPrice  }) => {
   const buttonFavoriteActive = clsx('outline', {
@@ -25,19 +24,13 @@ const ProductBox = ({ name, price, promo, stars, isFavorite, isCompare, id, ownR
   const addToCompare = () => {
     dispatch(addProductToCompare(product));
   };
+
   return (
-    <div
-      className={styles.root}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
+    <div className={styles.root}>
       <div className={styles.photo}>
         <img src={`images/beds/${name}.jpg`} alt={name} />
         {promo && <div className={styles.sale}>{promo}</div>}
-        <div
-          className={styles.buttons}
-          style={isHovered === true ? { opacity: 1 } : { opacity: 0 }}
-        >
+        <div className={styles.buttons}>
           <Button variant='small'>Quick View</Button>
           <Button variant='small'>
             <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> ADD TO CART
@@ -53,18 +46,23 @@ const ProductBox = ({ name, price, promo, stars, isFavorite, isCompare, id, ownR
       <div className={styles.line}></div>
       <div className={styles.actions}>
         <div className={styles.outlines}>
-          <Button variant='outline' className={buttonFavoriteActive}>
+          <Button variant='outline'>
             <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
           </Button>
-          <Button variant='outline' onClick={addToCompare}  className={buttonCompareActive}>
+          <Button
+            variant='outline'
+            onClick={addToCompare}
+            className={buttonCompareActive}
+          >
             <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
           </Button>
         </div>
         <div className={styles.price}>
-        {oldPrice ? <span className={styles.oldPrice}>${oldPrice}</span> : ''}
-        <Button noHover variant='small'>
-          $ {price}
-        </Button>
+          {oldPrice ? <span className={styles.oldPrice}>${oldPrice}</span> : ''}
+          <Button noHover variant='small'>
+            $ {price}
+          </Button>
+        </div>
       </div>
     </div>
   );
