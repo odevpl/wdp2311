@@ -71,35 +71,40 @@
   .postsContainer {
     display: flex;
     justify-content: center;
-  }
   
-  .postBox {
-    display: flex;
-    flex-direction: column;
-    margin: 10px; /* Add margin for spacing between post boxes */
-  }
+    .postImage {
+      width: 322px;
+      height: 260px;
+      background-color: $light-grey-bg;
+    }
   
-  .postImage {
-    width: 322px;
-    height: 260px;
-    background-color: $light-grey-bg;
-  }
-  
-  .postInfo {
-    width: 260px;
-    height: 290px;
-    left: 50%;
-    transform: translate(-50%, -20%);
-    background-color: $white;
-    position: relative; 
-    z-index: 1; 
-  }
+    .postInfo {
+      width: 260px;
+      height: 290px;
+      left: 50%;
+      transform: translate(-50%, -20%);
+      background-color: $white;
+      position: relative; 
+      z-index: 1; 
+    }
 
-  .details {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    font-size: 10px;
-    padding: 25px;
+    .details {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      font-size: 10px;
+      padding: 30px;
+      color: $light-grey-bg;
+
+        .icon{
+          padding: 3px;
+        }
+    }
+    
+
+    .postText { 
+    color: rgb(106, 103, 103);;
+    font-size: 12px;
+    }
   }
 }
