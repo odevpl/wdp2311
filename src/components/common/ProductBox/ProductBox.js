@@ -11,17 +11,7 @@ import { addProductToCompare } from '../../../redux/compareRedux';
 import { useDispatch } from 'react-redux';
 import Popup from '../Popup/Popup';
 
-const ProductBox = ({
-  name,
-  price,
-  promo,
-  stars,
-  isFavorite,
-  isCompare,
-  id,
-  ownRating,
-  oldPrice,
-}) => {
+const ProductBox = ({ name, price, promo, stars, isFavorite, isCompare, id, ownRating, oldPrice  }) => {
   const buttonFavoriteActive = clsx('outline', {
     [styles.favorite]: isFavorite,
   });
@@ -105,7 +95,7 @@ const ProductBox = ({
         </div>
         <div className={styles.price}>
           {oldPrice ? <span className={styles.oldPrice}>${oldPrice}</span> : ''}
-          <Button noHover variant='small'>
+          <Button noHover variant='small' className={styles.priceBtn}>
             $ {price}
           </Button>
         </div>
