@@ -7,10 +7,10 @@ import styles from './ProductPage.module.scss';
 
 const ProductPage = () => (
   <div className={styles.root}>
-    <div className='container'>
+    <div className={'container ' + styles.container}>
       <div className={styles.banner}>
         <h1 className={styles.bannerTitle}>
-          Bedroom <span className='font-weight-bold'>Furniture</span>
+          Bedroom <span className='font-weight-bold'> Furniture</span>
         </h1>
         <h3 className={styles.bannerSubtitle}>
           Always <span className={styles.subtitleColor}>25%</span>off or more
