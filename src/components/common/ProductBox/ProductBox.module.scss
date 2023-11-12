@@ -38,6 +38,7 @@
     .buttons {
       display: flex;
       justify-content: space-between;
+      transition: opacity 0.3s;
     }
   }
 

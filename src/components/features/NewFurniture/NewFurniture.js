@@ -83,7 +83,10 @@ class NewFurniture extends React.Component {
                 (activePage + 1) * productsPerPage[layout]
               )
               .map(item => (
-                <div key={item.id} className={'col-12 col-md-4 col-lg-3 ' + styles.desktopProduct}>
+                <div
+                  key={item.id}
+                  className={'col-12 col-md-4 col-lg-3 ' + styles.desktopProduct}
+                >
                   <ProductBox {...item} />
                 </div>
               ))}
