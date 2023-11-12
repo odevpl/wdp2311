@@ -7,8 +7,7 @@ import BestDeal from '../BestDeal/BestDeal';
 
 const Promotional = () => {
   const [deal, setDeal] = useState(0);
-  const promotionalProducts = Object.values(useSelector(allPromotional));
-
+  const promotionalProducts = useSelector(allPromotional);
   return (
     <div className={styles.root}>
       <div className='container'>
