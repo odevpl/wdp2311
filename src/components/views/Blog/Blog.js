@@ -59,7 +59,7 @@ const Blog = () => {
                   aliquip ex ea commodo consequat.
                 </p>
               </div>
-              <Button> Read more</Button>
+              <button> Read more</button>
             </div>
           </div>
 

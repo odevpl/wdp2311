@@ -79,7 +79,7 @@
     }
   
     .postInfo {
-      width: 260px;
+      width: 269px;
       height: 290px;
       left: 50%;
       transform: translate(-50%, -20%);
@@ -93,18 +93,43 @@
       flex-direction: row;
       justify-content: space-between;
       font-size: 10px;
-      padding: 30px;
+      padding: 20px 20px 25px 20px;
       color: $light-grey-bg;
 
         .icon{
           padding: 3px;
         }
     }
-    
 
     .postText { 
-    color: rgb(106, 103, 103);;
+    color: $dark-grey;
     font-size: 12px;
     }
+
+    button{
+      background-color: $dark-grey;
+      color: $white;
+      border: none;
+      transform: translate(30%, 30%);
+      width: 150px;
+      height: 40px;
+      font-size: 12px;
+      font-style: bold;
+      transition: background-color 0.1s, $dim-orange 0.1s; /* Add smooth transition */
+    }
+  
+    .postInfo:hover button {
+      background-color: $dim-orange;
+    }
+      
+    .postInfo:hover h6 {
+      color: $dim-orange;
+    }
+      
+    .postInfo:hover .details,
+    .postInfo:hover .postText {
+      color: rgb(106, 103, 103);
+    }
+
   }
 }
