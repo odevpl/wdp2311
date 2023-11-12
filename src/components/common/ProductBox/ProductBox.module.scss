@@ -24,7 +24,6 @@
       padding: 0;
     }
 
-
     .sale {
       position: absolute;
       top: -30px;
@@ -39,6 +38,7 @@
     .buttons {
       display: flex;
       justify-content: space-between;
+      transition: opacity 0.3s;
     }
   }
 
@@ -92,5 +92,8 @@
         margin: auto 6px;
       }
     }
+  }
+  &:hover .priceBtn {
+    background-color: $primary;
   }
 }
