@@ -24,7 +24,6 @@
       padding: 0;
     }
 
-
     .sale {
       position: absolute;
       top: -30px;
@@ -92,5 +91,8 @@
         margin: auto 6px;
       }
     }
+  }
+  &:hover .prices {
+    background-color: $primary;
   }
 }
