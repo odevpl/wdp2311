@@ -10,17 +10,7 @@ import StarsRating from '../../features/StarsRating/StarsRating';
 import { addProductToCompare } from '../../../redux/compareRedux';
 import { useDispatch } from 'react-redux';
 
-const ProductBox = ({
-  name,
-  price,
-  promo,
-  stars,
-  isFavorite,
-  isCompare,
-  id,
-  ownRating,
-  oldPrice,
-}) => {
+const ProductBox = ({ name, price, promo, stars, isFavorite, isCompare, id, ownRating, oldPrice  }) => {
   const buttonFavoriteActive = clsx('outline', {
     [styles.favorite]: isFavorite,
   });
