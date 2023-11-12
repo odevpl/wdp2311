@@ -4,15 +4,15 @@
 // }
 
 .main {
-  background-color: $button-bg;
-  color: $pure-white;
+  background-color: #2a2a2a;
+  color: #ffffff;
   font-size: 16px;
   line-height: 24px;
   font-weight: 600;
   padding: 10px 30px;
 
   &:not(.noHover):hover {
-    color: $pure-white !important;
+    color: #ffffff !important;
     background-color: $primary;
     text-decoration: none;
   }
@@ -29,13 +29,13 @@
 .outline {
   display: inline-block;
   padding: 5px 10px;
-  border: 1px solid $dark-grey;
-  color: $text-color;
+  border: 1px solid #2a2a2a;
+  color: #2a2a2a;
   font-size: 13px;
   line-height: 22px;
 
   &:not(.noHover):hover {
-    background-color: $button-bg;
-    color: $pure-white;
+    background-color: #2a2a2a;
+    color: #ffffff;
   }
 }

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import clsx from 'clsx';
+import { clsx } from 'clsx';
 import styles from './ProductBox.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExchangeAlt, faShoppingBasket } from '@fortawesome/free-solid-svg-icons';
@@ -61,8 +61,9 @@ const ProductBox = ({
           id,
           ownRating,
         }}
-      ></Popup>
+      />
       <div className={styles.photo}>
+        <img src={`images/beds/${name}.jpg`} alt={name} />
         {promo && <div className={styles.sale}>{promo}</div>}
         <div
           className={styles.buttons}
@@ -91,18 +92,23 @@ const ProductBox = ({
       <div className={styles.line}></div>
       <div className={styles.actions}>
         <div className={styles.outlines}>
-          <Button variant='outline' className={buttonFavoriteActive}>
+          <Button variant='outline'>
             <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
           </Button>
-          <Button variant='outline' onClick={addToCompare} className={buttonCompareActive}>
+          <Button
+            variant='outline'
+            onClick={addToCompare}
+            className={buttonCompareActive}
+          >
             <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
           </Button>
         </div>
         <div className={styles.price}>
-        {oldPrice ? <span className={styles.oldPrice}>${oldPrice}</span> : ''}
-        <Button noHover variant='small'>
-          $ {price}
-        </Button>
+          {oldPrice ? <span className={styles.oldPrice}>${oldPrice}</span> : ''}
+          <Button noHover variant='small'>
+            $ {price}
+          </Button>
+        </div>
       </div>
     </div>
   );

@@ -1,13 +1,9 @@
 @import "../../../styles/settings.scss";
 
 .root {
-  background-color: $pure-white;
+  background-color: #ffffff;
   border: 1px solid #e1e1e1;
   margin-bottom: 2rem;
-
-  &:hover .price {
-    background-color: $primary;
-  }
 
   .photo {
     position: relative;
@@ -35,15 +31,13 @@
       transform: translateX(-50%);
       background-color: #292929;
       border-radius: 50%;
-      color: $pure-white;
+      color: #ffffff;
       padding: 30px 15px 5px 15px;
     }
 
     .buttons {
-      opacity: 0;
       display: flex;
       justify-content: space-between;
-      transition: opacity 0.3s;
     }
   }
 
@@ -68,7 +62,7 @@
 
   .line {
     margin: 0 10px;
-    border-bottom: 1px solid $dark-grey;
+    border-bottom: 1px solid #2a2a2a;
     position: relative;
 
     &::before {
