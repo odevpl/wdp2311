@@ -1,11 +1,14 @@
 import React from 'react';
 import styles from './Blog.module.scss';
-import Button from '../../common/Button/Button';
 import { faGift } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faComments } from '@fortawesome/free-solid-svg-icons';
+import { useSelector } from 'react-redux';
 
 const Blog = () => {
+  const posts = useSelector(state => state.posts);
+  console.log(posts);
+
   return (
     <div className={styles.root}>
       <div className='container'>
@@ -20,57 +23,44 @@ const Blog = () => {
                   <a className={styles.active}>page </a>
                 </li>
                 <li>
-                  <a>page </a>
+                  <a>page</a>
                 </li>
                 <li>
-                  <a> page</a>
+                  <a>page</a>
                 </li>
               </ul>
             </div>
           </div>
         </div>
-
         <div className={styles.postsContainer}>
-          <div className='col m-3'>
-            <div className={styles.postImage}></div>
+          {posts.map(post => (
+            <div key={post.id} className='col m-3'>
+              <div className={styles.postImage}></div>
 
-            <div className={styles.postInfo}>
-              <div className={styles.details}>
-                <p>
-                  <span className={styles.icon}>
-                    <FontAwesomeIcon icon={faGift}>gift</FontAwesomeIcon>
-                  </span>
-                  15 JAN 2016
-                </p>
+              <div className={styles.postInfo}>
+                <div className={styles.details}>
+                  <p>
+                    <span className={styles.icon}>
+                      <FontAwesomeIcon icon={faGift}>gift</FontAwesomeIcon>
+                    </span>
+                    {post.date}
+                  </p>
 
-                <p>
-                  <span className={styles.icon}>
-                    <FontAwesomeIcon icon={faComments}>gift</FontAwesomeIcon>
-                  </span>
-                  4 comments
-                </p>
+                  <p>
+                    <span className={styles.icon}>
+                      <FontAwesomeIcon icon={faComments}>comments</FontAwesomeIcon>
+                    </span>
+                    {post.comments}comments
+                  </p>
+                </div>
+                <div>
+                  <h6>{post.header}</h6>
+                  <p className={styles.postText}>{post.description}</p>
+                </div>
+                <button> Read more</button>
               </div>
-              <div>
-                <h6>Products that fight static</h6>
-                <p className={styles.postText}>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                  eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                  minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                  aliquip ex ea commodo consequat.
-                </p>
-              </div>
-              <button> Read more</button>
             </div>
-          </div>
-
-          <div className='col m-3'>
-            <div className={styles.postImage}></div>
-            <div className={styles.postInfo}></div>
-          </div>
-          <div className='col m-3'>
-            <div className={styles.postImage}></div>
-            <div className={styles.postInfo}></div>
-          </div>
+          ))}
         </div>
       </div>
     </div>
