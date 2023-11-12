@@ -1,14 +1,18 @@
+import { createSelector } from '@reduxjs/toolkit';
 /* selectors */
 export const getAll = ({ products }) => products;
 export const getCount = ({ products }) => products.length;
 
-export const getNew = ({ products }) => {
-  const productsArray = Object.values(products || {});
-  return productsArray.filter(item => item.newFurniture === true);
-};
+const selectProducts = state => state.products;
+const selectProductId = (state, id) => id;
 
-const reducerName = 'products';
-const createActionName = name => `app/${reducerName}/${name}`;
+export const getProductById = createSelector(
+  [selectProducts, selectProductId],
+  (products, id) => products.find(product => product.id === id)
+);
+
+export const getNew = ({ products }) =>
+  products.filter(item => item.newFurniture === true);
 
 export const allPromotional = ({ promotional }) => promotional;
 const UPDATE_YOUR_STARS_RATE = 'UPDATE_YOUR_STARS_RATE';
