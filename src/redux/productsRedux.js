@@ -52,6 +52,10 @@ export default function reducer(statePart = initialState, action = {}) {
       };
     }
 
+    case UPDATE_YOUR_STARS_RATE:
+      return statePart.map(product =>
+        product.id === action.payload.id ? { ...product, ...action.payload } : product
+      );
     default:
       return statePart;
   }

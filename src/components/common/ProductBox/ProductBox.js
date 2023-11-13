@@ -7,7 +7,7 @@ import { addToFavorites, removeFromFavorites } from '../../../redux/productsRedu
 import styles from './ProductBox.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExchangeAlt, faShoppingBasket } from '@fortawesome/free-solid-svg-icons';
-import { faStar as faHeart } from '@fortawesome/free-regular-svg-icons';
+import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../Button/Button';
 import initialState from '../../../redux/initialState';
 import StarsRating from '../../features/StarsRating/StarsRating';
@@ -126,7 +126,7 @@ const ProductBox = ({
         </div>
         <div className={styles.price}>
           {oldPrice ? <span className={styles.oldPrice}>${oldPrice}</span> : ''}
-          <Button noHover variant='small' className={styles.priceBtn}>
+          <Button noHover variant='small' className={styles.prices}>
             $ {price}
           </Button>
         </div>
