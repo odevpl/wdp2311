@@ -10,6 +10,7 @@ import MainLayout from './components/layout/MainLayout/MainLayout';
 import Homepage from './components/views/Homepage/Homepage';
 import ProductList from './components/views/ProductList/ProductList';
 import ProductPage from './components/views/ProductPage/ProductPage';
+import Shop from './components/views/Shop/Shop';
 
 const App = () => (
   <Provider store={store}>
@@ -17,6 +18,7 @@ const App = () => (
       <MainLayout>
         <Routes>
           <Route path='/' element={<Homepage />} />
+          <Route path={'/shop'} element={<Shop />} />
           <Route path='/shop/:categoryId' element={<ProductList />} />
           <Route path='/product/:productId' element={<ProductPage />} />
         </Routes>
