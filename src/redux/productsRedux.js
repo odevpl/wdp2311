@@ -1,3 +1,4 @@
+/* selectors */
 export const getAll = ({ products }) => products;
 export const getCount = ({ products }) => products.length;
 
@@ -19,6 +20,9 @@ export const removeFromFavorites = payload => ({
   payload,
   type: REMOVE_FROM_FAVORITES,
 });
+export const allPromotional = ({ promotional }) => promotional;
+const UPDATE_YOUR_STARS_RATE = 'UPDATE_YOUR_STARS_RATE';
+export const addStarsRating = payload => ({ type: UPDATE_YOUR_STARS_RATE, payload });
 
 /* reducer */
 const initialState = {

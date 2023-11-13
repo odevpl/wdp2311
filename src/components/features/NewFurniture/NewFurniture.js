@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import styles from './NewFurniture.module.scss';
 import ProductBox from '../../common/ProductBox/ProductBox';
+import CompareProducts from '../../views/CompareProducts/CompareProducts';
 
 import { connect } from 'react-redux';
 import { getLayout } from '../../../redux/layoutRedux';
@@ -54,10 +55,10 @@ class NewFurniture extends React.Component {
     const dots = [];
     for (let i = 0; i < pagesCount; i++) {
       dots.push(
-        <li>
+        <li key={i}>
           <a
             onClick={() => this.handlePageChange(i)}
-            className={i === activePage && styles.active}
+            className={i === activePage ? styles.active : ''}
           >
             page {i}
           </a>
@@ -78,7 +79,7 @@ class NewFurniture extends React.Component {
                   {categories.map(item => (
                     <li key={item.id}>
                       <a
-                        className={item.id === activeCategory && styles.active}
+                        className={item.id === activeCategory ? styles.active : ''}
                         onClick={() => this.handleCategoryChange(item.id)}
                       >
                         {item.name}
@@ -102,6 +103,9 @@ class NewFurniture extends React.Component {
                 <ProductBox {...item} />
               </div>
             ))}
+          </div>
+          <div className={styles.compare}>
+            <CompareProducts />
           </div>
         </div>
       </div>
