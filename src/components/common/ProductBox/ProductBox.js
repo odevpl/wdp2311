@@ -126,7 +126,7 @@ const ProductBox = ({
         </div>
         <div className={styles.price}>
           {oldPrice ? <span className={styles.oldPrice}>${oldPrice}</span> : ''}
-          <Button noHover variant='small' className={styles.prices}>
+          <Button noHover variant='small' className={styles.priceBtn}>
             $ {price}
           </Button>
         </div>

@@ -485,9 +485,8 @@ const initialState = {
   cart: {
     products: [],
   },
-
-  promotional: {
-    first: {
+  promotional: [
+    {
       id: 'aenean-ru-bristique-24',
       name: 'Aenean Ru Bristique 24',
       category: 'bed',
@@ -496,8 +495,9 @@ const initialState = {
       promo: 'sale',
       newFurniture: true,
     },
-  },
+  ],
 
+  productsToCompare: [],
   brands: [
     {
       id: 1,
