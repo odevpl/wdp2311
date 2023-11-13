@@ -12,6 +12,7 @@ function useLayoutListener() {
   const currentLayout = useSelector(getLayout);
   const dispatch = useDispatch();
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const setCurrentLayout = width => {
     let layout = Object.keys(LAYOUT_BREAKPOINTS)[0];
     for (const device in LAYOUT_BREAKPOINTS) {
