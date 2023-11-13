@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faListUl, faSearch, faCaretDown } from '@fortawesome/free-solid-svg-icons';
@@ -6,9 +6,16 @@ import { faListUl, faSearch, faCaretDown } from '@fortawesome/free-solid-svg-ico
 import styles from './ProductSearch.module.scss';
 import { getAll } from '../../../redux/categoriesRedux';
 import { useSelector } from 'react-redux';
+import { Link, useHistory } from 'react-router-dom';
 
 const ProductSearch = () => {
   const allCategories = useSelector(getAll);
+  const history = useHistory();
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const handleSearch = () => {
+    history.push(`/search/${searchTerm}`);
+  };
 
   return (
     <form action='' className={styles.root}>
@@ -31,9 +38,17 @@ const ProductSearch = () => {
         <FontAwesomeIcon className={styles.icon} icon={faCaretDown} />
       </div>
       <div className={styles.searchField}>
-        <input placeholder='Search products...' type='text' />
-        <button>
-          <FontAwesomeIcon className={styles.icon} icon={faSearch} />
+        <input
+          value={searchTerm}
+          onChange={e => setSearchTerm(e.target.value)}
+          placeholder='Search products...'
+          type='text'
+        />
+        <button onClick={handleSearch}>
+          <Link to='/search'>
+            {' '}
+            <FontAwesomeIcon className={styles.icon} icon={faSearch} />
+          </Link>
         </button>
       </div>
     </form>
