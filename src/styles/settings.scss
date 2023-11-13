@@ -1,14 +1,29 @@
+$white: #ffffff;
+$dim-white: rgb(169, 169, 169);
+$dim-orange: #d58e32;
+$dark-grey: #2a2a2a;
+$grey-bg: #363636;
+$light-grey-bg: #434343;
+/* NOT FOR USE OUTSIDE THIS FILE */
+
+// VARIABLES USED IN COMPONENTS
+
 $base-padding: 24px;
-$pure-white: #fff;
+$form-border-color: #292929;
 
 $header-topbar-bg: #434343;
 $header-bg: #363636;
+$product-header-bg: #3f3f3f;
+$header-bg: $grey-bg;
+$header-topbar-bg: $light-grey-bg;
 
-$footer-claim-bg: #2a2a2a;
-$footer-bg: #363636;
+$footer-bg: $grey-bg;
+$footer-claim-bg: $dark-grey;
+$footer-text-elements: $dim-white;
 
-$primary: #d58e32;
+$button-bg: $dark-grey;
 
-$text-color: #2a2a2a;
+$primary: $dim-orange;
+$pure-white: $white;
 
-$form-border-color: #292929;
+$text-color: $dark-grey;

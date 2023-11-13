@@ -1,0 +1,125 @@
+@import "../../../styles/settings.scss";
+
+.chatBox{
+  position: fixed;
+  left: 260px;
+  top: 63%;
+  bottom: 0;
+  width: 225px;
+  background-color: transparent;
+  z-index: 1;
+  border: 1px solid $primary;
+  max-height: 300px;
+  border-radius: 5px;
+    .top{
+      background-color: $primary;
+      border-bottom: 5px;
+      padding: 0;
+      margin: 0;
+      width: 100%;
+      height: 40px;
+      color: $pure-white;
+      display: flex;
+      justify-content: end;
+      align-items: center;
+      .icon{
+        padding-right: 10px;
+        width: 50px;
+        display: flex;
+        justify-content: space-around;
+        font-size: 14px;
+      }
+    }
+    .textAreaView{
+      background-color: $pure-white;
+      border-top: 5px;
+      padding: 0;
+      margin: 0;
+      width: 100%;
+      height: 188px;
+      color: $header-bg;
+      bottom: 0px;
+      font-size: 14px;
+      padding-left: 10px
+    }
+    .textArea{
+      background-color: $pure-white;
+      padding: 0;
+      margin: 0;
+      width: 100%;
+      height: 30px;
+      color: $header-bg;
+      bottom: 0px;
+      display: flex;
+      font-size: 14px;
+      border: none;
+      input{
+        font-size: 14px;
+        width: 80%;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+        color: $pure-white;
+        background-color: $header-bg;
+        border: none;
+        padding-left: 10px
+      }
+        button{
+          width: 20%;
+          padding: 0;
+          margin: 0;
+          border: none;
+          background-color:$header-bg;
+          svg {
+            background-color:$header-bg;
+            color: $pure-white;
+            font-size: 14px;
+          }
+        }
+    }
+    .bottom{
+      background-color: $primary;
+      border-bottom: 5px;
+      padding: 0;
+      margin: 0;
+      width: 100%;
+      height: 40px;
+      color: $pure-white;
+      bottom: 0px;
+    }
+}
+.button{
+  position: fixed;
+  left: 20px;
+  bottom: 30px;
+  border: 1px solid $text-color;
+  border-radius: 50%;
+  z-index: 1;
+    cursor: pointer;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    a{
+      color: $text-color;
+      font-style: normal;
+      font-size: 14px;
+      text-decoration: none;
+
+    }
+    .faEdit{
+      font-size: 16px;
+    }
+}
+  .text{
+    left: 80px;
+    bottom: 40px;
+    color: $pure-white;
+    position: fixed;
+    background-color: $text-color ;
+    opacity: 0.5;
+    padding: 5px;
+     border-radius: 5px;
+    font-size: 14px;
+}
