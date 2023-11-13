@@ -61,6 +61,13 @@ const ProductBox = ({
     dispatch(addProductToCompare(product));
   };
 
+  const handleToggleFavorite = () => {
+    if (isFavorite) {
+      dispatch(removeFromFavorites({ id }));
+    } else {
+      dispatch(addToFavorites({ id }));
+    }
+  };
   return (
     <div
       className={styles.root}
@@ -113,7 +120,11 @@ const ProductBox = ({
       <div className={styles.line}></div>
       <div className={styles.actions}>
         <div className={styles.outlines}>
-          <Button variant='outline'>
+          <Button
+            variant='outline'
+            onClick={handleToggleFavorite}
+            className={isFavorite ? styles.favorite : ''}
+          >
             <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
           </Button>
           <Button variant='outline' className={buttonCompareActive}>
@@ -138,8 +149,8 @@ ProductBox.propTypes = {
   price: PropTypes.number,
   promo: PropTypes.string,
   stars: PropTypes.number,
+  category: PropTypes.string,
   oldPrice: PropTypes.number,
-  isFavorite: PropTypes.bool,
   isCompare: PropTypes.bool,
   ownRating: PropTypes.number,
   category: PropTypes.string,
