@@ -1,61 +1,45 @@
-import React, { useEffect } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { useDispatch, useSelector } from 'react-redux';
-import { addToFavorites, removeFromFavorites } from '../../../redux/productsRedux';
+import { clsx } from 'clsx';
 import styles from './ProductBox.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faStar,
-  faExchangeAlt,
-  faShoppingBasket,
-} from '@fortawesome/free-solid-svg-icons';
-import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons';
+import { faExchangeAlt, faShoppingBasket } from '@fortawesome/free-solid-svg-icons';
+import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../Button/Button';
-import initialState from '../../../redux/initialState';
+import StarsRating from '../../features/StarsRating/StarsRating';
+import { addProductToCompare } from '../../../redux/compareRedux';
+import { useDispatch } from 'react-redux';
 import Popup from '../Popup/Popup';
-import clsx from 'clsx';
-import { useState } from 'react';
 
 const ProductBox = ({
   name,
   price,
   promo,
   stars,
+  isFavorite,
   isCompare,
   id,
   ownRating,
   oldPrice,
 }) => {
-  /*const buttonFavoriteActive = clsx('outline', {
+  const buttonFavoriteActive = clsx('outline', {
     [styles.favorite]: isFavorite,
-  });*/
-  /*const buttonCompareActive = clsx('outline', {
+  });
+  const buttonCompareActive = clsx('outline', {
     [styles.favorite]: isCompare,
-  });*/
+  });
   const [isHovered, setIsHovered] = useState(false);
 
   const [modalShow, setModalShow] = useState(false);
   const [backgroundBlur, setBackgroundBlur] = useState(false);
 
   const dispatch = useDispatch();
-  const favorites = useSelector(state => state.products.favorites || {});
-  console.log('Favorites:', favorites);
+  const product = { name };
 
-  useEffect(() => {
-    if (Object.keys(favorites).length === 0) {
-      dispatch(addToFavorites({ id: initialState.products[0].id }));
-    }
-  }, [dispatch, favorites, id]);
-
-  const isFavorite = favorites[id];
-
-  const handleToggleFavorite = () => {
-    if (isFavorite) {
-      dispatch(removeFromFavorites({ id }));
-    } else {
-      dispatch(addToFavorites({ id }));
-    }
+  const addToCompare = () => {
+    dispatch(addProductToCompare(product));
   };
+
   return (
     <div
       className={styles.root}
@@ -102,33 +86,26 @@ const ProductBox = ({
       <div className={styles.content}>
         <h5>{name}</h5>
         <div className={styles.stars}>
-          {[1, 2, 3, 4, 5].map(i => (
-            <a key={i} href='#'>
-              {i <= stars ? (
-                <FontAwesomeIcon icon={faStar}>{i} stars</FontAwesomeIcon>
-              ) : (
-                <FontAwesomeIcon icon={farStar}>{i} stars</FontAwesomeIcon>
-              )}
-            </a>
-          ))}
+          <StarsRating stars={stars} id={id} ownRating={ownRating} />
         </div>
       </div>
       <div className={styles.line}></div>
       <div className={styles.actions}>
         <div className={styles.outlines}>
-          <Button
-            variant='outline'
-            onClick={handleToggleFavorite}
-            className={isFavorite ? styles.favorite : ''}
-          >
+          <Button variant='outline'>
             <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
           </Button>
-          <Button variant='outline'>
+          <Button
+            variant='outline'
+            onClick={addToCompare}
+            className={buttonCompareActive}
+          >
             <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
           </Button>
         </div>
         <div className={styles.price}>
-          <Button noHover variant='small'>
+          {oldPrice ? <span className={styles.oldPrice}>${oldPrice}</span> : ''}
+          <Button noHover variant='small' className={styles.priceBtn}>
             $ {price}
           </Button>
         </div>
@@ -136,17 +113,17 @@ const ProductBox = ({
     </div>
   );
 };
-
 ProductBox.propTypes = {
   children: PropTypes.node,
-  id: PropTypes.string,
   name: PropTypes.string,
   price: PropTypes.number,
   promo: PropTypes.string,
   stars: PropTypes.number,
-  ownRating: PropTypes.number,
   oldPrice: PropTypes.number,
-  isCompare: PropTypes.string,
+  isFavorite: PropTypes.bool,
+  isCompare: PropTypes.bool,
+  id: PropTypes.string,
+  ownRating: PropTypes.number,
 };
 
 export default ProductBox;
