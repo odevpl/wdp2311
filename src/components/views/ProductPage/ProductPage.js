@@ -84,7 +84,7 @@ const ProductPage = () => {
             <div className='d-flex justify-content-between'>
               <div>
                 <p>
-                  <b>chair</b>
+                  <b>Chair</b>
                 </p>
               </div>
               <div className={styles.buttons}>
