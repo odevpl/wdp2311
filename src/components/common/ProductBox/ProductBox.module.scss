@@ -92,8 +92,18 @@
         margin: auto 6px;
       }
     }
+    
   }
+    
   &:hover .priceBtn {
     background-color: $primary;
   }
+
+  .hovered {
+    opacity: 1;
+  }
+}
+
+.favorite {
+  background-color: $primary;
 }
