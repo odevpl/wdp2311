@@ -1,0 +1,16 @@
+
+
+.dealsColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 100%; 
+}
+
+.dealsColumn:first-child {
+  flex: 1; 
+}
+
+.dealsColumn:last-child {
+  flex: 1; 
+}
