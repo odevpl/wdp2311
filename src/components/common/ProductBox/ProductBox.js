@@ -12,8 +12,31 @@ import {
 import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../Button/Button';
 import initialState from '../../../redux/initialState';
+import Popup from '../Popup/Popup';
+import clsx from 'clsx';
+import { useState } from 'react';
 
-const ProductBox = ({ id, name, price, promo, stars }) => {
+const ProductBox = ({
+  name,
+  price,
+  promo,
+  stars,
+  isCompare,
+  id,
+  ownRating,
+  oldPrice,
+}) => {
+  /*const buttonFavoriteActive = clsx('outline', {
+    [styles.favorite]: isFavorite,
+  });*/
+  /*const buttonCompareActive = clsx('outline', {
+    [styles.favorite]: isCompare,
+  });*/
+  const [isHovered, setIsHovered] = useState(false);
+
+  const [modalShow, setModalShow] = useState(false);
+  const [backgroundBlur, setBackgroundBlur] = useState(false);
+
   const dispatch = useDispatch();
   const favorites = useSelector(state => state.products.favorites || {});
   console.log('Favorites:', favorites);
@@ -34,12 +57,43 @@ const ProductBox = ({ id, name, price, promo, stars }) => {
     }
   };
   return (
-    <div className={styles.root}>
+    <div
+      className={styles.root}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      <Popup
+        show={modalShow}
+        onHide={() => {
+          setModalShow(false);
+          setBackgroundBlur(false);
+        }}
+        {...{
+          backgroundBlur,
+          name,
+          price,
+          promo,
+          stars,
+          id,
+          ownRating,
+        }}
+      />
       <div className={styles.photo}>
         <img src={`images/beds/${name}.jpg`} alt={name} />
         {promo && <div className={styles.sale}>{promo}</div>}
-        <div className={styles.buttons}>
-          <Button variant='small'>Quick View</Button>
+        <div
+          className={styles.buttons}
+          style={isHovered === true ? { opacity: 1 } : { opacity: 0 }}
+        >
+          <Button
+            variant='small'
+            onClick={() => {
+              setModalShow(true);
+              setBackgroundBlur(true);
+            }}
+          >
+            Quick View
+          </Button>
           <Button variant='small'>
             <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> ADD TO CART
           </Button>
@@ -90,6 +144,9 @@ ProductBox.propTypes = {
   price: PropTypes.number,
   promo: PropTypes.string,
   stars: PropTypes.number,
+  ownRating: PropTypes.number,
+  oldPrice: PropTypes.number,
+  isCompare: PropTypes.string,
 };
 
 export default ProductBox;
