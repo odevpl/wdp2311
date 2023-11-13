@@ -17,7 +17,7 @@ const Footer = ({ children }) => (
     <div className={styles.footerMenu}>
       <div className='container'>
         <div className='row'>
-          <div className='col-6 col-md-3 text-center'>
+          <div className='col'>
             <div className={styles.menuWrapper}>
               <h6>Information</h6>
               <ul>
@@ -36,7 +36,7 @@ const Footer = ({ children }) => (
               </ul>
             </div>
           </div>
-          <div className='col-6 col-md-3 text-center'>
+          <div className='col'>
             <div className={styles.menuWrapper}>
               <h6>My account</h6>
               <ul>
@@ -55,7 +55,7 @@ const Footer = ({ children }) => (
               </ul>
             </div>
           </div>
-          <div className='col-6 col-md-3 text-center'>
+          <div className='col'>
             <div className={styles.menuWrapper}>
               <h6>Information</h6>
               <ul>
@@ -74,7 +74,7 @@ const Footer = ({ children }) => (
               </ul>
             </div>
           </div>
-          <div className='col-6 col-md-3 text-center'>
+          <div className='col'>
             <div className={styles.menuWrapper}>
               <h6>Orders</h6>
               <ul>
@@ -92,23 +92,19 @@ const Footer = ({ children }) => (
                 </li>
               </ul>
             </div>
+            <img src='./images/cards.png' alt='Supported credit cards' />
           </div>
-          <img
-            src='./images/cards.png'
-            alt='Supported credit cards'
-            className='mx-auto'
-          />
         </div>
       </div>
     </div>
     <div className={styles.bottomBar}>
       <div className='container'>
-        <div className='row align-items-center justify-content-between'>
-          <div className='d-none col-md-12 col-lg-4 mx-auto'></div>
-          <div className={'col-md-6 col-lg-5 ' + styles.copyright}>
+        <div className='row align-items-center'>
+          <div className='col'></div>
+          <div className={'col text-center ' + styles.copyright}>
             <p>©Copyright 2016 Bazar | All Rights Reserved</p>
           </div>
-          <div className={'col-md-6 col-lg-3 ' + styles.socialMedia}>
+          <div className={'col text-right ' + styles.socialMedia}>
             <ul>
               <li>
                 <a href='#'>
