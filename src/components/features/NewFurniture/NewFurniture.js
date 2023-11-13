@@ -97,16 +97,11 @@ class NewFurniture extends React.Component {
               isFading ? styles.fadeOut : styles.fadeIn
             }`}
           >
-            {categoryProducts
-              .slice(
-                activePage * productsPerPage[layout],
-                (activePage + 1) * productsPerPage[layout]
-              )
-              .map(item => (
-                <div key={item.id} className={styles.desktopProduct}>
-                  <ProductBox {...item} />
-                </div>
-              ))}
+            {categoryProducts.slice(activePage * 8, (activePage + 1) * 8).map(item => (
+              <div key={item.id} className='col-12 col-md-4 col-lg-3'>
+                <ProductBox {...item} />
+              </div>
+            ))}
           </div>
         </div>
       </div>
