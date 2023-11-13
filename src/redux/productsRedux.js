@@ -1,6 +1,3 @@
-const createActionName = actionName => `app/products/${actionName}`;
-const UPDATE_YOUR_STARS_RATE = createActionName('UPDATE_YOUR_STARS_RATE');
-
 /* selectors */
 export const getAll = ({ products }) => products;
 export const getCount = ({ products }) => products.length;
@@ -8,7 +5,8 @@ export const getCount = ({ products }) => products.length;
 export const getNew = ({ products }) =>
   products.filter(item => item.newFurniture === true);
 
-// action creators
+export const allPromotional = ({ promotional }) => promotional;
+const UPDATE_YOUR_STARS_RATE = 'UPDATE_YOUR_STARS_RATE';
 export const addStarsRating = payload => ({ type: UPDATE_YOUR_STARS_RATE, payload });
 
 /* reducer */

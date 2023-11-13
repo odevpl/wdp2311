@@ -32,13 +32,13 @@ const TopBar = () => (
         <div className={`col text-right ${styles.topMenu}`}>
           <ul>
             <li>
-              <a href='#' className={styles.login}>
-                <FontAwesomeIcon className={styles.icon} icon={faUser} />
+              <a href='#'>
+                <FontAwesomeIcon className={styles.icon} icon={faUser} /> Login
               </a>
             </li>
             <li>
-              <a href='#' className={styles.register}>
-                <FontAwesomeIcon className={styles.icon} icon={faLock} />
+              <a href='#'>
+                <FontAwesomeIcon className={styles.icon} icon={faLock} /> Register
               </a>
             </li>
             <li>

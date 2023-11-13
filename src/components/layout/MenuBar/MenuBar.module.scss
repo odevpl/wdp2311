@@ -2,7 +2,7 @@
 
 .root {
   box-shadow: 2px 3.464px 6px rgba(1, 2, 2, 0.2);
-  background-color: $pure-white;
+  background-color: #ffffff;
 
   :global(.container) > :global(.row) {
     height: 84px;
@@ -32,14 +32,14 @@
       text-decoration: none;
       display: flex;
       align-items: center;
-      border-top: 4px solid $pure-white;
+      border-top: 4px solid #ffffff;
       font-weight: 500;
       letter-spacing: 1px;
 
       &:hover,
       &.active {
         background-color: $primary;
-        color: $pure-white;
+        color: #ffffff;
         border-color: $primary;
       }
 

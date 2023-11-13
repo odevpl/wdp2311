@@ -3,7 +3,10 @@ import PropTypes from 'prop-types';
 
 import styles from './NewFurniture.module.scss';
 import ProductBox from '../../common/ProductBox/ProductBox';
+
 import Swipeable from '../../common/Swipeable/Swipeable';
+import CompareProducts from '../../views/CompareProducts/CompareProducts';
+
 
 import { connect } from 'react-redux';
 import { getLayout } from '../../../redux/layoutRedux';
@@ -42,10 +45,10 @@ class NewFurniture extends React.Component {
     const dots = [];
     for (let i = 0; i < pagesCount; i++) {
       dots.push(
-        <li>
+        <li key={i}>
           <a
             onClick={() => this.handlePageChange(i)}
-            className={i === activePage && styles.active}
+            className={i === activePage ? styles.active : ''}
           >
             page {i}
           </a>
@@ -78,21 +81,26 @@ class NewFurniture extends React.Component {
                 </div>
                 <div className={'col-auto ' + styles.dots}>
                   <ul>{dots}</ul>
-                </div>
               </div>
             </div>
           </div>
-          <div className={styles.productsContainer}>
+          <div className={'row ' + styles.productsContainer}>
             {categoryProducts
               .slice(
                 activePage * productsPerPage[layout],
                 (activePage + 1) * productsPerPage[layout]
               )
               .map(item => (
-                <div key={item.id} className={styles.desktopProduct}>
+                <div
+                  key={item.id}
+                  className={'col-12 col-md-4 col-lg-3 ' + styles.desktopProduct}
+                >
                   <ProductBox {...item} />
                 </div>
               ))}
+          </div>
+          <div className={styles.compare}>
+            <CompareProducts />
           </div>
         </div>
       </Swipeable>
