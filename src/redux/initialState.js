@@ -498,7 +498,6 @@ const initialState = {
     },
   },
 
-  productsToCompare: [],
   brands: [
     {
       id: 1,
@@ -531,6 +530,7 @@ const initialState = {
       url: 'images/brands/brands6.jpg',
     },
   ],
+  productsToCompare: [],
 };
 
 export default initialState;

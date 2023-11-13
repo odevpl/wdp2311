@@ -13,11 +13,11 @@ const CompareProducts = () => {
   const productNames = useSelector(getAll);
   const dispatch = useDispatch();
 
-  const handleCardClick = productName => {
-    const isIdInProducts = productNames.some(product => product.name === productName);
+  const handleCardClick = productId => {
+    const isIdInProducts = productNames.some(product => product.id === productId);
 
     if (isIdInProducts) {
-      dispatch(removeProductToCompare(productName));
+      dispatch(removeProductToCompare(productId));
     }
   };
 
@@ -27,7 +27,7 @@ const CompareProducts = () => {
         <div
           key={product.id}
           className={styles.product}
-          onClick={() => handleCardClick(product.name)}
+          onClick={() => handleCardClick(product.id)}
         >
           <div className={styles.imageContainer}>
             <img
