@@ -10,6 +10,10 @@ export const getNew = ({ products }) => {
 const reducerName = 'products';
 const createActionName = name => `app/${reducerName}/${name}`;
 
+export const allPromotional = ({ promotional }) => promotional;
+const UPDATE_YOUR_STARS_RATE = 'UPDATE_YOUR_STARS_RATE';
+export const addStarsRating = payload => ({ type: UPDATE_YOUR_STARS_RATE, payload });
+
 /* action types */
 const ADD_TO_FAVORITES = createActionName('ADD_TO_FAVORITES');
 const REMOVE_FROM_FAVORITES = createActionName('REMOVE_FROM_FAVORITES');
@@ -20,9 +24,6 @@ export const removeFromFavorites = payload => ({
   payload,
   type: REMOVE_FROM_FAVORITES,
 });
-export const allPromotional = ({ promotional }) => promotional;
-const UPDATE_YOUR_STARS_RATE = 'UPDATE_YOUR_STARS_RATE';
-export const addStarsRating = payload => ({ type: UPDATE_YOUR_STARS_RATE, payload });
 
 /* reducer */
 const initialState = {
