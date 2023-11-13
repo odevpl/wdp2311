@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './redux/store';
 
@@ -15,11 +15,11 @@ const App = () => (
   <Provider store={store}>
     <BrowserRouter>
       <MainLayout>
-        <Switch>
-          <Route exact path={'/'} component={Homepage} />
-          <Route exact path={'/shop/:categoryId'} component={ProductList} />
-          <Route exact path={'/product/:productId'} component={ProductPage} />
-        </Switch>
+        <Routes>
+          <Route path={'/'} element={<Homepage />} />
+          <Route path={'/shop/:categoryId'} element={<ProductList />} />
+          <Route path={'/product/:productId'} element={<ProductPage />} />
+        </Routes>
       </MainLayout>
     </BrowserRouter>
   </Provider>
