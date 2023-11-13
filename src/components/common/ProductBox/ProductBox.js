@@ -116,11 +116,7 @@ const ProductBox = ({
           <Button variant='outline'>
             <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
           </Button>
-          <Button
-            variant='outline'
-            onClick={addToCompare}
-            className={buttonCompareActive}
-          >
+          <Button variant='outline' className={buttonCompareActive}>
             <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
           </Button>
         </div>
