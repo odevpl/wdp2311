@@ -209,8 +209,29 @@
     a {
       margin-right: 5px;
     }
-    a:hover {
+    a {
       text-decoration: none;
+    }
+
+    a:first-child:hover {
+      background-color: #4867aa;
+      border: none;
+    }
+    a:nth-child(2):hover {
+      background-color: #c74337;
+      border: none;
+    }
+    a:nth-child(3):hover {
+      background-color: #1da1f2;
+      border: none;
+    }
+    a:nth-child(4):hover {
+      background-color: #c51e23;
+      border: none;
+    }
+    a:last-child:hover {
+      background-color: #0077b5;
+      border: none;
     }
   }
 }
