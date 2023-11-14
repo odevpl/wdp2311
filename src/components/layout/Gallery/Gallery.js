@@ -18,7 +18,11 @@ function Gallery() {
           </TabsBox>
         </div>
         <div className={styles.rightColumn + ' w-100'}>
-          <img src='1' alt={'image'} className={styles.rightImage} />
+          <img
+            src={window.location.origin + '/images/beds/Aenean Ru Bristique 13.jpg'}
+            alt={'image'}
+            className={styles.rightImage}
+          />
         </div>
       </div>
     </div>

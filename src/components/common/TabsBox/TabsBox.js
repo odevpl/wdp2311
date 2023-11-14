@@ -21,9 +21,6 @@ function TabsBox({ tabs = [], children }) {
 export default TabsBox;
 
 TabsBox.propTypes = {
-  tabs: PropTypes.shape({
-    map: PropTypes.func,
-    indexOf: PropTypes.func,
-  }),
+  tabs: PropTypes.array,
   children: PropTypes.node,
 };

@@ -32,9 +32,6 @@ function ImageSlider({ images = [], select = () => {} }) {
 export default ImageSlider;
 
 ImageSlider.propTypes = {
-  images: PropTypes.shape({
-    map: PropTypes.func,
-    indexOf: PropTypes.func,
-  }),
+  images: PropTypes.array,
   select: PropTypes.func,
 };
