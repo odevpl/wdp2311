@@ -28,6 +28,7 @@ function Swipeable({ leftAction = () => {}, rightAction = () => {}, children }) 
     if (!movableContents) return;
     movableContents.style.transform = 'translateX(0px)';
     movableContents.style.opacity = 1;
+    return true;
   };
 
   const animateContainer = (direction, firstChild) => {
