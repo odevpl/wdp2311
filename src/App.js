@@ -1,8 +1,8 @@
 import React from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './redux/store';
-
+import { Switch } from 'react-router-dom/cjs/react-router-dom';
 import './styles/bootstrap.scss';
 import './styles/global.scss';
 
