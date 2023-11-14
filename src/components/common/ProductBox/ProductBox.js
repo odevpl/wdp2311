@@ -35,7 +35,7 @@ const ProductBox = ({
   const [backgroundBlur, setBackgroundBlur] = useState(false);
 
   const dispatch = useDispatch();
-  const product = { name };
+  const product = { name, price };
 
   const addToCompare = () => {
     dispatch(addProductToCompare(product));
