@@ -4,6 +4,11 @@ import { Link } from 'react-router-dom';
 import styles from './ProductPage.module.scss';
 import { useSelector } from 'react-redux';
 import { getProductById } from '../../../redux/productsRedux';
+<<<<<<< HEAD
+=======
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Link } from 'react-router-dom';
+>>>>>>> 2c2e7b6 (Added banner back into /product subpage)
 import {
   faEnvelope,
   faHeart,
