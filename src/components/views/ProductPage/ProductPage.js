@@ -4,6 +4,7 @@ import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 // import PropTypes from 'prop-types';
 import styles from './ProductPage.module.scss';
+import NewFurnitureSinglePage from '../../features/NewFurniture/NewFurnitureSinglePage';
 
 const ProductPage = () => (
   <div className={styles.root}>
@@ -27,6 +28,7 @@ const ProductPage = () => (
         </Link>
       </div>
     </div>
+    <NewFurnitureSinglePage />
   </div>
 );
 
