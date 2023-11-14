@@ -7,6 +7,7 @@ import BrandsSlider from '../Brands/Brands';
 import Blog from '../Blog/Blog';
 import Promotional from '../../features/Promotional/Promotional';
 import Chatbot from '../../views/Chatbot/Chatbot';
+import Gallery from '../../layout/Gallery/Gallery';
 
 const Homepage = () => (
   <div className={styles.root}>
@@ -16,6 +17,7 @@ const Homepage = () => (
     <Blog />
     <Chatbot />
     <BrandsSlider />
+    <Gallery />
   </div>
 );
 

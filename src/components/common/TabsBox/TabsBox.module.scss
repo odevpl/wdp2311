@@ -1,0 +1,64 @@
+@import "../../../styles/settings.scss";
+
+.tabsBox {
+  background-color: $content-bg;
+  display: flex;
+  flex-direction: column;
+}
+
+.contentWrapper {
+  display: flex;
+}
+
+.tabsContainer {
+  display: flex;
+  border: 5px solid transparent;
+  border-top: none;
+  gap: 4px;
+}
+
+.tabButton {
+  position: relative;
+  border: none;
+  border-top: 4px solid $content-bg;
+  background-color: white;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:hover {
+    background-color: $content-bg;
+  }
+
+  &.active {
+    background-color: $content-bg;
+    h4 {
+      color: $primary;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: -2px;
+      left: -4px;
+      display: block;
+      height: 4px;
+      background-color: $primary;
+      width: calc(100% + 8px);
+    }
+  }
+
+  h4 {
+    color: rgba($color: $font-color, $alpha: 0.75);
+    text-transform: uppercase;
+    font-size: 16px;
+    line-height: 20px;
+    margin: 0;
+    letter-spacing: 1px;
+    font-weight: 700;
+  }
+}

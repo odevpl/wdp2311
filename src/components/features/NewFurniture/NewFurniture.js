@@ -7,6 +7,7 @@ import CompareProducts from '../../views/CompareProducts/CompareProducts';
 
 import { connect } from 'react-redux';
 import { getLayout } from '../../../redux/layoutRedux';
+import Heading from '../../common/Heading/Heading';
 
 class NewFurniture extends React.Component {
   state = {
@@ -71,9 +72,7 @@ class NewFurniture extends React.Component {
         <div className='container'>
           <div className={styles.panelBar}>
             <div className='row no-gutters align-items-end'>
-              <div className={'col-auto ' + styles.heading}>
-                <h3>New furniture</h3>
-              </div>
+              <Heading>New Furniture</Heading>
               <div className={'col ' + styles.menu}>
                 <ul>
                   {categories.map(item => (
