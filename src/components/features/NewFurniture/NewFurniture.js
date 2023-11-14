@@ -56,7 +56,12 @@ class NewFurniture extends React.Component {
     }
 
     return (
-      <Swipeable leftAction={nextPage} rightAction={previousPage}>
+      <Swipeable
+        activePage={activePage}
+        pagesCount={pagesCount}
+        leftAction={nextPage}
+        rightAction={previousPage}
+      >
         <div className={styles.root}>
           <div className='container'>
             <div className={styles.panelBar}>

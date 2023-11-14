@@ -1,9 +1,15 @@
 import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
-import { swipeLeft, swipeRight } from './Swipeable.module.scss';
+import { swipeLeft, swipeRight, scaleIn } from './Swipeable.module.scss';
 import useSwipeable from './useSwipeable';
 
-function Swipeable({ leftAction = () => {}, rightAction = () => {}, children }) {
+function Swipeable({
+  leftAction = () => {},
+  rightAction = () => {},
+  children,
+  activePage,
+  pagesCount,
+}) {
   const ref = useRef();
   const {
     initSwipe,
@@ -15,12 +21,22 @@ function Swipeable({ leftAction = () => {}, rightAction = () => {}, children }) 
     deadMove: 50,
   });
 
+  const lockFirstPage = activePage === 0;
+  const lockLastPage = activePage === pagesCount - 1;
+
   const getFirstChild = () => ref.current.children[0];
   const getMovableContents = () => ref.current.querySelector('.swipeableContent');
 
+  const scaleInAnimation = movableContents => {
+    if (!movableContents) return;
+    movableContents.classList.toggle(scaleIn, true);
+  };
+
   const animateMovableContents = (value, movableContents) => {
     if (!movableContents) return;
+    movableContents.classList.toggle(scaleIn, false);
     movableContents.style.transform = `translateX(${value * -1}px)`;
+    if (lockFirstPage || lockLastPage) return;
     movableContents.style.opacity = 1 / Math.abs(value) + 0.2;
   };
 
@@ -47,6 +63,7 @@ function Swipeable({ leftAction = () => {}, rightAction = () => {}, children }) 
   const resetElements = () => {
     resetMovableContentsStyle(getMovableContents());
     resetClasses(getFirstChild());
+    scaleInAnimation(getMovableContents());
   };
 
   onSwiping((direction, value) => {
@@ -56,11 +73,13 @@ function Swipeable({ leftAction = () => {}, rightAction = () => {}, children }) 
   });
 
   onSwipeLeft(() => {
+    if (lockLastPage) return resetMovableContentsStyle(getMovableContents());
     resetElements();
     leftAction();
   });
 
   onSwipeRight(() => {
+    if (lockFirstPage) return resetMovableContentsStyle(getMovableContents());
     resetElements();
     rightAction();
   });
@@ -77,6 +96,8 @@ function Swipeable({ leftAction = () => {}, rightAction = () => {}, children }) 
 export default Swipeable;
 
 Swipeable.propTypes = {
+  activePage: PropTypes.number,
+  pagesCount: PropTypes.number,
   children: PropTypes.node,
   leftAction: PropTypes.func,
   rightAction: PropTypes.func,
