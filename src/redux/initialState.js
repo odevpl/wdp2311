@@ -272,6 +272,31 @@ const initialState = {
       url: 'images/brands/brands6.jpg',
     },
   ],
+  promotions: [
+    {
+      id: 'aenean-ru-bristique-13',
+      title: 'GUEST ROOM',
+      subtitle: 'SOFA',
+      description: '-20%',
+      imgSrc:
+        'https://images.pexels.com/photos/6588592/pexels-photo-6588592.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    },
+    {
+      id: 'aenean-ru-bristique-1',
+      title: 'OFFICE CHAIR',
+      subtitle: 'COLLECTION',
+      description: '$200.000',
+      imgSrc:
+        'https://images.pexels.com/photos/12277015/pexels-photo-12277015.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    },
+    {
+      id: 'aenean-ru-bristique-6',
+      title: 'SPECIAL COLLECTION',
+      description: 'SAVE UP 45% OF FURNITURE',
+      imgSrc:
+        'https://images.pexels.com/photos/5178075/pexels-photo-5178075.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    },
+  ],
 };
 
 export default initialState;
