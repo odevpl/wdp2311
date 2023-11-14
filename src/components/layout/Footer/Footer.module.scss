@@ -7,7 +7,7 @@
 
     .menuWrapper {
       h6 {
-        color: $pure-white;
+        color: #ffffff;
         text-transform: uppercase;
         margin: 0 0 1rem 0;
       }
@@ -20,10 +20,10 @@
           a {
             font-size: 14px;
             line-height: 30px;
-            color: $footer-text-elements;
+            color: rgb(169, 169, 169);
 
             &:hover {
-              color: $pure-white;
+              color: #ffffff;
             }
           }
         }
@@ -51,7 +51,7 @@
     .copyright {
       p {
         margin: 0;
-        color: $footer-text-elements;
+        color: rgb(169, 169, 169);
         font-size: 14px;
         line-height: 26px;
       }
@@ -68,7 +68,7 @@
           margin-left: 1rem;
 
           a {
-            color: $footer-text-elements;
+            color: rgb(169, 169, 169);
             text-decoration: none;
 
             &:hover {
@@ -78,21 +78,5 @@
         }
       }
     }
-  }
-}
-@media only screen and (max-width: 767px) {
-  .socialMedia {
-    text-align: center;
-  }
-  .copyright {
-    text-align: center;
-  }
-}
-@media only screen and (min-width: 768px) {
-  .socialMedia {
-    text-align: right;
-  }
-  .copyright {
-    text-align: left;
   }
 }

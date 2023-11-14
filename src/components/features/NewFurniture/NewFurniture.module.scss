@@ -100,7 +100,7 @@ $productGap: 1rem;
       }
     }
   }
-
+}
   .productsContainer {
     display: flex;
     width: 100%;
@@ -111,4 +111,9 @@ $productGap: 1rem;
   .desktopProduct {
     width: calc(100% - $productGap);
   }
-}
+  .compare{
+    position: sticky;
+    bottom: 0;
+    padding: 10px;
+  }
+

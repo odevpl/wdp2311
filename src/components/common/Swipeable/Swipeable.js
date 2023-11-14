@@ -5,36 +5,66 @@ import useSwipeable from './useSwipeable';
 
 function Swipeable({ leftAction = () => {}, rightAction = () => {}, children }) {
   const ref = useRef();
-  const { initSwipe, onSwipeLeft, onSwipeRight, onSwiping } = useSwipeable({
+  const {
+    initSwipe,
+    onSwipeLeft,
+    onSwipeRight,
+    onSwiping,
+    onSwipeCancel,
+  } = useSwipeable({
     deadMove: 50,
   });
 
   const getFirstChild = () => ref.current.children[0];
+  const getMovableContents = () => ref.current.querySelector('.swipeableContent');
 
-  const resetClasses = () => {
-    const firstChild = getFirstChild();
-    if (firstChild) {
-      firstChild.classList.remove(swipeLeft);
-      firstChild.classList.remove(swipeRight);
-    }
+  const animateMovableContents = (value, movableContents) => {
+    if (!movableContents) return;
+    movableContents.style.transform = `translateX(${value * -1}px)`;
+    movableContents.style.opacity = 1 / Math.abs(value) + 0.2;
   };
 
-  onSwiping(direction => {
-    resetClasses();
+  const resetMovableContentsStyle = movableContents => {
+    if (!movableContents) return;
+    movableContents.style.transform = 'translateX(0px)';
+    movableContents.style.opacity = 1;
+  };
+
+  const animateContainer = (direction, firstChild) => {
+    if (!firstChild) return;
     direction > 0
-      ? getFirstChild().classList.add(swipeLeft)
-      : getFirstChild().classList.add(swipeRight);
+      ? firstChild.classList.add(swipeLeft)
+      : firstChild.classList.add(swipeRight);
+  };
+
+  const resetClasses = firstChild => {
+    if (!firstChild) return;
+    firstChild.classList.remove(swipeLeft);
+    firstChild.classList.remove(swipeRight);
+  };
+
+  const resetElements = () => {
+    resetMovableContentsStyle(getMovableContents());
+    resetClasses(getFirstChild());
+  };
+
+  onSwiping((direction, value) => {
+    resetClasses(getFirstChild());
+    animateMovableContents(value, getMovableContents()) ||
+      animateContainer(direction, getFirstChild());
   });
 
   onSwipeLeft(() => {
-    resetClasses();
+    resetElements();
     leftAction();
   });
 
   onSwipeRight(() => {
-    resetClasses();
+    resetElements();
     rightAction();
   });
+
+  onSwipeCancel(resetElements);
 
   return (
     <div ref={ref} {...initSwipe()}>

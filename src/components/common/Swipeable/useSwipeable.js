@@ -16,11 +16,15 @@ function useSwipeable({ deadMove = 50 }) {
   let swipeLeftAction = () => {};
   let swipeRightAction = () => {};
   let swipingAction = () => {};
+  let swipingCancel = () => {};
 
   const handleMouseMove = e => {
     if (move) {
-      const swipeValue = getSwipeValue(e);
-      swipeValue > 0 ? swipingAction(1) : swipingAction(-1);
+      let swipeValue = getSwipeValue(e);
+      if (Math.abs(swipeValue) > 100) {
+        swipeValue = swipeValue > 0 ? 100 : -100;
+      }
+      swipeValue > 0 ? swipingAction(1, swipeValue) : swipingAction(-1, swipeValue);
     }
   };
 
@@ -36,7 +40,7 @@ function useSwipeable({ deadMove = 50 }) {
             ? swipeLeftAction()
             : swipeRightAction();
         }
-      }
+      } else swipingCancel();
     }
     setMove();
   };
@@ -70,6 +74,9 @@ function useSwipeable({ deadMove = 50 }) {
     },
     onSwiping: callback => {
       swipingAction = callback;
+    },
+    onSwipeCancel: callback => {
+      swipingCancel = callback;
     },
   };
 }
