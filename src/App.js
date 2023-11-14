@@ -1,5 +1,6 @@
 import React from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
+//import { Switch } from 'react-router-dom/cjs/react-router-dom.min';
 import { Provider } from 'react-redux';
 import store from './redux/store';
 
@@ -10,16 +11,17 @@ import MainLayout from './components/layout/MainLayout/MainLayout';
 import Homepage from './components/views/Homepage/Homepage';
 import ProductList from './components/views/ProductList/ProductList';
 import ProductPage from './components/views/ProductPage/ProductPage';
+import { Switch } from 'react-router-dom/cjs/react-router-dom.min';
 
 const App = () => (
   <Provider store={store}>
     <BrowserRouter>
       <MainLayout>
-        <Routes>
-          <Route path={'/'} element={<Homepage />} />
-          <Route path={'/shop/:categoryId'} element={<ProductList />} />
-          <Route path={'/product/:productId'} element={<ProductPage />} />
-        </Routes>
+        <Switch>
+          <Route exact path={'/'} component={Homepage} />
+          <Route exact path={'/shop/:categoryId'} component={ProductList} />
+          <Route exact path={'/product/:productId'} component={ProductPage} />
+        </Switch>
       </MainLayout>
     </BrowserRouter>
   </Provider>
