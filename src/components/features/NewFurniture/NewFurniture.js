@@ -35,6 +35,7 @@ class NewFurniture extends React.Component {
         this.setState({
           activeCategory: newCategory,
           isFading: false,
+          activePage: 0,
         });
       }, 600);
     });
