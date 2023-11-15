@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 
 import styles from './NewFurniture.module.scss';
 import ProductBox from '../../common/ProductBox/ProductBox';
+import Swipeable from '../../common/Swipeable/Swipeable';
+
 import CompareProducts from '../../views/CompareProducts/CompareProducts';
 
 import { connect } from 'react-redux';
@@ -16,7 +18,8 @@ class NewFurniture extends React.Component {
     isFading: false,
   };
 
-  handlePageChange(newPage) {
+  handlePageChange(newPage, isSwipe) {
+    if (isSwipe) return this.setState({ activePage: newPage });
     // Set isFading to true before changing the page to trigger fade-out
     this.setState({ isFading: true }, () => {
       setTimeout(() => {
@@ -54,6 +57,11 @@ class NewFurniture extends React.Component {
     const categoryProducts = products.filter(item => item.category === activeCategory);
     const pagesCount = Math.ceil(categoryProducts.length / productsPerPage[layout]);
 
+    const previousPage = () =>
+      activePage > 0 && this.handlePageChange(activePage - 1, true);
+    const nextPage = () =>
+      activePage + 1 < pagesCount && this.handlePageChange(activePage + 1, true);
+
     const dots = [];
     for (let i = 0; i < pagesCount; i++) {
       dots.push(
@@ -69,32 +77,39 @@ class NewFurniture extends React.Component {
     }
 
     return (
-      <div className={styles.root}>
-        <div className='container'>
-          <div className={styles.panelBar}>
-            <div className='row no-gutters align-items-end'>
-              <Heading>New Furniture</Heading>
-              <div className={'col ' + styles.menu}>
-                <ul>
-                  {categories.map(item => (
-                    <li key={item.id}>
-                      <a
-                        className={item.id === activeCategory ? styles.active : ''}
-                        onClick={() => this.handleCategoryChange(item.id)}
-                      >
-                        {item.name}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className={'col-auto ' + styles.dots}>
-                <ul>{dots}</ul>
+      <Swipeable
+        activePage={activePage}
+        pagesCount={pagesCount}
+        leftAction={nextPage}
+        rightAction={previousPage}
+      >
+        <div className={styles.root}>
+          <div className='container'>
+            <div className={styles.panelBar}>
+              <div className='row no-gutters align-items-end'>
+                <Heading>New Furniture</Heading>
+                <div className={'col ' + styles.menu}>
+                  <ul>
+                    {categories.map(item => (
+                      <li key={item.id}>
+                        <a
+                          className={item.id === activeCategory ? styles.active : ''}
+                          onClick={() => this.handleCategoryChange(item.id)}
+                        >
+                          {item.name}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className={'col-auto ' + styles.dots}>
+                  <ul>{dots}</ul>
+                </div>
               </div>
             </div>
           </div>
           <div
-            className={`row ${styles.productsContainer} ${
+            className={`row swipeableContent ${styles.productsContainer} ${
               isFading ? styles.fadeOut : styles.fadeIn
             }`}
           >
@@ -108,7 +123,7 @@ class NewFurniture extends React.Component {
             <CompareProducts />
           </div>
         </div>
-      </div>
+      </Swipeable>
     );
   }
 }
