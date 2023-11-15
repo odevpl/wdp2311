@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretDown, faUser, faLock, faBars } from '@fortawesome/free-solid-svg-icons';
-
+import { Link } from 'react-router-dom/cjs/react-router-dom';
 import styles from './TopBar.module.scss';
 import Login from '../../common/Login/Login';
 
