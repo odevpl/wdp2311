@@ -1,0 +1,114 @@
+.wrapper {
+  width: 100%;
+  position: relative;
+  aspect-ratio: 4/3;
+}
+
+.selectedImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.selectedProduct {
+  position: relative;
+  display: flex;
+  height: 100%;
+
+  .actionsWrapper {
+    align-self: center;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    margin: 0.5rem;
+    gap: 0.5rem;
+
+    a {
+      background-color: white;
+    }
+  }
+
+  .ratingWrapper {
+    align-self: center;
+    position: absolute;
+    right: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    bottom: 1rem;
+
+    .priceTag {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: grey;
+      padding: 1rem;
+      border-radius: 1000px;
+      aspect-ratio: 1/1;
+      z-index: 1;
+
+      h5,
+      p {
+        font-weight: 600;
+        color: white;
+        margin: 0;
+        line-height: 24px;
+        font-size: 18px;
+      }
+
+      p {
+        font-size: 16px;
+        font-weight: 500;
+        opacity: 0.8;
+        text-decoration: line-through;
+      }
+    }
+
+    .rateBox {
+      width: 100%;
+      height: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 2.5rem;
+      position: relative;
+      background-color: white;
+      box-shadow: 2px 3.464px 6px rgba(1, 2, 2, 0.2);
+      top: -1rem;
+      overflow: hidden;
+
+      &::before,
+      &::after {
+        content: "";
+        width: 20%;
+        aspect-ratio: 1/1;
+        display: block;
+        position: absolute;
+        background-color: black;
+        transform: rotate(45deg);
+      }
+
+      &::before {
+        top: -20%;
+        left: -10%;
+      }
+
+      &::after {
+        bottom: -20%;
+        right: -10%;
+      }
+
+      h5 {
+        font-weight: 700;
+        font-size: 16px;
+      }
+
+      a {
+        color: black;
+      }
+    }
+  }
+}

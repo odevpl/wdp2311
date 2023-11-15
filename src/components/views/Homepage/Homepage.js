@@ -7,6 +7,7 @@ import NewFurniture from '../../features/NewFurniture/NewFurnitureContainer';
 import Promotional from '../../features/Promotional/Promotional';
 import Chatbot from '../../views/Chatbot/Chatbot';
 import BrandsSlider from '../Brands/Brands';
+import Gallery from '../../layout/Gallery/Gallery';
 
 const Homepage = () => (
   <div className={styles.root}>
@@ -15,6 +16,7 @@ const Homepage = () => (
     <NewFurniture />
     <Chatbot />
     <BrandsSlider />
+    <Gallery />
   </div>
 );
 
