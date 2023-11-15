@@ -106,12 +106,6 @@ class NewFurniture extends React.Component {
           <div className={styles.compare}>
             <CompareProducts />
           </div>
-          <div className={styles.compare}>
-            <CompareProducts />
-          </div>
-          <div className={styles.compare}>
-            <CompareProducts />
-          </div>
         </div>
       </div>
     );
