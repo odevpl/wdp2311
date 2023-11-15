@@ -9,6 +9,7 @@ import Button from '../Button/Button';
 import StarsRating from '../../features/StarsRating/StarsRating';
 import { addProductToCompare } from '../../../redux/compareRedux';
 import { useDispatch } from 'react-redux';
+import Popup from '../Popup/Popup';
 
 const ProductBox = ({
   name,
@@ -20,19 +21,30 @@ const ProductBox = ({
   id,
   ownRating,
   oldPrice,
+  category,
 }) => {
-  const buttonFavoriteActive = clsx('outline', {
+  /*const buttonFavoriteActive = clsx('outline', {
     [styles.favorite]: isFavorite,
-  });
+  });*/
   const buttonCompareActive = clsx('outline', {
     [styles.favorite]: isCompare,
   });
   const [isHovered, setIsHovered] = useState(false);
-  const dispatch = useDispatch();
-  const product = { name };
 
-  const addToCompare = () => {
+  const [modalShow, setModalShow] = useState(false);
+  const [backgroundBlur, setBackgroundBlur] = useState(false);
+
+  const dispatch = useDispatch();
+  const product = { name, price };
+
+  const addToCompare = e => {
+    e.preventDefault();
     dispatch(addProductToCompare(product));
+  };
+  const modalOn = e => {
+    e.preventDefault();
+    setModalShow(true);
+    setBackgroundBlur(true);
   };
 
   return (
@@ -41,14 +53,32 @@ const ProductBox = ({
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
+      <Popup
+        show={modalShow}
+        onHide={() => {
+          setModalShow(false);
+          setBackgroundBlur(false);
+        }}
+        {...{
+          backgroundBlur,
+          name,
+          price,
+          promo,
+          stars,
+          id,
+          ownRating,
+        }}
+      />
       <div className={styles.photo}>
-        <img src={`images/beds/${name}.jpg`} alt={name} />
+        <img src={`images/${category}s/${name}.jpg`} alt={name} />
         {promo && <div className={styles.sale}>{promo}</div>}
         <div
           className={styles.buttons}
           style={isHovered === true ? { opacity: 1 } : { opacity: 0 }}
         >
-          <Button variant='small'>Quick View</Button>
+          <Button variant='small' onClick={modalOn}>
+            Quick View
+          </Button>
           <Button variant='small'>
             <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> ADD TO CART
           </Button>
@@ -95,6 +125,7 @@ ProductBox.propTypes = {
   isCompare: PropTypes.bool,
   id: PropTypes.string,
   ownRating: PropTypes.number,
+  category: PropTypes.string,
 };
 
 export default ProductBox;
