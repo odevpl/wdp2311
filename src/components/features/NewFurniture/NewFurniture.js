@@ -16,6 +16,7 @@ class NewFurniture extends React.Component {
     activePage: 0,
     activeCategory: 'bed',
     isFading: false,
+    fadeTiming: parseInt(styles.animationTime),
   };
 
   handlePageChange(newPage, isSwipe) {
@@ -28,7 +29,7 @@ class NewFurniture extends React.Component {
           activePage: newPage,
           isFading: false, // Set isFading to false to trigger fade-in
         });
-      }, 400); // Adjust the delay according to your transition duration
+      }, this.state.fadeTiming); // Adjust the delay according to your transition duration
     });
   }
 
@@ -40,7 +41,7 @@ class NewFurniture extends React.Component {
           isFading: false,
           activePage: 0,
         });
-      }, 600);
+      }, this.state.fadeTiming);
     });
   }
 
