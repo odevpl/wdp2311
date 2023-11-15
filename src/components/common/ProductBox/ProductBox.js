@@ -11,7 +11,18 @@ import { addProductToCompare } from '../../../redux/compareRedux';
 import { useDispatch } from 'react-redux';
 import Popup from '../Popup/Popup';
 
-const ProductBox = ({ name, price, promo, stars, isFavorite, isCompare, id, ownRating, oldPrice  }) => {
+const ProductBox = ({
+  name,
+  price,
+  promo,
+  stars,
+  isFavorite,
+  isCompare,
+  id,
+  ownRating,
+  oldPrice,
+  category,
+}) => {
   const buttonFavoriteActive = clsx('outline', {
     [styles.favorite]: isFavorite,
   });
@@ -53,7 +64,7 @@ const ProductBox = ({ name, price, promo, stars, isFavorite, isCompare, id, ownR
         }}
       />
       <div className={styles.photo}>
-        <img src={`images/beds/${name}.jpg`} alt={name} />
+        <img src={`images/${category}s/${name}.jpg`} alt={name} />
         {promo && <div className={styles.sale}>{promo}</div>}
         <div
           className={styles.buttons}
@@ -114,6 +125,7 @@ ProductBox.propTypes = {
   isCompare: PropTypes.bool,
   id: PropTypes.string,
   ownRating: PropTypes.number,
+  category: PropTypes.string,
 };
 
 export default ProductBox;
