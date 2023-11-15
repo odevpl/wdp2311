@@ -11,8 +11,13 @@ export const getProductById = createSelector(
   (products, id) => products.find(product => product.id === id)
 );
 
-export const getNew = ({ products }) =>
-  products.filter(item => item.newFurniture === true);
+export const getNew = ({ products }) => {
+  const productsArray = Object.values(products || {});
+  return productsArray.filter(item => item.newFurniture === true);
+};
+
+const reducerName = 'products';
+const createActionName = name => `app/${reducerName}/${name}`;
 
 export const allPromotional = ({ promotional }) => promotional;
 const UPDATE_YOUR_STARS_RATE = 'UPDATE_YOUR_STARS_RATE';
