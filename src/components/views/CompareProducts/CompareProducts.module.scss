@@ -5,7 +5,7 @@
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
-  background-color: #d58e327d;
+  background-color: #d58e32b0;
   border-radius: 20px;
 }
 
@@ -34,6 +34,7 @@
   color: #fffdd0;
   display: none;
   transition: opacity 0.3s ease-in-out;
+  cursor: pointer;
 }
 
 .imageContainer:hover .closeIcon {
