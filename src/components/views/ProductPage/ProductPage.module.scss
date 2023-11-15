@@ -51,6 +51,238 @@
       }
     }
   }
+
+  .banner {
+    background-color: $product-header-bg;
+    padding: 3.5rem;
+    color: $pure-white;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .bannerTitle {
+      font-size: 56px;
+      font-weight: 300;
+      width: 630px;
+      letter-spacing: 2px;
+      margin: 0;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .bannerSubtitle {
+      font-weight: 300;
+      width: 630px;
+      letter-spacing: 12px;
+      display: flex;
+      justify-content: space-between;
+      margin-left: 12px;
+
+      .subtitleColor {
+        color: $primary;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .srcLinks {
+    padding: $base-padding;
+
+    a {
+      padding: 3px 6px;
+      margin: 0 10px;
+      text-decoration: none;
+      color: $text-color;
+
+      &.active {
+        color: $primary;
+      }
+    }
+  }
+
+  .photo {
+    position: relative;
+    padding: 10px 10px 0 10px;
+    background: {
+      color: #f4f5f7;
+      size: contain;
+      position: center;
+      repeat: no-repeat;
+    }
+    overflow: hidden;
+    align-items: flex-end;
+
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: 400px;
+      padding: 0;
+    }
+  }
+
+  .slider {
+    width: 100%;
+    display: flex;
+    margin-top: 10px;
+
+    .item {
+      width: 100%;
+      height: 93px;
+
+      img {
+        margin: 0 5px;
+        object-fit: cover;
+        width: 90%;
+        height: 91px;
+      }
+    }
+    button {
+      width: 33px;
+      height: 92px;
+      background-color: rgba(0, 0, 0, 0.5);
+
+      .fa {
+        color: $pure-white;
+      }
+    }
+  }
+
+  .stars {
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.5);
+
+    .emptyStar {
+      color: rgb(0, 0, 0, 0.5);
+    }
+    a {
+      text-decoration: none;
+      color: rgb(42, 42, 42);
+      cursor: default;
+    }
+  }
+  .line {
+    margin: 10px 0;
+    border-bottom: 2px solid #4e4e4e79;
+    position: relative;
+  }
+
+  .buttonsSlider {
+    display: flex;
+    align-items: center;
+    a {
+      background-color: $pure-white;
+      font-size: 16px;
+      color: rgba(0, 0, 0, 0.5);
+      border: 1px solid rgba(0, 0, 0, 0.5);
+    }
+  }
+  .buttons {
+    a {
+      background-color: $pure-white;
+      font-size: 16px;
+      color: rgba(0, 0, 0, 0.5);
+      border: 1px solid rgba(0, 0, 0, 0.5);
+      margin: 0 2px;
+    }
+  }
+  .price {
+    margin: 20px 0;
+    font-weight: bold;
+    font-size: 22px;
+    .oldPrice {
+      text-decoration: line-through;
+      margin-right: 5px;
+      color: rgba(0, 0, 0, 0.3);
+    }
+    .priceBox {
+      color: $pure-white;
+      background-color: black;
+      padding: 1px 5px;
+    }
+  }
+
+  .actionBtns {
+    margin: 20px 0 10px;
+    a {
+      border-color: rgb(0, 0, 0, 0.3);
+      font-weight: bold;
+      margin-right: 5px;
+      &:hover {
+        background-color: $primary;
+        text-decoration: none;
+        border: none;
+      }
+    }
+    .amount {
+      margin-top: 20px;
+      .amountTxt {
+        display: inline-block;
+        font-size: 14px;
+      }
+      .amountInput {
+        text-align: center;
+        height: 100%;
+        margin-left: 40px;
+        margin-right: 5px;
+        width: 60px;
+        cursor: default;
+        &:hover {
+          background-color: $pure-white;
+          color: black;
+          border: 1px solid rgb(0, 0, 0, 0.3);
+        }
+      }
+    }
+  }
+  .overview {
+    h5 {
+      font-size: 16px;
+    }
+    p {
+      font-size: 12px;
+    }
+  }
+  .infos {
+    p {
+      margin-bottom: 5px;
+      font-size: 14px;
+      span {
+        display: inline-block;
+        font-weight: 600;
+        width: 120px;
+      }
+    }
+  }
+  .socials {
+    a {
+      margin-right: 5px;
+    }
+    a {
+      text-decoration: none;
+    }
+
+    a:first-child:hover {
+      background-color: #4867aa;
+      border: none;
+    }
+    a:nth-child(2):hover {
+      background-color: #c74337;
+      border: none;
+    }
+    a:nth-child(3):hover {
+      background-color: #1da1f2;
+      border: none;
+    }
+    a:nth-child(4):hover {
+      background-color: #c51e23;
+      border: none;
+    }
+    a:last-child:hover {
+      background-color: #0077b5;
+      border: none;
+    }
+  }
 }
 
 @media (max-width: 576px) {

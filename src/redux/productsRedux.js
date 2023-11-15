@@ -1,6 +1,15 @@
+import { createSelector } from '@reduxjs/toolkit';
 /* selectors */
 export const getAll = ({ products }) => products;
 export const getCount = ({ products }) => products.length;
+
+const selectProducts = state => state.products;
+const selectProductId = (state, id) => id;
+
+export const getProductById = createSelector(
+  [selectProducts, selectProductId],
+  (products, id) => products.find(product => product.id === id)
+);
 
 export const getNew = ({ products }) => {
   const productsArray = Object.values(products || {});
