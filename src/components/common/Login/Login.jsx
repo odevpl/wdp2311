@@ -7,11 +7,22 @@ import styles from './login.module.scss';
 const Login = ({ isOpen, onClose, loginOpen, setIsOpenLogin }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState('')
   const history = useHistory();
 
   const handleLogin = () => {
-    history.push('/');
-    setIsOpenLogin(false)
+
+    // Zastąp je rzeczywistymi danymi logowania
+
+    const validEmail = 'admin'
+    const validPass = 'pass'
+
+    if (email === validEmail && password === validPass) {
+      history.push('/');
+      setIsOpenLogin(false)
+    } else {
+      setError('Invalid email or password')
+    }
   };
 
   const handleOverlayClick = (e) => {
@@ -42,6 +53,7 @@ const Login = ({ isOpen, onClose, loginOpen, setIsOpenLogin }) => {
           <p className={styles.login__info}>
             Nie pamiętasz hasła?  <Link to={'#'} className={styles.login__link}>Przypomnij hasło</Link>
           </p>
+          {error && <p className={styles.login__error}>{error}</p> }
           <button className={styles.login__button} onClick={handleLogin}>
             Zaloguj się
           </button>
