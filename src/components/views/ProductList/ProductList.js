@@ -1,6 +1,6 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
-import styles from './ProductList.module.scss';
+//import styles from './ProductList.module.scss';
 
 const ProductList = () => (
   <div className='my-5'>

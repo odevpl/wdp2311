@@ -1,0 +1,79 @@
+@import "../../../styles/settings.scss";
+
+.root {
+  padding: 20px;
+
+  h5 {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    li {
+      margin: 5px 0;
+      font-size: 14px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  .post {
+    margin: 20px 0 20px;
+    width: 100%;
+    .title {
+      text-transform: uppercase;
+      margin-bottom: 15px;
+    }
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .description {
+      font-size: 12px;
+      margin: 15px 0 30px;
+    }
+
+    .line {
+      border-bottom: 1px solid #2a2a2a75;
+      position: relative;
+    }
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      margin: 0 10px;
+      .informations {
+        display: flex;
+        color: rgba(0, 0, 0, 0.5);
+        .admin,
+        .date,
+        .file {
+          margin-right: 10px;
+        }
+      }
+      .btn {
+        border: none;
+        background-color: #fff;
+        color: rgba(0, 0, 0, 0.5);
+
+        &:hover {
+          font-weight: bold;
+        }
+      }
+    }
+  }
+  .menu {
+    margin: 20px 0 20px;
+    input {
+      padding-left: 10px;
+      outline: none;
+    }
+    .recentPosts,
+    .recentComments,
+    .archives,
+    .categories,
+    .meta {
+      margin: 40px 0;
+    }
+  }
+}
