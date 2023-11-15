@@ -13,19 +13,36 @@ class NewFurniture extends React.Component {
   state = {
     activePage: 0,
     activeCategory: 'bed',
+    isFading: false,
   };
 
   handlePageChange(newPage) {
-    this.setState({ activePage: newPage });
+    // Set isFading to true before changing the page to trigger fade-out
+    this.setState({ isFading: true }, () => {
+      setTimeout(() => {
+        // Change the page after a delay to allow fade-out transition
+        this.setState({
+          activePage: newPage,
+          isFading: false, // Set isFading to false to trigger fade-in
+        });
+      }, 400); // Adjust the delay according to your transition duration
+    });
   }
 
   handleCategoryChange(newCategory) {
-    this.setState({ activeCategory: newCategory });
+    this.setState({ isFading: true }, () => {
+      setTimeout(() => {
+        this.setState({
+          activeCategory: newCategory,
+          isFading: false,
+        });
+      }, 600);
+    });
   }
 
   render() {
     const { categories, products, layout } = this.props;
-    const { activeCategory, activePage } = this.state;
+    const { activeCategory, activePage, isFading } = this.state;
 
     const productsPerPage = {
       DESKTOP: 8,
@@ -75,20 +92,22 @@ class NewFurniture extends React.Component {
               </div>
             </div>
           </div>
-          <div className={'row ' + styles.productsContainer}>
-            {categoryProducts
-              .slice(
-                activePage * productsPerPage[layout],
-                (activePage + 1) * productsPerPage[layout]
-              )
-              .map(item => (
-                <div
-                  key={item.id}
-                  className={'col-12 col-md-4 col-lg-3 ' + styles.desktopProduct}
-                >
-                  <ProductBox {...item} />
-                </div>
-              ))}
+          <div
+            className={`row ${styles.productsContainer} ${
+              isFading ? styles.fadeOut : styles.fadeIn
+            }`}
+          >
+            {categoryProducts.slice(activePage * 8, (activePage + 1) * 8).map(item => (
+              <div key={item.id} className='col-12 col-md-4 col-lg-3'>
+                <ProductBox {...item} />
+              </div>
+            ))}
+          </div>
+          <div className={styles.compare}>
+            <CompareProducts />
+          </div>
+          <div className={styles.compare}>
+            <CompareProducts />
           </div>
           <div className={styles.compare}>
             <CompareProducts />

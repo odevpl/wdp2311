@@ -1,8 +1,8 @@
 import React from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './redux/store';
-
+import { Switch } from 'react-router-dom/cjs/react-router-dom';
 import './styles/bootstrap.scss';
 import './styles/global.scss';
 
@@ -16,9 +16,9 @@ const App = () => (
     <BrowserRouter>
       <MainLayout>
         <Switch>
-          <Route exact path={'/'} component={Homepage} />
-          <Route exact path={'/shop/:categoryId'} component={ProductList} />
-          <Route exact path={'/product/:productId'} component={ProductPage} />
+          <Route exact path='/' component={Homepage} />
+          <Route exact path='/shop/:categoryId' component={ProductList} />
+          <Route exact path='/product/:productId' component={ProductPage} />
         </Switch>
       </MainLayout>
     </BrowserRouter>
