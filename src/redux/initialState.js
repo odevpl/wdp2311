@@ -530,7 +530,33 @@ const initialState = {
       url: 'images/brands/brands6.jpg',
     },
   ],
-  productsToCompare: [],
+
+  posts: [
+    {
+      id: 1,
+      date: '15 JAN 16',
+      comments: '4',
+      header: 'Products that fight static',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim adminim veniam, quis nostrud exercitation ullamco laboris nisi utaliquip ex ea commodo consequat',
+    },
+    {
+      id: 2,
+      date: '15 JAN 16',
+      comments: '4',
+      header: 'Products that fight static',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim adminim veniam, quis nostrud exercitation ullamco laboris nisi utaliquip ex ea commodo consequat',
+    },
+    {
+      id: 3,
+      date: '15 JAN 16',
+      comments: '4',
+      header: 'Products that fight static',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim adminim veniam, quis nostrud exercitation ullamco laboris nisi utaliquip ex ea commodo consequat',
+    },
+  ],
 };
 
 export default initialState;
