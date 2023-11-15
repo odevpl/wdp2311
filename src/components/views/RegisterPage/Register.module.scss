@@ -1,0 +1,14 @@
+@import "../../../styles/settings.scss";
+
+.registerBox{
+    position: fixed;
+    left: 260px;
+    top: 63%;
+    bottom: 0;
+    width: 225px;
+    background-color: transparent;
+    z-index: 1;
+    border: 1px solid $primary;
+    max-height: 300px;
+    border-radius: 5px;
+}
