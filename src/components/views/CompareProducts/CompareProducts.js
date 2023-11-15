@@ -40,9 +40,6 @@ const CompareProducts = () => {
           </div>
           <div className={styles.content}>
             <h5>{product.name}</h5>
-            <div className={styles.stars}>
-              {/* <StarsRating stars={stars} id={id} ownRating={ownRating} /> */}
-            </div>
           </div>
           <div className={styles.line}></div>
           <div className={styles.actions}>
