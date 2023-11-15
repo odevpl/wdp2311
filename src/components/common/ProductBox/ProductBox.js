@@ -23,6 +23,7 @@ const ProductBox = ({
   id,
   ownRating,
   oldPrice,
+  category,
 }) => {
   const dispatch = useDispatch();
   const [isFavorite, setIsFavorite] = useState(false);
@@ -60,6 +61,7 @@ const ProductBox = ({
         onMouseLeave={() => setIsHovered(false)}
       >
         <div className={styles.photo}>
+          <img src={`images/${category}s/${name}.jpg`} alt={name} />
           {promo && <div className={styles.sale}>{promo}</div>}
           <div
             className={styles.buttons}
@@ -128,6 +130,7 @@ ProductBox.propTypes = {
   isCompare: PropTypes.bool,
   id: PropTypes.string,
   ownRating: PropTypes.number,
+  category: PropTypes.string,
 };
 
 export default ProductBox;

@@ -11,7 +11,6 @@ import Homepage from './components/views/Homepage/Homepage';
 import ProductList from './components/views/ProductList/ProductList';
 import ProductPage from './components/views/ProductPage/ProductPage';
 import Search from './components/common/Search/Search';
-import Login from './components/common/Login/Login';
 
 const App = () => (
   <Provider store={store}>
