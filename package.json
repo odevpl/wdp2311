@@ -50,6 +50,7 @@
     "@fortawesome/free-regular-svg-icons": "^5.11.2",
     "@fortawesome/free-solid-svg-icons": "^5.11.2",
     "@fortawesome/react-fontawesome": "^0.1.7",
+    "babel-preset-react-app": "^10.0.1",
     "bootstrap": "^4.3.1",
     "clsx": "^2.0.0",
     "enzyme": "^3.10.0",
@@ -68,6 +69,9 @@
     "yarn": "^1.22.19"
   },
   "devDependencies": {
+    "@babel/core": "^7.23.3",
+    "@babel/preset-env": "^7.23.3",
+    "@reduxjs/toolkit": "^1.9.7",
     "husky": "^3.1.0",
     "lint-staged": "^9.4.0",
     "onchange": "^6.1.0",

@@ -8,6 +8,7 @@ import Blog from '../Blog/Blog';
 import Promotional from '../../features/Promotional/Promotional';
 import Chatbot from '../../views/Chatbot/Chatbot';
 import Gallery from '../../layout/Gallery/Gallery';
+import SectionBlog from '../SectionBlog/SectionBlog';
 
 const Homepage = () => (
   <div className={styles.root}>
@@ -16,6 +17,7 @@ const Homepage = () => (
     <NewFurniture />
     <Blog />
     <Chatbot />
+    <SectionBlog />
     <BrandsSlider />
     <Gallery />
   </div>
