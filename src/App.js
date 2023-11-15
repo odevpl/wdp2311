@@ -2,14 +2,14 @@ import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './redux/store';
-import { Switch } from 'react-router-dom/cjs/react-router-dom';
 import './styles/bootstrap.scss';
 import './styles/global.scss';
-
+import { Switch } from 'react-router-dom/cjs/react-router-dom';
 import MainLayout from './components/layout/MainLayout/MainLayout';
 import Homepage from './components/views/Homepage/Homepage';
 import ProductList from './components/views/ProductList/ProductList';
 import ProductPage from './components/views/ProductPage/ProductPage';
+import CardPage from './components/views/CardPage/CardPage';
 import Blog from './components/views/Blog/Blog';
 
 const App = () => (
@@ -20,10 +20,8 @@ const App = () => (
           <Route exact path='/' component={Homepage} />
           <Route exact path='/shop/:categoryId' component={ProductList} />
           <Route exact path='/product/:productId' component={ProductPage} />
-          <Route exact path={'/'} component={Homepage} />
+          <Route exact path='/cart' component={CardPage} />
           <Route exact path={'/blog'} component={Blog} />
-          <Route exact path={'/shop/:categoryId'} component={ProductList} />
-          <Route exact path={'/product/:productId'} component={ProductPage} />
         </Switch>
       </MainLayout>
     </BrowserRouter>
