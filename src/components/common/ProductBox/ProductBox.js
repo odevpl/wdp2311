@@ -23,9 +23,9 @@ const ProductBox = ({
   oldPrice,
   category,
 }) => {
-  const buttonFavoriteActive = clsx('outline', {
+  /*const buttonFavoriteActive = clsx('outline', {
     [styles.favorite]: isFavorite,
-  });
+  });*/
   const buttonCompareActive = clsx('outline', {
     [styles.favorite]: isCompare,
   });
