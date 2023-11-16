@@ -78,6 +78,12 @@ $text-color: rgba(
       padding: $base-spcing;
       width: 100%;
     }
+
+    button {
+      padding: 0 $base-spcing * 3;
+      color: white;
+      background-color: $base-color;
+    }
   }
 
   .contents {
