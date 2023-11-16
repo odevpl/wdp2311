@@ -4,6 +4,7 @@ import { getAll } from '../../../redux/compareRedux';
 import styles from './CompareProducts.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import { useDispatch } from 'react-redux';
 import { removeProductToCompare } from '../../../redux/compareRedux';
 import Button from '../../common/Button/Button';
@@ -37,9 +38,25 @@ const CompareProducts = () => {
             />
             <FontAwesomeIcon icon={faTimes} className={styles.closeIcon} />
           </div>
-          <Button variant='outline'>
-            <FontAwesomeIcon icon={faExchangeAlt}></FontAwesomeIcon>
-          </Button>
+          <div className={styles.content}>
+            <h5>{product.name}</h5>
+          </div>
+          <div className={styles.line}></div>
+          <div className={styles.actions}>
+            <div className={styles.outlines}>
+              <Button variant='outline'>
+                <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
+              </Button>
+              <Button variant='outline'>
+                <FontAwesomeIcon icon={faExchangeAlt}></FontAwesomeIcon>
+              </Button>
+            </div>
+            <div className={styles.price}>
+              <Button noHover variant='small' className={styles.priceBtn}>
+                $ {product.price}
+              </Button>
+            </div>
+          </div>
         </div>
       ))}
     </div>

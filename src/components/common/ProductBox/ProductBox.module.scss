@@ -3,7 +3,7 @@
 .root {
   background-color: #ffffff;
   border: 1px solid #e1e1e1;
-  margin-bottom: 2rem;
+  margin-bottom: 2rem; 
 
   .photo {
     position: relative;
@@ -94,16 +94,12 @@
     }
     
   }
-    
+ 
+  .favorite {
+       background-color: #2a2a2a;
+    color: #ffffff
+    }
   &:hover .priceBtn {
     background-color: $primary;
   }
-
-  .hovered {
-    opacity: 1;
-  }
-}
-
-.favorite {
-  background-color: $primary;
 }
