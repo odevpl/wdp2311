@@ -486,7 +486,6 @@ const initialState = {
     products: [],
   },
 
-
   feedback: [
     {
       id: 1,
@@ -509,9 +508,7 @@ const initialState = {
         'Kupiłem tu kilka mebli do sypialni i są one nie tylko piękne, ale także wyjątkowo trwałe. Na pewno wrócę tu po więcej!',
       clientImg: `images/clientsAvatar/woman2.jpg`,
     },
-   ],
-
- 
+  ],
 
   promotional: [
     {
