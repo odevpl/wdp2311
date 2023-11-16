@@ -97,7 +97,7 @@ const ProductBox = ({
             className={styles.buttons}
             style={isHovered === true ? { opacity: 1 } : { opacity: 0 }}
           >
-            <Button variant='small' onClick={e => e.stopPropagation()}>
+            <Button variant='small' onClick={modalOn}>
               Quick View
             </Button>
             <Button variant='small' onClick={e => e.stopPropagation()}>
