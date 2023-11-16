@@ -97,7 +97,7 @@ const ProductBox = ({
             className={styles.buttons}
             style={isHovered === true ? { opacity: 1 } : { opacity: 0 }}
           >
-            <Button variant='small' onClick={modalOn}>
+            <Button variant='small' onClick={e => e.stopPropagation()}>
               Quick View
             </Button>
             <Button variant='small' onClick={e => e.stopPropagation()}>
@@ -106,7 +106,6 @@ const ProductBox = ({
           </div>
         </div>
       </NavLink>
-
       <div className={styles.content}>
         <NavLink to={`/product/${name}`} className='text-decoration-none'>
           <h5>{name}</h5>
