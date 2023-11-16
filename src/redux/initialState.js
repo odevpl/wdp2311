@@ -554,32 +554,6 @@ const initialState = {
       description: 'SAVE UP 45% OF FURNITURE',
       imgSrc:
         'https://images.pexels.com/photos/5178075/pexels-photo-5178075.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-
-  posts: [
-    {
-      id: 1,
-      date: '15 JAN 16',
-      comments: '4',
-      header: 'Products that fight static',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim adminim veniam, quis nostrud exercitation ullamco laboris nisi utaliquip ex ea commodo consequat',
-    },
-    {
-      id: 2,
-      date: '15 JAN 16',
-      comments: '4',
-      header: 'Products that fight static',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim adminim veniam, quis nostrud exercitation ullamco laboris nisi utaliquip ex ea commodo consequat',
-    },
-    {
-      id: 3,
-      date: '15 JAN 16',
-      comments: '4',
-      header: 'Products that fight static',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim adminim veniam, quis nostrud exercitation ullamco laboris nisi utaliquip ex ea commodo consequat',
-
     },
   ],
   posts: [
