@@ -1,7 +1,86 @@
 @import "../../../styles/settings.scss";
 .registerBox{
+
     display: flex;
     align-items: center;
     flex-direction: column;
-    margin: 20px auto;
+    margin: 20px auto; 
+
+    .switchContainer {
+      position: relative;
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 0;
+    }
+    
+    .switchInput {
+      display: none;
+    }
+    
+    .switchButton {
+      display: block;
+      position: absolute;
+      cursor: pointer;
+      width: 35px;
+      height: 18px;
+      background-color: transparent;
+      border-radius: 30px;
+      transition: background-color 0.3s;
+      border: solid 1px $dim-white;
+      margin-top: 2px;
+    }
+
+    
+    .switchCircle {
+    content: '';
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: $grey-bg;
+      top: 6px;
+      left: 4px;
+      transition: transform 0.3s;
+    }
+
+    .lable{
+      color: $dim-white;
+      margin-left: 45px;
+    }
+    .orange {
+      color:$dim-orange;
+    }
+
+    .conditions {
+      font-size: 12px;
+      color: $light-grey-bg;
+    }
+
+    .linkRegister{
+      background-color: orange;
+      border: none;
+      border-radius: 3px;
+      width: 150px;
+      height: 40px;
+      font-size: 14px;
+      font-style: bold; 
+      text-align: center; 
+      padding-top: 8px;
+      margin-left: 55%;
+      color: $white;
+    }
+
+    .btn {
+      color: $white;
+    }
+
+    .linkReturn{
+      margin-top: 15px;
+      margin-left: 22px;
+    }
+
+    .fa {
+      color: $dim-orange;
+      padding-right: 3px;
+    }
 }
