@@ -9,6 +9,7 @@ import {
   faEdit,
 } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
+import { useSelector } from 'react-redux';
 
 const Chatbot = () => {
   const [messages, setMessages] = useState(['How can I help you?']);
@@ -16,11 +17,25 @@ const Chatbot = () => {
   const [isHovered, setIsHovered] = useState(false);
   const [isChatVisible, setIsChatVisible] = useState(false);
 
+  const chatBotAnswer = useSelector(state =>
+    state.chatBotData.filter(answer => newMessage.includes(answer.question))
+  );
+
+  const chat = chatBotAnswer[0];
+
   const handleSendMessage = () => {
     if (newMessage.trim() === '') {
       return;
     }
-    setMessages([...messages, newMessage]);
+
+    if (!chat) {
+      setMessages([
+        ...messages,
+        newMessage,
+        'W takim przypadku proponuję kontakt z naszym pracownikiem. Czy mogę pomóc w czymś jeszcze?',
+      ]);
+    } else setMessages([...messages, newMessage, chat.answer]);
+
     setNewMessage('');
   };
   const handleResetChat = () => {
@@ -61,7 +76,7 @@ const Chatbot = () => {
           </div>
           <div className={styles.textAreaView}>
             {messages.map((message, index) => (
-              <div key={index}>{message}</div>
+              <p key={index}>{message}</p>
             ))}
           </div>
           <div className={styles.textArea}>

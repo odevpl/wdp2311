@@ -497,7 +497,6 @@ const initialState = {
     },
   ],
 
-  productsToCompare: [],
   brands: [
     {
       id: 1,
@@ -570,6 +569,45 @@ const initialState = {
       header: 'Products that fight static',
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim adminim veniam, quis nostrud exercitation ullamco laboris nisi utaliquip ex ea commodo consequat',
+    },
+  ],
+  productsToCompare: [],
+  chatBotData: [
+    {
+      question: 'cena dostawy',
+      answer: 'Cena dostawy wynosi 50zł',
+    },
+    {
+      question: 'opcje dostawy',
+      answer: 'Korzystamy z kuriera firmy DPD',
+    },
+    {
+      question: 'ile produktów',
+      answer: 'Jeden kurier może dostarczyć do 10 produktów.',
+    },
+    {
+      question: 'czas oczekiwania',
+      answer: 'Czas oczekiwania na produkty wynosi 20 dni',
+    },
+    {
+      question: 'instrukcje montażu',
+      answer: 'Tak, każdy mebel zawiera instrukcję montarzu',
+    },
+    {
+      question: 'gwarancja',
+      answer: 'Tak, meble są objęte 2 letnią gwarancją',
+    },
+    {
+      question: 'zwrot',
+      answer: 'Meble można zwrocić do 14 dni na koszt sklepu',
+    },
+    {
+      question: 'czas oczekiwania',
+      answer: 'Czas oczekiwania na produkty wynosi 20 dni',
+    },
+    {
+      question: 'metody płatności',
+      answer: 'Za meble można zapłacić przelewem i przy odbiorze',
     },
   ],
 };
