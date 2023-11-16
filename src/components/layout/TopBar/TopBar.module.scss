@@ -32,6 +32,18 @@
           text-decoration: none;
         }
       }
+      .btn {
+        color: #ffffff;
+        font-size: 13px;
+        background: transparent;
+        border: none;
+
+
+        &:hover {
+          color: $primary;
+          text-decoration: none;
+        }
+      }
     }
   }
 

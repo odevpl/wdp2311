@@ -184,6 +184,7 @@ const ProductPage = () => {
           </div>
         </div>
       </div>
+      <NewFurnitureSinglePage />
     </div>
   );
 };

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { clsx } from 'clsx';
 import styles from './ProductBox.module.scss';
@@ -16,16 +16,17 @@ const ProductBox = ({
   price,
   promo,
   stars,
-  isFavorite,
   isCompare,
   id,
   ownRating,
   oldPrice,
   category,
 }) => {
-  /*const buttonFavoriteActive = clsx('outline', {
+  const [isFavorite, setIsFavorite] = useState(false);
+  const buttonFavoriteActive = clsx('outline', {
     [styles.favorite]: isFavorite,
-  });*/
+  });
+
   const buttonCompareActive = clsx('outline', {
     [styles.favorite]: isCompare,
   });
@@ -36,6 +37,21 @@ const ProductBox = ({
 
   const dispatch = useDispatch();
   const product = { name, price };
+
+  useEffect(() => {
+    const favoriteFromStorage = JSON.parse(localStorage.getItem('favorites')) || [];
+    setIsFavorite(favoriteFromStorage.includes(id));
+  }, [id]);
+
+  const addToFavorite = e => {
+    e.preventDefault();
+    setIsFavorite(!isFavorite);
+    const favoritesFromStorage = JSON.parse(localStorage.getItem('favorites')) || [];
+    const update = isFavorite
+      ? favoritesFromStorage.filter(favId => favId !== id)
+      : [...favoritesFromStorage, id];
+    localStorage.setItem('favorites', JSON.stringify(update));
+  };
 
   const addToCompare = e => {
     e.preventDefault();
@@ -93,7 +109,11 @@ const ProductBox = ({
       <div className={styles.line}></div>
       <div className={styles.actions}>
         <div className={styles.outlines}>
-          <Button variant='outline'>
+          <Button
+            onClick={addToFavorite}
+            variant='outline'
+            className={buttonFavoriteActive}
+          >
             <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
           </Button>
           <Button
