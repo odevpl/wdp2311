@@ -5,6 +5,7 @@ import styles from './ProductPage.module.scss';
 import NewFurnitureSinglePage from '../../features/NewFurniture/NewFurnitureSinglePage';
 import { useSelector } from 'react-redux';
 import { getProductById } from '../../../redux/productsRedux';
+
 import {
   faEnvelope,
   faHeart,
