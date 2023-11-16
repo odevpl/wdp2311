@@ -1,0 +1,18 @@
+@import "../../../styles/keyframes.scss";
+@import "../../../styles/settings.scss";
+
+$swipeMove: 3;
+
+.swipeLeft {
+  overflow: hidden;
+  transform: translateX(-$swipeMove + px);
+}
+
+.swipeRight {
+  overflow: hidden;
+  transform: translateX($swipeMove + px);
+}
+
+.scaleIn {
+  animation: scale-in $animation-time, fade-in $animation-time;
+}

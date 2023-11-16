@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import styles from './ProductPage.module.scss';
 import { useSelector } from 'react-redux';
 import { getProductById } from '../../../redux/productsRedux';
+
 import {
   faEnvelope,
   faHeart,
@@ -32,7 +33,7 @@ import {
 
 const ProductPage = () => {
   const id = window.location.pathname.slice(9);
-  const product = useSelector(state => getProductById(state, id));
+  //const product = useSelector(state => getProductById(state, id));
 
   return (
     <div className={styles.root}>
