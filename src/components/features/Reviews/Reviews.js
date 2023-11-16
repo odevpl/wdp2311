@@ -26,6 +26,7 @@ function Reviews() {
           <div className={styles.inputsContainer}>
             <input placeholder='Name*' />
             <input placeholder='Email*' />
+            <button>Continue</button>
           </div>
         </div>
       </div>

@@ -2,6 +2,7 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'react-router-dom';
 import styles from './ProductPage.module.scss';
+import Reviews from '../../features/Reviews/Reviews';
 import { useSelector } from 'react-redux';
 import { getProductById } from '../../../redux/productsRedux';
 import {
@@ -183,6 +184,7 @@ const ProductPage = () => {
             </div>
           </div>
         </div>
+        <Reviews />
       </div>
     </div>
   );
