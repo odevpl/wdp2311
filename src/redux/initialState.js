@@ -529,6 +529,21 @@ const initialState = {
       description: '',
       url: 'images/brands/brands6.jpg',
     },
+    {
+      id: 7,
+      description: '',
+      url: 'images/brands/brands7.jpg',
+    },
+    {
+      id: 8,
+      description: '',
+      url: 'images/brands/brands8.jpg',
+    },
+    {
+      id: 9,
+      description: '',
+      url: 'images/brands/brands9.jpg',
+    },
   ],
 
   posts: [
