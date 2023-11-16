@@ -10,19 +10,20 @@ import StarsRating from '../../features/StarsRating/StarsRating';
 import { addProductToCompare } from '../../../redux/compareRedux';
 import { useDispatch } from 'react-redux';
 import Popup from '../Popup/Popup';
+import { NavLink } from 'react-router-dom';
 
 const ProductBox = ({
   name,
   price,
   promo,
   stars,
+  isFavorite,
   isCompare,
   id,
   ownRating,
   oldPrice,
-  category,
 }) => {
-  const [isFavorite, setIsFavorite] = useState(false);
+  const [isFav, setIsFav] = useState(false);
   const buttonFavoriteActive = clsx('outline', {
     [styles.favorite]: isFavorite,
   });
@@ -40,14 +41,14 @@ const ProductBox = ({
 
   useEffect(() => {
     const favoriteFromStorage = JSON.parse(localStorage.getItem('favorites')) || [];
-    setIsFavorite(favoriteFromStorage.includes(id));
+    setIsFav(favoriteFromStorage.includes(id));
   }, [id]);
 
   const addToFavorite = e => {
     e.preventDefault();
-    setIsFavorite(!isFavorite);
+    setIsFav(!isFav);
     const favoritesFromStorage = JSON.parse(localStorage.getItem('favorites')) || [];
-    const update = isFavorite
+    const update = isFav
       ? favoritesFromStorage.filter(favId => favId !== id)
       : [...favoritesFromStorage, id];
     localStorage.setItem('favorites', JSON.stringify(update));
@@ -57,8 +58,10 @@ const ProductBox = ({
     e.preventDefault();
     dispatch(addProductToCompare(product));
   };
+
   const modalOn = e => {
     e.preventDefault();
+    e.stopPropagation();
     setModalShow(true);
     setBackgroundBlur(true);
   };
@@ -85,23 +88,29 @@ const ProductBox = ({
           ownRating,
         }}
       />
-      <div className={styles.photo}>
-        <img src={`images/${category}s/${name}.jpg`} alt={name} />
-        {promo && <div className={styles.sale}>{promo}</div>}
-        <div
-          className={styles.buttons}
-          style={isHovered === true ? { opacity: 1 } : { opacity: 0 }}
-        >
-          <Button variant='small' onClick={modalOn}>
-            Quick View
-          </Button>
-          <Button variant='small'>
-            <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> ADD TO CART
-          </Button>
+
+      <NavLink to={`/product/${name}`} className='text-decoration-none'>
+        <div className={styles.photo}>
+          <img src={`images/beds/${name}.jpg`} alt={name} />
+          {promo && <div className={styles.sale}>{promo}</div>}
+          <div
+            className={styles.buttons}
+            style={isHovered === true ? { opacity: 1 } : { opacity: 0 }}
+          >
+            <Button variant='small' onClick={modalOn}>
+              Quick View
+            </Button>
+            <Button variant='small' onClick={e => e.stopPropagation()}>
+              <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> ADD TO CART
+            </Button>
+          </div>
         </div>
-      </div>
+      </NavLink>
+
       <div className={styles.content}>
-        <h5>{name}</h5>
+        <NavLink to={`/product/${name}`} className='text-decoration-none'>
+          <h5>{name}</h5>
+        </NavLink>
         <div className={styles.stars}>
           <StarsRating stars={stars} id={id} ownRating={ownRating} />
         </div>
@@ -126,6 +135,7 @@ const ProductBox = ({
         </div>
         <div className={styles.price}>
           {oldPrice ? <span className={styles.oldPrice}>${oldPrice}</span> : ''}
+
           <Button noHover variant='small' className={styles.priceBtn}>
             $ {price}
           </Button>

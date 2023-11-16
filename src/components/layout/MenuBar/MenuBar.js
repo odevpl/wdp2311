@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { NavLink } from 'react-router-dom';
 
 import ProductSearch from '../../features/ProductSearch/ProductSearch';
 
@@ -15,27 +16,39 @@ const MenuBar = ({ children }) => (
         <div className={'col-auto ' + styles.menu}>
           <ul>
             <li>
-              <a href='#' className={styles.active}>
-                Home
-              </a>
+              <NavLink to={'/'} className={styles.noUnderline}>
+                <p className={styles.active}>Home</p>
+              </NavLink>
             </li>
             <li>
-              <a href='#'>Furniture</a>
+              <NavLink to={'/shop/furniture'} className={styles.noUnderline}>
+                <p>Furniture</p>
+              </NavLink>
             </li>
             <li>
-              <a href='#'>Chair</a>
+              <NavLink to={'/shop/chair'} className={styles.noUnderline}>
+                <p>Chair</p>
+              </NavLink>
             </li>
             <li>
-              <a href='#'>Table</a>
+              <NavLink to={'/shop/table'} className={styles.noUnderline}>
+                <p>Table</p>
+              </NavLink>
             </li>
             <li>
-              <a href='#'>Sofa</a>
+              <NavLink to={'/shop/sofa'} className={styles.noUnderline}>
+                <p>Sofa</p>
+              </NavLink>
             </li>
             <li>
-              <a href='#'>Bedroom</a>
+              <NavLink to={'/shop/bedroom'} className={styles.noUnderline}>
+                <p>Bedroom</p>
+              </NavLink>
             </li>
             <li>
-              <a href='#'>Blog</a>
+              <NavLink to={'/blog'} className={styles.noUnderline}>
+                <p>Blog</p>
+              </NavLink>
             </li>
           </ul>
         </div>
