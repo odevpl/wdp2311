@@ -485,6 +485,31 @@ const initialState = {
   cart: {
     products: [],
   },
+
+  feedback: [
+    {
+      id: 1,
+      name: 'John Smith',
+      message:
+        'Niezrównana jakość i obsługa! Kupiłem niedawno zestaw mebli do salonu i jestem zachwycony ich jakością. Meble są solidne, stylowe i wygodne. Obsługa klienta była również na najwyższym poziomie. Zdecydowanie polecam ten sklep!',
+      clientImg: `images/clientsAvatar/man1.jpg`,
+    },
+    {
+      id: 2,
+      name: 'Amanda Doe',
+      message:
+        'Doskonałe doświadczenie zakupowe! Sklep oferuje szeroki wybór mebli, co ułatwiło mi znalezienie idealnego stołu do jadalni. Proces zakupu był prosty, a dostawa szybka i bezproblemowa. Jestem bardzo zadowolony z mojego zakupu',
+      clientImg: `images/clientsAvatar/woman1.jpg`,
+    },
+    {
+      id: 3,
+      name: 'Sara Black',
+      message:
+        'Kupiłem tu kilka mebli do sypialni i są one nie tylko piękne, ale także wyjątkowo trwałe. Na pewno wrócę tu po więcej!',
+      clientImg: `images/clientsAvatar/woman2.jpg`,
+    },
+  ],
+
   promotional: [
     {
       id: 'aenean-ru-bristique-24',
@@ -497,7 +522,6 @@ const initialState = {
     },
   ],
 
-  productsToCompare: [],
   brands: [
     {
       id: 1,
@@ -546,6 +570,31 @@ const initialState = {
     },
   ],
 
+  promotions: [
+    {
+      id: 'aenean-ru-bristique-13',
+      title: 'GUEST ROOM',
+      subtitle: 'SOFA',
+      description: '-20%',
+      imgSrc:
+        'https://images.pexels.com/photos/6588592/pexels-photo-6588592.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    },
+    {
+      id: 'aenean-ru-bristique-1',
+      title: 'OFFICE CHAIR',
+      subtitle: 'COLLECTION',
+      description: '$200.000',
+      imgSrc:
+        'https://images.pexels.com/photos/12277015/pexels-photo-12277015.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    },
+    {
+      id: 'aenean-ru-bristique-6',
+      title: 'SPECIAL COLLECTION',
+      description: 'SAVE UP 45% OF FURNITURE',
+      imgSrc:
+        'https://images.pexels.com/photos/5178075/pexels-photo-5178075.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    },
+  ],
   posts: [
     {
       id: 1,
@@ -570,6 +619,45 @@ const initialState = {
       header: 'Products that fight static',
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim adminim veniam, quis nostrud exercitation ullamco laboris nisi utaliquip ex ea commodo consequat',
+    },
+  ],
+  productsToCompare: [],
+  chatBotData: [
+    {
+      question: 'cena dostawy',
+      answer: 'Cena dostawy wynosi 50zł',
+    },
+    {
+      question: 'opcje dostawy',
+      answer: 'Korzystamy z kuriera firmy DPD',
+    },
+    {
+      question: 'ile produktów',
+      answer: 'Jeden kurier może dostarczyć do 10 produktów.',
+    },
+    {
+      question: 'czas oczekiwania',
+      answer: 'Czas oczekiwania na produkty wynosi 20 dni',
+    },
+    {
+      question: 'instrukcje montażu',
+      answer: 'Tak, każdy mebel zawiera instrukcję montarzu',
+    },
+    {
+      question: 'gwarancja',
+      answer: 'Tak, meble są objęte 2 letnią gwarancją',
+    },
+    {
+      question: 'zwrot',
+      answer: 'Meble można zwrocić do 14 dni na koszt sklepu',
+    },
+    {
+      question: 'czas oczekiwania',
+      answer: 'Czas oczekiwania na produkty wynosi 20 dni',
+    },
+    {
+      question: 'metody płatności',
+      answer: 'Za meble można zapłacić przelewem i przy odbiorze',
     },
   ],
 };

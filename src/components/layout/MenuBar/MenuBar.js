@@ -5,44 +5,53 @@ import ProductSearch from '../../features/ProductSearch/ProductSearch';
 
 import styles from './MenuBar.module.scss';
 
-const MenuBar = ({ children }) => (
-  <div className={styles.root}>
-    <div className='container'>
-      <div className='row align-items-center'>
-        <div className='col'>
-          <ProductSearch />
-        </div>
-        <div className={'col-auto ' + styles.menu}>
-          <ul>
-            <li>
-              <a href='#' className={styles.active}>
-                Home
-              </a>
-            </li>
-            <li>
-              <a href='#'>Furniture</a>
-            </li>
-            <li>
-              <a href='#'>Chair</a>
-            </li>
-            <li>
-              <a href='#'>Table</a>
-            </li>
-            <li>
-              <a href='#'>Sofa</a>
-            </li>
-            <li>
-              <a href='#'>Bedroom</a>
-            </li>
-            <li>
-              <a href='#'>Blog</a>
-            </li>
-          </ul>
+const MenuBar = ({ children }) => {
+  const Links = () => {
+    const hrefs = ['Home', 'Furniture', 'Chair', 'Table', 'Sofa', 'Bedroom', 'Blog'];
+    return hrefs.map(href => (
+      <li key={href}>
+        <a href='#' className={hrefs.indexOf(href) === 0 && styles.active}>
+          {href}
+        </a>
+      </li>
+    ));
+  };
+
+  return (
+    <div className={styles.root}>
+      <div className='container'>
+        <div className='row align-items-center'>
+          <div className='col order-last order-xl-first'>
+            <ProductSearch />
+          </div>
+          <div className={'col-auto ' + styles.menu}>
+            <ul className='d-none d-lg-flex'>
+              <Links />
+            </ul>
+
+            <div className='dropdown navbar-light d-flex align-items-center h-100 d-lg-none'>
+              <button
+                className='navbar-toggler'
+                type='button'
+                id='dropdownMenuButton'
+                data-toggle='dropdown'
+                aria-haspopup='true'
+                aria-expanded='false'
+              >
+                <span className='navbar-toggler-icon'></span>
+              </button>
+              <div className='dropdown-menu' aria-labelledby='dropdownMenuButton'>
+                <ul className={styles.dropdown + ' flex-column align-items-stretch'}>
+                  <Links />
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-);
+  );
+};
 
 MenuBar.propTypes = {
   children: PropTypes.node,

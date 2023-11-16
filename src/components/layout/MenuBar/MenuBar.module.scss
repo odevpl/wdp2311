@@ -5,14 +5,14 @@
   background-color: #ffffff;
 
   :global(.container) > :global(.row) {
-    height: 84px;
+    min-height: 84px;
   }
 
   .menu {
-    display: flex;
     align-self: stretch;
 
     ul {
+      height: 100%;
       margin: 0;
       padding: 0;
       display: flex;
@@ -46,6 +46,12 @@
       &.active {
         border-color: $text-color;
       }
+    }
+  }
+
+  .dropdown {
+    a {
+      width: 100%;
     }
   }
 }
