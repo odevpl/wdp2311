@@ -5,16 +5,18 @@ import ProductSearch from '../../features/ProductSearch/ProductSearch';
 
 import styles from './MenuBar.module.scss';
 import { NavLink } from 'react-router-dom';
+import { useState } from 'react';
 
 const MenuBar = ({ children }) => {
   const Links = () => {
+    const [activeLink, setActiveLink] = useState('Home');
     const hrefs = ['Home', 'Furniture', 'Chair', 'Table', 'Sofa', 'Bedroom', 'Blog'];
     return hrefs.map(href => (
-      
-      <li>
+      <li key={href}>
         <NavLink
           to={href === 'Home' ? `/` : href === 'Blog' ? `/blog` : `/shop/${href}`}
-          className={hrefs.indexOf(href) === 0 && styles.active}
+          className={href === activeLink ? styles.active : ''}
+          onClick={() => setActiveLink(href)}
         >
           <p>{href}</p>
         </NavLink>
@@ -63,4 +65,3 @@ MenuBar.propTypes = {
 };
 
 export default MenuBar;
-
