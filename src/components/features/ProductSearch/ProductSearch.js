@@ -12,7 +12,7 @@ const ProductSearch = () => {
 
   return (
     <form action='' className={styles.root}>
-      <div className={styles.category}>
+      <div className={styles.category + ' d-none d-md-flex'}>
         <FontAwesomeIcon className={styles.icon} icon={faListUl} />
 
         <ul className={styles.list}>
