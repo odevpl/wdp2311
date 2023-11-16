@@ -17,11 +17,13 @@ import BrandsSlider from '../Brands/Brands';
 
 import Gallery from '../../layout/Gallery/Gallery';
 import SectionBlog from '../SectionBlog/SectionBlog';
+import Deals from '../../features/Deals/Deals';
 
 const Homepage = () => (
   <div className={styles.root}>
     <Promotional />
     <FeatureBoxes />
+    <Deals />
     <NewFurniture />
     <Blog />
     <Chatbot />
