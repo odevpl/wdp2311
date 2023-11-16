@@ -1,125 +1,138 @@
 @import "../../../styles/settings.scss";
 
-.chatBox{
+.chatBox {
   position: fixed;
-  left: 260px;
-  top: 63%;
-  bottom: 0;
-  width: 225px;
+  left: 160px;
+  bottom: 15%;
+  width: 300px;
   background-color: transparent;
   z-index: 1;
   border: 1px solid $primary;
   max-height: 300px;
   border-radius: 5px;
-    .top{
-      background-color: $primary;
-      border-bottom: 5px;
+  .top {
+    background-color: $primary;
+    border-bottom: 5px;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 40px;
+    color: $pure-white;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    .icon {
+      padding-right: 10px;
+      width: 50px;
+      display: flex;
+      justify-content: space-around;
+      font-size: 14px;
+    }
+  }
+  .textAreaView {
+    background-color: $pure-white;
+    border-top: 5px;
+    padding: 5px;
+    margin: 0;
+    width: 100%;
+    height: 250px;
+    font-size: 14px;
+    padding-left: 10px;
+    overflow: auto;
+
+    p {
+      width: fit-content;
+      max-width: 70%;
+      padding: 2px 5px;
+      border-radius: 10px;
+      background-color: #c2c2c2;
+    }
+
+    p:nth-child(odd) {
+      color: $primary;
+      margin-left: auto;
+
+      background-color: #d58e3236;
+    }
+  }
+  .textArea {
+    background-color: $pure-white;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 30px;
+    color: $header-bg;
+    bottom: 0px;
+    display: flex;
+    font-size: 14px;
+    border: none;
+    input {
+      outline: none;
+      font-size: 14px;
+      width: 80%;
+      height: 100%;
       padding: 0;
       margin: 0;
-      width: 100%;
-      height: 40px;
       color: $pure-white;
-      display: flex;
-      justify-content: end;
-      align-items: center;
-      .icon{
-        padding-right: 10px;
-        width: 50px;
-        display: flex;
-        justify-content: space-around;
-        font-size: 14px;
-      }
-    }
-    .textAreaView{
-      background-color: $pure-white;
-      border-top: 5px;
-      padding: 0;
-      margin: 0;
-      width: 100%;
-      height: 188px;
-      color: $header-bg;
-      bottom: 0px;
-      font-size: 14px;
-      padding-left: 10px
-    }
-    .textArea{
-      background-color: $pure-white;
-      padding: 0;
-      margin: 0;
-      width: 100%;
-      height: 30px;
-      color: $header-bg;
-      bottom: 0px;
-      display: flex;
-      font-size: 14px;
+      background-color: $header-bg;
       border: none;
-      input{
-        font-size: 14px;
-        width: 80%;
-        height: 100%;
-        padding: 0;
-        margin: 0;
-        color: $pure-white;
-        background-color: $header-bg;
-        border: none;
-        padding-left: 10px
-      }
-        button{
-          width: 20%;
-          padding: 0;
-          margin: 0;
-          border: none;
-          background-color:$header-bg;
-          svg {
-            background-color:$header-bg;
-            color: $pure-white;
-            font-size: 14px;
-          }
-        }
+      padding-left: 10px;
     }
-    .bottom{
-      background-color: $primary;
-      border-bottom: 5px;
+    button {
+      width: 20%;
       padding: 0;
       margin: 0;
-      width: 100%;
-      height: 40px;
-      color: $pure-white;
-      bottom: 0px;
+      border: none;
+      background-color: $header-bg;
+      svg {
+        background-color: $header-bg;
+        color: $pure-white;
+        font-size: 14px;
+      }
     }
+  }
+  .bottom {
+    background-color: $primary;
+    border-bottom: 5px;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 40px;
+    color: $pure-white;
+    bottom: 0px;
+  }
 }
-.button{
+.button {
   position: fixed;
   left: 20px;
   bottom: 30px;
   border: 1px solid $text-color;
   border-radius: 50%;
   z-index: 1;
-    cursor: pointer;
-    width: 48px;
-    height: 48px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    a{
-      color: $text-color;
-      font-style: normal;
-      font-size: 14px;
-      text-decoration: none;
-
-    }
-    .faEdit{
-      font-size: 16px;
-    }
-}
-  .text{
-    left: 80px;
-    bottom: 40px;
-    color: $pure-white;
-    position: fixed;
-    background-color: $text-color ;
-    opacity: 0.5;
-    padding: 5px;
-     border-radius: 5px;
+  cursor: pointer;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  a {
+    color: $text-color;
+    font-style: normal;
     font-size: 14px;
+    text-decoration: none;
+  }
+  .faEdit {
+    font-size: 16px;
+  }
+}
+.text {
+  left: 80px;
+  bottom: 40px;
+  color: $pure-white;
+  position: fixed;
+  background-color: $text-color;
+  opacity: 0.5;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 14px;
 }
