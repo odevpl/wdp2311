@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import styles from './login.module.scss';
 import PropTypes from 'prop-types';
 import ProductBox from '../ProductBox/ProductBox';
@@ -8,7 +8,7 @@ const Login = ({ isOpen, onClose, loginOpen, setIsOpenLogin }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const handleLogin = () => {
     // Zastąp je rzeczywistymi danymi logowania
@@ -17,7 +17,7 @@ const Login = ({ isOpen, onClose, loginOpen, setIsOpenLogin }) => {
     const validPass = 'pass';
 
     if (email === validEmail && password === validPass) {
-      history.push('/');
+      navigate('/');
       setIsOpenLogin(false);
     } else {
       setError('Invalid email or password');
@@ -53,9 +53,9 @@ const Login = ({ isOpen, onClose, loginOpen, setIsOpenLogin }) => {
           />
           <p className={styles.login__info}>
             Nie pamiętasz hasła?{' '}
-            <Link to={'#'} className={styles.login__link}>
+            <NavLink to={'#'} className={styles.login__link}>
               Przypomnij hasło
-            </Link>
+            </NavLink>
           </p>
           {error && <p className={styles.login__error}>{error}</p>}
           <button className={styles.login__button} onClick={handleLogin}>

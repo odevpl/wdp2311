@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretDown, faUser, faLock, faBars } from '@fortawesome/free-solid-svg-icons';
 import styles from './TopBar.module.scss';
 import Login from '../../common/Login/Login';
-import { Link } from 'react-router-dom/cjs/react-router-dom.min';
+import { NavLink } from 'react-router-dom';
 
 const TopBar = () => {
   const [loginIsOpen, setLoginIsOpen] = useState(false);
@@ -44,9 +44,9 @@ const TopBar = () => {
                 </button>
               </li>
               <li>
-                <Link to='/register' className={styles.register}>
+                <NavLink to='/register' className={styles.register}>
                   <FontAwesomeIcon className={styles.icon} icon={faLock} />
-                </Link>
+                </NavLink>
               </li>
               <li>
                 <a href='#'>

@@ -3,7 +3,7 @@ import { Form, Row, Col } from 'react-bootstrap';
 import Button from '../../common/Button/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
-import { Link } from 'react-router-dom/cjs/react-router-dom.min';
+import { NavLink } from 'react-router-dom';
 import styles from './Register.module.scss';
 
 const Register = () => {
@@ -14,7 +14,7 @@ const Register = () => {
           <Row className='justify-content-between'>
             <Form.Check type={'radio'} id={`check-api-${'radio'}`} className='mx-4'>
               <Form.Check.Input type={'radio'} />
-              <Form.Check.Label>Mam konto</Form.Check.Label>
+              <Form.Check.Label className='my-3'>Mam konto</Form.Check.Label>
             </Form.Check>
             <Form.Check
               type={'radio'}
@@ -22,7 +22,7 @@ const Register = () => {
               className='mx-4 px-3'
             >
               <Form.Check.Input type={'radio'} />
-              <Form.Check.Label>Nie mam konta</Form.Check.Label>
+              <Form.Check.Label className='my-3'>Nie mam konta</Form.Check.Label>
             </Form.Check>
           </Row>
           <Col>
@@ -77,15 +77,15 @@ const Register = () => {
             </Form.Check>
           </Col>
           <Row className='my-3'>
-            <Link to='/' className={styles.linkReturn}>
+            <NavLink to='/' className={styles.linkReturn}>
               <Button>
                 <FontAwesomeIcon icon={faChevronLeft} className={styles.fa} />
                 Wróć
               </Button>
-            </Link>
-            <Link to='/' className={styles.linkRegister}>
+            </NavLink>
+            <NavLink to='/' className={styles.linkRegister}>
               <span>Zarejestruj się</span>
-            </Link>
+            </NavLink>
           </Row>
         </Form>
       </Col>
