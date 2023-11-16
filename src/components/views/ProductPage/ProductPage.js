@@ -2,6 +2,7 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'react-router-dom';
 import styles from './ProductPage.module.scss';
+import NewFurnitureSinglePage from '../../features/NewFurniture/NewFurnitureSinglePage';
 import { useSelector } from 'react-redux';
 import { getProductById } from '../../../redux/productsRedux';
 import {
@@ -185,6 +186,8 @@ const ProductPage = () => {
         </div>
       </div>
     </div>
+    <NewFurnitureSinglePage />
+  </div>
   );
 };
 
