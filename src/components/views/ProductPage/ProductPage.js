@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'react-router-dom';
 import styles from './ProductPage.module.scss';
 import NewFurnitureSinglePage from '../../features/NewFurniture/NewFurnitureSinglePage';
+import Reviews from '../../features/Reviews/Reviews';
 import { useSelector } from 'react-redux';
 import { getProductById } from '../../../redux/productsRedux';
 
@@ -185,6 +186,7 @@ const ProductPage = () => {
             </div>
           </div>
         </div>
+        <Reviews />
       </div>
       <NewFurnitureSinglePage />
     </div>

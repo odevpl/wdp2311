@@ -1,0 +1,92 @@
+@import "../../../styles/settings.scss";
+
+$base-font-size: 14px;
+$base-spcing: 0.5rem;
+$border-width: 2px;
+
+$base-color: $light-grey-bg;
+$border-color: rgba(
+  $color: $base-color,
+  $alpha: 0.2
+);
+$active-color: $dim-orange;
+$text-color: rgba(
+  $color: $base-color,
+  $alpha: 0.75
+);
+
+.container {
+  color: $text-color;
+  margin: $base-spcing;
+  border: $border-width solid $border-color;
+
+  p {
+    font-size: $base-font-size;
+    margin: 0;
+    font-weight: 600;
+    color: rgba($color: $text-color, $alpha: 0.75);
+  }
+
+  ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      padding: $base-spcing * 1.5 $base-spcing * 3;
+      border: $border-width solid $border-color;
+      border-top: none;
+      border-left: none;
+      text-transform: uppercase;
+      font-weight: 700;
+
+      &.selected {
+        border-bottom: none;
+        color: $active-color;
+      }
+    }
+  }
+
+  h5 {
+    font-size: $base-font-size * 1.1;
+    font-weight: 700;
+    margin: $base-spcing * 3 0;
+  }
+
+  .starsContainer {
+    display: flex;
+    gap: $base-spcing * 2;
+    margin: $base-spcing * 2 0;
+  }
+
+  textarea {
+    width: 100%;
+    resize: none;
+    height: $base-spcing * 10;
+    margin: $base-spcing 0;
+    border: $border-width solid $border-color;
+  }
+
+  .inputsContainer {
+    width: 100%;
+    display: flex;
+    gap: $base-spcing;
+
+    input {
+      border: $border-width solid $border-color;
+      padding: $base-spcing;
+      width: 100%;
+    }
+
+    button {
+      padding: 0 $base-spcing * 3;
+      color: white;
+      background-color: $base-color;
+    }
+  }
+
+  .contents {
+    padding: $base-spcing * 4;
+  }
+}
