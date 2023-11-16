@@ -22,9 +22,7 @@ const Register = () => {
               className='mx-4 px-3'
             >
               <Form.Check.Input type={'radio'} />
-              <Form.Check.Label>
-                <b>Nie mam konta</b>
-              </Form.Check.Label>
+              <Form.Check.Label>Nie mam konta</Form.Check.Label>
             </Form.Check>
           </Row>
           <Col>
@@ -55,7 +53,9 @@ const Register = () => {
                 type={'checkbox'}
                 style={{ width: '1rem', height: '1rem' }}
               />
-              <Form.Check.Label className='pt-1'>Zaznacz wszystko</Form.Check.Label>
+              <Form.Check.Label className='pt-1'>
+                <b>Zaznacz wszystko</b>
+              </Form.Check.Label>
             </Form.Check>
             <Form.Check custom type={'checkbox'} id={`check-api-2`} className='mb-3 '>
               <Form.Check.Input
