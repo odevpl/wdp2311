@@ -54,7 +54,7 @@ const Register = () => {
                 style={{ width: '1rem', height: '1rem' }}
               />
               <Form.Check.Label className='pt-1'>
-                <b>Zaznacz wszystko</b>
+                <b>Zaznacz wszystkie</b>
               </Form.Check.Label>
             </Form.Check>
             <Form.Check custom type={'checkbox'} id={`check-api-2`} className='mb-3 '>
@@ -63,7 +63,7 @@ const Register = () => {
                 style={{ width: '1rem', height: '1rem' }}
               />
               <Form.Check.Label className='pt-1'>
-                Akceptuje warunki <span className={styles.orange}> regulaminu *</span>
+                Akceptuje warunki <span className={styles.orange}> regulaminu</span>*
               </Form.Check.Label>
             </Form.Check>
             <Form.Check custom type={'checkbox'} id={`check-api-3`} className='mb-3'>
