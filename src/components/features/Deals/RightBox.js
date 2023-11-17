@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import styles from './RightBox.module.scss';
 
 const RightBox = ({ title, description, imgSrc, subtitle }) => {
-  // Splitting the title into parts to apply different styles
   const titleParts = title.split(' ');
   const officeIndex = titleParts.findIndex(part => part.toLowerCase() === 'office');
   const specialIndex = titleParts.findIndex(part => part.toLowerCase() === 'special');
