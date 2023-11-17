@@ -66,6 +66,19 @@ const ProductBox = ({
     setBackgroundBlur(true);
   };
 
+  const addToCart = (e, name, price) => {
+    e.stopPropagation();
+    e.preventDefault();
+
+    const cartProductData = {
+      name,
+      price,
+      img: `images/beds/${name}.jpg`,
+    };
+
+    console.log(cartProductData);
+  };
+
   return (
     <div
       className={styles.root}
@@ -100,7 +113,7 @@ const ProductBox = ({
             <Button variant='small' onClick={modalOn}>
               Quick View
             </Button>
-            <Button variant='small' onClick={e => e.stopPropagation()}>
+            <Button variant='small' onClick={e => addToCart(e, name, price)}>
               <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> ADD TO CART
             </Button>
           </div>

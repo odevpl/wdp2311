@@ -3,8 +3,11 @@ import React from 'react';
 import { faMinus, faPlus, faTimesCircle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { NavLink } from 'react-router-dom';
+import CartItem from './CartItem/CartItem';
+import { useSelector } from 'react-redux';
 
 const CardPage = () => {
+  const allCartProduct = useSelector(state => state.cart);
   return (
     <div className={styles.cart}>
       <div className={styles.shoppingCart}>
@@ -22,6 +25,16 @@ const CardPage = () => {
           <div className={styles.title}>QUANTITY</div>
           <div className={styles.title}>TOTAL</div>
         </div>
+        {allCartProduct.map(item => (
+          <CartItem
+            key={item.key}
+            id={item.id}
+            name={item.name}
+            price={item.price}
+            img={item.img}
+          />
+        ))}
+        {/* <CartItem {...props} />
         <div className={styles.item}>
           <div className={styles.buttons}>
             <FontAwesomeIcon className={styles.deleteBtn} icon={faTimesCircle} />
@@ -43,51 +56,8 @@ const CardPage = () => {
             </button>
           </div>
           <div className={styles.totalPrice}>$549</div>
-        </div>
-        <div className={styles.item}>
-          <div className={styles.buttons}>
-            <FontAwesomeIcon className={styles.deleteBtn} icon={faTimesCircle} />
-          </div>
-          <div className={styles.image}>
-            <img src='images/beds/Aenean Ru Bristique 3.jpg' alt='' />
-          </div>
-          <div className={styles.description}>
-            <span>Item 2</span>
-          </div>
-          <div className={styles.price}>$349</div>
-          <div className={styles.quantity}>
-            <button className={styles.plusBtn} type='button' name='button'>
-              <FontAwesomeIcon className={styles.icon} icon={faMinus} />
-            </button>
-            <input type='text' name='name' value='1' />
-            <button className={styles.faPlus} type='button' name='button'>
-              <FontAwesomeIcon className={styles.icon} icon={faPlus} />
-            </button>
-          </div>
-          <div className={styles.totalPrice}>$870</div>
-        </div>
-        <div className={styles.item}>
-          <div className={styles.buttons}>
-            <FontAwesomeIcon className={styles.deleteBtn} icon={faTimesCircle} />
-          </div>
-          <div className={styles.image}>
-            <img src='images/beds/Aenean Ru Bristique 2.jpg' alt='' />
-          </div>
-          <div className={styles.description}>
-            <span>Item 3</span>
-          </div>
-          <div className={styles.price}>$349</div>
-          <div className={styles.quantity}>
-            <button className={styles.plusBtn} type='button' name='button'>
-              <FontAwesomeIcon className={styles.icon} icon={faMinus} />
-            </button>
-            <input type='text' name='name' value='1' />
-            <button className={styles.faPlus} type='button' name='button'>
-              <FontAwesomeIcon className={styles.icon} icon={faPlus} />
-            </button>
-          </div>
-          <div className={styles.totalPrice}>$349</div>
-        </div>
+        </div> */}
+
         <div className={styles.title}>
           <div>
             <input type='text' name='name' value='' placeholder='Coupon code' />
