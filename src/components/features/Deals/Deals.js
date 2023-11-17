@@ -18,7 +18,7 @@ const Deals = () => {
             {dealsData
               .slice(1, 3)
               .map(({ id, title, description, imgSrc, subtitle }) => (
-                <div key={id} className='col-md-6'>
+                <div key={id}>
                   <RightBox
                     id={id}
                     title={title}

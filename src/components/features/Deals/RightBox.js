@@ -15,7 +15,12 @@ const RightBox = ({ title, description, imgSrc, subtitle }) => {
           <div className={styles.titleContainer}>
             <h2>
               {titleParts.map((part, index) => (
-                <span key={index} style={{ fontWeight: getFontWeight(index) }}>
+                <span
+                  key={index}
+                  style={{
+                    fontWeight: getFontWeight(index, officeIndex, specialIndex),
+                  }}
+                >
                   {part}
                   {index < titleParts.length - 1 && ' '}
                 </span>
@@ -29,7 +34,7 @@ const RightBox = ({ title, description, imgSrc, subtitle }) => {
     </div>
   );
 
-  function getFontWeight(index) {
+  function getFontWeight(index, officeIndex, specialIndex) {
     if (index === officeIndex || index === specialIndex) {
       return 'bold';
     } else {
