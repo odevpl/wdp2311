@@ -1,16 +1,75 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Form, Row, Col } from 'react-bootstrap';
 import Button from '../../common/Button/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import styles from './Register.module.scss';
 
 const Register = () => {
+  const navigate = useNavigate();
+
+  const [formData, setFormData] = useState({
+    email: '',
+    password: '',
+    confirmPassword: '',
+  });
+
+  const [error, setError] = useState({
+    email: '',
+    password: '',
+    confirmPassword: '',
+  });
+
+  const handleInputChange = (name, value) => {
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+  const validFrom = () => {
+    let isValid = true;
+    const newErrors = { ...error };
+
+    if (!formData.email.includes('@')) {
+      newErrors.email = 'Invalid email';
+      isValid = false;
+    } else {
+      newErrors.email = '';
+    }
+
+    if (formData.password.length < 3) {
+      newErrors.password = 'Invalid password';
+      isValid = false;
+    } else {
+      newErrors.password = '';
+    }
+
+    if (formData.confirmPassword !== formData.password) {
+      newErrors.confirmPassword = 'Invalid confirmPassword';
+      isValid = false;
+    } else {
+      newErrors.confirmPassword = '';
+    }
+    setError(newErrors);
+    return isValid;
+  };
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    if (validFrom()) {
+      console.log('Ok');
+      navigate('/');
+    } else {
+      console.log('Error');
+    }
+  };
+
   return (
     <div className={styles.registerBox}>
       <Col lg={4}>
-        <Form className='my-3'>
+        <Form className='my-3' onSubmit={handleSubmit}>
           <Row className='justify-content-between'>
             <Form.Check type={'radio'} id={`check-api-${'radio'}`} className='mx-4'>
               <Form.Check.Input type={'radio'} />
@@ -28,13 +87,30 @@ const Register = () => {
           <Col>
             <Form.Group className='mb-3 mt-5' controlId='exampleForm.ControlInput1'>
               <Form.Label>Podaj dane do rejestracji</Form.Label>
-              <Form.Control type='email' placeholder='E-mail *' className='mb-3' />
-              <Form.Control type='password' placeholder='Hasło *' className='mb-3' />
+              <Form.Control
+                type='text'
+                placeholder='E-mail *'
+                className='mb-3'
+                value={formData.email}
+                onChange={e => handleInputChange('email', e.target.value)}
+              />
+              <span className={styles.error}>{error.email}</span>
+              <Form.Control
+                value={formData.password}
+                onChange={e => handleInputChange('password', e.target.value)}
+                type='password'
+                placeholder='Hasło *'
+                className='mb-3'
+              />
+              <span className={styles.error}>{error.password}</span>
               <Form.Control
                 type='password'
                 placeholder='Powtórz hasło *'
                 className='mb-1'
+                value={formData.confirmPassword}
+                onChange={e => handleInputChange('confirmPassword', e.target.value)}
               />
+              <span className={styles.error}>{error.confirmPassword}</span>
             </Form.Group>
           </Col>
           <Row className='justify-content-end mx-3'>
@@ -76,17 +152,18 @@ const Register = () => {
               </Form.Check.Label>
             </Form.Check>
           </Col>
-          <Row className='my-3'>
+          <div className={styles.submitBtn}>
             <NavLink to='/' className={styles.linkReturn}>
               <Button>
                 <FontAwesomeIcon icon={faChevronLeft} className={styles.fa} />
                 Wróć
               </Button>
             </NavLink>
-            <NavLink to='/' className={styles.linkRegister}>
+
+            <button className={styles.linkRegister}>
               <span>Zarejestruj się</span>
-            </NavLink>
-          </Row>
+            </button>
+          </div>
         </Form>
       </Col>
     </div>
