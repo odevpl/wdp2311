@@ -231,7 +231,7 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
-      isFavorite: false,
+      isFavorite: true,
       isCompare: false,
     },
     {

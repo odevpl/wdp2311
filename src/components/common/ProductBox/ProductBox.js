@@ -17,15 +17,15 @@ const ProductBox = ({
   price,
   promo,
   stars,
-  isFavorite,
   isCompare,
+  isFavorite,
   id,
   ownRating,
   oldPrice,
 }) => {
-  const [isFav, setIsFav] = useState(false);
+  const [isFav, setIsFav] = useState(isFavorite);
   const buttonFavoriteActive = clsx('outline', {
-    [styles.favorite]: isFavorite,
+    [styles.favorite]: isFav,
   });
 
   const buttonCompareActive = clsx('outline', {

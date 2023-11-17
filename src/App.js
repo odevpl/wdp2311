@@ -11,6 +11,7 @@ import ProductPage from './components/views/ProductPage/ProductPage';
 import CardPage from './components/views/CardPage/CardPage';
 import Blog from './components/views/Blog/Blog';
 import Register from './components/views/Register/Register';
+import Search from './components/common/Search/Search';
 
 const App = () => (
   <Provider store={store}>
@@ -23,6 +24,7 @@ const App = () => (
           <Route path={'cart'} element={<CardPage />} />
           <Route path={'/blog'} element={<Blog />} />
           <Route path={'/register'} element={<Register />} />
+          <Route path={'/search/:category'} element={<Search />} />
         </Routes>
       </MainLayout>
     </BrowserRouter>
