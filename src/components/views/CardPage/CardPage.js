@@ -6,9 +6,15 @@ import { NavLink } from 'react-router-dom';
 import CartItem from './CartItem/CartItem';
 import { useSelector } from 'react-redux';
 import { Container } from 'react-bootstrap';
+import { useDispatch } from 'react-redux';
+import { proceedToCheckout } from '../../../redux/cartRedux';
 
 const CardPage = () => {
+  const dispatch = useDispatch();
   const allCartProduct = useSelector(state => state.cart.products);
+  const proceedHandleClick = () => {
+    dispatch(proceedToCheckout());
+  };
   return (
     <Container>
       <div className={styles.cart}>
@@ -28,7 +34,7 @@ const CardPage = () => {
             <div className={styles.title}>TOTAL</div>
           </div>
           {allCartProduct.map(item => (
-            <CartItem key={item.key} {...item} />
+            <CartItem key={item.id} {...item} />
           ))}
 
           <div className={styles.title}>
@@ -62,7 +68,7 @@ const CardPage = () => {
             <div className={styles.price}>$349</div>
           </div>
           <NavLink to='/'>
-            <button> PROCEED TO CHECKOUT</button>
+            <button onClick={proceedHandleClick}> PROCEED TO CHECKOUT</button>
           </NavLink>
         </div>
       </div>
