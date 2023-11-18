@@ -4,11 +4,18 @@ import PropTypes from 'prop-types';
 import styles from './CartItem.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMinus, faPlus, faTimesCircle } from '@fortawesome/free-solid-svg-icons';
+import { useDispatch } from 'react-redux';
+import { removeProductFromCart } from '../../../../redux/cartRedux';
 
-const CartItem = ({ name, price, img }) => {
+const CartItem = ({ id, name, price, img }) => {
+  const dispatch = useDispatch();
+
+  const removeFromCart = () => {
+    dispatch(removeProductFromCart(id));
+  };
   return (
     <div className={styles.item}>
-      <div className={styles.buttons}>
+      <div className={styles.buttons} onClick={removeFromCart}>
         <FontAwesomeIcon className={styles.deleteBtn} icon={faTimesCircle} />
       </div>
       <div className={styles.image}>
@@ -33,6 +40,7 @@ const CartItem = ({ name, price, img }) => {
 };
 
 CartItem.propTypes = {
+  id: PropTypes.string,
   name: PropTypes.string,
   price: PropTypes.number,
   img: PropTypes.string,
