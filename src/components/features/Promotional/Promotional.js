@@ -12,14 +12,17 @@ const Promotional = () => {
   const [fade, setFade] = useState(true);
 
   const promotionalProducts = useSelector(allPromotional);
-  console.log(promotionalProducts, 'products');
 
   useEffect(() => {
     let autoplayInterval;
+
     if (autoplay) {
       autoplayInterval = setInterval(() => {
-        setDeal(prevDeal => (prevDeal + 1) % 3);
-        setFade(true);
+        setFade(false);
+        setTimeout(() => {
+          setDeal(prevDeal => (prevDeal + 1) % 3);
+          setFade(true);
+        }); // Adjust the timeout duration as needed
       }, 3000);
     }
     return () => {
