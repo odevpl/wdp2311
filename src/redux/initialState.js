@@ -543,48 +543,39 @@ const initialState = {
   brands: [
     {
       id: 1,
-      description: '',
-      url: 'images/brands/brands1.jpg',
+      description: 'brands1',
     },
     {
       id: 2,
-      description: '',
-      url: 'images/brands/brands2.jpg',
+      description: 'brands2',
     },
     {
       id: 3,
-      description: '',
-      url: 'images/brands/brands3.jpg',
+      description: 'brands3',
     },
     {
       id: 4,
-      description: '',
-      url: 'images/brands/brands4.jpg',
+      description: 'brands4',
     },
     {
       id: 5,
-      description: '',
-      url: 'images/brands/brands5.jpg',
+      description: 'brands5',
     },
     {
       id: 6,
-      description: '',
-      url: 'images/brands/brands6.jpg',
+      description: 'brands6',
     },
     {
       id: 7,
-      description: '',
-      url: 'images/brands/brands7.jpg',
+      description: 'brands7',
     },
     {
       id: 8,
-      description: '',
-      url: 'images/brands/brands8.jpg',
+      description: 'brands8',
     },
     {
       id: 9,
-      description: '',
-      url: 'images/brands/brands9.jpg',
+      description: 'brands9',
     },
   ],
 
