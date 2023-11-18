@@ -1,16 +1,15 @@
 @import "../../../styles/settings.scss";
 
-.cart{
+.cart {
   display: flex;
   align-items: end;
   flex-direction: column;
   .shoppingCart {
-    width: 1200px;
-    height: 423px;
+    width: 100%;
     margin: 80px auto;
     display: flex;
     flex-direction: column;
-    img{
+    img {
       width: 100px;
     }
     .title {
@@ -63,15 +62,15 @@
       background-color: $content-bg;
       padding: 0 30px;
       margin: 0 auto;
-      width: 1200px;
+      width: 100%;
       .title {
         border: 0;
-        width:115px;
+        width: 115px;
         margin: auto;
         display: flex;
         justify-content: center;
         padding: 0;
-        span{
+        span {
           font-size: 16px;
         }
       }
@@ -80,7 +79,7 @@
         width: 240px;
         margin: auto 0;
         text-align: left;
-        span{
+        span {
           font-size: 16px;
         }
       }
@@ -90,9 +89,9 @@
       padding: 0;
       width: 115px;
       text-align: center;
-      .deleteBtn{
+      .deleteBtn {
         display: inline-block;
-        Cursor: pointer;
+        cursor: pointer;
         font-size: 2em;
       }
     }
@@ -134,7 +133,7 @@
       font-weight: 300;
     }
   }
-  .subTable{
+  .subTable {
     height: 205px;
     width: 400px;
     color: $text-color;
@@ -143,23 +142,23 @@
     border: 1px solid $footer-text-elements;
     display: flex;
     flex-direction: column;
-    margin: 0px 350px 50px 0 ;
-    .subTitle{
+    margin: 0px 350px 50px 0;
+    .subTitle {
       background-color: $content-bg;
       border-bottom: 1px solid $footer-text-elements;
       height: 40px;
-      h6{
+      h6 {
         text-align: center;
         padding-top: 10px;
       }
     }
-    .subItem{
+    .subItem {
       border-bottom: 1px solid $footer-text-elements;
       display: flex;
       justify-content: space-between;
       align-items: center;
       height: 40px;
-      .subBorder{
+      .subBorder {
         border-right: 1px solid $footer-text-elements;
         width: 50%;
         height: 100%;
@@ -184,7 +183,6 @@
     margin: auto;
     text-align: left;
     padding-left: 5px;
-
   }
   .description span {
     display: block;

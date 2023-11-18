@@ -660,26 +660,28 @@ const initialState = {
       answer: 'Za meble można zapłacić przelewem i przy odbiorze',
     },
   ],
-  cart: [
-    {
-      id: 1,
-      name: 'Item 1',
-      price: 389,
-      img: `images/beds/Aenean Ru Bristique 1.jpg`,
-    },
-    {
-      id: 2,
-      name: 'Item 2',
-      price: 349,
-      img: `images/beds/Aenean Ru Bristique 2.jpg`,
-    },
-    {
-      id: 3,
-      name: 'Item 3',
-      price: 249,
-      img: `images/beds/Aenean Ru Bristique 3.jpg`,
-    },
-  ],
+  cart: {
+    products: [
+      {
+        id: 1,
+        name: 'Item 1',
+        price: 389,
+        img: `images/beds/Aenean Ru Bristique 1.jpg`,
+      },
+      {
+        id: 2,
+        name: 'Item 2',
+        price: 349,
+        img: `images/beds/Aenean Ru Bristique 2.jpg`,
+      },
+      {
+        id: 3,
+        name: 'Item 3',
+        price: 249,
+        img: `images/beds/Aenean Ru Bristique 3.jpg`,
+      },
+    ],
+  },
 };
 
 export default initialState;

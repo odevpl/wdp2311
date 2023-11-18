@@ -11,6 +11,7 @@ import { addProductToCompare } from '../../../redux/compareRedux';
 import { useDispatch } from 'react-redux';
 import Popup from '../Popup/Popup';
 import { NavLink } from 'react-router-dom';
+import { addProductToCart } from '../../../redux/cartRedux';
 
 const ProductBox = ({
   name,
@@ -76,7 +77,7 @@ const ProductBox = ({
       img: `images/beds/${name}.jpg`,
     };
 
-    console.log(cartProductData);
+    dispatch(addProductToCart(cartProductData));
   };
 
   return (

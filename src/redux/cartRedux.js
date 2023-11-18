@@ -10,7 +10,7 @@ const createActionName = name => `app/${reducerName}/${name}`;
 const ADD_PRODUCT = createActionName('ADD_PRODUCT');
 
 /* action creators */
-export const addProduct = payload => ({ payload, type: ADD_PRODUCT });
+export const addProductToCart = payload => ({ payload, type: ADD_PRODUCT });
 
 /* reducer */
 export default function reducer(statePart = [], action = {}) {
