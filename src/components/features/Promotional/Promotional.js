@@ -4,10 +4,38 @@ import { useSelector } from 'react-redux';
 import { allPromotional } from '../../../redux/productsRedux';
 import PromotionalProduct from '../../common/PromotionalProduct/PromotionalProduct';
 import BestDeal from '../BestDeal/BestDeal';
+import { useEffect } from 'react';
 
 const Promotional = () => {
-  const [deal, setDeal] = useState(0);
+  const [activeDeal, setDeal] = useState(0);
+  const [autoplay, setAutoplay] = useState(true);
+  const [fade, setFade] = useState(true);
+
   const promotionalProducts = useSelector(allPromotional);
+  console.log(promotionalProducts, 'products');
+
+  useEffect(() => {
+    let autoplayInterval;
+    if (autoplay) {
+      autoplayInterval = setInterval(() => {
+        setDeal(prevDeal => (prevDeal + 1) % 3);
+        setFade(true);
+      }, 3000);
+    }
+    return () => {
+      clearInterval(autoplayInterval);
+    };
+  }, [autoplay]);
+
+  const handleDealChange = index => {
+    setAutoplay(false);
+    setFade(true);
+    setDeal(index);
+    setTimeout(() => {
+      setAutoplay(true);
+    }, 10000);
+  };
+
   return (
     <div className={styles.root}>
       <div className='container'>
@@ -19,17 +47,24 @@ const Promotional = () => {
                 <ul>
                   {[0, 1, 2].map(i => (
                     <li key={i}>
-                      <a className={i === deal ? styles.active : ''}>view {i}</a>
+                      <a
+                        onClick={() => handleDealChange(i)}
+                        className={i === activeDeal ? styles.active : ''}
+                      >
+                        view {i}
+                      </a>
                     </li>
                   ))}
                 </ul>
               </div>
             </div>
-            {promotionalProducts.map(item => (
-              <div key={item.id}>
-                <PromotionalProduct {...item} />
-              </div>
-            ))}
+            {promotionalProducts
+              .filter((item, index) => index === activeDeal)
+              .map(item => (
+                <div key={item.id} className={fade ? styles.fadeOut : styles.fadeIn}>
+                  <PromotionalProduct {...item} />
+                </div>
+              ))}
           </div>
           <div className='col-8'>
             <BestDeal />
