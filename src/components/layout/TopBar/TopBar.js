@@ -3,9 +3,9 @@ import React, { useState } from 'react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretDown, faUser, faLock, faBars } from '@fortawesome/free-solid-svg-icons';
-import { NavLink } from 'react-router-dom';
 import styles from './TopBar.module.scss';
 import Login from '../../common/Login/Login';
+import { NavLink } from 'react-router-dom';
 
 const TopBar = () => {
   const [loginIsOpen, setLoginIsOpen] = useState(false);
@@ -44,9 +44,9 @@ const TopBar = () => {
                 </button>
               </li>
               <li>
-                <a href='#' className={styles.register}>
+                <NavLink to='/register' className={styles.register}>
                   <FontAwesomeIcon className={styles.icon} icon={faLock} />
-                </a>
+                </NavLink>
               </li>
               <li>
                 <a href='#'>
