@@ -22,7 +22,7 @@ const BestDeal = () => {
         </div>
       </div>
       <div className={styles.buttons}>
-        <Button variant='small'>
+        <Button variant='small' onClick>
           <FontAwesomeIcon icon={faAngleLeft} />
         </Button>
         <Button variant='small'>
