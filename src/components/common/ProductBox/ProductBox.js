@@ -8,7 +8,7 @@ import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../Button/Button';
 import StarsRating from '../../features/StarsRating/StarsRating';
 import { addProductToCompare } from '../../../redux/compareRedux';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import Popup from '../Popup/Popup';
 import { NavLink } from 'react-router-dom';
 import { addProductToCart } from '../../../redux/cartRedux';
@@ -39,6 +39,7 @@ const ProductBox = ({
 
   const dispatch = useDispatch();
   const product = { name, price };
+  const qtyObjInCart = useSelector(state => state.cart.products.length);
 
   useEffect(() => {
     const favoriteFromStorage = JSON.parse(localStorage.getItem('favorites')) || [];
@@ -71,7 +72,10 @@ const ProductBox = ({
     e.stopPropagation();
     e.preventDefault();
 
+    const productIdInCart = qtyObjInCart + 1;
+
     const cartProductData = {
+      id: productIdInCart,
       name,
       price,
       img: `images/beds/${name}.jpg`,
