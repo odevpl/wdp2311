@@ -669,6 +669,9 @@ const initialState = {
       answer: 'Za meble można zapłacić przelewem i przy odbiorze',
     },
   ],
+  cart: {
+    products: [],
+  },
 };
 
 export default initialState;
