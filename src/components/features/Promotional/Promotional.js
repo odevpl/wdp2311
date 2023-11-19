@@ -12,6 +12,7 @@ const Promotional = () => {
   const [activePage, setActivePage] = useState(0);
   const promotionalProducts = useSelector(allPromotional);
 
+
   const dots = [];
   for (let i = 0; i < promotionalProducts.length; i++) {
     dots.push(
