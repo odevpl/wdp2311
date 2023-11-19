@@ -520,6 +520,24 @@ const initialState = {
       promo: 'sale',
       newFurniture: true,
     },
+    {
+      id: 'aenean-ru-bristique-12',
+      name: 'Aenean Ru Bristique 12',
+      category: 'bed',
+      price: 30,
+      stars: 2,
+      promo: 'sale',
+      newFurniture: true,
+    },
+    {
+      id: 'aenean-ru-bristique-4',
+      name: 'Aenean Ru Bristique 4',
+      category: 'bed',
+      price: 30,
+      stars: 2,
+      promo: 'sale',
+      newFurniture: true,
+    },
   ],
 
   brands: [
