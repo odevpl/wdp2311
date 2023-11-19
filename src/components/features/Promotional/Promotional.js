@@ -54,14 +54,13 @@ const Promotional = () => {
               leftAction={nextPage}
               rightAction={previousPage}
             >
-              {promotionalProducts.map((item, i) => (
-                <div
-                  key={i}
-                  className={i !== deal ? 'd-none' : 'd-block swipeableContent'}
-                >
-                  <PromotionalProduct {...item} />
-                </div>
-              ))}
+              <div className='swipeableContent'>
+                {promotionalProducts.map((item, i) => (
+                  <div key={i} className={i !== deal ? 'd-none' : 'd-block'}>
+                    <PromotionalProduct {...item} />
+                  </div>
+                ))}
+              </div>
             </Swipeable>
           </div>
           <div className='col-12 col-sm-8'>
