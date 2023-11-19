@@ -75,7 +75,8 @@
     "lint-staged": "^9.4.0",
     "onchange": "^6.1.0",
     "prettier": "^1.19.1",
-    "react-router-dom": "6.18.0",
-    "redux-devtools-extension": "^2.13.8"
+    "react-router-dom": "6.19.0",
+    "redux-devtools-extension": "2.13.8",
+    "uniqid": "5.4.0"
   }
 }

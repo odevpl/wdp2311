@@ -8,9 +8,15 @@ const createActionName = name => `app/${reducerName}/${name}`;
 
 /* action types */
 const ADD_PRODUCT = createActionName('ADD_PRODUCT');
+const REMOVE_PRODUCT = createActionName('REMOVE_PRODUCT');
+const PROCEED_TO_CHECKOUT = createActionName('PROCEED_TO_CHECKOUT');
 
 /* action creators */
-export const addProduct = payload => ({ payload, type: ADD_PRODUCT });
+export const addProductToCart = payload => ({ payload, type: ADD_PRODUCT });
+
+export const removeProductFromCart = payload => ({ payload, type: REMOVE_PRODUCT });
+
+export const proceedToCheckout = () => ({ type: PROCEED_TO_CHECKOUT });
 
 /* reducer */
 export default function reducer(statePart = [], action = {}) {
@@ -21,6 +27,20 @@ export default function reducer(statePart = [], action = {}) {
         products: [...statePart.products, action.payload],
       };
     }
+
+    case REMOVE_PRODUCT:
+      return {
+        ...statePart,
+        products: [
+          ...statePart.products.filter(product => product.id !== action.payload),
+        ],
+      };
+
+    case PROCEED_TO_CHECKOUT:
+      return {
+        ...statePart,
+        products: [],
+      };
     default:
       return statePart;
   }
