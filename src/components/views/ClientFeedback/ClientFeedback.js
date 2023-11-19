@@ -59,28 +59,28 @@ const ClientFeedback = () => {
           leftAction={nextPage}
           rightAction={previousPage}
         >
-          {feedbacks.map((item, i) => (
-            <div
-              key={item.id}
-              className={
-                i !== feedback
-                  ? 'd-none'
-                  : `d-flex swipeableContent  ${styles.quoteContainer} `
-              }
-            >
-              <FontAwesomeIcon icon={faQuoteRight} className={styles.quoteIcon} />
-              <div className={styles.quoteTextBox}>
-                <p className='my-3 py-2'>{item.message}</p>
-              </div>
-              <div className={styles.clientInfoBox}>
-                <img src={item.clientImg} alt='client1' />
-                <div className='d-flex flex-column justify-content-center'>
-                  <p className='mb-1 font-weight-bold'>{item.name}</p>
-                  <p className='mb-1'>Furniture Client</p>
+          <div className='swipeableContent'>
+            {feedbacks.map((item, i) => (
+              <div
+                key={item.id}
+                className={
+                  i !== feedback ? 'd-none' : `d-flex ${styles.quoteContainer} `
+                }
+              >
+                <FontAwesomeIcon icon={faQuoteRight} className={styles.quoteIcon} />
+                <div className={styles.quoteTextBox}>
+                  <p className='my-3 py-2'>{item.message}</p>
+                </div>
+                <div className={styles.clientInfoBox}>
+                  <img src={item.clientImg} alt='client1' />
+                  <div className='d-flex flex-column justify-content-center'>
+                    <p className='mb-1 font-weight-bold'>{item.name}</p>
+                    <p className='mb-1'>Furniture Client</p>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </Swipeable>
       </div>
     </div>
