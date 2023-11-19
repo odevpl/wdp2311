@@ -5,13 +5,10 @@
 
 .rightContent {
   position: absolute;
-  object-fit: cover;
  
-  left: 74%;
-  transform: translate(-50%, -50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+ 
+ left: 60%;
+ 
   padding: 5px;
   z-index: 2;
 }
@@ -25,8 +22,8 @@
   color: black;
   width: 400px;
   
- top: -70px;
- left: 10px;
+ top: -120px;
+ 
  object-fit: cover;
   position: relative;
 
@@ -36,8 +33,8 @@
   margin-bottom: 10px;
   object-fit: cover;
   position: relative;
- left: -90px;
- top: -70px;
+
+ top: -130px;
 
 }
 
@@ -60,20 +57,31 @@
   font-size: 22px;
   font-weight: bold;
   position: relative;
-  left: -90px;
- top: -65px;
+  
+ top: -135px;
 }
 
 @media (max-width: 734px) {
    
 
-    .rightContent h2 {
-    left: -25px;
-    
-    position: relative;
-    
-    }
+   .rightContent {
+    left: 15%;
+    position: absolute;
 
+   }
+
+
+   .rightContent h2 {
+    font-size: 26px;
+   }
+
+   .rightContent h3 {
+    font-size: 22px;
+   }
+
+   .description {
+    font-size: 20px;
+   }
     
 }
 
