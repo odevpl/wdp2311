@@ -53,11 +53,11 @@
   }
   
   .fadeIn {
-    animation: fade-in $animation-time ease-in-out;
+    animation: fade-in 500ms ;
   }
 
   .fadeOut {
-    animation: fade-out $animation-time ease-in-out;
+    animation: fade-out 700ms;
   }
   
 }

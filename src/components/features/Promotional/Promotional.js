@@ -18,11 +18,11 @@ const Promotional = () => {
 
     if (autoplay) {
       autoplayInterval = setInterval(() => {
-        setFade(false);
+        setFade(true);
         setTimeout(() => {
           setDeal(prevDeal => (prevDeal + 1) % 3);
-          setFade(true);
-        }); // Adjust the timeout duration as needed
+          setFade(false);
+        }, 500); // Adjust the timeout duration as needed
       }, 3000);
     }
     return () => {
@@ -34,6 +34,12 @@ const Promotional = () => {
     setAutoplay(false);
     setFade(true);
     setDeal(index);
+
+    setTimeout(() => {
+      setFade(false);
+    });
+
+    // Pause autoplay for 10 seconds after manual slide change
     setTimeout(() => {
       setAutoplay(true);
     }, 10000);
@@ -61,13 +67,16 @@ const Promotional = () => {
                 </ul>
               </div>
             </div>
-            {promotionalProducts
-              .filter((item, index) => index === activeDeal)
-              .map(item => (
-                <div key={item.id} className={fade ? styles.fadeOut : styles.fadeIn}>
-                  <PromotionalProduct {...item} />
-                </div>
-              ))}
+            {promotionalProducts.map((item, index) => (
+              <div
+                key={item.id}
+                className={`${styles.promotionalItem} ${
+                  index === activeDeal ? (fade ? styles.fadeOut : styles.fadeIn) : ''
+                }`}
+              >
+                {index === activeDeal && <PromotionalProduct {...item} />}
+              </div>
+            ))}
           </div>
           <div className='col-12 col-sm-8'>
             <BestDeal />
