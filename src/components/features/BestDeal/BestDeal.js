@@ -6,13 +6,14 @@ import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import { useSelector } from 'react-redux';
 import { allPromotional } from '../../../redux/productsRedux';
 import { useState } from 'react';
-
+import { useEffect } from 'react';
 const BestDeal = React.memo(() => {
   const bestDeals = useSelector(allPromotional);
 
   const [currentDeal, setCurrentDeal] = useState(0);
-  const mainDeal = bestDeals.slice(currentDeal, currentDeal + 1);
+  const [fade, setFadeOut] = useState(false);
 
+  const mainDeal = bestDeals.slice(currentDeal, currentDeal + 1);
   const dealsLength = bestDeals.length;
 
   const handleNext = e => {
@@ -30,7 +31,10 @@ const BestDeal = React.memo(() => {
   return (
     <div className={' ' + styles.root}>
       {mainDeal.map(deal => (
-        <div key={deal.id} className={'' + styles.dealInfo}>
+        <div
+          key={deal.id}
+          className={'' + `${styles.dealInfo} ${fade ? styles.fadeOut : styles.fadeIn}`}
+        >
           <img src={`images/${deal.category}s/${deal.name}.jpg`} alt={`${deal.name}`} />
           <div className={styles.infoBg}>
             <div className={styles.infoTexts}>

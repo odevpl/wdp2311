@@ -1,4 +1,5 @@
 @import "../../../styles/settings.scss";
+@import "../../../styles/keyframes.scss";
 
 .root {
 
@@ -85,5 +86,13 @@
       width: 50%;
       font-size: 16px;
     }
+  }
+
+  .fadeIn {
+    animation: fade-in 500ms ease-in-out;
+  }
+
+  .fadeOut {
+    animation: fade-out 700ms ease-in-out;
   }
 }
