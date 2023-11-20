@@ -76,6 +76,7 @@ const ProductBox = ({
       id: uniqid(),
       name,
       price,
+      qty: 1,
       img: `images/beds/${name}.jpg`,
     };
 

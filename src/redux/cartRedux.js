@@ -1,7 +1,7 @@
 /* selectors */
 export const getAll = ({ cart }) => cart.products;
 export const getCount = ({ cart }) => cart.products.length;
-
+export const getFee = ({ cart }) => cart.deliveryFee;
 /* action name creator */
 const reducerName = 'cart';
 const createActionName = name => `app/${reducerName}/${name}`;
@@ -10,6 +10,7 @@ const createActionName = name => `app/${reducerName}/${name}`;
 const ADD_PRODUCT = createActionName('ADD_PRODUCT');
 const REMOVE_PRODUCT = createActionName('REMOVE_PRODUCT');
 const PROCEED_TO_CHECKOUT = createActionName('PROCEED_TO_CHECKOUT');
+const QTY_CHANGE = createActionName('QTY_CHANGE');
 
 /* action creators */
 export const addProductToCart = payload => ({ payload, type: ADD_PRODUCT });
@@ -17,6 +18,8 @@ export const addProductToCart = payload => ({ payload, type: ADD_PRODUCT });
 export const removeProductFromCart = payload => ({ payload, type: REMOVE_PRODUCT });
 
 export const proceedToCheckout = () => ({ type: PROCEED_TO_CHECKOUT });
+
+export const qtyChange = payload => ({ type: QTY_CHANGE, payload });
 
 /* reducer */
 export default function reducer(statePart = [], action = {}) {
@@ -41,6 +44,19 @@ export default function reducer(statePart = [], action = {}) {
         ...statePart,
         products: [],
       };
+
+    case QTY_CHANGE:
+      return {
+        ...statePart,
+        products: [
+          ...statePart.products.map(product =>
+            product.id === action.payload.id
+              ? { ...product, ...action.payload }
+              : product
+          ),
+        ],
+      };
+
     default:
       return statePart;
   }

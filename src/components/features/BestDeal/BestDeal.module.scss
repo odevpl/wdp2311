@@ -1,8 +1,10 @@
 @import "../../../styles/settings.scss";
 
 .root {
-  width: 100%;
+
   height: 500px;
+  width: 100%;
+
   .dealInfo {
     position: relative;
     height: calc(100% - 35px);

@@ -1,16 +1,18 @@
-import styles from './Brands.module.scss';
+import styles from './BrandsSlider.module.scss';
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { getLayout } from '../../../redux/layoutRedux';
+import getBrandsImages from './GetBrandsImages';
 
 const BrandsSlider = () => {
-  const photos = useSelector(state => state.brands);
+  const brands = useSelector(state => state.brands);
+  const images = getBrandsImages(brands, 9);
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const layout = useSelector(state => getLayout(state));
-  const slidesLength = photos.length;
+  const slidesLength = images.length;
 
   const slidesPerPage = {
     DESKTOP: 6,
@@ -31,17 +33,16 @@ const BrandsSlider = () => {
     setCurrentIndex(prevIndex);
   };
 
-  const visibleSlides = photos.slice(currentIndex, currentIndex + slidesToShow);
+  const visibleSlides = images.slice(currentIndex, currentIndex + slidesToShow);
 
   return (
     <div className={styles.slider}>
       <button onClick={handleNext}>
         <FontAwesomeIcon icon={faChevronLeft} className={styles.fa} />
       </button>
-      {visibleSlides.map((photo, index) => (
-        <div key={photo.id} className={styles.item}>
-          <img src={process.env.PUBLIC_URL + photo.url} alt={photo.description} />
-          <p>{photo.description}</p>
+      {visibleSlides.map(image => (
+        <div key={image} className={styles.item}>
+          <img src={image} alt={`Brand ${image.id}`} />
         </div>
       ))}
       <button onClick={handlePrev}>
