@@ -21,7 +21,6 @@ function ImageSlider({ images, onChildImageClick }) {
     setCurrentIndex(prevIndex);
   };
   const visibleSlides = images.slice(currentIndex, currentIndex + 6);
-  console.log('visibleSlides', visibleSlides);
 
   const handleClickImage = image => {
     onChildImageClick(image);
