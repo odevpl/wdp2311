@@ -8,13 +8,12 @@ import { useEffect } from 'react';
 import Swipeable from '../../common/Swipeable/Swipeable';
 
 const Promotional = () => {
-  const [autoplay, setAutoplay] = useState(true);
-  const [fade, setFade] = useState(true);
-  const [deal, setDeal] = useState(0);
-  const [index, setIndex] = useState(0);
-  const [activePage, setActivePage] = useState(0);
-
   const promotionalProducts = useSelector(allPromotional);
+  const [index, setIndex] = useState(0);
+  const [deal, setDeal] = useState(0);
+  const [fade, setFade] = useState(false);
+  const [activePage, setActivePage] = useState(0);
+  const [autoplay, setAutoplay] = useState(true);
 
   useEffect(() => {
     let autoplayInterval;
@@ -23,20 +22,21 @@ const Promotional = () => {
       autoplayInterval = setInterval(() => {
         setFade(true);
         setTimeout(() => {
-          setDeal(prevDeal => (prevDeal + 1) % 3);
+          setDeal(prevDeal => (prevDeal + 1) % promotionalProducts.length);
           setFade(false);
         });
       }, 3000);
     }
+
     return () => {
       clearInterval(autoplayInterval);
     };
-  }, [autoplay]);
+  }, [autoplay, promotionalProducts.length]);
 
-  const handleDealChange = index => {
+  const handleDealChange = newIndex => {
     setAutoplay(false);
     setFade(true);
-    setDeal(index);
+    setDeal(newIndex);
 
     setTimeout(() => {
       setFade(false);
@@ -48,30 +48,26 @@ const Promotional = () => {
     }, 10000);
   };
 
-  const dots = [];
-  for (let i = 0; i < promotionalProducts.length; i++) {
-    dots.push(
-      <li key={i}>
-        <a
-          className={i === deal ? styles.active : ''}
-          onClick={() => {
-            setDeal(i);
-            setIndex(i);
-            handleDealChange(i);
-          }}
-        >
-          view {i}
-        </a>
-      </li>
-    );
-  }
+  const dots = promotionalProducts.map((item, i) => (
+    <li key={i}>
+      <a
+        className={i === deal ? styles.active : ''}
+        onClick={() => {
+          setIndex(i);
+          handleDealChange(i);
+        }}
+      >
+        view {i}
+      </a>
+    </li>
+  ));
 
   const previousPage = () =>
-    activePage > 0
+    index > 0
       ? `${(setIndex(index - 1), setDeal(index - 1), setActivePage(index - 1))}`
       : '';
   const nextPage = () =>
-    activePage + 1 < promotionalProducts.length
+    index + 1 < promotionalProducts.length
       ? `${(setDeal(index + 1), setIndex(index + 1), setActivePage(index + 1))}`
       : '';
 
