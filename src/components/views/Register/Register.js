@@ -10,12 +10,16 @@ const Register = () => {
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
+    name: '',
+    lastName: '',
     email: '',
     password: '',
     confirmPassword: '',
   });
 
   const [error, setError] = useState({
+    name: '',
+    lastName: '',
     email: '',
     password: '',
     confirmPassword: '',
@@ -37,6 +41,20 @@ const Register = () => {
       isValid = false;
     } else {
       newErrors.email = '';
+    }
+
+    if (formData.name.length < 3 || formData.name.length > 30) {
+      newErrors.name = 'Invalid name';
+      isValid = false;
+    } else {
+      newErrors.name = '';
+    }
+
+    if (formData.lastName.length < 3 || formData.lastName.length > 30) {
+      newErrors.lastName = 'Invalid lastName';
+      isValid = false;
+    } else {
+      newErrors.lastName = '';
     }
 
     if (formData.password.length < 3) {
@@ -87,6 +105,22 @@ const Register = () => {
           <Col>
             <Form.Group className='mb-3 mt-5' controlId='exampleForm.ControlInput1'>
               <Form.Label>Podaj dane do rejestracji</Form.Label>
+              <Form.Control
+                type='text'
+                placeholder='Name *'
+                className='mb-3'
+                value={formData.name}
+                onChange={e => handleInputChange('name', e.target.value)}
+              />
+              <span className={styles.error}>{error.name}</span>
+              <Form.Control
+                type='text'
+                placeholder='Lastname *'
+                className='mb-3'
+                value={formData.lastName}
+                onChange={e => handleInputChange('lastName', e.target.value)}
+              />
+              <span className={styles.error}>{error.lastName}</span>
               <Form.Control
                 type='text'
                 placeholder='E-mail *'
