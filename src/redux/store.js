@@ -6,9 +6,10 @@ import categoriesReducer from './categoriesRedux';
 import productsReducer from './productsRedux';
 import layoutReducer from './layoutRedux';
 import productsToCompareReducer from './compareRedux.js';
-
+import feedbacksReducer from './feedbackRedux.js';
 // define reducers
 const reducers = {
+  feedbacks: feedbacksReducer,
   cart: cartReducer,
   categories: categoriesReducer,
   products: productsReducer,

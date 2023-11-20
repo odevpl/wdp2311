@@ -1,0 +1,49 @@
+@import "../../../styles/settings.scss";
+
+.rightBox {
+  width: 100%;
+  position: relative;
+  margin-bottom: 20px;
+
+  img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+  }
+
+  .rightContent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+
+    .titleContainer {
+      text-shadow: 1px 1px 1px rgba(0, 0, 0);
+      margin-right: 10px;
+
+      h2 {
+        font-size: 26px;
+        color: $primary;
+
+        span {
+          font-weight: 300;
+        }
+      }
+      h3 {
+        font-size: 18px;
+        letter-spacing: 5px;
+        font-weight: 500;
+        line-height: 0.2;
+        margin-bottom: 10px;
+      }
+    }
+    .description {
+      font-size: 18px;
+    }
+  }
+}
