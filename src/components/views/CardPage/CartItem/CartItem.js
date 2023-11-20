@@ -31,7 +31,7 @@ const CartItem = ({ id, name, price, img, qty }) => {
     const newValue = +inputValue;
     setQtyValue(+inputValue);
 
-    if (!isNaN(newValue) && newValue > 0 && newValue <= 10) {
+    if (!isNaN(newValue) && newValue >= 0 && newValue <= 10) {
       setLastValidQtyValue(newValue);
     } else {
       setQtyValue(lastValidQtyValue);
@@ -52,7 +52,7 @@ const CartItem = ({ id, name, price, img, qty }) => {
       <div className={styles.price}>${price}</div>
       <div className={styles.quantity}>
         <button
-          className={styles.plusBtn}
+          className={styles.minusBtn}
           onClick={clickMinusHandler}
           type='button'
           name='button'
@@ -66,7 +66,7 @@ const CartItem = ({ id, name, price, img, qty }) => {
           value={qtyValue !== lastValidQtyValue ? lastValidQtyValue : qtyValue}
         />
         <button
-          className={styles.faPlus}
+          className={styles.plusBtn}
           onClick={clickPlusHandler}
           type='button'
           name='button'
