@@ -27,16 +27,14 @@ const CompanyClaim = () => {
             </a>
           </div>
           <div className={`col text-right ${styles.cart}`}>
-            <a href='#' className={styles.cartBox}>
+            <NavLink to='/cart' className={styles.cartBox}>
               <div className={styles.cartIcon}>
-                <NavLink to='/cart'>
-                  <FontAwesomeIcon className={styles.icon} icon={faShoppingBasket} />
-                </NavLink>
+                <FontAwesomeIcon className={styles.icon} icon={faShoppingBasket} />
               </div>
               <div className={styles.cartCounter}>
                 {isValidNumber && <div>{number}</div>}
               </div>
-            </a>
+            </NavLink>
           </div>
         </div>
 
