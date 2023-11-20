@@ -661,6 +661,7 @@ const initialState = {
     },
   ],
   cart: {
+    deliveryFee: 20,
     products: [],
   },
 };
