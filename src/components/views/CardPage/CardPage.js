@@ -1,20 +1,28 @@
 import styles from './CardPage.module.scss';
 import React from 'react';
-import { faMinus, faPlus, faTimesCircle } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { NavLink } from 'react-router-dom';
 import CartItem from './CartItem/CartItem';
 import { useSelector } from 'react-redux';
 import { Container } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
 import { proceedToCheckout } from '../../../redux/cartRedux';
+import { getAll, getCount, getFee } from '../../../redux/cartRedux';
 
 const CardPage = () => {
   const dispatch = useDispatch();
-  const allCartProduct = useSelector(state => state.cart.products);
+  const allCartProduct = useSelector(state => getAll(state));
+  const isCartEmpty = useSelector(state => getCount(state)) === 0;
   const proceedHandleClick = () => {
     dispatch(proceedToCheckout());
   };
+
+  const subtotalPriceAmount = useSelector(state =>
+    getAll(state)
+      .map(product => product.totalPrice)
+      .reduce((a, b) => a + b, 0)
+  );
+  const deliveryFee = useSelector(state => getFee(state));
+  const totalPriceAmount = subtotalPriceAmount + deliveryFee;
   return (
     <Container>
       <div className={styles.cart}>
@@ -57,7 +65,7 @@ const CardPage = () => {
                 <span>Subtotal</span>
               </div>
             </div>
-            <div className={styles.price}>$349</div>
+            <div className={styles.price}>${subtotalPriceAmount}</div>
           </div>
           <div className={styles.subItem}>
             <div className={styles.subBorder}>
@@ -65,7 +73,7 @@ const CardPage = () => {
                 <span>Total</span>
               </div>
             </div>
-            <div className={styles.price}>$349</div>
+            <div className={styles.price}>${isCartEmpty ? 0 : totalPriceAmount}</div>
           </div>
           <NavLink to='/'>
             <button onClick={proceedHandleClick}> PROCEED TO CHECKOUT</button>

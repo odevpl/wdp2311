@@ -37,7 +37,7 @@
     text-align: center;
     font-size: 16px;
     color: green;
-    font-weight: 300;
+    font-weight: 600;
   }
 
   .quantity {
@@ -49,9 +49,25 @@
       width: 28px;
       font-size: 14px;
       color: $text-color;
-      font-weight: 300;
-      border-top: 1px solid $footer-text-elements;
-      border-bottom: 1px solid $footer-text-elements;
+      font-weight: 900;
+      border: none;
+      margin: 0 2px;
+      outline: none;
+    }
+
+    button {
+      position: relative;
+      border-radius: 25%;
+      background-color: $primary;
+      border: none;
+
+      &:hover {
+        background-color: (lighten($color: $primary, $amount: 10%));
+      }
+
+      &:active {
+        top: 2px;
+      }
     }
     .icon {
       font-size: 10px;
@@ -63,6 +79,6 @@
     text-align: center;
     font-size: 16px;
     color: green;
-    font-weight: 300;
+    font-weight: 600;
   }
 }
