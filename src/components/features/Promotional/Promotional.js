@@ -5,11 +5,14 @@ import { allPromotional } from '../../../redux/productsRedux';
 import PromotionalProduct from '../../common/PromotionalProduct/PromotionalProduct';
 import BestDeal from '../BestDeal/BestDeal';
 import { useEffect } from 'react';
+import Swipeable from '../../common/Swipeable/Swipeable';
 
 const Promotional = () => {
-  const [activeDeal, setDeal] = useState(0);
   const [autoplay, setAutoplay] = useState(true);
   const [fade, setFade] = useState(true);
+  const [deal, setDeal] = useState(0);
+  const [index, setIndex] = useState(0);
+  const [activePage, setActivePage] = useState(0);
 
   const promotionalProducts = useSelector(allPromotional);
 
@@ -45,6 +48,33 @@ const Promotional = () => {
     }, 10000);
   };
 
+  const dots = [];
+  for (let i = 0; i < promotionalProducts.length; i++) {
+    dots.push(
+      <li key={i}>
+        <a
+          className={i === deal ? styles.active : ''}
+          onClick={() => {
+            setDeal(i);
+            setIndex(i);
+            handleDealChange(i);
+          }}
+        >
+          view {i}
+        </a>
+      </li>
+    );
+  }
+
+  const previousPage = () =>
+    activePage > 0
+      ? `${(setIndex(index - 1), setDeal(index - 1), setActivePage(index - 1))}`
+      : '';
+  const nextPage = () =>
+    activePage + 1 < promotionalProducts.length
+      ? `${(setDeal(index + 1), setIndex(index + 1), setActivePage(index + 1))}`
+      : '';
+
   return (
     <div className={styles.root}>
       <div className='container'>
@@ -53,30 +83,28 @@ const Promotional = () => {
             <div className={styles.dealBg}>
               <h3 className={styles.title}>hot deals</h3>
               <div className={'mr-3 ' + styles.dots}>
-                <ul>
-                  {[0, 1, 2].map(i => (
-                    <li key={i}>
-                      <a
-                        onClick={() => handleDealChange(i)}
-                        className={i === activeDeal ? styles.active : ''}
-                      >
-                        view {i}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
+                <ul>{dots}</ul>
               </div>
             </div>
-            {promotionalProducts.map((item, index) => (
-              <div
-                key={item.id}
-                className={`${styles.promotionalItem} ${
-                  index === activeDeal ? (fade ? styles.fadeOut : styles.fadeIn) : ''
-                }`}
-              >
-                {index === activeDeal && <PromotionalProduct {...item} />}
+            <Swipeable
+              activePage={activePage}
+              pagesCount={dots.length}
+              leftAction={nextPage}
+              rightAction={previousPage}
+            >
+              <div className='swipeableContent'>
+                {promotionalProducts.map((item, i) => (
+                  <div
+                    key={i}
+                    className={`${i !== deal ? 'd-none' : 'd-block'} ${
+                      styles.promotionalItem
+                    } ${i === deal ? (fade ? styles.fadeOut : styles.fadeIn) : ''}`}
+                  >
+                    <PromotionalProduct {...item} />
+                  </div>
+                ))}
               </div>
-            ))}
+            </Swipeable>
           </div>
           <div className='col-12 col-sm-8'>
             <BestDeal />

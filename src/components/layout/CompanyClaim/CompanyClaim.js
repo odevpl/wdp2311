@@ -4,9 +4,11 @@ import { NavLink } from 'react-router-dom';
 import styles from './CompanyClaim.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMobileAlt, faShoppingBasket } from '@fortawesome/free-solid-svg-icons';
+import { useSelector } from 'react-redux';
+import { getCount } from '../../../redux/cartRedux';
 
 const CompanyClaim = () => {
-  const number = 0;
+  const number = useSelector(getCount);
   const isValidNumber = number >= 0 && number <= 99999;
 
   return (
