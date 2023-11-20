@@ -22,7 +22,7 @@ const Promotional = () => {
         setTimeout(() => {
           setDeal(prevDeal => (prevDeal + 1) % 3);
           setFade(false);
-        }, 500); // Adjust the timeout duration as needed
+        });
       }, 3000);
     }
     return () => {
