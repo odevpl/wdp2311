@@ -60,10 +60,10 @@ function Swipeable({
     firstChild.classList.remove(swipeRight);
   };
 
-  const resetElements = () => {
+  const resetElements = noScale => {
     resetMovableContentsStyle(getMovableContents());
     resetClasses(getFirstChild());
-    scaleInAnimation(getMovableContents());
+    if (!noScale) scaleInAnimation(getMovableContents());
   };
 
   onSwiping((direction, value) => {
@@ -84,7 +84,7 @@ function Swipeable({
     rightAction();
   });
 
-  onSwipeCancel(resetElements);
+  onSwipeCancel(() => resetElements(true));
 
   return (
     <div ref={ref} {...initSwipe()}>
