@@ -3,8 +3,15 @@ import Heading from '../../common/Heading/Heading';
 import styles from './Gallery.module.scss';
 import TabsBox from '../../common/TabsBox/TabsBox';
 import ProductsBrowser from '../../features/ProductsBrowser/ProductsBrowser';
+import { useState } from 'react';
 
 function Gallery() {
+  const [tabActive, setTabActive] = useState('featured');
+
+  const handleTabChange = newTab => {
+    setTabActive(newTab);
+  };
+
   return (
     <div className='container my-3'>
       <div className={styles.wrapper}>
@@ -13,8 +20,12 @@ function Gallery() {
           style={{ gap: '1rem' }}
         >
           <Heading>Furniture gallery</Heading>
-          <TabsBox tabs={['featured', 'top seller', 'sale off', 'top rated']}>
-            <ProductsBrowser />
+          <TabsBox
+            tabActive={tabActive}
+            onTabChange={handleTabChange}
+            tabs={['featured', 'top seller', 'sale off', 'top rated']}
+          >
+            <ProductsBrowser tabActive={tabActive} />
           </TabsBox>
         </div>
         <div className={styles.rightColumn + ' w-100'}>

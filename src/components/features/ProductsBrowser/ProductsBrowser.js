@@ -6,28 +6,64 @@ import { getAll } from '../../../redux/productsRedux';
 import ActionButtons from './ActionButtons';
 import PriceRateBox from './PriceRateBox';
 import useGetImages from './useGetImages';
+import { useState } from 'react';
+import PropTypes from 'prop-types';
+import ProductImage from './ProductImage';
+import { useEffect } from 'react';
 
-function ProductsBrowser() {
+function ProductsBrowser({ tabActive }) {
   const products = useSelector(getAll);
-  const selectedProduct = products[Math.floor(Math.random() * products.length)];
+
+  const [state, setState] = useState({
+    isFading: false,
+  });
+
+  const filteredProducts = products.filter(product => {
+    return product.tab === tabActive;
+  });
+
+  const selectedProduct =
+    filteredProducts[Math.floor(Math.random() * filteredProducts.length)];
+
+  const images = useGetImages(filteredProducts);
 
   const [selectedProductImage] = useGetImages([selectedProduct], 1);
-  const images = useGetImages(products, 7);
+
+  const [selectedImage, setSelectedImage] = useState(selectedProductImage);
+
+  const handleClickImage = newClickedImage => {
+    setSelectedImage(newClickedImage);
+    setState({
+      isFading: true,
+    });
+  };
+
+  useEffect(() => {
+    setSelectedImage(selectedProductImage);
+    setState({
+      isFading: true,
+    });
+  }, [selectedProductImage, tabActive]);
 
   return (
     <div className={styles.wrapper}>
       <div className={styles.selectedProduct}>
-        <img
-          src={selectedProductImage}
-          alt={selectedProductImage}
-          className={styles.selectedImage}
+        <ProductImage
+          selectedImage={selectedImage}
+          className={`${styles.selectedImage} ${styles.productsContainer} ${
+            state.isFading ? styles.fadeOut : styles.fadeIn
+          }`}
         />
         <ActionButtons product={selectedProduct} />
         <PriceRateBox product={selectedProduct} />
       </div>
-      <ImageSlider {...{ images }} />
+      <ImageSlider images={images} onChildImageClick={handleClickImage} />
     </div>
   );
 }
 
 export default ProductsBrowser;
+
+ProductsBrowser.propTypes = {
+  tabActive: PropTypes.string,
+};
