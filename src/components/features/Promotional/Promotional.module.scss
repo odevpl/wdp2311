@@ -52,12 +52,13 @@
     }
   }
   
-  .fadeIn {
-    animation: fade-in $animation-time ease-in-out;
-  }
-
   .fadeOut {
-    animation: fade-out $animation-time ease-in-out;
+    opacity: 0;
+    transition: opacity 700ms;
+  }
+  
+  .fadeIn {
+    animation: fade-in 700ms;
   }
   
 }

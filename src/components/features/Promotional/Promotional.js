@@ -5,38 +5,84 @@ import { allPromotional } from '../../../redux/productsRedux';
 import PromotionalProduct from '../../common/PromotionalProduct/PromotionalProduct';
 import BestDeal from '../BestDeal/BestDeal';
 import { useEffect } from 'react';
+import Swipeable from '../../common/Swipeable/Swipeable';
 
 const Promotional = () => {
-  const [activeDeal, setDeal] = useState(0);
-  const [autoplay, setAutoplay] = useState(true);
-  const [fade, setFade] = useState(true);
-
   const promotionalProducts = useSelector(allPromotional);
+  const [index, setIndex] = useState(0);
+  const [deal, setDeal] = useState(0);
+  const [fade, setFade] = useState(false);
+  const [activePage, setActivePage] = useState(0);
+  const [autoplay, setAutoplay] = useState(true);
 
   useEffect(() => {
     let autoplayInterval;
 
     if (autoplay) {
       autoplayInterval = setInterval(() => {
-        setFade(false);
+        setFade(true);
         setTimeout(() => {
-          setDeal(prevDeal => (prevDeal + 1) % 3);
-          setFade(true);
-        }); // Adjust the timeout duration as needed
+          setDeal(prevDeal => (prevDeal + 1) % promotionalProducts.length);
+          setFade(false);
+        }, 500);
       }, 3000);
     }
+
     return () => {
       clearInterval(autoplayInterval);
     };
-  }, [autoplay]);
+  }, [autoplay, promotionalProducts.length]);
 
-  const handleDealChange = index => {
+  const handleDealChange = newIndex => {
     setAutoplay(false);
     setFade(true);
-    setDeal(index);
+
+    setTimeout(() => {
+      setDeal(newIndex);
+      setFade(false);
+    });
     setTimeout(() => {
       setAutoplay(true);
     }, 10000);
+  };
+
+  const dots = promotionalProducts.map((item, i) => (
+    <li key={i}>
+      <a
+        className={i === deal ? styles.active : ''}
+        onClick={() => {
+          handleDealChange(i);
+        }}
+      >
+        view {i}
+      </a>
+    </li>
+  ));
+
+  const previousPage = () => {
+    if (index > 0) {
+      setIndex(index - 1);
+      setDeal(index - 1);
+      setActivePage(index - 1);
+
+      setAutoplay(false);
+      setTimeout(() => {
+        setAutoplay(true);
+      }, 10000);
+    }
+  };
+
+  const nextPage = () => {
+    if (index + 1 < promotionalProducts.length) {
+      setIndex(index + 1);
+      setDeal(index + 1);
+      setActivePage(index + 1);
+
+      setAutoplay(false);
+      setTimeout(() => {
+        setAutoplay(true);
+      }, 10000);
+    }
   };
 
   return (
@@ -47,27 +93,28 @@ const Promotional = () => {
             <div className={styles.dealBg}>
               <h3 className={styles.title}>hot deals</h3>
               <div className={'mr-3 ' + styles.dots}>
-                <ul>
-                  {[0, 1, 2].map(i => (
-                    <li key={i}>
-                      <a
-                        onClick={() => handleDealChange(i)}
-                        className={i === activeDeal ? styles.active : ''}
-                      >
-                        view {i}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
+                <ul>{dots}</ul>
               </div>
             </div>
-            {promotionalProducts
-              .filter((item, index) => index === activeDeal)
-              .map(item => (
-                <div key={item.id} className={fade ? styles.fadeOut : styles.fadeIn}>
-                  <PromotionalProduct {...item} />
-                </div>
-              ))}
+            <Swipeable
+              activePage={activePage}
+              pagesCount={dots.length}
+              leftAction={nextPage}
+              rightAction={previousPage}
+            >
+              <div className='swipeableContent'>
+                {promotionalProducts.map((item, i) => (
+                  <div
+                    key={i}
+                    className={`${i !== deal ? 'd-none' : 'd-block'} ${
+                      styles.promotionalItem
+                    } ${i === deal ? (fade ? styles.fadeOut : styles.fadeIn) : ''}`}
+                  >
+                    <PromotionalProduct {...item} />
+                  </div>
+                ))}
+              </div>
+            </Swipeable>
           </div>
           <div className='col-12 col-sm-8'>
             <BestDeal />
