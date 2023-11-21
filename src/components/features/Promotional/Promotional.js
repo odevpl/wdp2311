@@ -24,7 +24,7 @@ const Promotional = () => {
         setTimeout(() => {
           setDeal(prevDeal => (prevDeal + 1) % promotionalProducts.length);
           setFade(false);
-        }, 300);
+        }, 500);
       }, 3000);
     }
 
@@ -36,9 +36,9 @@ const Promotional = () => {
   const handleDealChange = newIndex => {
     setAutoplay(false);
     setFade(true);
-    setDeal(newIndex);
 
     setTimeout(() => {
+      setDeal(newIndex);
       setFade(false);
     });
     setTimeout(() => {
