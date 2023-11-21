@@ -24,7 +24,7 @@ const Promotional = () => {
         setTimeout(() => {
           setDeal(prevDeal => (prevDeal + 1) % promotionalProducts.length);
           setFade(false);
-        });
+        }, 300);
       }, 3000);
     }
 
@@ -41,8 +41,6 @@ const Promotional = () => {
     setTimeout(() => {
       setFade(false);
     });
-
-    // Pause autoplay for 10 seconds after manual slide change
     setTimeout(() => {
       setAutoplay(true);
     }, 10000);
@@ -53,7 +51,6 @@ const Promotional = () => {
       <a
         className={i === deal ? styles.active : ''}
         onClick={() => {
-          setIndex(i);
           handleDealChange(i);
         }}
       >
@@ -62,14 +59,31 @@ const Promotional = () => {
     </li>
   ));
 
-  const previousPage = () =>
-    index > 0
-      ? `${(setIndex(index - 1), setDeal(index - 1), setActivePage(index - 1))}`
-      : '';
-  const nextPage = () =>
-    index + 1 < promotionalProducts.length
-      ? `${(setDeal(index + 1), setIndex(index + 1), setActivePage(index + 1))}`
-      : '';
+  const previousPage = () => {
+    if (index > 0) {
+      setIndex(index - 1);
+      setDeal(index - 1);
+      setActivePage(index - 1);
+
+      setAutoplay(false);
+      setTimeout(() => {
+        setAutoplay(true);
+      }, 10000);
+    }
+  };
+
+  const nextPage = () => {
+    if (index + 1 < promotionalProducts.length) {
+      setIndex(index + 1);
+      setDeal(index + 1);
+      setActivePage(index + 1);
+
+      setAutoplay(false);
+      setTimeout(() => {
+        setAutoplay(true);
+      }, 10000);
+    }
+  };
 
   return (
     <div className={styles.root}>

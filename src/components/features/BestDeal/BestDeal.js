@@ -11,7 +11,7 @@ const BestDeal = React.memo(() => {
   const bestDeals = useSelector(allPromotional);
 
   const [currentDeal, setCurrentDeal] = useState(0);
-  const [fade, setFadeOut] = useState(false);
+  const [fade, setFade] = useState(false);
 
   const mainDeal = bestDeals.slice(currentDeal, currentDeal + 1);
   const dealsLength = bestDeals.length;
@@ -19,13 +19,23 @@ const BestDeal = React.memo(() => {
   const handleNext = e => {
     e.preventDefault();
     const nextDeal = (currentDeal + 1) % dealsLength;
-    setCurrentDeal(nextDeal);
+    setFade(true);
+
+    setTimeout(() => {
+      setCurrentDeal(nextDeal);
+      setFade(false);
+    }, 300);
   };
 
   const handlePrev = e => {
     e.preventDefault();
     const prevDeal = (currentDeal - 1 + dealsLength) % dealsLength;
-    setCurrentDeal(prevDeal);
+    setFade(true);
+
+    setTimeout(() => {
+      setCurrentDeal(prevDeal);
+      setFade(false);
+    }, 300);
   };
 
   return (
