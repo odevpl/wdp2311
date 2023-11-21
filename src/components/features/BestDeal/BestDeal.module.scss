@@ -88,11 +88,12 @@
     }
   }
 
-  .fadeIn {
-    animation: fade-in 700ms ease-in-out;
-  }
-
   .fadeOut {
-    animation: fade-out 300ms ease-in-out;
+    opacity: 0;
+    transition: opacity 700ms;
+  }
+  
+  .fadeIn {
+    animation: fade-in 700ms;
   }
 }
