@@ -1,9 +1,5 @@
 @import "../../../styles/settings.scss";
 
-input {
-  height: 25px;
-}
-
 .root {
   border: 1px solid $form-border-color;
   display: inline-flex;
@@ -63,7 +59,6 @@ input {
     .childItem {
       padding: 3px;
     }
-
   }
 
   .searchField {
@@ -72,6 +67,7 @@ input {
     position: relative;
 
     input {
+      height: 100%;
       border: 0;
       padding-left: 10px;
       font-size: 14px;
@@ -89,5 +85,3 @@ input {
     }
   }
 }
-
-
