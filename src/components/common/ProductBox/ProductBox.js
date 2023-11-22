@@ -108,7 +108,7 @@ const ProductBox = ({
 
       <NavLink to={`/product/${id}`} className='text-decoration-none'>
         <div className={styles.photo}>
-          <img src={`images/beds/${name}.jpg`} alt={name} />
+          <img src={`/images/beds/${name}.jpg`} alt={name} />
           {promo && <div className={styles.sale}>{promo}</div>}
           <div
             className={styles.buttons}
