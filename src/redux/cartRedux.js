@@ -1,6 +1,9 @@
 /* selectors */
 export const getAll = ({ cart }) => cart.products;
-export const getCount = ({ cart }) => cart.products.length;
+export const getCount = ({ cart }) => {
+  return cart.products.reduce((total, product) => total + product.qty, 0);
+};
+
 export const getFee = ({ cart }) => cart.deliveryFee;
 /* action name creator */
 const reducerName = 'cart';
