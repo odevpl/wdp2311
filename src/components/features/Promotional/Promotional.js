@@ -14,6 +14,7 @@ const Promotional = () => {
   const [fade, setFade] = useState(false);
   const [activePage, setActivePage] = useState(0);
   const [autoplay, setAutoplay] = useState(true);
+  const [fadeTiming] = useState(parseInt(styles.animationTime));
 
   useEffect(() => {
     let autoplayInterval;
@@ -24,14 +25,14 @@ const Promotional = () => {
         setTimeout(() => {
           setDeal(prevDeal => (prevDeal + 1) % promotionalProducts.length);
           setFade(false);
-        }, 500);
+        }, fadeTiming);
       }, 3000);
     }
 
     return () => {
       clearInterval(autoplayInterval);
     };
-  }, [autoplay, promotionalProducts.length]);
+  }, [autoplay, fadeTiming, promotionalProducts.length]);
 
   const handleDealChange = newIndex => {
     setAutoplay(false);
