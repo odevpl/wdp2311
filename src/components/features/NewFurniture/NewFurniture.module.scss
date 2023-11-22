@@ -104,3 +104,7 @@ $productGap: 1rem;
   bottom: 0;
   padding: 10px;
 }
+
+:export {
+  animationTime: $animation-time;
+}

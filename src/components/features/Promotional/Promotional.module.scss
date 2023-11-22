@@ -51,14 +51,17 @@
       }
     }
   }
-  
+
   .fadeOut {
     opacity: 0;
-    transition: opacity 700ms;
+    //transition: opacity 700ms;
   }
-  
+
   .fadeIn {
-    animation: fade-in 700ms;
+    animation: fade-in $animation-time;
   }
-  
+}
+
+:export {
+  animationTime: $animation-time;
 }
