@@ -1,5 +1,8 @@
 @import "../../../styles/settings.scss";
 
+input {
+  height: 25px;
+}
 
 .root {
   border: 1px solid $form-border-color;
@@ -86,3 +89,5 @@
     }
   }
 }
+
+
