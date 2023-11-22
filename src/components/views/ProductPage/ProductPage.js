@@ -1,9 +1,13 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { getProductById } from '../../../redux/productsRedux';
 import styles from './ProductPage.module.scss';
 import NewFurnitureSinglePage from '../../features/NewFurniture/NewFurnitureSinglePage';
 import Reviews from '../../features/Reviews/Reviews';
+import Banner from '../Banner/Banner';
+import Button from '../../common/Button/Button';
 
 import {
   faEnvelope,
@@ -21,7 +25,6 @@ import {
   faShoppingBasket,
   faStar,
 } from '@fortawesome/free-solid-svg-icons';
-import Button from '../../common/Button/Button';
 import {
   faFacebook,
   faGooglePlusG,
@@ -29,7 +32,7 @@ import {
   faPinterestP,
   faTwitter,
 } from '@fortawesome/free-brands-svg-icons';
-import Banner from '../Banner/Banner';
+
 // import PropTypes from 'prop-types';
 
 const ProductPage = () => {
