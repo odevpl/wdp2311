@@ -106,7 +106,7 @@ const ProductBox = ({
         }}
       />
 
-      <NavLink to={`/product/${name}`} className='text-decoration-none'>
+      <NavLink to={`/product/${id}`} className='text-decoration-none'>
         <div className={styles.photo}>
           <img src={`images/beds/${name}.jpg`} alt={name} />
           {promo && <div className={styles.sale}>{promo}</div>}
@@ -124,7 +124,7 @@ const ProductBox = ({
         </div>
       </NavLink>
       <div className={styles.content}>
-        <NavLink to={`/product/${name}`} className='text-decoration-none'>
+        <NavLink to={`/product/${id}`} className='text-decoration-none'>
           <h5>{name}</h5>
         </NavLink>
         <div className={styles.stars}>
