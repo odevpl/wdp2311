@@ -7,11 +7,11 @@ import './styles/bootstrap.scss';
 import './styles/global.scss';
 import MainLayout from './components/layout/MainLayout/MainLayout';
 import Homepage from './components/views/Homepage/Homepage';
-import ProductList from './components/views/ProductList/ProductList';
 import ProductPage from './components/views/ProductPage/ProductPage';
 import CardPage from './components/views/CardPage/CardPage';
 import Blog from './components/views/Blog/Blog';
 import Register from './components/views/Register/Register';
+import Shop from './components/views/Shop/Shop';
 
 const App = () => (
   <Provider store={store}>
@@ -19,7 +19,8 @@ const App = () => (
       <MainLayout>
         <Routes>
           <Route path={'/'} element={<Homepage />} />
-          <Route path={'/shop/:categoryId'} element={<ProductList />} />
+          <Route path={'/shop'} element={<Shop />} />
+          <Route path={'/shop/:categoryId'} element={<Shop />} />
           <Route path={'/product/:productId'} element={<ProductPage />} />
           <Route path={'cart'} element={<CardPage />} />
           <Route path={'/blog'} element={<Blog />} />

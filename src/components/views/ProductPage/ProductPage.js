@@ -4,8 +4,6 @@ import { Link, useParams } from 'react-router-dom';
 import styles from './ProductPage.module.scss';
 import NewFurnitureSinglePage from '../../features/NewFurniture/NewFurnitureSinglePage';
 import Reviews from '../../features/Reviews/Reviews';
-import { useSelector } from 'react-redux';
-import { getProductById } from '../../../redux/productsRedux';
 
 import {
   faEnvelope,
@@ -31,6 +29,7 @@ import {
   faPinterestP,
   faTwitter,
 } from '@fortawesome/free-brands-svg-icons';
+import Banner from '../Banner/Banner';
 // import PropTypes from 'prop-types';
 
 const ProductPage = () => {
@@ -39,26 +38,7 @@ const ProductPage = () => {
 
   return (
     <div className={styles.root}>
-      <div className={'container ' + styles.container}>
-        <div className={styles.banner}>
-          <h1 className={styles.bannerTitle}>
-            Bedroom <span className='font-weight-bold'> Furniture</span>
-          </h1>
-          <h3 className={styles.bannerSubtitle}>
-            Always <span className={styles.subtitleColor}>25%</span>off or more
-          </h3>
-        </div>
-
-        <div className={styles.srcLinks}>
-          <Link to={'/'}> Home</Link>
-
-          <FontAwesomeIcon icon={faAngleRight} />
-
-          <Link to={'/product/furniture'} className={styles.active}>
-            Furniture
-          </Link>
-        </div>
-      </div>
+      <Banner />
       <div className='container'>
         <div className='row'>
           <div className='col-5'>
