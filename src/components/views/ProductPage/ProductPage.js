@@ -1,6 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import styles from './ProductPage.module.scss';
 import NewFurnitureSinglePage from '../../features/NewFurniture/NewFurnitureSinglePage';
 import Reviews from '../../features/Reviews/Reviews';
@@ -34,8 +34,8 @@ import {
 // import PropTypes from 'prop-types';
 
 const ProductPage = () => {
-  const id = window.location.pathname.slice(9);
-  //const product = useSelector(state => getProductById(state, id));
+  const { productId } = useParams();
+  const product = useSelector(state => getProductById(state, productId));
 
   return (
     <div className={styles.root}>
@@ -63,7 +63,7 @@ const ProductPage = () => {
         <div className='row'>
           <div className='col-5'>
             <div className={styles.photo}>
-              <img src={`/images/logo.png`} alt='chair' />
+              <img src={`/images/beds/${product.name}.jpg`} alt={product.name} />
             </div>
             <div className={styles.slider}>
               <div className={styles.buttonsSlider}>
@@ -73,7 +73,7 @@ const ProductPage = () => {
               </div>
               {[1, 2, 3].map(index => (
                 <div key={index} className={styles.item}>
-                  <img src={`/images/logo.png`} alt='chair' />
+                  <img src={`/images/beds/${product.name}.jpg`} alt={product.name} />
                 </div>
               ))}
               <div className={styles.buttonsSlider}>
@@ -87,7 +87,7 @@ const ProductPage = () => {
             <div className='d-flex justify-content-between'>
               <div>
                 <p>
-                  <b>Chair</b>
+                  <b>{product.name}</b>
                 </p>
               </div>
               <div className={styles.buttons}>
@@ -114,10 +114,10 @@ const ProductPage = () => {
               (0 reviews) | Add Your Review
             </div>
             <div className={styles.line} />
-            <p className={styles.price}>
+            <div className={styles.price}>
               <span className={styles.oldPrice}>$300</span>
               <span className={styles.priceBox}>$250.00</span>
-            </p>
+            </div>
             <div className={styles.line} />
             <div className={styles.actionBtns}>
               <Button variant='outline' className={'cart'}>

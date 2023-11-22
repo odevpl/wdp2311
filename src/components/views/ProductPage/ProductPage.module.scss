@@ -190,6 +190,7 @@
     margin: 20px 0;
     font-weight: bold;
     font-size: 22px;
+
     .oldPrice {
       text-decoration: line-through;
       margin-right: 5px;
@@ -245,6 +246,7 @@
   }
   .infos {
     p {
+      justify-content: flex-start;
       margin-bottom: 5px;
       font-size: 14px;
       span {
