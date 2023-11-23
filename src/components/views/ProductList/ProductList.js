@@ -1,7 +1,9 @@
 import React from 'react';
 import BrandsSlider from '../../features/BrandsSlider/BrandsSlider';
+import NewFurnitureShop from '../../features/NewFurniture/NewFurnitureShop';
+import PropTypes from 'prop-types';
 
-const ProductList = () => {
+const ProductList = ({ categoryId }) => {
   return (
     <div className='my-5'>
       <div className='container'>
@@ -9,7 +11,9 @@ const ProductList = () => {
           <h2 className='mx-auto'>BANNER</h2>
         </div>
         <div className='row'>
-          <div className='col-9'>Product List</div>
+          <div className='col-9'>
+            <NewFurnitureShop categoryId={categoryId} />
+          </div>
           <div className='col-3'>filters</div>
         </div>
         <div className='row'>
@@ -20,6 +24,8 @@ const ProductList = () => {
   );
 };
 
-// ProductList.propTypes = {};
+ProductList.propTypes = {
+  categoryId: PropTypes.string,
+};
 
 export default ProductList;

@@ -62,4 +62,18 @@
       }
     }
   }
+  .menu {
+    margin: 20px 0 20px;
+    input {
+      padding-left: 10px;
+      outline: none;
+    }
+    .recentPosts,
+    .recentComments,
+    .archives,
+    .categories,
+    .meta {
+      margin: 40px 0;
+    }
+  }
 }

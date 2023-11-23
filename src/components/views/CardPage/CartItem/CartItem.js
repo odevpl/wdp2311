@@ -33,6 +33,7 @@ const CartItem = ({ id, name, price, img, qty }) => {
 
     if (!isNaN(newValue) && newValue >= 0 && newValue <= 10) {
       setLastValidQtyValue(newValue);
+      dispatch(qtyChange({ qty: newValue, id, totalPrice: newValue * price }));
     } else {
       setQtyValue(lastValidQtyValue);
     }

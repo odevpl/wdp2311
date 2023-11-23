@@ -25,9 +25,9 @@ const ProductBox = ({
   ownRating,
   oldPrice,
 }) => {
-  const [isFav, setIsFav] = useState(false);
+  const [isFav, setIsFav] = useState(isFavorite);
   const buttonFavoriteActive = clsx('outline', {
-    [styles.favorite]: isFavorite,
+    [styles.favorite]: isFav,
   });
 
   const buttonCompareActive = clsx('outline', {
@@ -106,9 +106,9 @@ const ProductBox = ({
         }}
       />
 
-      <NavLink to={`/product/${name}`} className='text-decoration-none'>
+      <NavLink to={`/product/${id}`} className='text-decoration-none'>
         <div className={styles.photo}>
-          <img src={`images/beds/${name}.jpg`} alt={name} />
+          <img src={`/images/beds/${name}.jpg`} alt={name} />
           {promo && <div className={styles.sale}>{promo}</div>}
           <div
             className={styles.buttons}
@@ -124,7 +124,7 @@ const ProductBox = ({
         </div>
       </NavLink>
       <div className={styles.content}>
-        <NavLink to={`/product/${name}`} className='text-decoration-none'>
+        <NavLink to={`/product/${id}`} className='text-decoration-none'>
           <h5>{name}</h5>
         </NavLink>
         <div className={styles.stars}>

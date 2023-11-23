@@ -5947,14 +5947,6 @@ ignore@^5.1.1, ignore@^5.1.4:
   version "5.1.4"
   resolved "https://registry.npmjs.org/ignore/-/ignore-5.1.4.tgz"
   integrity sha512-MzbUSahkTW1u7JpKKjY7LCARd1fU5W2rLdxlM4kdkayuCwZImjkpluF9CM1aLewYJguPDqewLam18Y6AU69A8A==
-<<<<<<< HEAD
-
-immer@^9.0.21:
-  version "9.0.21"
-  resolved "https://registry.npmjs.org/immer/-/immer-9.0.21.tgz"
-  integrity sha512-bc4NBHqOqSfRW7POMkHd51LvClaeMXpm8dx0e8oE2GORbq5aRK7Bxl4FyzVLdGtLmvLKL7BTDBG5ACQm4HWjTA==
-=======
->>>>>>> b8dcb4bb875ee0715159a0d25e32d8b730e7c316
 
 immer@1.10.0:
   version "1.10.0"
