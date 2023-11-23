@@ -39,7 +39,7 @@ function Gallery() {
 
         <div
           className={`${styles.rightColumn} w-100 ${
-            layout === 'MOBILE' ? 'd-none' : 'd-sm-block'
+            layout === 'MOBILE' ? styles.rightColumnBlock : ''
           }`}
         >
           <img
