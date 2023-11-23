@@ -14,7 +14,6 @@ function Gallery() {
   };
 
   const layout = useSelector(getLayout);
-  console.log(layout, 'layout');
 
   return (
     <div className='container my-3'>
@@ -44,7 +43,7 @@ function Gallery() {
         >
           <img
             src={window.location.origin + '/images/beds/Aenean Ru Bristique 13.jpg'}
-            alt={'image'}
+            alt={'bed'}
             className={styles.rightImage}
           />
         </div>
