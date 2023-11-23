@@ -20,3 +20,10 @@
     object-fit: cover;
   }
 }
+
+.mobileLayout {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 1fr;
+  gap: 10px;
+}
