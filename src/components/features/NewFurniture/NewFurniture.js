@@ -87,7 +87,7 @@ class NewFurniture extends React.Component {
         <div className={styles.root}>
           <div className='container'>
             <div className={styles.panelBar}>
-              <div className='row no-gutters align-items-end'>
+              <div className='row no-gutters align-items-end flex-column'>
                 <Heading>New Furniture</Heading>
                 <div className={'col ' + styles.menu}>
                   <ul>
