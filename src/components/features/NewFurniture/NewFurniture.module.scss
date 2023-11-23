@@ -28,6 +28,7 @@ $productGap: 1rem;
             text-decoration: none;
             font-size: 18px;
             display: block;
+            cursor: pointer;
 
             &.active,
             &:hover {
@@ -103,8 +104,4 @@ $productGap: 1rem;
   position: sticky;
   bottom: 0;
   padding: 10px;
-}
-
-:export {
-  animationTime: $animation-time;
 }
