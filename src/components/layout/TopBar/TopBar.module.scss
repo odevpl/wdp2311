@@ -38,7 +38,6 @@
         background: transparent;
         border: none;
 
-
         &:hover {
           color: $primary;
           text-decoration: none;
@@ -68,6 +67,11 @@
   .root {
     ul {
       li {
+        button {
+          span {
+            display: none;
+          }
+        }
         a.login {
           &::after {
             content: "";
