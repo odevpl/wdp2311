@@ -1,11 +1,12 @@
 const initialState = {
   categories: [
-    { id: 'bed', name: 'Bed' },
-    { id: 'chair', name: 'Chair' },
-    { id: 'sofa', name: 'Sofa' },
-    { id: 'table', name: 'Table' },
-    { id: 'dining', name: 'Dining' },
+    { id: 'bed', name: 'Bed', folder: 'beds' },
+    { id: 'chair', name: 'Chair', folder: 'chairs' },
+    { id: 'sofa', name: 'Sofa', folder: 'sofas' },
+    { id: 'table', name: 'Table', folder: 'tables' },
+    { id: 'dining', name: 'Dining', folder: 'dinings' },
   ],
+
   products: [
     {
       id: 'aenean-ru-bristique-1',
@@ -516,6 +517,10 @@ const initialState = {
     },
   ],
 
+  cart: {
+    products: [],
+  },
+
   feedback: [
     {
       id: 1,
@@ -549,7 +554,6 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
-      finishPromoDate: '12 30 2023',
     },
     {
       id: 'aenean-ru-bristique-20',
@@ -559,7 +563,6 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
-      finishPromoDate: '1 30 2024',
     },
     {
       id: 'aenean-ru-bristique-21',
@@ -569,7 +572,6 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
-      finishPromoDate: '2 30 2024',
     },
   ],
 
