@@ -7,13 +7,21 @@ import styles from './ProductSearch.module.scss';
 import { getAll } from '../../../redux/categoriesRedux';
 import { useSelector } from 'react-redux';
 import { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 
 const ProductSearch = () => {
   const allCategories = useSelector(getAll);
   const [isListVisible, setListVisibility] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+  const navigate = useNavigate();
+
+  const handleSearch = e => {
+    e.preventDefault();
+    navigate(`/search?query=${searchQuery}`);
+  };
 
   return (
-    <form action='' className={styles.root}>
+    <form onSubmit={handleSearch} action='' className={styles.root}>
       <div className={styles.category + ' d-none d-md-flex'}>
         <FontAwesomeIcon className={styles.icon} icon={faListUl} />
 
@@ -33,9 +41,16 @@ const ProductSearch = () => {
         <FontAwesomeIcon className={styles.icon} icon={faCaretDown} />
       </div>
       <div className={styles.searchField}>
-        <input placeholder='Search products...' type='text' />
+        <input
+          value={searchQuery}
+          onChange={e => setSearchQuery(e.target.value)}
+          placeholder='Search products...'
+          type='text'
+        />
         <button>
-          <FontAwesomeIcon className={styles.icon} icon={faSearch} />
+          <Link to={`/search?query=${searchQuery}`}>
+            <FontAwesomeIcon className={styles.icon} icon={faSearch} />
+          </Link>
         </button>
       </div>
     </form>
