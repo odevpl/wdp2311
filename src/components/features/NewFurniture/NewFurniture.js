@@ -88,7 +88,9 @@ class NewFurniture extends React.Component {
           <div className='container'>
             <div className={styles.panelBar}>
               <div className='row no-gutters align-items-end flex-column'>
-                <Heading>New Furniture</Heading>
+                <div className={'col-auto ' + styles.heading}>
+                  <h3>New Furniture</h3>
+                </div>
                 <div className={'col ' + styles.menu}>
                   <ul>
                     {categories.map(item => (
