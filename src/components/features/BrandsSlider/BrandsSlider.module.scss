@@ -42,7 +42,8 @@
 
     button {
       width: 33px;
-      height: 92px;
+      height: 110px;
+      top: -25px;
       background-color: $dark-grey;
 
       .fa {
@@ -53,7 +54,7 @@
     .dots {
       position: absolute;
       right: 0;
-      top: 0;
+      top: -60px;
 
       ul {
         margin: 0;
