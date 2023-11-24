@@ -8,6 +8,9 @@ const LAYOUT_BREAKPOINTS = {
   DESKTOP: 1200,
 };
 
+const getWidth = () =>
+  Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
+
 function useLayoutListener() {
   const currentLayout = useSelector(getLayout);
   const dispatch = useDispatch();
@@ -24,8 +27,9 @@ function useLayoutListener() {
   };
 
   useEffect(() => {
-    setCurrentLayout(window.outerWidth);
-    window.onresize = () => setCurrentLayout(window.outerWidth);
+    const width = getWidth();
+    setCurrentLayout(width);
+    window.onresize = () => setCurrentLayout(width);
   }, [setCurrentLayout]);
 
   return currentLayout;
