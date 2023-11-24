@@ -5,7 +5,9 @@ function useSlider({ step = 3 }) {
   const [container, setContainer] = useState();
 
   const scroll = direction =>
-    (container.scrollLeft += container.children[0].offsetWidth * step * direction);
+    direction
+      ? (container.scrollLeft += container.children[0].offsetWidth * step * direction)
+      : (container.scrollLeft = 0);
 
   const centerSlider = e => {
     const containerRect = container.getBoundingClientRect();
@@ -14,14 +16,7 @@ function useSlider({ step = 3 }) {
       childRect.x - containerRect.x - containerRect.width / 2 + childRect.width / 4;
   };
 
-  const scrollToFirst = () => (container ? (container.scrollLeft = 0) : '');
-
-  useEffect(() => {
-    if (ref.current) {
-      setContainer(ref.current);
-      ref.current.scrollLeft = 0;
-    }
-  }, [ref]);
+  useEffect(() => (ref.current ? setContainer(ref.current) : setContainer()), [ref]);
 
   return {
     initSlider: () => ({
@@ -31,7 +26,7 @@ function useSlider({ step = 3 }) {
     }),
     next: container ? () => scroll(1) : () => {},
     prev: container ? () => scroll(-1) : () => {},
-    scrollToFirst,
+    scrollToFirst: container ? () => scroll(0) : () => {},
   };
 }
 
