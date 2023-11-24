@@ -1,37 +1,88 @@
 @import "../../../styles/settings.scss";
 
-.slider {
-  ///width: 1141px;
-  height: 142px;
-  margin: 40px auto;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  border-top: 1px solid #b6b6b6;
-  border-bottom: 1px solid #b6b6b6;
+.root {
+  padding: 30px 0;
 
-  .item {
-    width: 144px;
-    height: 93px;
-    transition: transform 0.5s ease;
-    margin: 10px;
-    border: 1px solid #b6b6b6;
+  .slider {
+    height: 142px;
+    margin: 40px auto;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    border-top: 1px solid #b6b6b6;
+    border-bottom: 1px solid #b6b6b6;
 
 
-    img{
-    width: 142px;
-    height: 91px;
+  .slideritems{
+    height: 142px;
+    margin: 40px auto;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
   }
-}
-  button {
-    width: 33px;
-    height: 92px;
-    background-color: $dark-grey;
 
-    .fa {
-    color: $pure-white;
+
+    .item {
+      width: 144px;
+      height: 93px;
+      transition: transform 0.5s ease;
+      margin: 10px;
+      border: 1px solid #b6b6b6;
+
+      img {
+        width: 142px;
+        height: 91px;
+        object-fit: contain;
+      }
+    }
+
+    button {
+      width: 33px;
+      height: 92px;
+      background-color: $dark-grey;
+
+      .fa {
+        color: $pure-white;
+      }
+    }
+
+    .dots {
+      position: absolute;
+      right: 0;
+      top: 0;
+
+      ul {
+        margin: 0;
+        padding: 0 0 0 1rem;
+        list-style: none;
+        background-color: $pure-white;
+        transform: translateY(15px);
+        
+
+        li {
+          display: inline-block;
+          margin-left: 0.5rem;
+
+          a {
+            display: block;
+            
+            width: 13px;
+            height: 13px;
+            border-radius: 6px;
+            background-color: #e1e1e1;
+            font-size: 0;
+
+            &.active,
+            &:hover {
+              background-color: $primary;
+            }
+          }
+        }
+      }
     }
   }
 }
