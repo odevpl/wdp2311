@@ -1,7 +1,6 @@
 @import "../../../styles/settings.scss";
 
 .registerBox {
-
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -15,6 +14,7 @@
   }
 
   .error {
+    display: block;
     color: red;
   }
 
@@ -35,9 +35,8 @@
     margin-top: 2px;
   }
 
-
   .switchCircle {
-    content: '';
+    content: "";
     position: absolute;
     width: 10px;
     height: 10px;
@@ -78,10 +77,8 @@
     color: $white;
   }
 
-
   .linkReturn {
     margin-left: 22px;
-
   }
 
   .linkReturn a {
@@ -97,6 +94,4 @@
     display: flex;
     align-items: center;
   }
-
 }
-

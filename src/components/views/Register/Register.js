@@ -65,7 +65,7 @@ const Register = () => {
     }
 
     if (formData.confirmPassword !== formData.password) {
-      newErrors.confirmPassword = 'Invalid confirmPassword';
+      newErrors.confirmPassword = 'Passwords do not match';
       isValid = false;
     } else {
       newErrors.confirmPassword = '';
@@ -105,6 +105,7 @@ const Register = () => {
           <Col>
             <Form.Group className='mb-3 mt-5' controlId='exampleForm.ControlInput1'>
               <Form.Label>Podaj dane do rejestracji</Form.Label>
+              <span className={styles.error}>{error.name}</span>
               <Form.Control
                 type='text'
                 placeholder='Name *'
@@ -112,7 +113,7 @@ const Register = () => {
                 value={formData.name}
                 onChange={e => handleInputChange('name', e.target.value)}
               />
-              <span className={styles.error}>{error.name}</span>
+              <span className={styles.error}>{error.lastName}</span>
               <Form.Control
                 type='text'
                 placeholder='Lastname *'
@@ -120,7 +121,7 @@ const Register = () => {
                 value={formData.lastName}
                 onChange={e => handleInputChange('lastName', e.target.value)}
               />
-              <span className={styles.error}>{error.lastName}</span>
+              <span className={styles.error}>{error.email}</span>
               <Form.Control
                 type='text'
                 placeholder='E-mail *'
@@ -128,7 +129,7 @@ const Register = () => {
                 value={formData.email}
                 onChange={e => handleInputChange('email', e.target.value)}
               />
-              <span className={styles.error}>{error.email}</span>
+              <span className={styles.error}>{error.password}</span>
               <Form.Control
                 value={formData.password}
                 onChange={e => handleInputChange('password', e.target.value)}
@@ -136,7 +137,7 @@ const Register = () => {
                 placeholder='Hasło *'
                 className='mb-3'
               />
-              <span className={styles.error}>{error.password}</span>
+              <span className={styles.error}>{error.confirmPassword}</span>
               <Form.Control
                 type='password'
                 placeholder='Powtórz hasło *'
@@ -144,7 +145,6 @@ const Register = () => {
                 value={formData.confirmPassword}
                 onChange={e => handleInputChange('confirmPassword', e.target.value)}
               />
-              <span className={styles.error}>{error.confirmPassword}</span>
             </Form.Group>
           </Col>
           <Row className='justify-content-end mx-3'>
