@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './ProductsBrowser.module.scss';
 import ImageSlider from '../../common/ImageSlider/ImageSlider';
 import { useSelector } from 'react-redux';
-import { getAll, getProductsByTab } from '../../../redux/productsRedux';
+import { getProductsByTab } from '../../../redux/productsRedux';
 import ActionButtons from './ActionButtons';
 import PriceRateBox from './PriceRateBox';
 import useGetImages, { getImage } from './useGetImages';

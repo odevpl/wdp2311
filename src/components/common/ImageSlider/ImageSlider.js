@@ -9,6 +9,7 @@ function ImageSlider({ images, onChildImageClick, selectedImage }) {
   const { initSlider, prev, next, scrollToFirst } = useSlider({ step: 3 });
 
   if (selectedImage === images[0]) scrollToFirst();
+  const selectedClass = image => (selectedImage === image ? styles.selected : '');
 
   return (
     <div className={styles.wrapper}>
@@ -18,13 +19,11 @@ function ImageSlider({ images, onChildImageClick, selectedImage }) {
       <div className={styles.thumbnailsWrapper} {...initSlider()}>
         {images.map(image => (
           <div
-            key={image.id}
+            key={image}
             onClick={() => onChildImageClick(image)}
-            className={`${styles.thumbnail} ${
-              selectedImage === image ? styles.selected : ''
-            }`}
+            className={`${styles.thumbnail} ${selectedClass(image)}`}
           >
-            <img src={process.env.PUBLIC_URL + image} alt={image.description} />
+            <img src={image} alt={image} />
           </div>
         ))}
       </div>
