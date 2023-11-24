@@ -516,10 +516,6 @@ const initialState = {
     },
   ],
 
-  cart: {
-    products: [],
-  },
-
   feedback: [
     {
       id: 1,
@@ -553,6 +549,7 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      finishPromoDate: '12 30 2023',
     },
     {
       id: 'aenean-ru-bristique-20',
@@ -562,6 +559,7 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      finishPromoDate: '1 30 2024',
     },
     {
       id: 'aenean-ru-bristique-21',
@@ -571,6 +569,7 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      finishPromoDate: '2 30 2024',
     },
   ],
 
