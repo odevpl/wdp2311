@@ -8,9 +8,7 @@ import { useState } from 'react';
 function Gallery() {
   const [tabActive, setTabActive] = useState('featured');
 
-  const handleTabChange = newTab => {
-    setTabActive(newTab);
-  };
+  const handleTabChange = newTab => setTabActive(newTab);
 
   return (
     <div className='container my-3'>

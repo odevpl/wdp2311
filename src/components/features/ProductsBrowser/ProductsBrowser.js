@@ -15,14 +15,16 @@ function ProductsBrowser({ tabActive }) {
   const { fadeClass, doFade } = useFade(styles.fadeOut, styles.fadeIn);
 
   const products = useSelector(state => getProductsByTab(state, tabActive));
-  const [selectedProduct, setSelectedProduct] = useState(products[0]);
-
   const images = useGetImages(products);
+
+  const [selectedProduct, setSelectedProduct] = useState(products[0]);
 
   const handleClickImage = image =>
     setSelectedProduct(products.find(product => image.includes(product.name)));
 
-  useEffect(() => setSelectedProduct(products[0]), [products, tabActive]);
+  const selectFirstProduct = () => setSelectedProduct(products[0]);
+
+  useEffect(selectFirstProduct, [tabActive]);
   useEffect(doFade, [selectedProduct]);
 
   return (
