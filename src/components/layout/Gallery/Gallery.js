@@ -6,13 +6,10 @@ import ProductsBrowser from '../../features/ProductsBrowser/ProductsBrowser';
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { getLayout } from '../../../redux/layoutRedux';
-import useLayoutListener from '../MainLayout/useLayoutListener';
 
 function Gallery() {
   const [tabActive, setTabActive] = useState('featured');
-  const layout = useLayoutListener();
-
-  console.log(layout);
+  const layout = useSelector(getLayout);
 
   const handleTabChange = newTab => setTabActive(newTab);
 
