@@ -93,8 +93,8 @@ const BrandsSlider = () => {
     <div className={styles.root}>
       <div className='container'>
         <div className={`row ${styles.slider}`}>
-          <div className={`row col-12 no-gutters align-items-end `}>
-            <div className={`${styles.dots} col-auto`}>
+          <div className={`col-12 no-gutters align-items-end `}>
+            <div className={'mr-3 ' + styles.dots}>
               <ul>{dots}</ul>
             </div>
           </div>
@@ -103,24 +103,19 @@ const BrandsSlider = () => {
             pagesCount={pagesCount}
             leftAction={previousPage}
             rightAction={nextPage}
-            className={styles.slideritems}
           >
-            <div className={styles.slider}>
-              <button onClick={handlePrev}>
+            <div className={`row-with-buttons d-flex align-items-end justify-content-between`}>
+              <button onClick={handlePrev} className={`${styles.button} mx-2`}>
                 <FontAwesomeIcon icon={faChevronLeft} className={styles.fa} />
               </button>
-              <div className='row justify-content-center'>
+              <div className={`row justify-content-center`}>
                 {visibleSlides.map((image, i) => (
                   <div key={i} className={`${getColClass()} ${styles.item}`}>
-                    <img
-                      src={image}
-                      alt={`Brand ${i + 1}`}
-                      className='img-fluid w-100'
-                    />
+                    <img src={image} alt={`Brand ${i + 1}`} className='img-fluid w-100' />
                   </div>
                 ))}
               </div>
-              <button onClick={handleNext}>
+              <button onClick={handleNext} className={`${styles.button} mx-2`}>
                 <FontAwesomeIcon icon={faChevronRight} className={styles.fa} />
               </button>
             </div>
