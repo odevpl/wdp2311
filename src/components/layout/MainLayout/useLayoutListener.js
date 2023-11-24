@@ -24,8 +24,8 @@ function useLayoutListener() {
   };
 
   useEffect(() => {
-    setCurrentLayout(window.innerWidth);
-    window.onresize = () => setCurrentLayout(window.innerWidth);
+    setCurrentLayout(window.outerWidth);
+    window.onresize = () => setCurrentLayout(window.outerWidth);
   }, [setCurrentLayout]);
 
   return currentLayout;

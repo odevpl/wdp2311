@@ -49,8 +49,8 @@ class NewFurniture extends React.Component {
     const { activeCategory, activePage, isFading } = this.state;
 
     const productsPerPage = {
-      DESKTOP: 8,
-      TABLET: 6,
+      DESKTOP: 6,
+      TABLET: 3,
       MOBILE: 3,
     };
 
@@ -86,7 +86,7 @@ class NewFurniture extends React.Component {
         <div className={styles.root}>
           <div className='container'>
             <div className={styles.panelBar}>
-              <div className='row no-gutters align-items-end'>
+              <div className='row no-gutters align-items-end flex-column'>
                 <Heading>New Furniture</Heading>
                 <div className={'col ' + styles.menu}>
                   <ul>
@@ -106,6 +106,22 @@ class NewFurniture extends React.Component {
                   <ul>{dots}</ul>
                 </div>
               </div>
+            </div>
+            <div
+              className={`row swipeableContent ${styles.productsContainer} ${
+                isFading ? styles.fadeOut : styles.fadeIn
+              }`}
+            >
+              {categoryProducts
+                .slice(
+                  activePage * productsPerPage[layout],
+                  (activePage + 1) * productsPerPage[layout]
+                )
+                .map(item => (
+                  <div key={item.id} className='col-12 col-md-4'>
+                    <ProductBox {...item} />
+                  </div>
+                ))}
             </div>
           </div>
           <div
