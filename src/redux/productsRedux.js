@@ -1,6 +1,8 @@
 import { createSelector } from '@reduxjs/toolkit';
 /* selectors */
 export const getAll = ({ products }) => products;
+export const getProductsByTab = ({ products }, tab) =>
+  products.filter(product => product.tab === tab);
 export const getCount = ({ products }) => products.length;
 
 const selectProducts = state => state.products;
