@@ -2,62 +2,44 @@ import React from 'react';
 import styles from './ProductsBrowser.module.scss';
 import ImageSlider from '../../common/ImageSlider/ImageSlider';
 import { useSelector } from 'react-redux';
-import { getAll } from '../../../redux/productsRedux';
+import { getAll, getProductsByTab } from '../../../redux/productsRedux';
 import ActionButtons from './ActionButtons';
 import PriceRateBox from './PriceRateBox';
-import useGetImages from './useGetImages';
-import { useState } from 'react';
+import useGetImages, { getImage } from './useGetImages';
 import PropTypes from 'prop-types';
 import ProductImage from './ProductImage';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import useFade from '../../common/ImageSlider/useFade';
 
 function ProductsBrowser({ tabActive }) {
-  const products = useSelector(getAll);
+  const { fadeClass, doFade } = useFade(styles.fadeOut, styles.fadeIn);
 
-  const [state, setState] = useState({
-    isFading: false,
-  });
+  const products = useSelector(state => getProductsByTab(state, tabActive));
+  const [selectedProduct, setSelectedProduct] = useState(products[0]);
 
-  const filteredProducts = products.filter(product => {
-    return product.tab === tabActive;
-  });
+  const images = useGetImages(products);
 
-  const selectedProduct =
-    filteredProducts[Math.floor(Math.random() * filteredProducts.length)];
+  const handleClickImage = image =>
+    setSelectedProduct(products.find(product => image.includes(product.name)));
 
-  const images = useGetImages(filteredProducts);
-
-  const [selectedProductImage] = useGetImages([selectedProduct], 1);
-
-  const [selectedImage, setSelectedImage] = useState(selectedProductImage);
-
-  const handleClickImage = newClickedImage => {
-    setSelectedImage(newClickedImage);
-    setState({
-      isFading: true,
-    });
-  };
-
-  useEffect(() => {
-    setSelectedImage(selectedProductImage);
-    setState({
-      isFading: true,
-    });
-  }, [selectedProductImage, tabActive]);
+  useEffect(() => setSelectedProduct(products[0]), [products, tabActive]);
+  useEffect(doFade, [selectedProduct]);
 
   return (
     <div className={styles.wrapper}>
       <div className={styles.selectedProduct}>
         <ProductImage
-          selectedImage={selectedImage}
-          className={`${styles.selectedImage} ${styles.productsContainer} ${
-            state.isFading ? styles.fadeOut : styles.fadeIn
-          }`}
+          selectedImage={getImage(selectedProduct)}
+          className={`${styles.selectedImage} ${styles.productsContainer} ${fadeClass}`}
         />
         <ActionButtons product={selectedProduct} />
         <PriceRateBox product={selectedProduct} />
       </div>
-      <ImageSlider images={images} onChildImageClick={handleClickImage} />
+      <ImageSlider
+        images={images}
+        selectedImage={getImage(selectedProduct)}
+        onChildImageClick={handleClickImage}
+      />
     </div>
   );
 }

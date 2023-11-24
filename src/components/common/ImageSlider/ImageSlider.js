@@ -3,46 +3,32 @@ import styles from './ImageSlider.module.scss';
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
-import { useState } from 'react';
+import useSlider from './useSlider';
 
-function ImageSlider({ images, onChildImageClick }) {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const slidesLength = images.length;
+function ImageSlider({ images, onChildImageClick, selectedImage }) {
+  const { initSlider, prev, next, scrollToFirst } = useSlider({ step: 3 });
 
-  const slidesPerPage = 6;
-
-  const handleNext = () => {
-    const nextIndex = (currentIndex + slidesPerPage) % slidesLength;
-    setCurrentIndex(nextIndex);
-  };
-
-  const handlePrev = () => {
-    const prevIndex = (currentIndex - slidesPerPage + slidesLength) % slidesLength;
-    setCurrentIndex(prevIndex);
-  };
-  const visibleSlides = images.slice(currentIndex, currentIndex + 6);
-
-  const handleClickImage = image => {
-    onChildImageClick(image);
-  };
+  if (selectedImage === images[0]) scrollToFirst();
 
   return (
     <div className={styles.wrapper}>
-      <button onClick={handlePrev} className={styles.button}>
+      <button onClick={prev} className={styles.button}>
         <FontAwesomeIcon icon={faChevronLeft}>Left</FontAwesomeIcon>
       </button>
-      <div className={styles.thumbnailsWrapper}>
-        {visibleSlides.map((image, index) => (
-          <div className={styles.thumbnail} key={image.id}>
-            <img
-              onClick={() => handleClickImage(image)}
-              src={process.env.PUBLIC_URL + image}
-              alt={image.description}
-            />
+      <div className={styles.thumbnailsWrapper} {...initSlider()}>
+        {images.map(image => (
+          <div
+            key={image.id}
+            onClick={() => onChildImageClick(image)}
+            className={`${styles.thumbnail} ${
+              selectedImage === image ? styles.selected : ''
+            }`}
+          >
+            <img src={process.env.PUBLIC_URL + image} alt={image.description} />
           </div>
         ))}
       </div>
-      <button onClick={handleNext} className={styles.button}>
+      <button onClick={next} className={styles.button}>
         <FontAwesomeIcon icon={faChevronRight}>Right</FontAwesomeIcon>
       </button>
     </div>
@@ -55,4 +41,5 @@ ImageSlider.propTypes = {
   images: PropTypes.array,
   onChildClick: PropTypes.func,
   onChildImageClick: PropTypes.func,
+  selectedImage: PropTypes.string,
 };
