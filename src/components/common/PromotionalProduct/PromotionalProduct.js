@@ -12,7 +12,40 @@ import {
 import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../../common/Button/Button';
 
-const PromotionalProduct = ({ name, price, stars }) => {
+const PromotionalProduct = ({ name, price, stars, finishPromoDate }) => {
+  let countTime;
+
+  const [seconds, setSeconds] = useState(0);
+  const [minutes, setMinutes] = useState(0);
+  const [hours, setHours] = useState(0);
+  const [days, setDays] = useState(0);
+
+  const countPromoTime = () => {
+    const dateNow = new Date();
+    const dateOfFinishPromo = new Date(finishPromoDate);
+    const timeBetween = dateOfFinishPromo - dateNow;
+
+    setSeconds(
+      Math.floor((timeBetween / 1000) % 60)
+        .toString()
+        .padStart(2, '0')
+    );
+    setMinutes(
+      Math.floor((timeBetween / (1000 * 60)) % 60)
+        .toString()
+        .padStart(2, '0')
+    );
+    setHours(
+      Math.floor((timeBetween / (1000 * 60 * 60)) % 24)
+        .toString()
+        .padStart(2, '0')
+    );
+    setDays(Math.floor(timeBetween / (1000 * 60 * 60 * 24)));
+  };
+
+  clearInterval(countTime);
+  countTime = setInterval(countPromoTime, 1000);
+
   return (
     <div className={styles.root}>
       <div className={styles.photo}>
@@ -23,10 +56,18 @@ const PromotionalProduct = ({ name, price, stars }) => {
           </Button>
         </div>
         <div className={'text-white ' + styles.counter}>
-          <div className={styles.amount}>25 days</div>
-          <div className={styles.amount}> 10 hrs</div>
-          <div className={styles.amount}> 45 mins</div>
-          <div className={styles.amount}> 30 secs</div>
+          <div className={styles.amount}>
+            <span>{days}</span> days
+          </div>
+          <div className={styles.amount}>
+            <span>{hours}</span> hrs
+          </div>
+          <div className={styles.amount}>
+            <span>{minutes}</span> mins
+          </div>
+          <div className={styles.amount}>
+            <span>{seconds}</span> secs
+          </div>
         </div>
       </div>
       <div className={styles.content}>
@@ -70,6 +111,7 @@ PromotionalProduct.propTypes = {
   name: PropTypes.string,
   price: PropTypes.number,
   stars: PropTypes.number,
+  finishPromoDate: PropTypes.string,
 };
 
 export default PromotionalProduct;
