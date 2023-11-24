@@ -6,24 +6,13 @@
   .slider {
     height: 142px;
     margin: 40px auto;
-    padding: 0;
+    padding: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: row;
     border-top: 1px solid #b6b6b6;
     border-bottom: 1px solid #b6b6b6;
-
-
-  .slideritems{
-    height: 142px;
-    margin: 40px auto;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-  }
 
 
     .item {
@@ -43,6 +32,9 @@
     button {
       width: 33px;
       height: 92px;
+      margin-left: 10px;
+      top: -10px;
+      position: relative;
       background-color: $dark-grey;
 
       .fa {
@@ -53,7 +45,7 @@
     .dots {
       position: absolute;
       right: 0;
-      top: 0;
+      top: -60px;
 
       ul {
         margin: 0;

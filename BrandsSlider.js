@@ -104,16 +104,18 @@ const BrandsSlider = () => {
             leftAction={previousPage}
             rightAction={nextPage}
           >
-            <div className={`row ${styles.slideritems}`}>
-              <button onClick={handlePrev}>
+            <div className={`row-with-buttons d-flex align-items-end justify-content-between`}>
+              <button onClick={handlePrev} className={`${styles.button} mx-2`}>
                 <FontAwesomeIcon icon={faChevronLeft} className={styles.fa} />
               </button>
-              {visibleSlides.map((image, i) => (
-                <div key={i} className={`${getColClass()} ${styles.item}`}>
-                  <img src={image} alt={`Brand ${i + 1}`} className='img-fluid w-100' />
-                </div>
-              ))}
-              <button onClick={handleNext}>
+              <div className={`row justify-content-center`}>
+                {visibleSlides.map((image, i) => (
+                  <div key={i} className={`${getColClass()} ${styles.item}`}>
+                    <img src={image} alt={`Brand ${i + 1}`} className='img-fluid w-100' />
+                  </div>
+                ))}
+              </div>
+              <button onClick={handleNext} className={`${styles.button} mx-2`}>
                 <FontAwesomeIcon icon={faChevronRight} className={styles.fa} />
               </button>
             </div>
