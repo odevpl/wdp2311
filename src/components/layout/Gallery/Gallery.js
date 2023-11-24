@@ -9,11 +9,10 @@ import { getLayout } from '../../../redux/layoutRedux';
 
 function Gallery() {
   const [tabActive, setTabActive] = useState('featured');
+  const [layout, setLayout] = useState('MOBILE');
   const handleTabChange = newTab => {
     setTabActive(newTab);
   };
-
-  const layout = useSelector(getLayout);
 
   return (
     <div className='container my-3'>
