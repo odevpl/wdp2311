@@ -9,7 +9,7 @@ const Blog = () => {
     <div className={styles.root}>
       <div className='container'>
         <div className='row'>
-          <div className='col-9'>
+          <div className='col-12 col-lg-9'>
             <div className={styles.post}>
               <h4 className={styles.title}>Witamy na nowej stronie sklepu!</h4>
               <img src={'images/blog/newShop.jpg'} alt='furnitures' />
@@ -25,13 +25,15 @@ const Blog = () => {
               <div className={styles.footer}>
                 <div className={styles.informations}>
                   <div className={styles.admin}>
-                    <FontAwesomeIcon icon={faUserAlt}></FontAwesomeIcon> admin
+                    <FontAwesomeIcon icon={faUserAlt}></FontAwesomeIcon> <p>admin</p>
                   </div>
                   <div className={styles.date}>
-                    <FontAwesomeIcon icon={faCalendar}></FontAwesomeIcon> June 15, 2020
+                    <FontAwesomeIcon icon={faCalendar}></FontAwesomeIcon>
+                    <p>June 15, 2020</p>
                   </div>
                   <div className={styles.file}>
-                    <FontAwesomeIcon icon={faFolder}></FontAwesomeIcon> Information
+                    <FontAwesomeIcon icon={faFolder}></FontAwesomeIcon>
+                    <p>Information</p>
                   </div>
                 </div>
                 <button className={styles.btn}>Read More...</button>
@@ -39,7 +41,7 @@ const Blog = () => {
               <div className={styles.line} />
             </div>
           </div>
-          <div className='col-3'>
+          <div className='d-none d-lg-block'>
             <div className={styles.menu}>
               <input type='text' placeholder='Search...' />
               <div className={styles.recentPosts}>
