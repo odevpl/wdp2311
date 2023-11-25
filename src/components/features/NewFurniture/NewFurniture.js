@@ -16,6 +16,7 @@ class NewFurniture extends React.Component {
     activePage: 0,
     activeCategory: 'bed',
     isFading: false,
+    fadeTiming: parseInt(styles.animationTime),
   };
 
   handlePageChange(newPage, isSwipe) {
@@ -28,7 +29,7 @@ class NewFurniture extends React.Component {
           activePage: newPage,
           isFading: false, // Set isFading to false to trigger fade-in
         });
-      }, 400); // Adjust the delay according to your transition duration
+      },  this.state.fadeTiming); // Adjust the delay according to your transition duration
     });
   }
 
@@ -40,7 +41,7 @@ class NewFurniture extends React.Component {
           isFading: false,
           activePage: 0,
         });
-      }, 600);
+      }, this.state.fadeTiming);
     });
   }
 
@@ -119,7 +120,7 @@ class NewFurniture extends React.Component {
                 )
                 .map(item => (
                   <div key={item.id} className='col-12 col-md-4'>
-                    <ProductBox {...item} />
+                    <ProductBox category={item.category}{...item} />
                   </div>
                 ))}
             </div>
@@ -129,14 +130,6 @@ class NewFurniture extends React.Component {
               isFading ? styles.fadeOut : styles.fadeIn
             }`}
           >
-            {categoryProducts.slice(activePage * 8, (activePage + 1) * 8).map(item => (
-              <div
-                key={item.id}
-                className='col-12 col-xs-12 col-sm-6 col-md-4 col-lg-3'
-              >
-                <ProductBox category={item.category} {...item} />
-              </div>
-            ))}
           </div>
           <div className={styles.compare}>
             <CompareProducts />
