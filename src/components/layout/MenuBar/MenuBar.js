@@ -5,11 +5,9 @@ import ProductSearch from '../../features/ProductSearch/ProductSearch';
 
 import styles from './MenuBar.module.scss';
 import { NavLink } from 'react-router-dom';
-import { useState } from 'react';
 
-const MenuBar = ({ children }) => {
+const MenuBar = ({ children, activeLink, setActiveLink }) => {
   const Links = () => {
-    const [activeLink, setActiveLink] = useState('Home');
     const hrefs = ['Home', 'Furniture', 'Chair', 'Table', 'Sofa', 'Bedroom', 'Blog'];
     return hrefs.map(href => (
       <li key={href}>
@@ -62,6 +60,8 @@ const MenuBar = ({ children }) => {
 
 MenuBar.propTypes = {
   children: PropTypes.node,
+  activeLink: PropTypes.string,
+  setActiveLink: PropTypes.func,
 };
 
 export default MenuBar;

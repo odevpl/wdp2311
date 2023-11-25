@@ -11,12 +11,40 @@ $productGap: 1rem;
       border-bottom: 4px solid #e2e2e2;
     }
 
+    .heading {
+      position: absolute;
+      top: 9px;
+      left: 0;
+      z-index: 2;
+
+      h3 {
+        color: $primary;
+        text-transform: uppercase;
+        font-size: 20px;
+        line-height: 38px;
+        margin: 0;
+        letter-spacing: 1px;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 45px;
+        border-bottom: 4px solid $primary;
+      }
+    }
+
     .menu {
       text-align: center;
       margin-top: 20px;
 
       ul {
+        display: flex;
+        justify-content: flex-end;
         margin: 0;
+        margin-right: 10px;
         padding: 0;
         list-style: none;
         li {
@@ -112,4 +140,20 @@ $productGap: 1rem;
 
 :export {
   animationTime: $animation-time;
+}
+@media (max-width: 576px) {
+  .root {
+    .panelBar {
+      .heading {
+        position: relative;
+        margin: 0 auto 20px;
+      }
+
+      .menu {
+        ul {
+          justify-content: center;
+        }
+      }
+    }
+  }
 }
