@@ -7,9 +7,8 @@ import { useSelector } from 'react-redux';
 import { getByName } from '../../../redux/categoriesRedux';
 import { getAll } from '../../../redux/productsRedux';
 
-function NewFurnitureShop({ categoryId, productsPerPage = 12 }) {
+function NewFurnitureShop({ categoryId, productsPerPage = 6 }) {
   const category = useSelector(state => getByName(state, categoryId));
-
   const products = useSelector(getAll);
   const productsFromCategory = category
     ? products.filter(product => product.category === category.id)
