@@ -4,8 +4,7 @@
   border: 1px solid #b6b6b6;
   text-align: center;
   margin-top: 40px;
-  
-  
+
   .iconWrapper {
     height: 60px;
     transform: translateY(-50%);
@@ -73,7 +72,7 @@
       color: $primary;
     }
   }
-  
+
   &:hover {
     .iconWrapper {
       color: #ffffff;
@@ -92,5 +91,16 @@
       color: $primary;
     }
   }
- 
+}
+
+@media screen and (max-width: 768px) {
+  .root {
+    height: 140px;
+
+    .content {
+      h5 {
+        font-size: 22px;
+      }
+    }
+  }
 }

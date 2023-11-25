@@ -91,7 +91,7 @@ const Promotional = () => {
     <div className={styles.root}>
       <div className='container'>
         <div className='row'>
-          <div className={'col-4 d-none d-sm-block ' + styles.hotDeal}>
+          <div className={'col-4 d-none d-md-block ' + styles.hotDeal}>
             <div className={styles.dealBg}>
               <h3 className={styles.title}>hot deals</h3>
               <div className={'mr-3 ' + styles.dots}>
@@ -118,7 +118,7 @@ const Promotional = () => {
               </div>
             </Swipeable>
           </div>
-          <div className='col-12 col-sm-8'>
+          <div className='col-12 col-md-8'>
             <BestDeal />
           </div>
         </div>
