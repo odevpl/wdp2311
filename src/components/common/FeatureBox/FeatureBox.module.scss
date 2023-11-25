@@ -4,7 +4,8 @@
   border: 1px solid #b6b6b6;
   text-align: center;
   margin-top: 40px;
-
+  
+  
   .iconWrapper {
     height: 60px;
     transform: translateY(-50%);
@@ -56,9 +57,6 @@
       font-weight: 600;
       margin: 0;
     }
-
-    p {
-    }
   }
 
   &.active {
@@ -75,4 +73,24 @@
       color: $primary;
     }
   }
+  
+  &:hover {
+    .iconWrapper {
+      color: #ffffff;
+
+      &::after {
+        background-color: $primary;
+        border-color: $primary;
+      }
+
+      &::before {
+        border-color: $primary;
+      }
+    }
+
+    .content {
+      color: $primary;
+    }
+  }
+ 
 }
