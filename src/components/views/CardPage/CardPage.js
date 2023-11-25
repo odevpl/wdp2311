@@ -15,7 +15,6 @@ const CardPage = () => {
   const proceedHandleClick = () => {
     dispatch(proceedToCheckout());
   };
-
   const subtotalPriceAmount = useSelector(state =>
     getAll(state)
       .map(product => product.totalPrice)

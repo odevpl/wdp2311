@@ -5,8 +5,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMobileAlt, faShoppingBasket } from '@fortawesome/free-solid-svg-icons';
 import { useSelector } from 'react-redux';
 import { getCount } from '../../../redux/cartRedux';
+import PropTypes from 'prop-types';
 
-const CompanyClaim = () => {
+const CompanyClaim = ({ setActiveLink }) => {
   const number = useSelector(getCount);
   const isValidNumber = number >= 0 && number <= 99999;
 
@@ -23,7 +24,7 @@ const CompanyClaim = () => {
             </p>
           </div>
           <div className={`col text-center ${styles.logoBazar}`}>
-            <Link to='/'>
+            <Link to='/' onClick={() => setActiveLink('Home')}>
               <img src='/images/logo.png' alt='Bazar' />
             </Link>
           </div>
@@ -43,7 +44,7 @@ const CompanyClaim = () => {
 
         <div className={`row align-items-center ${styles.mobile}`}>
           <div className={`col text-center ${styles.logoBazar}`}>
-            <Link to='/'>
+            <Link to='/' onClick={() => setActiveLink('Home')}>
               <img src='/images/logo.png' alt='Bazar' />
             </Link>
           </div>
@@ -53,7 +54,9 @@ const CompanyClaim = () => {
                 <div className={styles.cartIcon}>
                   <FontAwesomeIcon className={styles.icon} icon={faShoppingBasket} />
                 </div>
-                <div className={styles.cartCounter}>0</div>
+                <div className={styles.cartCounter}>
+                  {isValidNumber && <div>{number}</div>}
+                </div>
               </Link>
             </div>
             <div className={`col text-center ${styles.phoneNumber}`}>
@@ -69,4 +72,7 @@ const CompanyClaim = () => {
   );
 };
 
+CompanyClaim.propTypes = {
+  setActiveLink: PropTypes.func,
+};
 export default CompanyClaim;
