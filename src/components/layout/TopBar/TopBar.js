@@ -40,7 +40,8 @@ const TopBar = () => {
             <ul>
               <li>
                 <button onClick={loginOpen} className={styles.btn}>
-                  <FontAwesomeIcon className={styles.icon} icon={faUser} /> Login
+                  <FontAwesomeIcon className={styles.icon} icon={faUser} />{' '}
+                  <span>Login</span>
                 </button>
               </li>
               <li>
