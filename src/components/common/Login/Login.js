@@ -69,8 +69,6 @@ const Login = ({ loginOpen, setIsOpenLogin }) => {
 };
 
 Login.propTypes = {
-  isOpen: PropTypes.bool.isRequired,
-  onClose: PropTypes.func.isRequired,
   loginOpen: PropTypes.func.isRequired,
   setIsOpenLogin: PropTypes.func.isRequired,
 };
