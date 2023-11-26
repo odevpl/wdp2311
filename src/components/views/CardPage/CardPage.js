@@ -45,8 +45,8 @@ const CardPage = () => {
           ))}
         </div>
         <div className={styles.code}>
-          <div className='d-flex  align-items-center'>
-            <input type='text' name='name' placeholder='Coupon code' />
+          <div className='d-flex align-items-center'>
+            <input type='text' name='name' placeholder='Coupon' />
             <button>APPLY COUPON</button>
           </div>
           <div>
