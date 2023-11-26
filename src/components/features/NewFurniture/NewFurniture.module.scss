@@ -65,6 +65,7 @@ $productGap: 1rem;
             text-decoration: none;
             font-size: 18px;
             display: block;
+            cursor: pointer;
 
             &.active,
             &:hover {
@@ -141,6 +142,9 @@ $productGap: 1rem;
 :export {
   animationTime: $animation-time;
 }
+
+
+
 @media (max-width: 576px) {
   .root {
     .panelBar {
@@ -157,3 +161,4 @@ $productGap: 1rem;
     }
   }
 }
+

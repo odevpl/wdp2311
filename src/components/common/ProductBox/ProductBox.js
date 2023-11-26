@@ -13,6 +13,7 @@ import Popup from '../Popup/Popup';
 import { NavLink } from 'react-router-dom';
 import { addProductToCart } from '../../../redux/cartRedux';
 import uniqid from 'uniqid';
+import initialState from '../../../redux/initialState';
 
 const ProductBox = ({
   name,
@@ -24,10 +25,16 @@ const ProductBox = ({
   id,
   ownRating,
   oldPrice,
+  category,
 }) => {
-  const [isFav, setIsFav] = useState(isFavorite);
+
+  const categoryInfo = initialState.categories.find(cat => cat.id === category);
+
+  const imagePath = `/images/${categoryInfo.folder}/${name}.jpg`;
+
+  const [isFav, setIsFav] = useState(false);
   const buttonFavoriteActive = clsx('outline', {
-    [styles.favorite]: isFav,
+    [styles.favorite]: isFavorite,
   });
 
   const buttonCompareActive = clsx('outline', {
@@ -77,7 +84,7 @@ const ProductBox = ({
       name,
       price,
       qty: 1,
-      img: `images/beds/${name}.jpg`,
+      img: `images/${category}/${name}.jpg`,
     };
 
     dispatch(addProductToCart(cartProductData));
@@ -106,9 +113,9 @@ const ProductBox = ({
         }}
       />
 
-      <NavLink to={`/product/${id}`} className='text-decoration-none'>
+      <NavLink to={`/product/${name}`} className='text-decoration-none'>
         <div className={styles.photo}>
-          <img src={`/images/beds/${name}.jpg`} alt={name} />
+          <img src={imagePath} alt={name} className='img-fluid' />
           {promo && <div className={styles.sale}>{promo}</div>}
           <div
             className={styles.buttons}
@@ -124,7 +131,7 @@ const ProductBox = ({
         </div>
       </NavLink>
       <div className={styles.content}>
-        <NavLink to={`/product/${id}`} className='text-decoration-none'>
+        <NavLink to={`/product/${name}`} className='text-decoration-none'>
           <h5>{name}</h5>
         </NavLink>
         <div className={styles.stars}>
@@ -172,6 +179,7 @@ ProductBox.propTypes = {
   id: PropTypes.string,
   ownRating: PropTypes.number,
   category: PropTypes.string,
+  categories: PropTypes.string,
 };
 
 export default ProductBox;
