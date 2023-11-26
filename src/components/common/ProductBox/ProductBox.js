@@ -27,9 +27,6 @@ const ProductBox = ({
   oldPrice,
   category,
 }) => {
-  console.log('Category:', category);
-  console.log('Name:', name);
-  console.log('Image Source:', `images/${category}/${name}.jpg`);
 
   const categoryInfo = initialState.categories.find(cat => cat.id === category);
 
