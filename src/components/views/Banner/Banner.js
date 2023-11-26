@@ -15,7 +15,10 @@ function Banner({ categoryId }) {
           </h1>
         ) : (
           <h1 className={styles.bannerTitle + ' justify-content-center'}>
-            <span className='font-weight-bold '>{categoryId}S</span>
+            <span className='font-weight-bold '>
+              {categoryId}
+              {categoryId ? 'S' : ''}
+            </span>
           </h1>
         )}
         <h3 className={styles.bannerSubtitle}>

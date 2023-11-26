@@ -37,21 +37,20 @@ const CardPage = () => {
               <span>PRODUCT</span>
             </div>
             <div className={styles.title}>PRICE</div>
-            <div className={styles.title}>QUANTITY</div>
+            <div className={styles.title}>QTY</div>
             <div className={styles.title}>TOTAL</div>
           </div>
           {allCartProduct.map(item => (
             <CartItem key={item.id} {...item} />
           ))}
-
-          <div className={styles.title}>
-            <div>
-              <input type='text' name='name' value='' placeholder='Coupon code' />
-              <button>APPLY COUPON</button>
-            </div>
-            <div>
-              <button>UPDATE CART</button>
-            </div>
+        </div>
+        <div className={styles.code}>
+          <div className='d-flex align-items-center'>
+            <input type='text' name='name' placeholder='Coupon' />
+            <button>APPLY COUPON</button>
+          </div>
+          <div>
+            <button>UPDATE CART</button>
           </div>
         </div>
         <div className={styles.subTable}>
@@ -60,17 +59,13 @@ const CardPage = () => {
           </div>
           <div className={styles.subItem}>
             <div className={styles.subBorder}>
-              <div className={styles.description}>
-                <span>Subtotal</span>
-              </div>
+              <span>Subtotal</span>
             </div>
             <div className={styles.price}>${subtotalPriceAmount}</div>
           </div>
           <div className={styles.subItem}>
             <div className={styles.subBorder}>
-              <div className={styles.description}>
-                <span>Total</span>
-              </div>
+              <span>Total</span>
             </div>
             <div className={styles.price}>${isCartEmpty ? 0 : totalPriceAmount}</div>
           </div>

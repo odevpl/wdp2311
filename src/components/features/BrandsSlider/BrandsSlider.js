@@ -94,7 +94,7 @@ const BrandsSlider = () => {
       <div className='container'>
         <div className={`row ${styles.slider}`}>
           <div className={`col-12 no-gutters align-items-end `}>
-            <div className={'mr-3 ' + styles.dots}>
+            <div className={styles.dots}>
               <ul>{dots}</ul>
             </div>
           </div>

@@ -14,7 +14,6 @@
     border-top: 1px solid #b6b6b6;
     border-bottom: 1px solid #b6b6b6;
 
-
     .item {
       width: 144px;
       height: 93px;
@@ -44,8 +43,8 @@
 
     .dots {
       position: absolute;
-      right: 0;
-      top: -60px;
+      right: -10px;
+      top: -50px;
 
       ul {
         margin: 0;
@@ -53,7 +52,6 @@
         list-style: none;
         background-color: $pure-white;
         transform: translateY(15px);
-        
 
         li {
           display: inline-block;
@@ -61,7 +59,7 @@
 
           a {
             display: block;
-            
+
             width: 13px;
             height: 13px;
             border-radius: 6px;

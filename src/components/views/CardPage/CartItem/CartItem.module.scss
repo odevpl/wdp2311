@@ -14,7 +14,6 @@
     width: 115px;
     text-align: center;
     .deleteBtn {
-      display: inline-block;
       cursor: pointer;
       font-size: 2em;
     }
@@ -80,5 +79,30 @@
     font-size: 16px;
     color: green;
     font-weight: 600;
+  }
+}
+
+@media (max-width: 992px) {
+  .item {
+    padding: 20px 0;
+
+    .buttons {
+      width: 70px;
+      .deleteBtn {
+        font-size: 1em;
+      }
+    }
+    .image {
+      margin-right: 0;
+    }
+    .quantity {
+      margin: auto;
+      width: 115px;
+      text-align: center;
+      input {
+        height: 30px;
+        margin: 0 2px;
+      }
+    }
   }
 }
