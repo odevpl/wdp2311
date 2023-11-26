@@ -5,7 +5,7 @@ import styles from './login.module.scss';
 import PropTypes from 'prop-types';
 import ProductBox from '../ProductBox/ProductBox';
 
-const Login = ({ isOpen, onClose, loginOpen, setIsOpenLogin }) => {
+const Login = ({ loginOpen, setIsOpenLogin }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -26,8 +26,8 @@ const Login = ({ isOpen, onClose, loginOpen, setIsOpenLogin }) => {
   };
 
   const handleOverlayClick = e => {
-    if (e.target.classList.contains(styles.overlay)) {
-      onClose();
+    if (e.target.classList.contains(styles.modalOverlay)) {
+      loginOpen();
     }
   };
 
