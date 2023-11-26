@@ -8,13 +8,9 @@ const ProductList = ({ categoryId }) => {
     <div className='my-5'>
       <div className='container'>
         <div className='row'>
-          <h2 className='mx-auto'>BANNER</h2>
-        </div>
-        <div className='row'>
-          <div className='col-9'>
+          <div className='col-12'>
             <NewFurnitureShop categoryId={categoryId} />
           </div>
-          <div className='col-3'>filters</div>
         </div>
         <div className='row'>
           <BrandsSlider />
