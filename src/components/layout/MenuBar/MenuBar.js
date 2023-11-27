@@ -1,12 +1,26 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 
 import ProductSearch from '../../features/ProductSearch/ProductSearch';
 
 import styles from './MenuBar.module.scss';
 import { NavLink } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 const MenuBar = ({ children, activeLink, setActiveLink }) => {
+  const [isSearchVisible, setIsSearchVisible] = useState(window.innerWidth > 767);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsSearchVisible(window.innerWidth > 767);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
   const Links = () => {
     const hrefs = ['Home', 'Furniture', 'Chair', 'Table', 'Sofa', 'Bedroom', 'Blog'];
     return hrefs.map(href => (
@@ -26,9 +40,11 @@ const MenuBar = ({ children, activeLink, setActiveLink }) => {
     <div className={styles.root}>
       <div className='container'>
         <div className='row align-items-center'>
-          <div className='col order-last order-xl-first'>
-            <ProductSearch />
-          </div>
+          {isSearchVisible && (
+            <div className='col order-last order-xl-first'>
+              <ProductSearch />
+            </div>
+          )}
           <div className={'col-auto ' + styles.menu}>
             <ul className='d-none d-lg-flex'>
               <Links />
@@ -44,6 +60,13 @@ const MenuBar = ({ children, activeLink, setActiveLink }) => {
                 aria-expanded='false'
               >
                 <span className='navbar-toggler-icon'></span>
+              </button>
+              <button
+                style={{ height: '40px', marginLeft: '10px' }}
+                className='navbar-toggler'
+                onClick={() => setIsSearchVisible(!isSearchVisible)}
+              >
+                <FontAwesomeIcon className={styles.icon} icon={faSearch} />
               </button>
               <div className='dropdown-menu' aria-labelledby='dropdownMenuButton'>
                 <ul className={styles.dropdown + ' flex-column align-items-stretch'}>
