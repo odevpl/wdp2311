@@ -46,7 +46,7 @@ input {
   border-radius: 5px;
 }
 
-p {
+.login__info {
   display: flex;
   justify-content: center;
   gap: 10px;
@@ -63,10 +63,35 @@ p {
   background-color: #d58e32;
   font-weight: inherit;
   border: none;
-  font-family: "Arial Black"
+  font-family: "Arial Black";
 }
 .login__error {
   color: red;
   font-size: 20px;
   align-items: center;
+}
+
+@media (max-width: 576px) {
+  .modalOverlay {
+    width: 100vw;
+    height: 100vh;
+  }
+  .loginModal {
+    width: 90%;
+  }
+
+  .login__button {
+    margin: 0;
+    height: 50px;
+  }
+
+  .login__info {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  input {
+    height: 45px;
+    padding: 0 15px;
+  }
 }
