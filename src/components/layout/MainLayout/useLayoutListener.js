@@ -8,12 +8,19 @@ const LAYOUT_BREAKPOINTS = {
   DESKTOP: 1200,
 };
 
+const getWidth = () =>
+  Math.max(
+    document.documentElement.clientWidth || 0,
+    window.innerWidth || 0,
+    window.outerWidth || 0
+  );
+
 function useLayoutListener() {
   const currentLayout = useSelector(getLayout);
   const dispatch = useDispatch();
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  const setCurrentLayout = width => {
+  const setCurrentLayout = () => {
+    const width = getWidth();
     let layout = Object.keys(LAYOUT_BREAKPOINTS)[0];
     for (const device in LAYOUT_BREAKPOINTS) {
       if (width > LAYOUT_BREAKPOINTS[device]) {
@@ -24,8 +31,8 @@ function useLayoutListener() {
   };
 
   useEffect(() => {
-    setCurrentLayout(window.outerWidth);
-    window.onresize = () => setCurrentLayout(window.outerWidth);
+    setCurrentLayout();
+    window.onresize = setCurrentLayout;
   }, [setCurrentLayout]);
 
   return currentLayout;
