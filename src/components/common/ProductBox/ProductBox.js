@@ -27,7 +27,6 @@ const ProductBox = ({
   oldPrice,
   category,
 }) => {
-
   const categoryInfo = initialState.categories.find(cat => cat.id === category);
 
   const imagePath = `/images/${categoryInfo.folder}/${name}.jpg`;
@@ -84,7 +83,7 @@ const ProductBox = ({
       name,
       price,
       qty: 1,
-      img: `images/${category}/${name}.jpg`,
+      img: `images/${category}s/${name}.jpg`,
     };
 
     dispatch(addProductToCart(cartProductData));

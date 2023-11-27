@@ -6,11 +6,11 @@ export const getProductsByTab = ({ products }, tab) =>
 export const getCount = ({ products }) => products.length;
 
 const selectProducts = state => state.products;
-const selectProductId = (state, id) => id;
+const selectProductId = (state, name) => name;
 
 export const getProductById = createSelector(
   [selectProducts, selectProductId],
-  (products, id) => products.find(product => product.id === id)
+  (products, name) => products.find(product => product.name === name)
 );
 
 export const getNew = ({ products }) => {
