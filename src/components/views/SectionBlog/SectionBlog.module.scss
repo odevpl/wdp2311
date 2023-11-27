@@ -1,13 +1,12 @@
 @import "../../../styles/settings.scss";
 
-
 .root {
   .panelBar {
     margin-bottom: 30px;
     position: relative;
 
     :global(.row) > * {
-    border-bottom: 4px solid #e2e2e2;
+      border-bottom: 4px solid #e2e2e2;
     }
 
     .heading {
@@ -67,25 +66,28 @@
     }
   }
 
-
   .postsContainer {
+    width: 100%;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-  
+
     .postImage {
-      width: 322px;
+      width: 100%;
       height: 260px;
       background-color: $light-grey-bg;
     }
-  
+
     .postInfo {
-      width: 269px;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
       height: 290px;
-      left: 50%;
-      transform: translate(-50%, -20%);
       background-color: $white;
-      position: relative; 
-      z-index: 1; 
+
+      &:last-of-type {
+        align-items: flex-end;
+      }
     }
 
     .details {
@@ -95,41 +97,39 @@
       font-size: 10px;
       padding: 20px 20px 25px 20px;
       color: $light-grey-bg;
-
-        .icon{
-          padding: 3px;
-        }
+      width: 100%;
+    }
+    .content {
+      width: 75%;
+      margin: 0 auto;
+      .postText {
+        color: $dark-grey;
+        font-size: 12px;
+      }
     }
 
-    .postText { 
-    color: $dark-grey;
-    font-size: 12px;
-    }
-
-    button{
+    button {
       background-color: $dark-grey;
       color: $white;
       border: none;
-      transform: translate(30%, 30%);
       width: 150px;
       height: 40px;
       font-size: 12px;
       font-style: bold;
-      transition: background-color 0.1s, $dim-orange 0.1s; /* Add smooth transition */
+      transition: background-color 0.1s, $dim-orange 0.1s;
     }
-  
+
     .postInfo:hover button {
       background-color: $dim-orange;
     }
-      
+
     .postInfo:hover h6 {
       color: $dim-orange;
     }
-      
+
     .postInfo:hover .details,
     .postInfo:hover .postText {
       color: rgb(106, 103, 103);
     }
-
   }
 }

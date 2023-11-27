@@ -4,19 +4,24 @@ import styles from './Gallery.module.scss';
 import TabsBox from '../../common/TabsBox/TabsBox';
 import ProductsBrowser from '../../features/ProductsBrowser/ProductsBrowser';
 import { useState } from 'react';
+import { useSelector } from 'react-redux';
+import { getLayout } from '../../../redux/layoutRedux';
 
 function Gallery() {
   const [tabActive, setTabActive] = useState('featured');
+  const layout = useSelector(getLayout);
 
-  const handleTabChange = newTab => {
-    setTabActive(newTab);
-  };
+  const handleTabChange = newTab => setTabActive(newTab);
 
   return (
     <div className='container my-3'>
-      <div className={styles.wrapper}>
+      <div
+        className={`${styles.wrapper} ${
+          layout === 'MOBILE' ? styles.mobileLayout : ''
+        }`}
+      >
         <div
-          className={styles.leftColumn + ' d-flex flex-column'}
+          className={` ${styles.leftColumn} d-flex flex-column col-sm-12`}
           style={{ gap: '1rem' }}
         >
           <Heading>Furniture gallery</Heading>
@@ -28,10 +33,15 @@ function Gallery() {
             <ProductsBrowser tabActive={tabActive} />
           </TabsBox>
         </div>
-        <div className={styles.rightColumn + ' w-100'}>
+
+        <div
+          className={`${styles.rightColumn} w-100 ${
+            layout === 'MOBILE' ? styles.rightColumnBlock : ''
+          }`}
+        >
           <img
             src={window.location.origin + '/images/beds/Aenean Ru Bristique 13.jpg'}
-            alt={'image'}
+            alt={'bed'}
             className={styles.rightImage}
           />
         </div>

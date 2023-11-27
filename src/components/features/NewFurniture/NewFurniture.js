@@ -29,7 +29,7 @@ class NewFurniture extends React.Component {
           activePage: newPage,
           isFading: false, // Set isFading to false to trigger fade-in
         });
-      }, this.state.fadeTiming); // Adjust the delay according to your transition duration
+      },  this.state.fadeTiming); // Adjust the delay according to your transition duration
     });
   }
 
@@ -88,7 +88,9 @@ class NewFurniture extends React.Component {
           <div className='container'>
             <div className={styles.panelBar}>
               <div className='row no-gutters align-items-end flex-column'>
-                <Heading>New Furniture</Heading>
+                <div className={'col-auto ' + styles.heading}>
+                  <h3>New Furniture</h3>
+                </div>
                 <div className={'col ' + styles.menu}>
                   <ul>
                     {categories.map(item => (
@@ -120,12 +122,17 @@ class NewFurniture extends React.Component {
                 )
                 .map(item => (
                   <div key={item.id} className='col-12 col-md-4'>
-                    <ProductBox {...item} />
+                    <ProductBox category={item.category}{...item} />
                   </div>
                 ))}
             </div>
           </div>
-
+          <div
+            className={`row swipeableContent ${styles.productsContainer} ${
+              isFading ? styles.fadeOut : styles.fadeIn
+            }`}
+          >
+          </div>
           <div className={styles.compare}>
             <CompareProducts />
           </div>

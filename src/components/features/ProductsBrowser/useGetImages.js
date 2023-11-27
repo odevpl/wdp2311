@@ -1,8 +1,10 @@
+export const getImage = product => {
+  const imagesPath = `${window.location.origin}/images/`;
+  return `${imagesPath}/${product.category}s/${product.name}.jpg`;
+};
+
 function useGetImages(products = [], imagesCount) {
-  const imagesPath = `${window.location.origin}/images/beds/`;
-  return products
-    .slice(0, imagesCount)
-    .map(product => `${imagesPath}${product.name}.jpg`);
+  return products.slice(0, imagesCount).map(product => getImage(product));
 }
 
 export default useGetImages;

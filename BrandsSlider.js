@@ -94,7 +94,7 @@ const BrandsSlider = () => {
       <div className='container'>
         <div className={`row ${styles.slider}`}>
           <div className={`col-12 no-gutters align-items-end `}>
-            <div className={styles.dots}>
+            <div className={'mr-3 ' + styles.dots}>
               <ul>{dots}</ul>
             </div>
           </div>
@@ -104,20 +104,14 @@ const BrandsSlider = () => {
             leftAction={previousPage}
             rightAction={nextPage}
           >
-            <div
-              className={`row-with-buttons d-flex align-items-end justify-content-between`}
-            >
+            <div className={`row-with-buttons d-flex align-items-end justify-content-between`}>
               <button onClick={handlePrev} className={`${styles.button} mx-2`}>
                 <FontAwesomeIcon icon={faChevronLeft} className={styles.fa} />
               </button>
               <div className={`row justify-content-center`}>
                 {visibleSlides.map((image, i) => (
                   <div key={i} className={`${getColClass()} ${styles.item}`}>
-                    <img
-                      src={image}
-                      alt={`Brand ${i + 1}`}
-                      className='img-fluid w-100'
-                    />
+                    <img src={image} alt={`Brand ${i + 1}`} className='img-fluid w-100' />
                   </div>
                 ))}
               </div>

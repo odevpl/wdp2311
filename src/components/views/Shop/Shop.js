@@ -7,7 +7,7 @@ function Shop() {
   const { categoryId } = useParams();
   return (
     <>
-      <Banner />
+      <Banner categoryId={categoryId} />
       <ProductList categoryId={categoryId} />
     </>
   );

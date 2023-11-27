@@ -65,6 +65,7 @@
     "react-test-renderer": "^16.9.0",
     "redux": "^4.0.4",
     "sass": "^1.54.3",
+    "uniqid": "5.4.0",
     "yarn": "^1.22.19"
   },
   "devDependencies": {
@@ -77,6 +78,6 @@
     "prettier": "^1.19.1",
     "react-router-dom": "6.19.0",
     "redux-devtools-extension": "2.13.8",
-    "uniqid": "5.4.0"
+    "uniqid": "^5.4.0"
   }
 }

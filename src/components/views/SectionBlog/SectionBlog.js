@@ -33,7 +33,7 @@ const SectionBlog = () => {
         </div>
         <div className={styles.postsContainer}>
           {posts.map(post => (
-            <div key={post.id} className='col m-3'>
+            <div key={post.id} className='col-12 col-md-4 '>
               <div className={styles.postImage}></div>
 
               <div className={styles.postInfo}>
@@ -52,11 +52,11 @@ const SectionBlog = () => {
                     {post.comments}comments
                   </p>
                 </div>
-                <div>
+                <div className={styles.content}>
                   <h6>{post.header}</h6>
                   <p className={styles.postText}>{post.description}</p>
                 </div>
-                <button> Read more</button>
+                <button>Read more</button>
               </div>
             </div>
           ))}

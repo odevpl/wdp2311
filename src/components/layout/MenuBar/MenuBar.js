@@ -22,8 +22,9 @@ const MenuBar = ({ children }) => {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
+
+const MenuBar = ({ children, activeLink, setActiveLink }) => {
   const Links = () => {
-    const [activeLink, setActiveLink] = useState('Home');
     const hrefs = ['Home', 'Furniture', 'Chair', 'Table', 'Sofa', 'Bedroom', 'Blog'];
     return hrefs.map(href => (
       <li key={href}>
@@ -85,6 +86,8 @@ const MenuBar = ({ children }) => {
 
 MenuBar.propTypes = {
   children: PropTypes.node,
+  activeLink: PropTypes.string,
+  setActiveLink: PropTypes.func,
 };
 
 export default MenuBar;

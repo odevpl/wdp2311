@@ -56,9 +56,6 @@
       font-weight: 600;
       margin: 0;
     }
-
-    p {
-    }
   }
 
   &.active {
@@ -73,6 +70,37 @@
 
     .content {
       color: $primary;
+    }
+  }
+
+  &:hover {
+    .iconWrapper {
+      color: #ffffff;
+
+      &::after {
+        background-color: $primary;
+        border-color: $primary;
+      }
+
+      &::before {
+        border-color: $primary;
+      }
+    }
+
+    .content {
+      color: $primary;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .root {
+    height: 140px;
+
+    .content {
+      h5 {
+        font-size: 22px;
+      }
     }
   }
 }
