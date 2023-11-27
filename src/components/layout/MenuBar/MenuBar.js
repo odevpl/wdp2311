@@ -1,15 +1,14 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 
 import ProductSearch from '../../features/ProductSearch/ProductSearch';
 
 import styles from './MenuBar.module.scss';
 import { NavLink } from 'react-router-dom';
-import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
-const MenuBar = ({ children }) => {
+const MenuBar = ({ children, activeLink, setActiveLink }) => {
   const [isSearchVisible, setIsSearchVisible] = useState(window.innerWidth > 767);
 
   useEffect(() => {
@@ -22,8 +21,6 @@ const MenuBar = ({ children }) => {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
-
-const MenuBar = ({ children, activeLink, setActiveLink }) => {
   const Links = () => {
     const hrefs = ['Home', 'Furniture', 'Chair', 'Table', 'Sofa', 'Bedroom', 'Blog'];
     return hrefs.map(href => (
